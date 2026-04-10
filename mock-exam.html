@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mock Exam ภาษาอังกฤษ — Thep Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --orange:#F97316; --orange2:#fb923c; --navy:#0f1f3d;
+      --green:#16a34a; --red:#dc2626;
+      --bg:#f1f5f9; --white:#ffffff; --border:#e2e8f0;
+      --mid:#64748b; --dark:#1e293b;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh;}
+
+    /* TOP BAR */
+    .topbar{position:fixed;top:0;left:0;right:0;height:52px;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+    .topbar-logo{font-size:15px;font-weight:700;color:var(--navy);text-decoration:none;}
+    .topbar-logo span{color:var(--orange);}
+    .topbar-label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mid);letter-spacing:1px;text-transform:uppercase;}
+    .topbar-exit{font-size:13px;color:var(--mid);text-decoration:none;padding:5px 12px;border:1px solid var(--border);border-radius:8px;transition:all .18s;}
+    .topbar-exit:hover{color:var(--dark);border-color:#94a3b8;}
+
+    .wrapper{max-width:640px;margin:0 auto;padding:80px 16px 40px;}
+
+    /* SCREENS */
+    .screen{display:none;}
+    .screen.active{display:block;animation:fadeUp .22s ease;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+    /* ── START SCREEN ── */
+    .intro-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.25);color:var(--orange);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:20px;}
+    .intro-badge::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;animation:blink 1.4s infinite;}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+    .intro-title{font-size:clamp(28px,5vw,40px);font-weight:800;line-height:1.15;letter-spacing:-1px;color:var(--navy);margin-bottom:10px;}
+    .intro-title .accent{color:var(--orange);}
+    .intro-desc{font-size:16px;color:var(--mid);line-height:1.7;margin-bottom:32px;}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px;}
+    .stat-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 12px;text-align:center;}
+    .stat-icon{font-size:20px;margin-bottom:6px;}
+    .stat-val{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--orange);margin-bottom:2px;}
+    .stat-label{font-size:12px;color:var(--mid);}
+    .cat-list{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin-bottom:28px;}
+    .cat-list-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mid);margin-bottom:12px;}
+    .cat-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--dark);}
+    .cat-row:last-child{border-bottom:none;}
+    .cat-badge{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;background:rgba(249,115,22,.1);color:var(--orange);padding:2px 8px;border-radius:999px;}
+    .btn-primary{width:100%;padding:16px;background:var(--orange);color:#fff;font-family:'Sarabun',sans-serif;font-size:16px;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:all .2s;box-shadow:0 6px 20px rgba(249,115,22,.3);}
+    .btn-primary:hover{background:var(--orange2);transform:translateY(-1px);box-shadow:0 10px 28px rgba(249,115,22,.38);}
+    .btn-primary:disabled{background:#cbd5e1;box-shadow:none;cursor:not-allowed;transform:none;}
+
+    /* ── EXAM SCREEN ── */
+    .exam-header{position:sticky;top:52px;background:var(--white);border-bottom:1px solid var(--border);padding:12px 0 10px;margin-bottom:24px;z-index:50;}
+    .exam-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+    .exam-counter{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mid);letter-spacing:.4px;}
+    .exam-counter b{color:var(--orange);}
+    .exam-timer{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:var(--dark);background:var(--bg);border:1px solid var(--border);padding:4px 12px;border-radius:8px;}
+    .exam-timer.urgent{color:var(--red);border-color:rgba(220,38,38,.3);background:rgba(220,38,38,.04);animation:pulse 1s infinite;}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+    .progress-track{height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--orange2));border-radius:2px;transition:width .35s ease;}
+    .q-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 24px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+    .q-cat-label{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:12px;}
+    .q-passage{background:#f8fafc;border:1px solid var(--border);border-left:3px solid var(--orange);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.8;color:var(--dark);margin-bottom:16px;white-space:pre-wrap;}
+    .q-text{font-size:18px;font-weight:600;line-height:1.6;color:var(--navy);}
+    .options{display:grid;gap:8px;margin-bottom:24px;}
+    .opt-btn{display:flex;align-items:center;gap:12px;background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;text-align:left;font-family:'Sarabun',sans-serif;font-size:15px;font-weight:500;color:var(--dark);transition:all .16s;width:100%;}
+    .opt-btn:hover{border-color:var(--orange);background:rgba(249,115,22,.04);}
+    .opt-btn.selected{border-color:var(--orange);background:rgba(249,115,22,.08);color:var(--navy);font-weight:700;}
+    .opt-letter{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--mid);transition:all .16s;}
+    .opt-btn.selected .opt-letter{background:var(--orange);border-color:var(--orange);color:#fff;}
+    .nav-row{display:flex;gap:10px;}
+    .btn-nav{flex:1;padding:13px;font-family:'Sarabun',sans-serif;font-size:15px;font-weight:600;border-radius:12px;cursor:pointer;transition:all .18s;border:1.5px solid var(--border);background:var(--white);color:var(--mid);}
+    .btn-nav:hover:not(:disabled){border-color:#94a3b8;color:var(--dark);}
+    .btn-nav:disabled{opacity:.35;cursor:not-allowed;}
+    .btn-nav.primary{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 4px 14px rgba(249,115,22,.28);}
+    .btn-nav.primary:hover{background:var(--orange2);border-color:var(--orange2);}
+    .btn-submit{width:100%;margin-top:10px;padding:13px;font-family:'Sarabun',sans-serif;font-size:15px;font-weight:600;border-radius:12px;cursor:pointer;transition:all .18s;background:var(--green);border:1.5px solid var(--green);color:#fff;box-shadow:0 4px 14px rgba(22,163,74,.25);}
+    .btn-submit:hover{background:#15803d;}
+
+    /* ── RESULTS SCREEN ── */
+    .result-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 24px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+    .result-title{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:24px;text-align:center;}
+    .score-ring-wrap{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;}
+    .score-ring{width:110px;height:110px;border-radius:50%;border:8px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:700;margin-bottom:10px;}
+    .score-ring.good{border-color:var(--green);color:var(--green);}
+    .score-ring.ok{border-color:var(--orange);color:var(--orange);}
+    .score-ring.low{border-color:var(--red);color:var(--red);}
+    .score-sub{font-size:15px;color:var(--mid);text-align:center;}
+    .score-feedback{font-size:13px;color:var(--mid);margin-top:4px;text-align:center;}
+    .tally-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px;}
+    .tally-box{text-align:center;padding:14px 8px;border-radius:12px;}
+    .tally-box.c{background:rgba(22,163,74,.08);}
+    .tally-box.w{background:rgba(220,38,38,.07);}
+    .tally-box.s{background:rgba(100,116,139,.07);}
+    .tally-num{font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:700;}
+    .tally-box.c .tally-num{color:var(--green);}
+    .tally-box.w .tally-num{color:var(--red);}
+    .tally-box.s .tally-num{color:var(--mid);}
+    .tally-label{font-size:12px;color:var(--mid);margin-top:2px;}
+    .section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mid);margin-bottom:12px;}
+    .cat-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+    .cat-bar-name{font-size:12px;color:var(--dark);width:170px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .cat-bar-track{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden;}
+    .cat-bar-fill{height:100%;border-radius:3px;background:var(--orange);}
+    .cat-bar-fill.good{background:var(--green);}
+    .cat-bar-fill.low{background:var(--red);}
+    .cat-bar-score{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--mid);width:32px;text-align:right;}
+    .review-item{border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:10px;border-left:4px solid var(--red);background:rgba(220,38,38,.03);}
+    .review-meta{font-size:11px;color:var(--mid);margin-bottom:8px;}
+    .review-q{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:12px;line-height:1.5;}
+    .review-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;margin-right:6px;margin-bottom:4px;}
+    .tag-wrong{background:rgba(220,38,38,.1);color:var(--red);}
+    .tag-correct{background:rgba(22,163,74,.1);color:var(--green);}
+    .tag-skip{background:rgba(100,116,139,.1);color:var(--mid);}
+    .review-ans{font-size:13px;color:var(--dark);margin-bottom:4px;}
+    .review-note{font-size:12px;color:var(--mid);font-style:italic;margin-top:8px;border-top:1px solid var(--border);padding-top:8px;}
+    .empty-review{text-align:center;padding:28px;color:var(--green);font-weight:700;font-size:16px;}
+    .action-row{display:flex;gap:10px;flex-wrap:wrap;}
+    .btn-action{flex:1;min-width:140px;padding:14px;font-family:'Sarabun',sans-serif;font-size:15px;font-weight:700;border-radius:12px;cursor:pointer;transition:all .18s;text-align:center;border:1.5px solid;}
+    .btn-action.solid{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 4px 16px rgba(249,115,22,.28);}
+    .btn-action.solid:hover{background:var(--orange2);}
+    .btn-action.outline{background:var(--white);border-color:var(--border);color:var(--dark);}
+    .btn-action.outline:hover{border-color:var(--orange);color:var(--orange);}
+    .hidden{display:none!important;}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="topbar-logo">Thep <span>Academy</span></a>
+  <span class="topbar-label">Mock Exam</span>
+  <a href="index.html" class="topbar-exit">← กลับหน้าหลัก</a>
+</div>
+
+<div class="wrapper">
+
+  <!-- START -->
+  <div id="s-start" class="screen active">
+    <div class="intro-badge">Mock Exam · ภาษาอังกฤษ</div>
+    <h1 class="intro-title">ข้อสอบ <span class="accent">1,000 ข้อ</span><br/>ม.1 Entrance</h1>
+    <p class="intro-desc">สุ่ม 50 ข้อจาก 5 หมวดหมู่ ตอบให้ครบก่อนหมดเวลา 60 นาที</p>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-icon">📝</div><div class="stat-val">50</div><div class="stat-label">ข้อสอบ</div></div>
+      <div class="stat-card"><div class="stat-icon">⏱️</div><div class="stat-val">60</div><div class="stat-label">นาที</div></div>
+      <div class="stat-card"><div class="stat-icon">🎯</div><div class="stat-val">5</div><div class="stat-label">หมวดหมู่</div></div>
+    </div>
+    <div class="cat-list">
+      <div class="cat-list-title">หมวดหมู่ (10 ข้อ / หมวด)</div>
+      <div class="cat-row"><span>📚 Grammar &amp; Structure</span><span class="cat-badge">10 ข้อ</span></div>
+      <div class="cat-row"><span>🔤 Vocabulary</span><span class="cat-badge">10 ข้อ</span></div>
+      <div class="cat-row"><span>📖 Reading Comprehension</span><span class="cat-badge">10 ข้อ</span></div>
+      <div class="cat-row"><span>💬 Conversation</span><span class="cat-badge">10 ข้อ</span></div>
+      <div class="cat-row"><span>🎯 Mock Exams</span><span class="cat-badge">10 ข้อ</span></div>
+    </div>
+    <button class="btn-primary" id="btn-start" onclick="handleStart()">เริ่มทำข้อสอบ →</button>
+  </div>
+
+  <!-- EXAM -->
+  <div id="s-exam" class="screen">
+    <div class="exam-header">
+      <div class="exam-meta">
+        <div class="exam-counter">ข้อ <b id="q-num">1</b> / <b id="q-total">50</b> &nbsp;·&nbsp; <span id="q-answered">0</span> ตอบแล้ว</div>
+        <div class="exam-timer" id="timer">60:00</div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:2%"></div></div>
+    </div>
+    <div class="q-card">
+      <div class="q-cat-label" id="q-cat"></div>
+      <div id="q-passage" class="q-passage hidden"></div>
+      <div class="q-text" id="q-text"></div>
+    </div>
+    <div class="options" id="options"></div>
+    <div class="nav-row">
+      <button class="btn-nav" id="btn-prev" disabled>← ก่อนหน้า</button>
+      <button class="btn-nav primary" id="btn-next">ถัดไป →</button>
+    </div>
+    <button class="btn-submit hidden" id="btn-submit">ส่งข้อสอบ ✓</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="s-results" class="screen">
+    <div class="result-card">
+      <div class="result-title">ผลการสอบ</div>
+      <div class="score-ring-wrap">
+        <div class="score-ring" id="score-ring"></div>
+        <div class="score-sub" id="score-sub"></div>
+        <div class="score-feedback" id="score-feedback"></div>
+      </div>
+      <div class="tally-grid">
+        <div class="tally-box c"><div class="tally-num" id="t-correct"></div><div class="tally-label">ถูก</div></div>
+        <div class="tally-box w"><div class="tally-num" id="t-wrong"></div><div class="tally-label">ผิด</div></div>
+        <div class="tally-box s"><div class="tally-num" id="t-skip"></div><div class="tally-label">ข้าม</div></div>
+      </div>
+      <div class="section-title">คะแนนรายหมวด</div>
+      <div id="cat-bars"></div>
+    </div>
+    <div class="result-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <div class="section-title" style="margin:0">เฉลยข้อที่ผิด</div>
+        <span id="review-count" style="font-size:12px;color:var(--mid);"></span>
+      </div>
+      <div id="review-list"></div>
+      <div class="empty-review hidden" id="review-empty">🎉 ไม่มีข้อผิด! ยอดเยี่ยมมาก</div>
+    </div>
+    <div class="action-row">
+      <button class="btn-action solid" id="btn-retry">สอบรอบใหม่</button>
+      <button class="btn-action outline" id="btn-retake">ทำข้อที่ผิดใหม่</button>
+    </div>
+  </div>
+
+</div><!-- /wrapper -->
+
+<script>
+"use strict";
+
+let bank = [];
+let bankLoaded = false;
+
+// ── Load questions ───────────────────────────────────────────────
+function initExam() {
+  const btn = document.getElementById('btn-start');
+  btn.textContent = 'กำลังโหลด...';
+  btn.disabled = true;
+
+  fetch('questions.json')
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      bank = data;
+      bankLoaded = true;
+      btn.disabled = false;
+      btn.textContent = 'เริ่มทำข้อสอบ →';
+    })
+    .catch(function(err) {
+      btn.disabled = false;
+      btn.textContent = '⚠️ โหลดไม่สำเร็จ — กดเพื่อลองใหม่';
+      bankLoaded = false;
+      console.error(err);
+    });
+}
+
+function handleStart() {
+  if (!bankLoaded || bank.length === 0) {
+    initExam();
+    return;
+  }
+  try {
+    startSession();
+  } catch(e) {
+    alert('เกิดข้อผิดพลาด: ' + e.message);
+    console.error(e);
+  }
+}
+
+async function initExam() {
+  try {
+    document.getElementById('btn-start').disabled = true;
+    document.getElementById('btn-start').textContent = 'กำลังโหลด...';
+    const res = await fetch('questions.json');
+    bank = await res.json();
+    document.getElementById('btn-start').disabled = false;
+    document.getElementById('btn-start').textContent = 'เริ่มทำข้อสอบ →';
+  } catch(e) {
+    document.getElementById('btn-start').textContent = 'โหลดไม่สำเร็จ ลองรีเฟรช';
+    console.error('Failed to load questions:', e);
+  }
+}
+
+// ── State ───────────────────────────────────────────────────────
+let session  = [];
+let answers  = {};
+let cur      = 0;
+let timerID  = null;
+let secsLeft = 3600;
+const LETTERS = ['A','B','C','D'];
+
+// ── Helpers ─────────────────────────────────────────────────────
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function pickQuestions(pool, n) {
+  const groups = {};
+  for (const q of pool) (groups[q.category] = groups[q.category] || []).push(q);
+  const picked = [];
+  for (const qs of Object.values(groups)) picked.push(...shuffle(qs).slice(0, n));
+  return shuffle(picked);
+}
+
+// ── Timer ────────────────────────────────────────────────────────
+function startTimer() {
+  clearInterval(timerID);
+  secsLeft = 3600;
+  renderTimer();
+  timerID = setInterval(() => {
+    secsLeft--;
+    renderTimer();
+    if (secsLeft <= 0) { clearInterval(timerID); alert('⏰ หมดเวลา! ระบบส่งข้อสอบให้อัตโนมัติ'); showResults(); }
+  }, 1000);
+}
+
+function renderTimer() {
+  const el = document.getElementById('timer');
+  const m  = String(Math.floor(secsLeft / 60)).padStart(2, '0');
+  const s  = String(secsLeft % 60).padStart(2, '0');
+  el.textContent = m + ':' + s;
+  el.classList.toggle('urgent', secsLeft <= 300);
+}
+
+// ── Render question ──────────────────────────────────────────────
+function renderQ() {
+  const q     = session[cur];
+  const total = session.length;
+
+  document.getElementById('q-num').textContent     = cur + 1;
+  document.getElementById('q-total').textContent   = total;
+  document.getElementById('q-answered').textContent = Object.keys(answers).length;
+  document.getElementById('q-cat').textContent     = q.category;
+  document.getElementById('progress-fill').style.width = ((cur + 1) / total * 100) + '%';
+
+  // Reading passage
+  const passEl = document.getElementById('q-passage');
+  if (q.passage) {
+    passEl.textContent = q.passage;
+    passEl.classList.remove('hidden');
+  } else {
+    passEl.classList.add('hidden');
+  }
+
+  // Question text — Conversation: split A:/B: onto new lines
+  const qEl = document.getElementById('q-text');
+  if (q.category === 'Conversation & Situational Dialogues') {
+    qEl.innerHTML = q.question.replace(/\n/g, '<br>');
+  } else {
+    qEl.textContent = q.question;
+  }
+
+  // Options
+  const container = document.getElementById('options');
+  container.innerHTML = '';
+  q.options.forEach((text, i) => {
+    if (!text) return;
+    const letter = LETTERS[i];
+    const sel    = answers[cur] === letter;
+    const btn    = document.createElement('button');
+    btn.className = 'opt-btn' + (sel ? ' selected' : '');
+    btn.innerHTML =
+      '<span class="opt-letter">' + letter + '</span>' +
+      '<span>' + text + '</span>';
+    btn.onclick = () => { answers[cur] = letter; renderQ(); };
+    container.appendChild(btn);
+  });
+
+  // Nav
+  const isLast = cur === total - 1;
+  document.getElementById('btn-prev').disabled = cur === 0;
+  document.getElementById('btn-next').classList.toggle('hidden', isLast);
+  document.getElementById('btn-submit').classList.toggle('hidden', !isLast);
+}
+
+// ── Navigation ───────────────────────────────────────────────────
+document.getElementById('btn-prev').onclick = () => { if (cur > 0) { cur--; renderQ(); } };
+document.getElementById('btn-next').onclick = () => { if (cur < session.length - 1) { cur++; renderQ(); } };
+document.getElementById('btn-submit').onclick = () => {
+  const left = session.length - Object.keys(answers).length;
+  if (left > 0 && !confirm('ยังมี ' + left + ' ข้อที่ยังไม่ตอบ ต้องการส่งเลยไหม?')) return;
+  clearInterval(timerID);
+  showResults();
+};
+
+// ── Results ──────────────────────────────────────────────────────
+function showResults() {
+  showScreen('s-results');
+  let correct = 0, wrong = 0, skip = 0;
+  const catStats = {};
+
+  session.forEach((q, i) => {
+    const ua  = answers[i];
+    const cat = q.category;
+    if (!catStats[cat]) catStats[cat] = { c: 0, t: 0 };
+    catStats[cat].t++;
+    if (!ua)            skip++;
+    else if (ua === q.answer) { correct++; catStats[cat].c++; }
+    else                wrong++;
+  });
+
+  const pct = Math.round(correct / session.length * 100);
+  const ring = document.getElementById('score-ring');
+  ring.textContent = pct + '%';
+  ring.className   = 'score-ring ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'low');
+  document.getElementById('score-sub').textContent     = correct + ' / ' + session.length + ' ข้อถูก';
+  document.getElementById('score-feedback').textContent =
+    pct >= 80 ? '🎉 ยอดเยี่ยม! พร้อมสอบมากแล้ว' :
+    pct >= 60 ? '👍 ดี! ทบทวนจุดอ่อนเพิ่มเติม' :
+                '💪 ฝึกต่อไป! ยิ่งทำยิ่งเก่งขึ้น';
+  document.getElementById('t-correct').textContent = correct;
+  document.getElementById('t-wrong').textContent   = wrong;
+  document.getElementById('t-skip').textContent    = skip;
+
+  const barsEl = document.getElementById('cat-bars');
+  barsEl.innerHTML = '';
+  for (const [cat, s] of Object.entries(catStats)) {
+    const p = Math.round(s.c / s.t * 100);
+    barsEl.innerHTML +=
+      '<div class="cat-bar-row">' +
+        '<div class="cat-bar-name" title="' + cat + '">' + cat + '</div>' +
+        '<div class="cat-bar-track"><div class="cat-bar-fill ' + (p >= 80 ? 'good' : p < 60 ? 'low' : '') + '" style="width:' + p + '%"></div></div>' +
+        '<div class="cat-bar-score">' + s.c + '/' + s.t + '</div>' +
+      '</div>';
+  }
+
+  const reviewEl = document.getElementById('review-list');
+  reviewEl.innerHTML = '';
+  const wrongItems = session.reduce((acc, q, i) => {
+    if (answers[i] !== q.answer) acc.push({ q, i, ua: answers[i] });
+    return acc;
+  }, []);
+  document.getElementById('review-count').textContent = wrongItems.length + ' ข้อ';
+
+  if (!wrongItems.length) {
+    document.getElementById('review-empty').classList.remove('hidden');
+  } else {
+    wrongItems.forEach(({ q, i, ua }) => {
+      const corrText = q.options[LETTERS.indexOf(q.answer)] || '';
+      const uaText   = ua ? (q.options[LETTERS.indexOf(ua)] || '') : null;
+      reviewEl.innerHTML +=
+        '<div class="review-item">' +
+          '<div class="review-meta">ข้อ ' + (i + 1) + ' · ' + q.category + '</div>' +
+          '<div class="review-q">' + q.question.split('\n').join('<br>') + '</div>' +
+          (ua
+            ? '<span class="review-tag tag-wrong">คำตอบของคุณ</span><div class="review-ans">(' + ua + ') ' + uaText + '</div>'
+            : '<span class="review-tag tag-skip">ข้ามข้อนี้</span>') +
+          '<span class="review-tag tag-correct">เฉลย</span>' +
+          '<div class="review-ans" style="color:var(--green);font-weight:700;">(' + q.answer + ') ' + corrText + '</div>' +
+          '<div class="review-note">' + q.explanation + '</div>' +
+        '</div>';
+    });
+  }
+}
+
+// ── Retry / Retake ───────────────────────────────────────────────
+document.getElementById('btn-retry').onclick  = () => startSession();
+document.getElementById('btn-retake').onclick = () => {
+  const wrong = session.filter((q, i) => answers[i] !== q.answer);
+  if (!wrong.length) { alert('ไม่มีข้อที่ผิด!'); return; }
+  startSession(wrong);
+};
+
+// ── Start session ────────────────────────────────────────────────
+function startSession(override) {
+  answers  = {};
+  cur      = 0;
+  session  = override ? shuffle(override) : pickQuestions(bank, 10);
+  showScreen('s-exam');
+  renderQ();
+  startTimer();
+}
+
+// ── Init ────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', initExam);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join — KHAM</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8D5A3;--gold-pale:#FAF5E9;--ink:#1A1714;--ink-soft:#3D3830;--ink-muted:#8A837A;--white:#FDFBF7;--line:rgba(201,168,76,0.2);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;min-height:100vh;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 60px;background:rgba(253,251,247,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:padding 0.3s;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:0.18em;color:var(--ink);text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:13px;color:var(--ink-soft);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+.lang-btn{padding:6px 14px;cursor:pointer;border:none;background:transparent;color:var(--ink-muted);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;transition:all 0.2s;}
+.lang-btn.active{background:var(--gold);color:var(--white);}
+.nav-cta{padding:10px 24px;background:var(--ink);color:var(--white);border:none;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:var(--gold);}
+.join-layout{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;}
+.join-left{background:var(--ink);padding:120px 80px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.join-left::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:500px;color:rgba(201,168,76,0.04);position:absolute;top:-120px;left:20px;line-height:1;pointer-events:none;}
+.join-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+.join-eyebrow-line{width:24px;height:1px;background:var(--gold);}
+.join-eyebrow-text{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+.join-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,4vw,64px);font-weight:300;line-height:1.1;color:var(--white);margin-bottom:24px;position:relative;z-index:1;}
+.join-title em{font-style:italic;color:var(--gold);}
+.join-desc{font-size:15px;font-weight:300;line-height:1.7;color:rgba(253,251,247,0.65);max-width:400px;margin-bottom:48px;position:relative;z-index:1;}
+.perks{display:flex;flex-direction:column;gap:16px;position:relative;z-index:1;}
+.perk{display:flex;align-items:flex-start;gap:16px;}
+.perk-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:6px;flex-shrink:0;}
+.perk-text{font-size:14px;color:rgba(253,251,247,0.8);line-height:1.5;}
+.join-right{padding:120px 80px 80px;display:flex;flex-direction:column;justify-content:center;}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--ink);margin-bottom:8px;}
+.form-sub{font-size:14px;color:var(--ink-muted);margin-bottom:40px;line-height:1.5;}
+.form-group{margin-bottom:20px;}
+.form-label{display:block;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:8px;}
+.form-input{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:4px;background:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color 0.2s;}
+.form-input:focus{border-color:var(--gold);}
+.form-input::placeholder{color:var(--ink-muted);}
+.form-select{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:4px;background:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;cursor:pointer;appearance:none;transition:border-color 0.2s;}
+.form-select:focus{border-color:var(--gold);}
+.form-submit{width:100%;padding:16px;background:var(--ink);color:var(--white);border:none;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.06em;cursor:pointer;transition:background 0.2s,transform 0.2s;margin-top:8px;}
+.form-submit:hover{background:var(--gold);transform:translateY(-1px);}
+.form-note{font-size:12px;color:var(--ink-muted);text-align:center;margin-top:12px;}
+.success-state{display:none;text-align:center;padding:40px 0;}
+.success-icon{font-size:48px;margin-bottom:16px;}
+.success-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--ink);margin-bottom:12px;}
+.success-desc{font-size:14px;color:var(--ink-muted);line-height:1.6;}
+footer{border-top:1px solid var(--line);}
+.footer-bottom{padding:20px 60px;display:flex;align-items:center;justify-content:space-between;}
+@media(max-width:900px){nav{padding:20px 24px;}.nav-links{display:none;}.join-layout{grid-template-columns:1fr;}.join-left{padding:100px 32px 60px;}.join-right{padding:60px 32px;}.footer-bottom{padding:20px 24px;flex-direction:column;gap:8px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">KH<span>A</span>M</a>
+  <div class="nav-links">
+    <a href="index.html" data-en="Home" data-th="หน้าแรก">Home</a>
+    <a href="courses.html" data-en="Courses" data-th="คอร์สเรียน">Courses</a>
+    <a href="about.html" data-en="About" data-th="เกี่ยวกับเรา">About</a>
+    <a href="join.html" class="active" data-en="Join" data-th="ลงทะเบียน">Join</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('th')">TH</button>
+    </div>
+    <a href="join.html" class="nav-cta" data-en="Get Early Access" data-th="ลงทะเบียนก่อนใคร">Get Early Access</a>
+  </div>
+</nav>
+
+<div class="join-layout">
+  <div class="join-left">
+    <div class="join-eyebrow"><div class="join-eyebrow-line"></div><span class="join-eyebrow-text" data-en="Free for opening members" data-th="ฟรีสำหรับสมาชิกช่วงเปิดตัว">Free for opening members</span></div>
+    <h1 class="join-title" data-en="Join free.<br><em>Learn with Kham.</em>" data-th="เรียนฟรี<br><em>กับ Kham</em>">Join free.<br><em>Learn with Kham.</em></h1>
+    <p class="join-desc" data-en="Be among the first to access Everyday English — completely free for our opening members. We'll notify you the moment we go live." data-th="เป็นคนแรกๆ ที่เข้าถึงคอร์สภาษาอังกฤษ ฟรีสำหรับสมาชิกช่วงเปิดตัว เราจะแจ้งคุณทันทีที่เปิดตัว">Be among the first to access Everyday English — completely free for our opening members. We'll notify you the moment we go live.</p>
+    <div class="perks">
+      <div class="perk"><div class="perk-dot"></div><div class="perk-text" data-en="Full access to Everyday English — free" data-th="เข้าถึงคอร์สภาษาอังกฤษครบ — ฟรี">Full access to Everyday English — free</div></div>
+      <div class="perk"><div class="perk-dot"></div><div class="perk-text" data-en="Certificate of completion included" data-th="ได้รับใบรับรองการสำเร็จหลักสูตร">Certificate of completion included</div></div>
+      <div class="perk"><div class="perk-dot"></div><div class="perk-text" data-en="Early access to all future subjects" data-th="เข้าถึงวิชาใหม่ๆ ก่อนใคร">Early access to all future subjects</div></div>
+      <div class="perk"><div class="perk-dot"></div><div class="perk-text" data-en="No spam. Unsubscribe anytime." data-th="ไม่มีสแปม ยกเลิกได้ทุกเมื่อ">No spam. Unsubscribe anytime.</div></div>
+    </div>
+  </div>
+
+  <div class="join-right">
+    <div id="form-area">
+      <div class="form-title" data-en="Reserve your spot" data-th="จองสิทธิ์ของคุณ">Reserve your spot</div>
+      <p class="form-sub" data-en="Takes 30 seconds. No credit card required." data-th="ใช้เวลา 30 วินาที ไม่ต้องใช้บัตรเครดิต">Takes 30 seconds. No credit card required.</p>
+      <div class="form-group">
+        <label class="form-label" data-en="Your name" data-th="ชื่อของคุณ">Your name</label>
+        <input type="text" class="form-input" id="input-name" placeholder="Bom" data-ph-en="Bom" data-ph-th="บอม">
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-en="Email address" data-th="อีเมล">Email address</label>
+        <input type="email" class="form-input" id="input-email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-en="I am a..." data-th="ฉันคือ...">I am a...</label>
+        <select class="form-select" id="input-role">
+          <option value="" data-en="Select one" data-th="เลือกหนึ่งอย่าง">Select one</option>
+          <option value="student" data-en="Student (High school)" data-th="นักเรียน (มัธยมปลาย)">Student (High school)</option>
+          <option value="uni" data-en="University student" data-th="นักศึกษามหาวิทยาลัย">University student</option>
+          <option value="parent" data-en="Parent" data-th="ผู้ปกครอง">Parent</option>
+          <option value="working" data-en="Working professional" data-th="วัยทำงาน">Working professional</option>
+          <option value="other" data-en="Other" data-th="อื่นๆ">Other</option>
+        </select>
+      </div>
+      <button class="form-submit" onclick="handleJoin()" data-en="Join the Waitlist →" data-th="ลงทะเบียนเลย →">Join the Waitlist →</button>
+      <p class="form-note" data-en="We'll only email you when Kham launches. That's it." data-th="เราจะส่งอีเมลถึงคุณเมื่อ Kham เปิดตัวเท่านั้น">We'll only email you when Kham launches. That's it.</p>
+    </div>
+    <div id="success-area" class="success-state">
+      <div class="success-icon">🙏</div>
+      <div class="success-title" data-en="You're in!" data-th="ลงทะเบียนสำเร็จ!">You're in!</div>
+      <p class="success-desc" data-en="We'll email you the moment Kham goes live. Thank you for believing in what we're building." data-th="เราจะส่งอีเมลถึงคุณทันทีที่ Kham เปิดตัว ขอบคุณที่เชื่อในสิ่งที่เรากำลังสร้าง">We'll email you the moment Kham goes live. Thank you for believing in what we're building.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <div style="font-size:12px;color:var(--ink-muted);">© 2025 Kham. Bangkok, Thailand.</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--ink-muted);" data-en="Gold for Every Mind." data-th="ทองคำแห่งการเรียนรู้">Gold for Every Mind.</div>
+  </div>
+</footer>
+
+<script>
+let currentLang='en';
+function setLang(lang){
+  currentLang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.querySelectorAll('[data-en]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t)el.innerHTML=t;});
+  const nameInput=document.getElementById('input-name');
+  if(nameInput)nameInput.placeholder=nameInput.getAttribute('data-ph-'+lang)||nameInput.placeholder;
+}
+function handleJoin(){
+  const name=document.getElementById('input-name').value.trim();
+  const email=document.getElementById('input-email').value.trim();
+  if(!name){alert(currentLang==='th'?'กรุณากรอกชื่อของคุณ':'Please enter your name.');return;}
+  if(!email||!email.includes('@')){alert(currentLang==='th'?'กรุณากรอกอีเมลที่ถูกต้อง':'Please enter a valid email.');return;}
+  document.getElementById('form-area').style.display='none';
+  const success=document.getElementById('success-area');
+  success.style.display='block';
+  const t=success.querySelector('.success-title');
+  const d=success.querySelector('.success-desc');
+  if(currentLang==='th'){t.textContent='ลงทะเบียนสำเร็จ!';d.textContent='เราจะส่งอีเมลถึงคุณทันทีที่ Kham เปิดตัว ขอบคุณที่เชื่อในสิ่งที่เรากำลังสร้าง';}
+}
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.padding=window.scrollY>40?'16px 60px':'24px 60px';});
+</script>
+</body>
+</html>
