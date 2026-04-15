@@ -1,0 +1,4993 @@
+[
+  {
+    "word": "accident",
+    "pos": "n.",
+    "pronunciation": "แอค-ซิ-เดินท์",
+    "meaning": "อุบัติเหตุ",
+    "example": "He had an accident on the way to school."
+  },
+  {
+    "word": "activity",
+    "pos": "n.",
+    "pronunciation": "แอค-ที-วิ-ที",
+    "meaning": "กิจกรรม",
+    "example": "We joined a fun activity at the park."
+  },
+  {
+    "word": "address",
+    "pos": "n.",
+    "pronunciation": "แอค-เดรส",
+    "meaning": "ที่อยู่",
+    "example": "Please write your address on the form."
+  },
+  {
+    "word": "advice",
+    "pos": "n.",
+    "pronunciation": "แอด-ไวซ์",
+    "meaning": "คำแนะนำ",
+    "example": "She gave me good advice about studying."
+  },
+  {
+    "word": "afternoon",
+    "pos": "n.",
+    "pronunciation": "แอฟ-เทอร์-นูน",
+    "meaning": "ช่วงบ่าย",
+    "example": "We will meet in the afternoon."
+  },
+  {
+    "word": "age",
+    "pos": "n.",
+    "pronunciation": "เอจ",
+    "meaning": "อายุ",
+    "example": "My age is fifteen years old."
+  },
+  {
+    "word": "airport",
+    "pos": "n.",
+    "pronunciation": "แอร์-พอร์ต",
+    "meaning": "สนามบิน",
+    "example": "The airport is very busy today."
+  },
+  {
+    "word": "alarm",
+    "pos": "n.",
+    "pronunciation": "อะ-ลาร์ม",
+    "meaning": "สัญญาณเตือนภัย",
+    "example": "The alarm woke me up early."
+  },
+  {
+    "word": "album",
+    "pos": "n.",
+    "pronunciation": "อัล-บั้ม",
+    "meaning": "อัลบั้มรูป",
+    "example": "I bought a photo album yesterday."
+  },
+  {
+    "word": "alphabet",
+    "pos": "n.",
+    "pronunciation": "แอล-ฟะ-เบ็ท",
+    "meaning": "ตัวอักษร",
+    "example": "We learn the English alphabet at school."
+  },
+  {
+    "word": "amount",
+    "pos": "n.",
+    "pronunciation": "อะ-เมาท์",
+    "meaning": "จำนวน",
+    "example": "The amount of water is enough."
+  },
+  {
+    "word": "animal",
+    "pos": "n.",
+    "pronunciation": "แอน-นิ-มัล",
+    "meaning": "สัตว์",
+    "example": "The zoo has many animals."
+  },
+  {
+    "word": "answer",
+    "pos": "n.",
+    "pronunciation": "แอน-เซอร์",
+    "meaning": "คำตอบ",
+    "example": "I know the answer to the question."
+  },
+  {
+    "word": "apartment",
+    "pos": "n.",
+    "pronunciation": "อะ-พาร์ท-เมินท์",
+    "meaning": "อพาร์ตเมนต์",
+    "example": "My family lives in an apartment."
+  },
+  {
+    "word": "apple",
+    "pos": "n.",
+    "pronunciation": "แอ็ป-เปิล",
+    "meaning": "แอปเปิ้ล",
+    "example": "I eat an apple every day."
+  },
+  {
+    "word": "area",
+    "pos": "n.",
+    "pronunciation": "แอ-รี-อา",
+    "meaning": "พื้นที่",
+    "example": "This area is very clean."
+  },
+  {
+    "word": "argument",
+    "pos": "n.",
+    "pronunciation": "อาร์-กิว-เมินท์",
+    "meaning": "การโต้แย้ง",
+    "example": "They had an argument about the game."
+  },
+  {
+    "word": "army",
+    "pos": "n.",
+    "pronunciation": "อาร์-มี",
+    "meaning": "กองทัพ",
+    "example": "The army protects the country."
+  },
+  {
+    "word": "art",
+    "pos": "n.",
+    "pronunciation": "อาร์ท",
+    "meaning": "ศิลปะ",
+    "example": "She likes to study art."
+  },
+  {
+    "word": "artist",
+    "pos": "n.",
+    "pronunciation": "อาร์-ทิสท์",
+    "meaning": "ศิลปิน",
+    "example": "He is a famous artist."
+  },
+  {
+    "word": "attention",
+    "pos": "n.",
+    "pronunciation": "แอท-เท็น-ชัน",
+    "meaning": "ความสนใจ",
+    "example": "Please pay attention in class."
+  },
+  {
+    "word": "audience",
+    "pos": "n.",
+    "pronunciation": "ออ-เดียนซ์",
+    "meaning": "ผู้ชม",
+    "example": "The audience clapped loudly."
+  },
+  {
+    "word": "author",
+    "pos": "n.",
+    "pronunciation": "ออ-เธอร์",
+    "meaning": "ผู้เขียน",
+    "example": "She is the author of the book."
+  },
+  {
+    "word": "autumn",
+    "pos": "n.",
+    "pronunciation": "ออ-ทัมน์",
+    "meaning": "ฤดูใบไม้ร่วง",
+    "example": "Leaves fall in autumn."
+  },
+  {
+    "word": "baby",
+    "pos": "n.",
+    "pronunciation": "เบบ-บี",
+    "meaning": "เด็กทารก",
+    "example": "The baby is sleeping."
+  },
+  {
+    "word": "backpack",
+    "pos": "n.",
+    "pronunciation": "แบ็ค-แพค",
+    "meaning": "กระเป๋าเป้",
+    "example": "I carry my books in a backpack."
+  },
+  {
+    "word": "bag",
+    "pos": "n.",
+    "pronunciation": "แบ็ก",
+    "meaning": "กระเป๋า",
+    "example": "She has a red bag."
+  },
+  {
+    "word": "baker",
+    "pos": "n.",
+    "pronunciation": "เบค-เคอร์",
+    "meaning": "คนทำขนมปัง",
+    "example": "The baker made fresh bread."
+  },
+  {
+    "word": "balance",
+    "pos": "n.",
+    "pronunciation": "แบน-ลันซ์",
+    "meaning": "ความสมดุล",
+    "example": "Balance is important when riding a bike."
+  },
+  {
+    "word": "ball",
+    "pos": "n.",
+    "pronunciation": "บอล",
+    "meaning": "ลูกบอล",
+    "example": "They played with a ball."
+  },
+  {
+    "word": "banana",
+    "pos": "n.",
+    "pronunciation": "บะ-นา-นะ",
+    "meaning": "กล้วย",
+    "example": "I like to eat a banana."
+  },
+  {
+    "word": "bank",
+    "pos": "n.",
+    "pronunciation": "แบงค์",
+    "meaning": "ธนาคาร",
+    "example": "I go to the bank to withdraw money."
+  },
+  {
+    "word": "bar",
+    "pos": "n.",
+    "pronunciation": "บาร์",
+    "meaning": "ร้านเหล้า, แท่ง",
+    "example": "He bought a chocolate bar."
+  },
+  {
+    "word": "baseball",
+    "pos": "n.",
+    "pronunciation": "เบส-บอล",
+    "meaning": "เบสบอล",
+    "example": "They play baseball on weekends."
+  },
+  {
+    "word": "basket",
+    "pos": "n.",
+    "pronunciation": "บาส-เก็ต",
+    "meaning": "ตะกร้า",
+    "example": "Put the apples in the basket."
+  },
+  {
+    "word": "bathroom",
+    "pos": "n.",
+    "pronunciation": "บาธ-รูม",
+    "meaning": "ห้องน้ำ",
+    "example": "The bathroom is clean."
+  },
+  {
+    "word": "beach",
+    "pos": "n.",
+    "pronunciation": "บีช",
+    "meaning": "ชายหาด",
+    "example": "We went to the beach."
+  },
+  {
+    "word": "bear",
+    "pos": "n.",
+    "pronunciation": "แบร์",
+    "meaning": "หมี",
+    "example": "The bear is big and strong."
+  },
+  {
+    "word": "bed",
+    "pos": "n.",
+    "pronunciation": "เบด",
+    "meaning": "เตียง",
+    "example": "I sleep on my bed."
+  },
+  {
+    "word": "bedroom",
+    "pos": "n.",
+    "pronunciation": "เบด-รูม",
+    "meaning": "ห้องนอน",
+    "example": "My bedroom is cozy."
+  },
+  {
+    "word": "bee",
+    "pos": "n.",
+    "pronunciation": "บี",
+    "meaning": "ผึ้ง",
+    "example": "A bee is flying near the flower."
+  },
+  {
+    "word": "bell",
+    "pos": "n.",
+    "pronunciation": "เบล",
+    "meaning": "ระฆัง",
+    "example": "The school bell rings at eight."
+  },
+  {
+    "word": "belt",
+    "pos": "n.",
+    "pronunciation": "เบลท์",
+    "meaning": "เข็มขัด",
+    "example": "He wears a black belt."
+  },
+  {
+    "word": "bicycle",
+    "pos": "n.",
+    "pronunciation": "ไบ-ซิ-เคิล",
+    "meaning": "จักรยาน",
+    "example": "I ride my bicycle to school."
+  },
+  {
+    "word": "bird",
+    "pos": "n.",
+    "pronunciation": "เบิร์ด",
+    "meaning": "นก",
+    "example": "The bird sings in the tree."
+  },
+  {
+    "word": "birthday",
+    "pos": "n.",
+    "pronunciation": "เบิร์ธ-เดย์",
+    "meaning": "วันเกิด",
+    "example": "Today is my birthday."
+  },
+  {
+    "word": "boat",
+    "pos": "n.",
+    "pronunciation": "โบ๊ท",
+    "meaning": "เรือ",
+    "example": "We sailed on a boat."
+  },
+  {
+    "word": "body",
+    "pos": "n.",
+    "pronunciation": "บอดี้",
+    "meaning": "ร่างกาย",
+    "example": "Exercise is good for your body."
+  },
+  {
+    "word": "book",
+    "pos": "n.",
+    "pronunciation": "บุ๊ค",
+    "meaning": "หนังสือ",
+    "example": "I read a book every night."
+  },
+  {
+    "word": "bottle",
+    "pos": "n.",
+    "pronunciation": "บอท-เทิล",
+    "meaning": "ขวด",
+    "example": "She drank water from a bottle."
+  },
+  {
+    "word": "box",
+    "pos": "n.",
+    "pronunciation": "บ็อกซ์",
+    "meaning": "กล่อง",
+    "example": "Put the toys in the box."
+  },
+  {
+    "word": "boy",
+    "pos": "n.",
+    "pronunciation": "บอย",
+    "meaning": "เด็กชาย",
+    "example": "The boy is playing outside."
+  },
+  {
+    "word": "bread",
+    "pos": "n.",
+    "pronunciation": "เบรด",
+    "meaning": "ขนมปัง",
+    "example": "I like to eat bread for breakfast."
+  },
+  {
+    "word": "breakfast",
+    "pos": "n.",
+    "pronunciation": "เบรค-ฟาสต์",
+    "meaning": "อาหารเช้า",
+    "example": "We have breakfast at 7 a.m."
+  },
+  {
+    "word": "bridge",
+    "pos": "n.",
+    "pronunciation": "บริดจ์",
+    "meaning": "สะพาน",
+    "example": "The bridge is very long."
+  },
+  {
+    "word": "brother",
+    "pos": "n.",
+    "pronunciation": "บรา-เธอร์",
+    "meaning": "พี่ชาย, น้องชาย",
+    "example": "My brother is older than me."
+  },
+  {
+    "word": "building",
+    "pos": "n.",
+    "pronunciation": "บิล-ดิ้ง",
+    "meaning": "อาคาร",
+    "example": "The building is tall."
+  },
+  {
+    "word": "bus",
+    "pos": "n.",
+    "pronunciation": "บัส",
+    "meaning": "รถบัส",
+    "example": "I take the bus to school."
+  },
+  {
+    "word": "business",
+    "pos": "n.",
+    "pronunciation": "บิซ-นิส",
+    "meaning": "ธุรกิจ",
+    "example": "He runs a small business."
+  },
+  {
+    "word": "butter",
+    "pos": "n.",
+    "pronunciation": "บัท-เทอร์",
+    "meaning": "เนย",
+    "example": "I like butter on my bread."
+  },
+  {
+    "word": "button",
+    "pos": "n.",
+    "pronunciation": "บัต-เทิน",
+    "meaning": "กระดุม",
+    "example": "The shirt has five buttons."
+  },
+  {
+    "word": "café",
+    "pos": "n.",
+    "pronunciation": "คา-เฟ่",
+    "meaning": "ร้านกาแฟ",
+    "example": "We met at the café."
+  },
+  {
+    "word": "calendar",
+    "pos": "n.",
+    "pronunciation": "แค-ลัน-เดอร์",
+    "meaning": "ปฏิทิน",
+    "example": "Mark the date on your calendar."
+  },
+  {
+    "word": "camera",
+    "pos": "n.",
+    "pronunciation": "แคม-เมอ-รา",
+    "meaning": "กล้องถ่ายรูป",
+    "example": "She bought a new camera."
+  },
+  {
+    "word": "camp",
+    "pos": "n.",
+    "pronunciation": "แคมพ์",
+    "meaning": "ค่ายพักแรม",
+    "example": "We go to camp every summer."
+  },
+  {
+    "word": "candle",
+    "pos": "n.",
+    "pronunciation": "แคน-เดิล",
+    "meaning": "เทียน",
+    "example": "Light the candle, please."
+  },
+  {
+    "word": "car",
+    "pos": "n.",
+    "pronunciation": "คาร์",
+    "meaning": "รถยนต์",
+    "example": "My father drives a car."
+  },
+  {
+    "word": "card",
+    "pos": "n.",
+    "pronunciation": "การ์ด",
+    "meaning": "การ์ด",
+    "example": "She sent me a birthday card."
+  },
+  {
+    "word": "carrot",
+    "pos": "n.",
+    "pronunciation": "แคร์-ร็อต",
+    "meaning": "แครอท",
+    "example": "Rabbits like to eat carrots."
+  },
+  {
+    "word": "cat",
+    "pos": "n.",
+    "pronunciation": "แคท",
+    "meaning": "แมว",
+    "example": "The cat is sleeping."
+  },
+  {
+    "word": "celebration",
+    "pos": "n.",
+    "pronunciation": "เซล-เล็บ-เร-ชัน",
+    "meaning": "การฉลอง",
+    "example": "We had a celebration for her success."
+  },
+  {
+    "word": "chair",
+    "pos": "n.",
+    "pronunciation": "แชร์",
+    "meaning": "เก้าอี้",
+    "example": "Please sit on the chair."
+  },
+  {
+    "word": "chance",
+    "pos": "n.",
+    "pronunciation": "แชนซ์",
+    "meaning": "โอกาส",
+    "example": "You have a chance to win."
+  },
+  {
+    "word": "change",
+    "pos": "n.",
+    "pronunciation": "เชนจ์",
+    "meaning": "การเปลี่ยนแปลง",
+    "example": "Change is part of life."
+  },
+  {
+    "word": "character",
+    "pos": "n.",
+    "pronunciation": "แคร์-แรค-เทอร์",
+    "meaning": "ตัวละคร",
+    "example": "The character is kind and brave."
+  },
+  {
+    "word": "charge",
+    "pos": "n.",
+    "pronunciation": "ชาร์จ",
+    "meaning": "ค่าใช้จ่าย",
+    "example": "What is the charge for the ticket?"
+  },
+  {
+    "word": "check",
+    "pos": "n.",
+    "pronunciation": "เช็ค",
+    "meaning": "เช็ค",
+    "example": "Please write a check for the payment."
+  },
+  {
+    "word": "child",
+    "pos": "n.",
+    "pronunciation": "ไชลด์",
+    "meaning": "เด็ก",
+    "example": "The child is playing happily."
+  },
+  {
+    "word": "church",
+    "pos": "n.",
+    "pronunciation": "เชิร์ช",
+    "meaning": "โบสถ์",
+    "example": "We go to church on Sunday."
+  },
+  {
+    "word": "circle",
+    "pos": "n.",
+    "pronunciation": "เซอร์-เคิล",
+    "meaning": "วงกลม",
+    "example": "Draw a circle around the answer."
+  },
+  {
+    "word": "city",
+    "pos": "n.",
+    "pronunciation": "ซิ-ที",
+    "meaning": "เมืองใหญ่",
+    "example": "Bangkok is a big city."
+  },
+  {
+    "word": "class",
+    "pos": "n.",
+    "pronunciation": "คลาส",
+    "meaning": "ชั้นเรียน",
+    "example": "Our class is very friendly."
+  },
+  {
+    "word": "clock",
+    "pos": "n.",
+    "pronunciation": "คล็อก",
+    "meaning": "นาฬิกา",
+    "example": "The clock shows ten o'clock."
+  },
+  {
+    "word": "club",
+    "pos": "n.",
+    "pronunciation": "คลับ",
+    "meaning": "ชมรม",
+    "example": "She joined the music club."
+  },
+  {
+    "word": "coach",
+    "pos": "n.",
+    "pronunciation": "โค้ช",
+    "meaning": "ผู้ฝึกสอน",
+    "example": "The coach helps us practice."
+  },
+  {
+    "word": "coffee",
+    "pos": "n.",
+    "pronunciation": "คอฟ-ฟี",
+    "meaning": "กาแฟ",
+    "example": "I like to drink coffee in the morning."
+  },
+  {
+    "word": "college",
+    "pos": "n.",
+    "pronunciation": "คอล-เลจ",
+    "meaning": "วิทยาลัย",
+    "example": "He studies at a college."
+  },
+  {
+    "word": "color",
+    "pos": "n.",
+    "pronunciation": "คัล-เลอร์",
+    "meaning": "สี",
+    "example": "Blue is my favorite color."
+  },
+  {
+    "word": "computer",
+    "pos": "n.",
+    "pronunciation": "คอม-พิว-เทอร์",
+    "meaning": "คอมพิวเตอร์",
+    "example": "I use a computer to do my homework."
+  },
+  {
+    "word": "concert",
+    "pos": "n.",
+    "pronunciation": "คอน-เสิร์ต",
+    "meaning": "คอนเสิร์ต",
+    "example": "We went to a music concert."
+  },
+  {
+    "word": "conversation",
+    "pos": "n.",
+    "pronunciation": "คอน-เวอร์-เซ-ชัน",
+    "meaning": "บทสนทนา",
+    "example": "We had a conversation about school."
+  },
+  {
+    "word": "cookie",
+    "pos": "n.",
+    "pronunciation": "คุ้ก-กี้",
+    "meaning": "คุกกี้",
+    "example": "I ate a chocolate cookie."
+  },
+  {
+    "word": "country",
+    "pos": "n.",
+    "pronunciation": "คันทรี",
+    "meaning": "ประเทศ",
+    "example": "Thailand is my country."
+  },
+  {
+    "word": "course",
+    "pos": "n.",
+    "pronunciation": "คอร์ส",
+    "meaning": "หลักสูตร",
+    "example": "I take an English course."
+  },
+  {
+    "word": "cow",
+    "pos": "n.",
+    "pronunciation": "เคา",
+    "meaning": "วัว",
+    "example": "The cow gives us milk."
+  },
+  {
+    "word": "cream",
+    "pos": "n.",
+    "pronunciation": "ครีม",
+    "meaning": "ครีม",
+    "example": "I like ice cream."
+  },
+  {
+    "word": "credit",
+    "pos": "n.",
+    "pronunciation": "เคร-ดิท",
+    "meaning": "เครดิต",
+    "example": "She has good credit at the bank."
+  },
+  {
+    "word": "cross",
+    "pos": "n.",
+    "pronunciation": "ครอส",
+    "meaning": "เครื่องหมายบวก",
+    "example": "Draw a cross on the map."
+  },
+  {
+    "word": "crowd",
+    "pos": "n.",
+    "pronunciation": "คราวด์",
+    "meaning": "ฝูงชน",
+    "example": "The crowd cheered loudly."
+  },
+  {
+    "word": "cup",
+    "pos": "n.",
+    "pronunciation": "คัพ",
+    "meaning": "ถ้วย",
+    "example": "I drink tea from a cup."
+  },
+  {
+    "word": "customer",
+    "pos": "n.",
+    "pronunciation": "คัส-โต-เมอร์",
+    "meaning": "ลูกค้า",
+    "example": "The customer is happy with the service."
+  },
+  {
+    "word": "dad",
+    "pos": "n.",
+    "pronunciation": "แดด",
+    "meaning": "พ่อ",
+    "example": "My dad is very kind."
+  },
+  {
+    "word": "dance",
+    "pos": "n.",
+    "pronunciation": "แดนซ์",
+    "meaning": "การเต้นรำ",
+    "example": "They enjoyed the dance party."
+  },
+  {
+    "word": "danger",
+    "pos": "n.",
+    "pronunciation": "เดน-เจอร์",
+    "meaning": "อันตราย",
+    "example": "Be careful, there is danger ahead."
+  },
+  {
+    "word": "daughter",
+    "pos": "n.",
+    "pronunciation": "ดอ-เทอร์",
+    "meaning": "ลูกสาว",
+    "example": "She is my daughter."
+  },
+  {
+    "word": "day",
+    "pos": "n.",
+    "pronunciation": "เดย์",
+    "meaning": "วัน",
+    "example": "Today is a sunny day."
+  },
+  {
+    "word": "death",
+    "pos": "n.",
+    "pronunciation": "เดธ",
+    "meaning": "ความตาย",
+    "example": "The story is about life and death."
+  },
+  {
+    "word": "decision",
+    "pos": "n.",
+    "pronunciation": "ดี-ซิ-ชัน",
+    "meaning": "การตัดสินใจ",
+    "example": "I made a decision to study hard."
+  },
+  {
+    "word": "degree",
+    "pos": "n.",
+    "pronunciation": "ดี-กรี",
+    "meaning": "ปริญญา",
+    "example": "He has a degree in science."
+  },
+  {
+    "word": "dentist",
+    "pos": "n.",
+    "pronunciation": "เด็น-ทิสท์",
+    "meaning": "ทันตแพทย์",
+    "example": "I have an appointment with the dentist."
+  },
+  {
+    "word": "desk",
+    "pos": "n.",
+    "pronunciation": "เดสก์",
+    "meaning": "โต๊ะทำงาน",
+    "example": "The book is on the desk."
+  },
+  {
+    "word": "detail",
+    "pos": "n.",
+    "pronunciation": "ดี-เทล",
+    "meaning": "รายละเอียด",
+    "example": "Tell me the details of the plan."
+  },
+  {
+    "word": "dictionary",
+    "pos": "n.",
+    "pronunciation": "ดิก-ชัน-นา-รี",
+    "meaning": "พจนานุกรม",
+    "example": "Use a dictionary to find new words."
+  },
+  {
+    "word": "dinner",
+    "pos": "n.",
+    "pronunciation": "ดิน-เนอร์",
+    "meaning": "อาหารเย็น",
+    "example": "We have dinner at six o'clock."
+  },
+  {
+    "word": "doctor",
+    "pos": "n.",
+    "pronunciation": "ด็อก-เทอร์",
+    "meaning": "แพทย์",
+    "example": "The doctor helps sick people."
+  },
+  {
+    "word": "dog",
+    "pos": "n.",
+    "pronunciation": "ด็อก",
+    "meaning": "สุนัข",
+    "example": "The dog is barking."
+  },
+  {
+    "word": "door",
+    "pos": "n.",
+    "pronunciation": "ดอร์",
+    "meaning": "ประตู",
+    "example": "Close the door, please."
+  },
+  {
+    "word": "downtown",
+    "pos": "n.",
+    "pronunciation": "ดาวน์-ทาวน์",
+    "meaning": "ใจกลางเมือง",
+    "example": "The shops are downtown."
+  },
+  {
+    "word": "dream",
+    "pos": "n.",
+    "pronunciation": "ดรีม",
+    "meaning": "ความฝัน",
+    "example": "I had a nice dream last night."
+  },
+  {
+    "word": "dress",
+    "pos": "n.",
+    "pronunciation": "เดรส",
+    "meaning": "ชุดเดรส",
+    "example": "She wears a red dress."
+  },
+  {
+    "word": "drink",
+    "pos": "n.",
+    "pronunciation": "ดริ้งค์",
+    "meaning": "เครื่องดื่ม",
+    "example": "I like a cold drink."
+  },
+  {
+    "word": "driver",
+    "pos": "n.",
+    "pronunciation": "ได-รเวอร์",
+    "meaning": "คนขับรถ",
+    "example": "The driver stopped the car."
+  },
+  {
+    "word": "ear",
+    "pos": "n.",
+    "pronunciation": "เอียร์",
+    "meaning": "หู",
+    "example": "I hear with my ears."
+  },
+  {
+    "word": "earth",
+    "pos": "n.",
+    "pronunciation": "เอิร์ธ",
+    "meaning": "โลก",
+    "example": "Earth is our home."
+  },
+  {
+    "word": "east",
+    "pos": "n.",
+    "pronunciation": "อีสต์",
+    "meaning": "ทิศตะวันออก",
+    "example": "The sun rises in the east."
+  },
+  {
+    "word": "egg",
+    "pos": "n.",
+    "pronunciation": "เอ็ก",
+    "meaning": "ไข่",
+    "example": "I ate an egg for breakfast."
+  },
+  {
+    "word": "elephant",
+    "pos": "n.",
+    "pronunciation": "เอล-ลิ-แฟ่นท์",
+    "meaning": "ช้าง",
+    "example": "The elephant is very big."
+  },
+  {
+    "word": "email",
+    "pos": "n.",
+    "pronunciation": "อี-เมล",
+    "meaning": "อีเมล",
+    "example": "I sent you an email."
+  },
+  {
+    "word": "engineer",
+    "pos": "n.",
+    "pronunciation": "เอน-จิ-เนียร์",
+    "meaning": "วิศวกร",
+    "example": "My uncle is an engineer."
+  },
+  {
+    "word": "exam",
+    "pos": "n.",
+    "pronunciation": "อิก-แซม",
+    "meaning": "การสอบ",
+    "example": "I studied hard for the exam."
+  },
+  {
+    "word": "example",
+    "pos": "n.",
+    "pronunciation": "อิก-แซม-เพิล",
+    "meaning": "ตัวอย่าง",
+    "example": "This is an example sentence."
+  },
+  {
+    "word": "exercise",
+    "pos": "n.",
+    "pronunciation": "เอค-ซาร์-ไซซ์",
+    "meaning": "การออกกำลังกาย",
+    "example": "Exercise is good for health."
+  },
+  {
+    "word": "family",
+    "pos": "n.",
+    "pronunciation": "แฟม-มิ-ลี่",
+    "meaning": "ครอบครัว",
+    "example": "My family is very kind."
+  },
+  {
+    "word": "farm",
+    "pos": "n.",
+    "pronunciation": "ฟาร์ม",
+    "meaning": "ฟาร์ม",
+    "example": "They live on a farm."
+  },
+  {
+    "word": "father",
+    "pos": "n.",
+    "pronunciation": "ฟา-เธอร์",
+    "meaning": "พ่อ",
+    "example": "My father works hard."
+  },
+  {
+    "word": "feather",
+    "pos": "n.",
+    "pronunciation": "เฟ็ธ-เทอร์",
+    "meaning": "ขนสัตว์",
+    "example": "The bird's feather is soft."
+  },
+  {
+    "word": "festival",
+    "pos": "n.",
+    "pronunciation": "เฟส-ติ-วัล",
+    "meaning": "เทศกาล",
+    "example": "We enjoy the festival every year."
+  },
+  {
+    "word": "field",
+    "pos": "n.",
+    "pronunciation": "ฟีลด์",
+    "meaning": "ทุ่งนา",
+    "example": "The farmer works in the field."
+  },
+  {
+    "word": "finger",
+    "pos": "n.",
+    "pronunciation": "ฟิง-เกอร์",
+    "meaning": "นิ้วมือ",
+    "example": "I cut my finger."
+  },
+  {
+    "word": "fire",
+    "pos": "n.",
+    "pronunciation": "ไฟร์",
+    "meaning": "ไฟ",
+    "example": "The fire is warm."
+  },
+  {
+    "word": "fish",
+    "pos": "n.",
+    "pronunciation": "ฟิช",
+    "meaning": "ปลา",
+    "example": "I like to eat fish."
+  },
+  {
+    "word": "flag",
+    "pos": "n.",
+    "pronunciation": "แฟลก",
+    "meaning": "ธง",
+    "example": "The flag is waving."
+  },
+  {
+    "word": "floor",
+    "pos": "n.",
+    "pronunciation": "ฟลอร์",
+    "meaning": "พื้น",
+    "example": "The floor is clean."
+  },
+  {
+    "word": "flower",
+    "pos": "n.",
+    "pronunciation": "ฟลาว-เออร์",
+    "meaning": "ดอกไม้",
+    "example": "The flower is beautiful."
+  },
+  {
+    "word": "food",
+    "pos": "n.",
+    "pronunciation": "ฟู้ด",
+    "meaning": "อาหาร",
+    "example": "I love Thai food."
+  },
+  {
+    "word": "forest",
+    "pos": "n.",
+    "pronunciation": "ฟอ-เรสท์",
+    "meaning": "ป่าไม้",
+    "example": "The forest is full of trees."
+  },
+  {
+    "word": "friend",
+    "pos": "n.",
+    "pronunciation": "เฟรนด์",
+    "meaning": "เพื่อน",
+    "example": "My friend helps me."
+  },
+  {
+    "word": "game",
+    "pos": "n.",
+    "pronunciation": "เกม",
+    "meaning": "เกม",
+    "example": "We play a game after school."
+  },
+  {
+    "word": "garden",
+    "pos": "n.",
+    "pronunciation": "การ์-เดิน",
+    "meaning": "สวน",
+    "example": "The garden has many flowers."
+  },
+  {
+    "word": "girl",
+    "pos": "n.",
+    "pronunciation": "เกิร์ล",
+    "meaning": "เด็กหญิง",
+    "example": "The girl is reading a book."
+  },
+  {
+    "word": "glass",
+    "pos": "n.",
+    "pronunciation": "กลาส",
+    "meaning": "แก้ว",
+    "example": "I drink water from a glass."
+  },
+  {
+    "word": "goal",
+    "pos": "n.",
+    "pronunciation": "โกล",
+    "meaning": "เป้าหมาย",
+    "example": "Scoring a goal is exciting."
+  },
+  {
+    "word": "government",
+    "pos": "n.",
+    "pronunciation": "กัฟ-เวิร์น-เมินท์",
+    "meaning": "รัฐบาล",
+    "example": "The government makes rules."
+  },
+  {
+    "word": "grade",
+    "pos": "n.",
+    "pronunciation": "เกรด",
+    "meaning": "เกรด",
+    "example": "I got a good grade in math."
+  },
+  {
+    "word": "grandmother",
+    "pos": "n.",
+    "pronunciation": "แกรนด์-มา-เธอร์",
+    "meaning": "ยาย,ย่า",
+    "example": "My grandmother cooks delicious food."
+  },
+  {
+    "word": "grass",
+    "pos": "n.",
+    "pronunciation": "กราส",
+    "meaning": "หญ้า",
+    "example": "The grass is green."
+  },
+  {
+    "word": "group",
+    "pos": "n.",
+    "pronunciation": "กรุ๊ป",
+    "meaning": "กลุ่ม",
+    "example": "Our group won the contest."
+  },
+  {
+    "word": "guitar",
+    "pos": "n.",
+    "pronunciation": "กิ-ตาร์",
+    "meaning": "กีตาร์",
+    "example": "He plays the guitar well."
+  },
+  {
+    "word": "hand",
+    "pos": "n.",
+    "pronunciation": "แฮนด์",
+    "meaning": "มือ",
+    "example": "Wash your hands before eating."
+  },
+  {
+    "word": "happiness",
+    "pos": "n.",
+    "pronunciation": "แฮ็ป-พิ-เนส",
+    "meaning": "ความสุข",
+    "example": "Happiness is important in life."
+  },
+  {
+    "word": "hat",
+    "pos": "n.",
+    "pronunciation": "แฮท",
+    "meaning": "หมวก",
+    "example": "She wears a hat."
+  },
+  {
+    "word": "head",
+    "pos": "n.",
+    "pronunciation": "เฮด",
+    "meaning": "หัว",
+    "example": "He hit his head."
+  },
+  {
+    "word": "health",
+    "pos": "n.",
+    "pronunciation": "เฮลธ์",
+    "meaning": "สุขภาพ",
+    "example": "Good health is valuable."
+  },
+  {
+    "word": "heart",
+    "pos": "n.",
+    "pronunciation": "ฮาร์ท",
+    "meaning": "หัวใจ",
+    "example": "Listen to your heart."
+  },
+  {
+    "word": "holiday",
+    "pos": "n.",
+    "pronunciation": "โฮลิ-เดย์",
+    "meaning": "วันหยุด",
+    "example": "We have a holiday tomorrow."
+  },
+  {
+    "word": "home",
+    "pos": "n.",
+    "pronunciation": "โฮม",
+    "meaning": "บ้าน",
+    "example": "I love my home."
+  },
+  {
+    "word": "hospital",
+    "pos": "n.",
+    "pronunciation": "ฮอส-พิ-ทัล",
+    "meaning": "โรงพยาบาล",
+    "example": "She works at the hospital."
+  },
+  {
+    "word": "hotel",
+    "pos": "n.",
+    "pronunciation": "โฮ-เทล",
+    "meaning": "โรงแรม",
+    "example": "We stayed at a hotel."
+  },
+  {
+    "word": "hour",
+    "pos": "n.",
+    "pronunciation": "เอา-เวอร์",
+    "meaning": "ชั่วโมง",
+    "example": "It takes one hour to get there."
+  },
+  {
+    "word": "house",
+    "pos": "n.",
+    "pronunciation": "เฮาส์",
+    "meaning": "บ้าน",
+    "example": "Their house is big."
+  },
+  {
+    "word": "ice",
+    "pos": "n.",
+    "pronunciation": "ไอซ์",
+    "meaning": "น้ำแข็ง",
+    "example": "Put ice in your drink."
+  },
+  {
+    "word": "idea",
+    "pos": "n.",
+    "pronunciation": "ไอ-เดีย",
+    "meaning": "ความคิด",
+    "example": "I have a good idea."
+  },
+  {
+    "word": "image",
+    "pos": "n.",
+    "pronunciation": "อิ-เมจ",
+    "meaning": "ภาพ",
+    "example": "The image is clear."
+  },
+  {
+    "word": "importance",
+    "pos": "n.",
+    "pronunciation": "อิม-พอ-เทินซ",
+    "meaning": "ความสำคัญ",
+    "example": "Education has great importance."
+  },
+  {
+    "word": "information",
+    "pos": "n.",
+    "pronunciation": "อิน-ฟอร์-เม-ชัน",
+    "meaning": "ข้อมูล",
+    "example": "I need more information."
+  },
+  {
+    "word": "island",
+    "pos": "n.",
+    "pronunciation": "ไอ-แลนด์",
+    "meaning": "เกาะ",
+    "example": "Thailand has many islands."
+  },
+  {
+    "word": "item",
+    "pos": "n.",
+    "pronunciation": "ไอ-เท็ม",
+    "meaning": "รายการ",
+    "example": "This item is on sale."
+  },
+  {
+    "word": "jacket",
+    "pos": "n.",
+    "pronunciation": "แจ็ค-เก็ต",
+    "meaning": "เสื้อแจ็คเก็ต",
+    "example": "I wear a jacket when it's cold."
+  },
+  {
+    "word": "January",
+    "pos": "n.",
+    "pronunciation": "แจน-ยู-เออ-รี",
+    "meaning": "เดือนมกราคม",
+    "example": "My birthday is in January."
+  },
+  {
+    "word": "job",
+    "pos": "n.",
+    "pronunciation": "จ็อบ",
+    "meaning": "งาน",
+    "example": "He has a new job."
+  },
+  {
+    "word": "juice",
+    "pos": "n.",
+    "pronunciation": "จูซ",
+    "meaning": "น้ำผลไม้",
+    "example": "I drink orange juice."
+  },
+  {
+    "word": "July",
+    "pos": "n.",
+    "pronunciation": "จู-ไล",
+    "meaning": "เดือนกรกฎาคม",
+    "example": "We travel in July."
+  },
+  {
+    "word": "June",
+    "pos": "n.",
+    "pronunciation": "จูน",
+    "meaning": "เดือนมิถุนายน",
+    "example": "School ends in June."
+  },
+  {
+    "word": "key",
+    "pos": "n.",
+    "pronunciation": "คีย์",
+    "meaning": "กุญแจ",
+    "example": "I lost my house key."
+  },
+  {
+    "word": "king",
+    "pos": "n.",
+    "pronunciation": "คิง",
+    "meaning": "กษัตริย์",
+    "example": "The king rules the country."
+  },
+  {
+    "word": "kitchen",
+    "pos": "n.",
+    "pronunciation": "คิท-เชิน",
+    "meaning": "ห้องครัว",
+    "example": "Mom cooks in the kitchen."
+  },
+  {
+    "word": "knife",
+    "pos": "n.",
+    "pronunciation": "ไนฟ์",
+    "meaning": "มีด",
+    "example": "Be careful with the knife."
+  },
+  {
+    "word": "language",
+    "pos": "n.",
+    "pronunciation": "แลง-กวิจ",
+    "meaning": "ภาษา",
+    "example": "English is an international language."
+  },
+  {
+    "word": "law",
+    "pos": "n.",
+    "pronunciation": "ลอว์",
+    "meaning": "กฎหมาย",
+    "example": "We must follow the law."
+  },
+  {
+    "word": "library",
+    "pos": "n.",
+    "pronunciation": "ไล-บรา-รี",
+    "meaning": "ห้องสมุด",
+    "example": "I borrow books from the library."
+  },
+  {
+    "word": "life",
+    "pos": "n.",
+    "pronunciation": "ไลฟ์",
+    "meaning": "ชีวิต",
+    "example": "Life is full of surprises."
+  },
+  {
+    "word": "light",
+    "pos": "n.",
+    "pronunciation": "ไลท์",
+    "meaning": "แสง",
+    "example": "Turn on the light."
+  },
+  {
+    "word": "line",
+    "pos": "n.",
+    "pronunciation": "ไลน์",
+    "meaning": "เส้น",
+    "example": "Draw a straight line."
+  },
+  {
+    "word": "list",
+    "pos": "n.",
+    "pronunciation": "ลิสท์",
+    "meaning": "รายการ",
+    "example": "Make a list of your friends."
+  },
+  {
+    "word": "location",
+    "pos": "n.",
+    "pronunciation": "โล-เค-ชัน",
+    "meaning": "สถานที่",
+    "example": "Tell me the location of the party."
+  },
+  {
+    "word": "lock",
+    "pos": "n.",
+    "pronunciation": "ล็อค",
+    "meaning": "กุญแจล็อค",
+    "example": "Lock the door before you leave."
+  },
+  {
+    "word": "lot",
+    "pos": "n.",
+    "pronunciation": "ลอท",
+    "meaning": "จำนวนมาก",
+    "example": "I have a lot of homework."
+  },
+  {
+    "word": "machine",
+    "pos": "n.",
+    "pronunciation": "มา-ชีน",
+    "meaning": "เครื่องจักร",
+    "example": "The machine is broken."
+  },
+  {
+    "word": "magazine",
+    "pos": "n.",
+    "pronunciation": "แมก-อะ-ซีน",
+    "meaning": "นิตยสาร",
+    "example": "I read a magazine every week."
+  },
+  {
+    "word": "mail",
+    "pos": "n.",
+    "pronunciation": "เมล",
+    "meaning": "จดหมาย",
+    "example": "I received mail today."
+  },
+  {
+    "word": "main",
+    "pos": "n.",
+    "pronunciation": "เมน",
+    "meaning": "หลัก",
+    "example": "This is the main road."
+  },
+  {
+    "word": "market",
+    "pos": "n.",
+    "pronunciation": "มาร์-เก็ต",
+    "meaning": "ตลาด",
+    "example": "We buy fruits at the market."
+  },
+  {
+    "word": "meal",
+    "pos": "n.",
+    "pronunciation": "มีล",
+    "meaning": "มื้ออาหาร",
+    "example": "Breakfast is my favorite meal."
+  },
+  {
+    "word": "medicine",
+    "pos": "n.",
+    "pronunciation": "เมด-ดิ-ซิน",
+    "meaning": "ยา",
+    "example": "Take your medicine twice a day."
+  },
+  {
+    "word": "memory",
+    "pos": "n.",
+    "pronunciation": "เมม-โม-รี",
+    "meaning": "ความทรงจำ",
+    "example": "I have good memories of school."
+  },
+  {
+    "word": "message",
+    "pos": "n.",
+    "pronunciation": "เมส-เสจ",
+    "meaning": "ข้อความ",
+    "example": "I sent a message to my friend."
+  },
+  {
+    "word": "metal",
+    "pos": "n.",
+    "pronunciation": "เมท-เทิล",
+    "meaning": "โลหะ",
+    "example": "The table is made of metal."
+  },
+  {
+    "word": "month",
+    "pos": "n.",
+    "pronunciation": "มันธ์",
+    "meaning": "เดือน",
+    "example": "There are twelve months in a year."
+  },
+  {
+    "word": "morning",
+    "pos": "n.",
+    "pronunciation": "มอร์-นิง",
+    "meaning": "ตอนเช้า",
+    "example": "Good morning!"
+  },
+  {
+    "word": "mother",
+    "pos": "n.",
+    "pronunciation": "มัธ-เธอร์",
+    "meaning": "แม่",
+    "example": "My mother is very kind."
+  },
+  {
+    "word": "movie",
+    "pos": "n.",
+    "pronunciation": "มู-วี",
+    "meaning": "ภาพยนตร์",
+    "example": "We watched a movie last night."
+  },
+  {
+    "word": "music",
+    "pos": "n.",
+    "pronunciation": "มิว-ซิค",
+    "meaning": "ดนตรี",
+    "example": "I like listening to music."
+  },
+  {
+    "word": "museum",
+    "pos": "n.",
+    "pronunciation": "มิว-ซี-อัม",
+    "meaning": "พิพิธภัณฑ์",
+    "example": "We visited the museum."
+  },
+  {
+    "word": "music",
+    "pos": "n.",
+    "pronunciation": "มิว-ซิค",
+    "meaning": "ดนตรี",
+    "example": "Music makes me happy."
+  },
+  {
+    "word": "name",
+    "pos": "n.",
+    "pronunciation": "เนม",
+    "meaning": "ชื่อ",
+    "example": "What is your name?"
+  },
+  {
+    "word": "nation",
+    "pos": "n.",
+    "pronunciation": "เน-ชัน",
+    "meaning": "ชาติ",
+    "example": "Our nation is peaceful."
+  },
+  {
+    "word": "nature",
+    "pos": "n.",
+    "pronunciation": "เน-เชอร์",
+    "meaning": "ธรรมชาติ",
+    "example": "We should protect nature."
+  },
+  {
+    "word": "neck",
+    "pos": "n.",
+    "pronunciation": "เน็ค",
+    "meaning": "คอ",
+    "example": "She wears a necklace around her neck."
+  },
+  {
+    "word": "need",
+    "pos": "n.",
+    "pronunciation": "นีด",
+    "meaning": "ความจำเป็น",
+    "example": "Food is a basic need."
+  },
+  {
+    "word": "news",
+    "pos": "n.",
+    "pronunciation": "นิวส์",
+    "meaning": "ข่าว",
+    "example": "I watched the news last night."
+  },
+  {
+    "word": "night",
+    "pos": "n.",
+    "pronunciation": "ไนท์",
+    "meaning": "กลางคืน",
+    "example": "The stars shine at night."
+  },
+  {
+    "word": "note",
+    "pos": "n.",
+    "pronunciation": "โน้ต",
+    "meaning": "บันทึก",
+    "example": "Write a note to your teacher."
+  },
+  {
+    "word": "number",
+    "pos": "n.",
+    "pronunciation": "นัม-เบอร์",
+    "meaning": "ตัวเลข",
+    "example": "My phone number is 123456."
+  },
+  {
+    "word": "oasis",
+    "pos": "n.",
+    "pronunciation": "โอ-เอ-ซิส",
+    "meaning": "โอเอซิส, แหล่งน้ำในทะเลทราย",
+    "example": "We found an oasis in the desert."
+  },
+  {
+    "word": "object",
+    "pos": "n.",
+    "pronunciation": "อ็อบ-เจ็ค",
+    "meaning": "วัตถุ, สิ่งของ",
+    "example": "The object on the table is a book."
+  },
+  {
+    "word": "obstacle",
+    "pos": "n.",
+    "pronunciation": "อ็อบ-สแทค-เคิล",
+    "meaning": "อุปสรรค",
+    "example": "He overcame the obstacle easily."
+  },
+  {
+    "word": "ocean",
+    "pos": "n.",
+    "pronunciation": "โอ-เชิน",
+    "meaning": "มหาสมุทร",
+    "example": "The ocean is very deep."
+  },
+  {
+    "word": "octopus",
+    "pos": "n.",
+    "pronunciation": "อ็อก-ทอ-พัส",
+    "meaning": "ปลาหมึก",
+    "example": "The octopus has eight arms."
+  },
+  {
+    "word": "office",
+    "pos": "n.",
+    "pronunciation": "ออฟ-ฟิส",
+    "meaning": "สำนักงาน",
+    "example": "She works in an office."
+  },
+  {
+    "word": "oil",
+    "pos": "n.",
+    "pronunciation": "ออยล์",
+    "meaning": "น้ำมัน",
+    "example": "We need oil for cooking."
+  },
+  {
+    "word": "operation",
+    "pos": "n.",
+    "pronunciation": "ออ-เพอ-เร-ชัน",
+    "meaning": "การผ่าตัด, การดำเนินงาน",
+    "example": "The operation was successful."
+  },
+  {
+    "word": "opinion",
+    "pos": "n.",
+    "pronunciation": "ออ-พิ-เนียน",
+    "meaning": "ความคิดเห็น",
+    "example": "My opinion is different from yours."
+  },
+  {
+    "word": "opportunity",
+    "pos": "n.",
+    "pronunciation": "ออ-พอ-ทูน-นิ-ที",
+    "meaning": "โอกาส",
+    "example": "This is a good opportunity to learn."
+  },
+  {
+    "word": "orange",
+    "pos": "n.",
+    "pronunciation": "โอ-เรนจ์",
+    "meaning": "ส้ม",
+    "example": "I like to eat an orange."
+  },
+  {
+    "word": "order",
+    "pos": "n.",
+    "pronunciation": "ออร์-เดอร์",
+    "meaning": "คำสั่ง, การสั่งซื้อ",
+    "example": "I placed an order online."
+  },
+  {
+    "word": "organization",
+    "pos": "n.",
+    "pronunciation": "ออ-แกน-ไน-เซ-ชัน",
+    "meaning": "องค์กร",
+    "example": "The organization helps poor people."
+  },
+  {
+    "word": "origin",
+    "pos": "n.",
+    "pronunciation": "โอ-ริ-จิน",
+    "meaning": "ต้นกำเนิด",
+    "example": "The origin of the story is unclear."
+  },
+  {
+    "word": "ornament",
+    "pos": "n.",
+    "pronunciation": "ออร์-นะ-เมินท์",
+    "meaning": "ของประดับตกแต่ง",
+    "example": "The Christmas tree has many ornaments."
+  },
+  {
+    "word": "oven",
+    "pos": "n.",
+    "pronunciation": "อัฟ-เวิน",
+    "meaning": "เตาอบ",
+    "example": "Put the cake in the oven."
+  },
+  {
+    "word": "owner",
+    "pos": "n.",
+    "pronunciation": "โอ-เนอร์",
+    "meaning": "เจ้าของ",
+    "example": "He is the owner of the shop."
+  },
+  {
+    "word": "oxygen",
+    "pos": "n.",
+    "pronunciation": "อ็อก-ซิ-เจิน",
+    "meaning": "ออกซิเจน",
+    "example": "We need oxygen to breathe."
+  },
+  {
+    "word": "package",
+    "pos": "n.",
+    "pronunciation": "แพ็ค-เกจ",
+    "meaning": "พัสดุ",
+    "example": "The package arrived today."
+  },
+  {
+    "word": "page",
+    "pos": "n.",
+    "pronunciation": "เพจ",
+    "meaning": "หน้า (หนังสือ)",
+    "example": "Turn to page ten."
+  },
+  {
+    "word": "painting",
+    "pos": "n.",
+    "pronunciation": "เพน-ทิง",
+    "meaning": "ภาพวาด",
+    "example": "The painting is beautiful."
+  },
+  {
+    "word": "palace",
+    "pos": "n.",
+    "pronunciation": "พา-ลิส",
+    "meaning": "พระราชวัง",
+    "example": "The king lives in a palace."
+  },
+  {
+    "word": "palm",
+    "pos": "n.",
+    "pronunciation": "พาม",
+    "meaning": "ต้นปาล์ม, ฝ่ามือ",
+    "example": "The palm tree is tall."
+  },
+  {
+    "word": "pan",
+    "pos": "n.",
+    "pronunciation": "แพน",
+    "meaning": "กระทะ",
+    "example": "Heat the pan before cooking."
+  },
+  {
+    "word": "panda",
+    "pos": "n.",
+    "pronunciation": "แปน-ดา",
+    "meaning": "แพนด้า",
+    "example": "The panda eats bamboo."
+  },
+  {
+    "word": "paper",
+    "pos": "n.",
+    "pronunciation": "เพ-เพอร์",
+    "meaning": "กระดาษ",
+    "example": "I need a piece of paper."
+  },
+  {
+    "word": "paragraph",
+    "pos": "n.",
+    "pronunciation": "แพ-ระ-กราฟ",
+    "meaning": "ย่อหน้า",
+    "example": "Write a paragraph about yourself."
+  },
+  {
+    "word": "parent",
+    "pos": "n.",
+    "pronunciation": "เพ-เรินท์",
+    "meaning": "พ่อแม่",
+    "example": "My parents are kind."
+  },
+  {
+    "word": "park",
+    "pos": "n.",
+    "pronunciation": "พาร์ค",
+    "meaning": "สวนสาธารณะ",
+    "example": "We played football in the park."
+  },
+  {
+    "word": "party",
+    "pos": "n.",
+    "pronunciation": "พาร์-ที",
+    "meaning": "งานเลี้ยง",
+    "example": "She went to a birthday party."
+  },
+  {
+    "word": "passenger",
+    "pos": "n.",
+    "pronunciation": "แพส-เซ็น-เจอร์",
+    "meaning": "ผู้โดยสาร",
+    "example": "The bus has many passengers."
+  },
+  {
+    "word": "passport",
+    "pos": "n.",
+    "pronunciation": "พาส-พอร์ต",
+    "meaning": "หนังสือเดินทาง",
+    "example": "Don't forget your passport."
+  },
+  {
+    "word": "past",
+    "pos": "n.",
+    "pronunciation": "พาสท์",
+    "meaning": "อดีต",
+    "example": "We learn from the past."
+  },
+  {
+    "word": "path",
+    "pos": "n.",
+    "pronunciation": "พาธ",
+    "meaning": "ทางเดิน",
+    "example": "Follow the path to the lake."
+  },
+  {
+    "word": "patient",
+    "pos": "n.",
+    "pronunciation": "เพ-เชินท์",
+    "meaning": "คนไข้",
+    "example": "The patient is feeling better."
+  },
+  {
+    "word": "payment",
+    "pos": "n.",
+    "pronunciation": "เพ-เมินท์",
+    "meaning": "การชำระเงิน",
+    "example": "Make the payment by tomorrow."
+  },
+  {
+    "word": "peace",
+    "pos": "n.",
+    "pronunciation": "พีซ",
+    "meaning": "สันติภาพ",
+    "example": "We hope for world peace."
+  },
+  {
+    "word": "pen",
+    "pos": "n.",
+    "pronunciation": "เพน",
+    "meaning": "ปากกา",
+    "example": "I write with a pen."
+  },
+  {
+    "word": "pencil",
+    "pos": "n.",
+    "pronunciation": "เพน-ซิล",
+    "meaning": "ดินสอ",
+    "example": "My pencil is sharp."
+  },
+  {
+    "word": "people",
+    "pos": "n.",
+    "pronunciation": "พี-เพิล",
+    "meaning": "ผู้คน",
+    "example": "Many people live here."
+  },
+  {
+    "word": "pepper",
+    "pos": "n.",
+    "pronunciation": "เพ็พ-เพอร์",
+    "meaning": "พริกไทย",
+    "example": "Add some pepper to the soup."
+  },
+  {
+    "word": "percent",
+    "pos": "n.",
+    "pronunciation": "เปอร์-เซ็นต์",
+    "meaning": "เปอร์เซ็นต์",
+    "example": "He scored ninety percent."
+  },
+  {
+    "word": "performance",
+    "pos": "n.",
+    "pronunciation": "เพอร์-ฟอร์-แมนซ์",
+    "meaning": "การแสดง, ผลงาน",
+    "example": "The performance was excellent."
+  },
+  {
+    "word": "period",
+    "pos": "n.",
+    "pronunciation": "พี-เรียด",
+    "meaning": "ช่วงเวลา",
+    "example": "The test lasts one period."
+  },
+  {
+    "word": "permission",
+    "pos": "n.",
+    "pronunciation": "เพอร์-มิ-ชัน",
+    "meaning": "การอนุญาต",
+    "example": "You need permission to enter."
+  },
+  {
+    "word": "person",
+    "pos": "n.",
+    "pronunciation": "เพอร์-ซัน",
+    "meaning": "บุคคล",
+    "example": "She is a good person."
+  },
+  {
+    "word": "photograph",
+    "pos": "n.",
+    "pronunciation": "โฟ-โท-กราฟ",
+    "meaning": "ภาพถ่าย",
+    "example": "This is a photograph of my family."
+  },
+  {
+    "word": "photo",
+    "pos": "n.",
+    "pronunciation": "โฟ-โท",
+    "meaning": "รูปภาพ",
+    "example": "I took a photo of the sunset."
+  },
+  {
+    "word": "physics",
+    "pos": "n.",
+    "pronunciation": "ฟิซ-ซิกส์",
+    "meaning": "ฟิสิกส์",
+    "example": "Physics is a science subject."
+  },
+  {
+    "word": "piano",
+    "pos": "n.",
+    "pronunciation": "เพีย-โน",
+    "meaning": "เปียโน",
+    "example": "She plays the piano well."
+  },
+  {
+    "word": "picture",
+    "pos": "n.",
+    "pronunciation": "พิค-เชอร์",
+    "meaning": "ภาพ",
+    "example": "Look at the picture on the wall."
+  },
+  {
+    "word": "piece",
+    "pos": "n.",
+    "pronunciation": "พีซ",
+    "meaning": "ชิ้น",
+    "example": "Can I have a piece of cake?"
+  },
+  {
+    "word": "pig",
+    "pos": "n.",
+    "pronunciation": "พิก",
+    "meaning": "หมู",
+    "example": "The pig is pink."
+  },
+  {
+    "word": "pillow",
+    "pos": "n.",
+    "pronunciation": "พิล-โล",
+    "meaning": "หมอน",
+    "example": "I need a soft pillow."
+  },
+  {
+    "word": "pilot",
+    "pos": "n.",
+    "pronunciation": "ไพ-ลอท",
+    "meaning": "นักบิน",
+    "example": "The pilot flew the plane."
+  },
+  {
+    "word": "pin",
+    "pos": "n.",
+    "pronunciation": "พิน",
+    "meaning": "หมุด, เข็มกลัด",
+    "example": "Use a pin to fix the paper."
+  },
+  {
+    "word": "pipe",
+    "pos": "n.",
+    "pronunciation": "ไพพ์",
+    "meaning": "ท่อ",
+    "example": "The pipe is leaking."
+  },
+  {
+    "word": "pizza",
+    "pos": "n.",
+    "pronunciation": "พิซ-ซา",
+    "meaning": "พิซซ่า",
+    "example": "I like to eat pizza."
+  },
+  {
+    "word": "place",
+    "pos": "n.",
+    "pronunciation": "เพลส",
+    "meaning": "สถานที่",
+    "example": "This is a nice place."
+  },
+  {
+    "word": "planet",
+    "pos": "n.",
+    "pronunciation": "แพล-เน็ท",
+    "meaning": "ดาวเคราะห์",
+    "example": "Earth is a planet."
+  },
+  {
+    "word": "plant",
+    "pos": "n.",
+    "pronunciation": "แพลนท์",
+    "meaning": "พืช",
+    "example": "The plant needs water."
+  },
+  {
+    "word": "plastic",
+    "pos": "n.",
+    "pronunciation": "พลาส-ติก",
+    "meaning": "พลาสติก",
+    "example": "The bottle is made of plastic."
+  },
+  {
+    "word": "plate",
+    "pos": "n.",
+    "pronunciation": "เพลต",
+    "meaning": "จาน",
+    "example": "Put the food on the plate."
+  },
+  {
+    "word": "playground",
+    "pos": "n.",
+    "pronunciation": "เพล-กราวนด์",
+    "meaning": "สนามเด็กเล่น",
+    "example": "Children are playing in the playground."
+  },
+  {
+    "word": "player",
+    "pos": "n.",
+    "pronunciation": "เพล-เยอร์",
+    "meaning": "ผู้เล่น",
+    "example": "He is a good player."
+  },
+  {
+    "word": "pleasure",
+    "pos": "n.",
+    "pronunciation": "เพลช-เชอร์",
+    "meaning": "ความสุข",
+    "example": "It is a pleasure to meet you."
+  },
+  {
+    "word": "poem",
+    "pos": "n.",
+    "pronunciation": "โพ-เอิม",
+    "meaning": "บทกลอน",
+    "example": "She wrote a beautiful poem."
+  },
+  {
+    "word": "poet",
+    "pos": "n.",
+    "pronunciation": "โพ-เอ็ท",
+    "meaning": "กวี",
+    "example": "He is a famous poet."
+  },
+  {
+    "word": "point",
+    "pos": "n.",
+    "pronunciation": "พอยน์ท",
+    "meaning": "จุด, ประเด็น",
+    "example": "That is a good point."
+  },
+  {
+    "word": "police",
+    "pos": "n.",
+    "pronunciation": "โพลีซ",
+    "meaning": "ตำรวจ",
+    "example": "The police caught the thief."
+  },
+  {
+    "word": "policy",
+    "pos": "n.",
+    "pronunciation": "พอ-ลิ-ซี",
+    "meaning": "นโยบาย",
+    "example": "The company has a new policy."
+  },
+  {
+    "word": "pollution",
+    "pos": "n.",
+    "pronunciation": "พอ-ลู-ชัน",
+    "meaning": "มลพิษ",
+    "example": "Air pollution is a serious problem."
+  },
+  {
+    "word": "pool",
+    "pos": "n.",
+    "pronunciation": "พูล",
+    "meaning": "สระว่ายน้ำ",
+    "example": "We swam in the pool."
+  },
+  {
+    "word": "popcorn",
+    "pos": "n.",
+    "pronunciation": "ป็อป-คอร์น",
+    "meaning": "ข้าวโพดคั่ว",
+    "example": "I like to eat popcorn at the movies."
+  },
+  {
+    "word": "population",
+    "pos": "n.",
+    "pronunciation": "พอ-พิว-เล-ชัน",
+    "meaning": "ประชากร",
+    "example": "The population of the city is large."
+  },
+  {
+    "word": "position",
+    "pos": "n.",
+    "pronunciation": "โพ-สิ-ชัน",
+    "meaning": "ตำแหน่ง",
+    "example": "She applied for the manager position."
+  },
+  {
+    "word": "possibility",
+    "pos": "n.",
+    "pronunciation": "พอ-ซิ-บิล-ลิ-ที",
+    "meaning": "ความเป็นไปได้",
+    "example": "There is a possibility of rain."
+  },
+  {
+    "word": "post",
+    "pos": "n.",
+    "pronunciation": "โพสต์",
+    "meaning": "จดหมาย, เสา",
+    "example": "I sent a letter by post."
+  },
+  {
+    "word": "potato",
+    "pos": "n.",
+    "pronunciation": "โพ-เท-โท",
+    "meaning": "มันฝรั่ง",
+    "example": "I like to eat fried potatoes."
+  },
+  {
+    "word": "pound",
+    "pos": "n.",
+    "pronunciation": "พาวนด์",
+    "meaning": "ปอนด์ (หน่วยน้ำหนัก)",
+    "example": "The bag weighs five pounds."
+  },
+  {
+    "word": "power",
+    "pos": "n.",
+    "pronunciation": "พาว-เออร์",
+    "meaning": "พลังงาน, อำนาจ",
+    "example": "The power went out."
+  },
+  {
+    "word": "practice",
+    "pos": "n.",
+    "pronunciation": "แพรค-ทิส",
+    "meaning": "การฝึกฝน",
+    "example": "Practice makes perfect."
+  },
+  {
+    "word": "preference",
+    "pos": "n.",
+    "pronunciation": "พรี-เฟอ-เรินซ์",
+    "meaning": "ความชอบ",
+    "example": "My preference is coffee."
+  },
+  {
+    "word": "preparation",
+    "pos": "n.",
+    "pronunciation": "พรี-แพร์-เร-ชัน",
+    "meaning": "การเตรียมตัว",
+    "example": "Preparation is important for the exam."
+  },
+  {
+    "word": "presence",
+    "pos": "n.",
+    "pronunciation": "เพรส-เซินซ์",
+    "meaning": "การอยู่, การปรากฏตัว",
+    "example": "His presence made a difference."
+  },
+  {
+    "word": "president",
+    "pos": "n.",
+    "pronunciation": "เพรส-ซิ-เดินท์",
+    "meaning": "ประธานาธิบดี",
+    "example": "The president gave a speech."
+  },
+  {
+    "word": "pressure",
+    "pos": "n.",
+    "pronunciation": "เพรส-เชอร์",
+    "meaning": "แรงกดดัน",
+    "example": "She feels pressure to succeed."
+  },
+  {
+    "word": "price",
+    "pos": "n.",
+    "pronunciation": "ไพรซ์",
+    "meaning": "ราคา",
+    "example": "The price is too high."
+  },
+  {
+    "word": "pride",
+    "pos": "n.",
+    "pronunciation": "ไพรด์",
+    "meaning": "ความภูมิใจ",
+    "example": "She takes pride in her work."
+  },
+  {
+    "word": "prince",
+    "pos": "n.",
+    "pronunciation": "พรินซ์",
+    "meaning": "เจ้าชาย",
+    "example": "The prince is kind."
+  },
+  {
+    "word": "prison",
+    "pos": "n.",
+    "pronunciation": "พริซ-เซิน",
+    "meaning": "คุก",
+    "example": "He was sent to prison."
+  },
+  {
+    "word": "problem",
+    "pos": "n.",
+    "pronunciation": "พร็อบ-เลิม",
+    "meaning": "ปัญหา",
+    "example": "We need to solve this problem."
+  },
+  {
+    "word": "process",
+    "pos": "n.",
+    "pronunciation": "โพร-เซส",
+    "meaning": "กระบวนการ",
+    "example": "The process is simple."
+  },
+  {
+    "word": "product",
+    "pos": "n.",
+    "pronunciation": "โพร-ดักท์",
+    "meaning": "สินค้า",
+    "example": "This product is popular."
+  },
+  {
+    "word": "profession",
+    "pos": "n.",
+    "pronunciation": "โพร-เฟส-ชัน",
+    "meaning": "อาชีพ",
+    "example": "Teaching is a noble profession."
+  },
+  {
+    "word": "profit",
+    "pos": "n.",
+    "pronunciation": "โพร-ฟิท",
+    "meaning": "กำไร",
+    "example": "The company made a big profit."
+  },
+  {
+    "word": "program",
+    "pos": "n.",
+    "pronunciation": "โพร-แกรม",
+    "meaning": "โปรแกรม",
+    "example": "I installed a new program."
+  },
+  {
+    "word": "project",
+    "pos": "n.",
+    "pronunciation": "โพร-เจ็คท์",
+    "meaning": "โครงการ",
+    "example": "Our project is about recycling."
+  },
+  {
+    "word": "promise",
+    "pos": "n.",
+    "pronunciation": "พรอม-มิส",
+    "meaning": "สัญญา",
+    "example": "He made a promise to help."
+  },
+  {
+    "word": "property",
+    "pos": "n.",
+    "pronunciation": "พรอพ-เพอ-ที",
+    "meaning": "ทรัพย์สิน",
+    "example": "That house is her property."
+  },
+  {
+    "word": "proposal",
+    "pos": "n.",
+    "pronunciation": "โพร-โพ-ซัล",
+    "meaning": "ข้อเสนอ",
+    "example": "He made a proposal for the plan."
+  },
+  {
+    "word": "protection",
+    "pos": "n.",
+    "pronunciation": "โพร-เทค-ชัน",
+    "meaning": "การปกป้อง",
+    "example": "Wear a helmet for protection."
+  },
+  {
+    "word": "protein",
+    "pos": "n.",
+    "pronunciation": "โพร-ทีน",
+    "meaning": "โปรตีน",
+    "example": "Meat is high in protein."
+  },
+  {
+    "word": "psychology",
+    "pos": "n.",
+    "pronunciation": "ไซ-คอล-โล-จี",
+    "meaning": "จิตวิทยา",
+    "example": "She studies psychology at university."
+  },
+  {
+    "word": "public",
+    "pos": "n.",
+    "pronunciation": "พับ-ลิค",
+    "meaning": "ประชาชน, สาธารณะ",
+    "example": "The public supports the event."
+  },
+  {
+    "word": "publication",
+    "pos": "n.",
+    "pronunciation": "พับ-ลิ-เค-ชัน",
+    "meaning": "การตีพิมพ์",
+    "example": "The book's publication date is June."
+  },
+  {
+    "word": "publisher",
+    "pos": "n.",
+    "pronunciation": "พับ-ลิช-เซอร์",
+    "meaning": "สำนักพิมพ์",
+    "example": "The publisher printed many books."
+  },
+  {
+    "word": "pull",
+    "pos": "n.",
+    "pronunciation": "พูล",
+    "meaning": "การดึง",
+    "example": "Give a strong pull."
+  },
+  {
+    "word": "pupil",
+    "pos": "n.",
+    "pronunciation": "พิว-เพิล",
+    "meaning": "นักเรียน",
+    "example": "The pupil studies hard."
+  },
+  {
+    "word": "purpose",
+    "pos": "n.",
+    "pronunciation": "เพอร์-เพิส",
+    "meaning": "จุดประสงค์",
+    "example": "The purpose of this meeting is clear."
+  },
+  {
+    "word": "puzzle",
+    "pos": "n.",
+    "pronunciation": "พัซ-เซิล",
+    "meaning": "ปริศนา, จิ๊กซอว์",
+    "example": "This puzzle is difficult."
+  },
+  {
+    "word": "quality",
+    "pos": "n.",
+    "pronunciation": "ควอล-ลิ-ที",
+    "meaning": "คุณภาพ",
+    "example": "The quality of the product is good."
+  },
+  {
+    "word": "quantity",
+    "pos": "n.",
+    "pronunciation": "ควอน-ทิ-ที",
+    "meaning": "ปริมาณ",
+    "example": "We need a large quantity of water."
+  },
+  {
+    "word": "quarter",
+    "pos": "n.",
+    "pronunciation": "ควอร์-เทอร์",
+    "meaning": "หนึ่งในสี่, ไตรมาส",
+    "example": "The year is divided into four quarters."
+  },
+  {
+    "word": "question",
+    "pos": "n.",
+    "pronunciation": "เควส-ชัน",
+    "meaning": "คำถาม",
+    "example": "I have a question for you."
+  },
+  {
+    "word": "queue",
+    "pos": "n.",
+    "pronunciation": "คิว",
+    "meaning": "คิว, แถว",
+    "example": "We stood in a long queue."
+  },
+  {
+    "word": "quiet",
+    "pos": "n.",
+    "pronunciation": "ไควเอ็ท",
+    "meaning": "ความเงียบสงบ",
+    "example": "Please keep quiet in the library."
+  },
+  {
+    "word": "radio",
+    "pos": "n.",
+    "pronunciation": "เรด-ดิ-โอ",
+    "meaning": "วิทยุ",
+    "example": "I listen to the radio every morning."
+  },
+  {
+    "word": "rain",
+    "pos": "n.",
+    "pronunciation": "เรน",
+    "meaning": "ฝน",
+    "example": "The rain is heavy today."
+  },
+  {
+    "word": "rainbow",
+    "pos": "n.",
+    "pronunciation": "เรน-โบว์",
+    "meaning": "สายรุ้ง",
+    "example": "I saw a beautiful rainbow."
+  },
+  {
+    "word": "raincoat",
+    "pos": "n.",
+    "pronunciation": "เรน-โค้ท",
+    "meaning": "เสื้อกันฝน",
+    "example": "Don't forget your raincoat."
+  },
+  {
+    "word": "raise",
+    "pos": "n.",
+    "pronunciation": "เรส",
+    "meaning": "การยก, การเพิ่ม",
+    "example": "He asked for a raise at work."
+  },
+  {
+    "word": "range",
+    "pos": "n.",
+    "pronunciation": "เรนจ์",
+    "meaning": "ช่วง, ขอบเขต",
+    "example": "The price range is wide."
+  },
+  {
+    "word": "rate",
+    "pos": "n.",
+    "pronunciation": "เรท",
+    "meaning": "อัตรา",
+    "example": "The interest rate is low."
+  },
+  {
+    "word": "reaction",
+    "pos": "n.",
+    "pronunciation": "รี-แอค-ชัน",
+    "meaning": "ปฏิกิริยา",
+    "example": "Her reaction was surprising."
+  },
+  {
+    "word": "reader",
+    "pos": "n.",
+    "pronunciation": "รี-เดอร์",
+    "meaning": "ผู้อ่าน",
+    "example": "He is an avid reader."
+  },
+  {
+    "word": "reading",
+    "pos": "n.",
+    "pronunciation": "รี-ดิง",
+    "meaning": "การอ่าน",
+    "example": "Reading helps you learn."
+  },
+  {
+    "word": "reason",
+    "pos": "n.",
+    "pronunciation": "รี-เซิน",
+    "meaning": "เหตุผล",
+    "example": "What is the reason for your absence?"
+  },
+  {
+    "word": "receipt",
+    "pos": "n.",
+    "pronunciation": "รี-ซี็พท์",
+    "meaning": "ใบเสร็จรับเงิน",
+    "example": "Keep the receipt for your purchase."
+  },
+  {
+    "word": "recipe",
+    "pos": "n.",
+    "pronunciation": "เรซ-ิ-ปี",
+    "meaning": "สูตรอาหาร",
+    "example": "This recipe is easy to follow."
+  },
+  {
+    "word": "recognition",
+    "pos": "n.",
+    "pronunciation": "เร็ค-อะก-นิ-ชัน",
+    "meaning": "การยอมรับ",
+    "example": "She gained recognition for her work."
+  },
+  {
+    "word": "record",
+    "pos": "n.",
+    "pronunciation": "เร็ค-คอร์ด",
+    "meaning": "บันทึก, สถิติ",
+    "example": "He set a new world record."
+  },
+  {
+    "word": "recovery",
+    "pos": "n.",
+    "pronunciation": "รี-คัฟ-เวอ-รี",
+    "meaning": "การฟื้นตัว",
+    "example": "Her recovery was quick."
+  },
+  {
+    "word": "recycle",
+    "pos": "n.",
+    "pronunciation": "รี-ไซ-เคิล",
+    "meaning": "การรีไซเคิล",
+    "example": "Recycling helps protect the environment."
+  },
+  {
+    "word": "red",
+    "pos": "n.",
+    "pronunciation": "เรด",
+    "meaning": "สีแดง",
+    "example": "Red is my favorite color."
+  },
+  {
+    "word": "reflection",
+    "pos": "n.",
+    "pronunciation": "รี-เฟล็ค-ชัน",
+    "meaning": "การสะท้อน",
+    "example": "The reflection in the mirror is clear."
+  },
+  {
+    "word": "refrigerator",
+    "pos": "n.",
+    "pronunciation": "รี-ฟริจ-เจอ-เร-เทอร์",
+    "meaning": "ตู้เย็น",
+    "example": "Put the milk in the refrigerator."
+  },
+  {
+    "word": "region",
+    "pos": "n.",
+    "pronunciation": "รี-เจิน",
+    "meaning": "ภูมิภาค",
+    "example": "This region is famous for its food."
+  },
+  {
+    "word": "register",
+    "pos": "n.",
+    "pronunciation": "เร็จ-ิส-เตอร์",
+    "meaning": "ทะเบียน",
+    "example": "Please sign the register."
+  },
+  {
+    "word": "relation",
+    "pos": "n.",
+    "pronunciation": "รี-เล-ชัน",
+    "meaning": "ความสัมพันธ์",
+    "example": "They have a close relation."
+  },
+  {
+    "word": "relationship",
+    "pos": "n.",
+    "pronunciation": "รี-เล-ชัน-ชิพ",
+    "meaning": "ความสัมพันธ์",
+    "example": "They have a good relationship."
+  },
+  {
+    "word": "religion",
+    "pos": "n.",
+    "pronunciation": "รี-ลิจ-ชัน",
+    "meaning": "ศาสนา",
+    "example": "Religion teaches morals."
+  },
+  {
+    "word": "reminder",
+    "pos": "n.",
+    "pronunciation": "รี-มายน์-เดอร์",
+    "meaning": "การเตือนความจำ",
+    "example": "Set a reminder for the meeting."
+  },
+  {
+    "word": "report",
+    "pos": "n.",
+    "pronunciation": "รี-พอร์ต",
+    "meaning": "รายงาน",
+    "example": "Write a report about your trip."
+  },
+  {
+    "word": "reputation",
+    "pos": "n.",
+    "pronunciation": "เร็พ-ยู-เท-ชัน",
+    "meaning": "ชื่อเสียง",
+    "example": "She has a good reputation."
+  },
+  {
+    "word": "restaurant",
+    "pos": "n.",
+    "pronunciation": "เรส-เทอ-รองท์",
+    "meaning": "ร้านอาหาร",
+    "example": "We ate dinner at a restaurant."
+  },
+  {
+    "word": "result",
+    "pos": "n.",
+    "pronunciation": "รี-ซัลท์",
+    "meaning": "ผลลัพธ์",
+    "example": "The result was surprising."
+  },
+  {
+    "word": "reward",
+    "pos": "n.",
+    "pronunciation": "รี-วอร์ด",
+    "meaning": "รางวัล",
+    "example": "He received a reward for honesty."
+  },
+  {
+    "word": "rhythm",
+    "pos": "n.",
+    "pronunciation": "ริท-ึ่ม",
+    "meaning": "จังหวะ",
+    "example": "The song has a good rhythm."
+  },
+  {
+    "word": "rice",
+    "pos": "n.",
+    "pronunciation": "ไรซ์",
+    "meaning": "ข้าว",
+    "example": "Rice is a staple food."
+  },
+  {
+    "word": "rich",
+    "pos": "n.",
+    "pronunciation": "ริช",
+    "meaning": "ความร่ำรวย",
+    "example": "He became rich after many years."
+  },
+  {
+    "word": "accept",
+    "pos": "v.",
+    "pronunciation": "แอค-เซ็พท",
+    "meaning": "ยอมรับ",
+    "example": "She accepted the gift happily."
+  },
+  {
+    "word": "achieve",
+    "pos": "v.",
+    "pronunciation": "อะ-ชีฟ",
+    "meaning": "บรรลุผล",
+    "example": "He achieved his goal last year."
+  },
+  {
+    "word": "admire",
+    "pos": "v.",
+    "pronunciation": "แอด-ไม-เออะ",
+    "meaning": "ชื่นชม",
+    "example": "I admire her courage."
+  },
+  {
+    "word": "admit",
+    "pos": "v.",
+    "pronunciation": "แอด-มิด",
+    "meaning": "ยอมรับผิด",
+    "example": "He admitted his mistake."
+  },
+  {
+    "word": "advise",
+    "pos": "v.",
+    "pronunciation": "แอด-ไวซ",
+    "meaning": "แนะนำ",
+    "example": "She advised me to study harder."
+  },
+  {
+    "word": "agree",
+    "pos": "v.",
+    "pronunciation": "อะ-กรี",
+    "meaning": "เห็นด้วย",
+    "example": "They agreed to meet at noon."
+  },
+  {
+    "word": "allow",
+    "pos": "v.",
+    "pronunciation": "อะ-ลาว",
+    "meaning": "อนุญาต",
+    "example": "My parents allow me to go out."
+  },
+  {
+    "word": "announce",
+    "pos": "v.",
+    "pronunciation": "อะ-นาวน์ซ",
+    "meaning": "ประกาศ",
+    "example": "The teacher announced the test date."
+  },
+  {
+    "word": "apologize",
+    "pos": "v.",
+    "pronunciation": "อะ-พอ-โล-ไจซ์",
+    "meaning": "ขอโทษ",
+    "example": "She apologized for being late."
+  },
+  {
+    "word": "appear",
+    "pos": "v.",
+    "pronunciation": "อะ-เพียร์",
+    "meaning": "ปรากฏ",
+    "example": "The sun appeared after the rain."
+  },
+  {
+    "word": "apply",
+    "pos": "v.",
+    "pronunciation": "แอพ-พลาย",
+    "meaning": "สมัคร",
+    "example": "I applied for the scholarship."
+  },
+  {
+    "word": "approve",
+    "pos": "v.",
+    "pronunciation": "อะ-พรูฟ",
+    "meaning": "อนุมัติ",
+    "example": "The manager approved the plan."
+  },
+  {
+    "word": "argue",
+    "pos": "v.",
+    "pronunciation": "อาร์-กิ้ว",
+    "meaning": "โต้แย้ง",
+    "example": "They argued about the problem."
+  },
+  {
+    "word": "arrive",
+    "pos": "v.",
+    "pronunciation": "อะ-ไรฟ",
+    "meaning": "มาถึง",
+    "example": "We arrived at the airport early."
+  },
+  {
+    "word": "ask",
+    "pos": "v.",
+    "pronunciation": "อาส์ค",
+    "meaning": "ถาม",
+    "example": "I asked for help."
+  },
+  {
+    "word": "assist",
+    "pos": "v.",
+    "pronunciation": "อะ-ซิสท์",
+    "meaning": "ช่วยเหลือ",
+    "example": "He assisted me with my homework."
+  },
+  {
+    "word": "attend",
+    "pos": "v.",
+    "pronunciation": "อะ-เท็นด",
+    "meaning": "เข้าร่วม",
+    "example": "She attended the meeting."
+  },
+  {
+    "word": "attract",
+    "pos": "v.",
+    "pronunciation": "อะ-แทร็คท",
+    "meaning": "ดึงดูด",
+    "example": "The flowers attract bees."
+  },
+  {
+    "word": "avoid",
+    "pos": "v.",
+    "pronunciation": "อะ-วอยด์",
+    "meaning": "หลีกเลี่ยง",
+    "example": "He avoided the busy street."
+  },
+  {
+    "word": "bake",
+    "pos": "v.",
+    "pronunciation": "เบค",
+    "meaning": "อบ",
+    "example": "She baked a cake."
+  },
+  {
+    "word": "balance",
+    "pos": "v.",
+    "pronunciation": "บาล-แอนซ์",
+    "meaning": "ทรงตัว",
+    "example": "He balanced on one foot."
+  },
+  {
+    "word": "ban",
+    "pos": "v.",
+    "pronunciation": "แบน",
+    "meaning": "ห้าม",
+    "example": "Smoking is banned here."
+  },
+  {
+    "word": "bathe",
+    "pos": "v.",
+    "pronunciation": "เบธ",
+    "meaning": "อาบน้ำ",
+    "example": "I bathed in the river."
+  },
+  {
+    "word": "become",
+    "pos": "v.",
+    "pronunciation": "บี-คัม",
+    "meaning": "กลายเป็น",
+    "example": "He became a doctor."
+  },
+  {
+    "word": "begin",
+    "pos": "v.",
+    "pronunciation": "บิ-กิ้น",
+    "meaning": "เริ่มต้น",
+    "example": "Class begins at 8 a.m."
+  },
+  {
+    "word": "behave",
+    "pos": "v.",
+    "pronunciation": "บี-เฮฟ",
+    "meaning": "ประพฤติ",
+    "example": "Please behave in class."
+  },
+  {
+    "word": "believe",
+    "pos": "v.",
+    "pronunciation": "บี-ลีฟ",
+    "meaning": "เชื่อ",
+    "example": "I believe in you."
+  },
+  {
+    "word": "belong",
+    "pos": "v.",
+    "pronunciation": "บี-ลอง",
+    "meaning": "เป็นของ",
+    "example": "This book belongs to me."
+  },
+  {
+    "word": "bend",
+    "pos": "v.",
+    "pronunciation": "เบ็นด",
+    "meaning": "โค้งงอ",
+    "example": "He bent the metal rod."
+  },
+  {
+    "word": "bet",
+    "pos": "v.",
+    "pronunciation": "เบ็ท",
+    "meaning": "เดิมพัน",
+    "example": "I bet on the horse race."
+  },
+  {
+    "word": "bind",
+    "pos": "v.",
+    "pronunciation": "ไบน์ด",
+    "meaning": "ผูก",
+    "example": "She bound the books together."
+  },
+  {
+    "word": "bite",
+    "pos": "v.",
+    "pronunciation": "ไบท์",
+    "meaning": "กัด",
+    "example": "The dog bit me."
+  },
+  {
+    "word": "blame",
+    "pos": "v.",
+    "pronunciation": "เบลม",
+    "meaning": "โทษ",
+    "example": "Don’t blame me for the mistake."
+  },
+  {
+    "word": "bleed",
+    "pos": "v.",
+    "pronunciation": "บลีด",
+    "meaning": "เลือดออก",
+    "example": "He bled from a cut."
+  },
+  {
+    "word": "blow",
+    "pos": "v.",
+    "pronunciation": "โบว์",
+    "meaning": "เป่า",
+    "example": "The wind blew hard."
+  },
+  {
+    "word": "borrow",
+    "pos": "v.",
+    "pronunciation": "บอ-โรว",
+    "meaning": "ยืม",
+    "example": "Can I borrow your pen?"
+  },
+  {
+    "word": "bounce",
+    "pos": "v.",
+    "pronunciation": "บาวน์ซ",
+    "meaning": "เด้ง",
+    "example": "The ball bounced high."
+  },
+  {
+    "word": "break",
+    "pos": "v.",
+    "pronunciation": "เบรค",
+    "meaning": "แตก",
+    "example": "I broke the glass."
+  },
+  {
+    "word": "bring",
+    "pos": "v.",
+    "pronunciation": "บริง",
+    "meaning": "นำมา",
+    "example": "Please bring your book."
+  },
+  {
+    "word": "build",
+    "pos": "v.",
+    "pronunciation": "บิลด์",
+    "meaning": "สร้าง",
+    "example": "They built a new school."
+  },
+  {
+    "word": "burn",
+    "pos": "v.",
+    "pronunciation": "เบิร์น",
+    "meaning": "เผา",
+    "example": "The fire burned brightly."
+  },
+  {
+    "word": "burst",
+    "pos": "v.",
+    "pronunciation": "เบิร์สท",
+    "meaning": "ระเบิด",
+    "example": "The balloon burst."
+  },
+  {
+    "word": "buy",
+    "pos": "v.",
+    "pronunciation": "บาย",
+    "meaning": "ซื้อ",
+    "example": "I bought a new phone."
+  },
+  {
+    "word": "calculate",
+    "pos": "v.",
+    "pronunciation": "แคล-คิว-เลท",
+    "meaning": "คำนวณ",
+    "example": "He calculated the total cost."
+  },
+  {
+    "word": "call",
+    "pos": "v.",
+    "pronunciation": "คอล",
+    "meaning": "โทร",
+    "example": "I called my friend."
+  },
+  {
+    "word": "cancel",
+    "pos": "v.",
+    "pronunciation": "แคน-เซิล",
+    "meaning": "ยกเลิก",
+    "example": "They canceled the meeting."
+  },
+  {
+    "word": "capture",
+    "pos": "v.",
+    "pronunciation": "แค็พ-เชอร์",
+    "meaning": "จับ",
+    "example": "The police captured the thief."
+  },
+  {
+    "word": "care",
+    "pos": "v.",
+    "pronunciation": "แคร์",
+    "meaning": "ดูแล",
+    "example": "She cares for her baby."
+  },
+  {
+    "word": "carry",
+    "pos": "v.",
+    "pronunciation": "แคร์-รี",
+    "meaning": "ถือ",
+    "example": "He carried the bag."
+  },
+  {
+    "word": "catch",
+    "pos": "v.",
+    "pronunciation": "แคช",
+    "meaning": "จับ",
+    "example": "I caught the ball."
+  },
+  {
+    "word": "cause",
+    "pos": "v.",
+    "pronunciation": "คอซ",
+    "meaning": "ทำให้เกิด",
+    "example": "Smoking causes illness."
+  },
+  {
+    "word": "change",
+    "pos": "v.",
+    "pronunciation": "เชนจ์",
+    "meaning": "เปลี่ยน",
+    "example": "She changed her dress."
+  },
+  {
+    "word": "charge",
+    "pos": "v.",
+    "pronunciation": "ชาร์จ",
+    "meaning": "เรียกเก็บเงิน",
+    "example": "They charged me $10."
+  },
+  {
+    "word": "chase",
+    "pos": "v.",
+    "pronunciation": "เชส",
+    "meaning": "ไล่ตาม",
+    "example": "The dog chased the cat."
+  },
+  {
+    "word": "choose",
+    "pos": "v.",
+    "pronunciation": "ชูส",
+    "meaning": "เลือก",
+    "example": "I chose the red shirt."
+  },
+  {
+    "word": "clean",
+    "pos": "v.",
+    "pronunciation": "คลีน",
+    "meaning": "ทำความสะอาด",
+    "example": "She cleaned her room."
+  },
+  {
+    "word": "climb",
+    "pos": "v.",
+    "pronunciation": "ไคลม์",
+    "meaning": "ปีน",
+    "example": "He climbed the tree."
+  },
+  {
+    "word": "close",
+    "pos": "v.",
+    "pronunciation": "โคลส",
+    "meaning": "ปิด",
+    "example": "Please close the door."
+  },
+  {
+    "word": "collect",
+    "pos": "v.",
+    "pronunciation": "คอล-เลคท",
+    "meaning": "เก็บสะสม",
+    "example": "She collects stamps."
+  },
+  {
+    "word": "color",
+    "pos": "v.",
+    "pronunciation": "คัล-เลอะ",
+    "meaning": "ระบายสี",
+    "example": "I colored the picture."
+  },
+  {
+    "word": "come",
+    "pos": "v.",
+    "pronunciation": "คัม",
+    "meaning": "มา",
+    "example": "Please come here."
+  },
+  {
+    "word": "communicate",
+    "pos": "v.",
+    "pronunciation": "คอม-มิวน-นิ-เคท",
+    "meaning": "สื่อสาร",
+    "example": "We communicate by phone."
+  },
+  {
+    "word": "compare",
+    "pos": "v.",
+    "pronunciation": "คอม-แพร์",
+    "meaning": "เปรียบเทียบ",
+    "example": "Compare the two pictures."
+  },
+  {
+    "word": "compete",
+    "pos": "v.",
+    "pronunciation": "คอม-พีท",
+    "meaning": "แข่งขัน",
+    "example": "They compete in the race."
+  },
+  {
+    "word": "complete",
+    "pos": "v.",
+    "pronunciation": "คอม-พลีท",
+    "meaning": "ทำให้สมบูรณ์",
+    "example": "I completed my homework."
+  },
+  {
+    "word": "concern",
+    "pos": "v.",
+    "pronunciation": "คอน-เซิร์น",
+    "meaning": "เกี่ยวข้อง",
+    "example": "This problem concerns everyone."
+  },
+  {
+    "word": "connect",
+    "pos": "v.",
+    "pronunciation": "คอน-เน็คท",
+    "meaning": "เชื่อมต่อ",
+    "example": "Connect the cables carefully."
+  },
+  {
+    "word": "consider",
+    "pos": "v.",
+    "pronunciation": "คอน-ซิด-เดอร์",
+    "meaning": "พิจารณา",
+    "example": "Consider all the options."
+  },
+  {
+    "word": "consist",
+    "pos": "v.",
+    "pronunciation": "คอน-ซิสท",
+    "meaning": "ประกอบด้วย",
+    "example": "The team consists of five players."
+  },
+  {
+    "word": "contain",
+    "pos": "v.",
+    "pronunciation": "คอน-เทน",
+    "meaning": "บรรจุ",
+    "example": "The box contains books."
+  },
+  {
+    "word": "continue",
+    "pos": "v.",
+    "pronunciation": "คอน-ทิน-ยู",
+    "meaning": "ดำเนินต่อ",
+    "example": "Please continue reading."
+  },
+  {
+    "word": "control",
+    "pos": "v.",
+    "pronunciation": "คอน-โทรล",
+    "meaning": "ควบคุม",
+    "example": "He controls the machine."
+  },
+  {
+    "word": "cook",
+    "pos": "v.",
+    "pronunciation": "คุก",
+    "meaning": "ทำอาหาร",
+    "example": "She cooks dinner every day."
+  },
+  {
+    "word": "copy",
+    "pos": "v.",
+    "pronunciation": "คอ-พี",
+    "meaning": "ก็อปปี้",
+    "example": "Please copy this document."
+  },
+  {
+    "word": "correct",
+    "pos": "v.",
+    "pronunciation": "คอ-เร็คท",
+    "meaning": "แก้ไข",
+    "example": "Correct your mistakes."
+  },
+  {
+    "word": "count",
+    "pos": "v.",
+    "pronunciation": "เคานต์",
+    "meaning": "นับ",
+    "example": "Count to ten."
+  },
+  {
+    "word": "cover",
+    "pos": "v.",
+    "pronunciation": "คัฟ-เวอร์",
+    "meaning": "คลุม",
+    "example": "Cover the food with a lid."
+  },
+  {
+    "word": "create",
+    "pos": "v.",
+    "pronunciation": "ครี-เอท",
+    "meaning": "สร้าง",
+    "example": "She created a beautiful painting."
+  },
+  {
+    "word": "cry",
+    "pos": "v.",
+    "pronunciation": "คราย",
+    "meaning": "ร้องไห้",
+    "example": "The baby is crying."
+  },
+  {
+    "word": "cut",
+    "pos": "v.",
+    "pronunciation": "คัท",
+    "meaning": "ตัด",
+    "example": "Cut the paper carefully."
+  },
+  {
+    "word": "damage",
+    "pos": "v.",
+    "pronunciation": "แดม-เมจ",
+    "meaning": "ทำลาย",
+    "example": "The storm damaged the house."
+  },
+  {
+    "word": "dance",
+    "pos": "v.",
+    "pronunciation": "แดนซ์",
+    "meaning": "เต้นรำ",
+    "example": "They danced all night."
+  },
+  {
+    "word": "decide",
+    "pos": "v.",
+    "pronunciation": "ดี-ไซด์",
+    "meaning": "ตัดสินใจ",
+    "example": "I decided to study abroad."
+  },
+  {
+    "word": "declare",
+    "pos": "v.",
+    "pronunciation": "ดี-แคลร์",
+    "meaning": "ประกาศ",
+    "example": "They declared a holiday."
+  },
+  {
+    "word": "deliver",
+    "pos": "v.",
+    "pronunciation": "ดี-ลิฟ-เวอร์",
+    "meaning": "ส่ง",
+    "example": "He delivered the package."
+  },
+  {
+    "word": "depend",
+    "pos": "v.",
+    "pronunciation": "ดี-เพ็นด",
+    "meaning": "ขึ้นอยู่กับ",
+    "example": "It depends on the weather."
+  },
+  {
+    "word": "describe",
+    "pos": "v.",
+    "pronunciation": "ดี-สไครบ์",
+    "meaning": "อธิบาย",
+    "example": "Describe your favorite place."
+  },
+  {
+    "word": "design",
+    "pos": "v.",
+    "pronunciation": "ดี-ไซน์",
+    "meaning": "ออกแบบ",
+    "example": "She designed a new dress."
+  },
+  {
+    "word": "destroy",
+    "pos": "v.",
+    "pronunciation": "ดี-สทรอย",
+    "meaning": "ทำลาย",
+    "example": "The fire destroyed the building."
+  },
+  {
+    "word": "develop",
+    "pos": "v.",
+    "pronunciation": "ดี-เวล-อพ",
+    "meaning": "พัฒนา",
+    "example": "They developed a new app."
+  },
+  {
+    "word": "die",
+    "pos": "v.",
+    "pronunciation": "ได",
+    "meaning": "ตาย",
+    "example": "The plant died without water."
+  },
+  {
+    "word": "dig",
+    "pos": "v.",
+    "pronunciation": "ดิก",
+    "meaning": "ขุด",
+    "example": "They dug a hole in the ground."
+  },
+  {
+    "word": "direct",
+    "pos": "v.",
+    "pronunciation": "ได-เร็คท",
+    "meaning": "กำกับ",
+    "example": "She directed the play."
+  },
+  {
+    "word": "discover",
+    "pos": "v.",
+    "pronunciation": "ดิส-คัฟ-เวอร์",
+    "meaning": "ค้นพบ",
+    "example": "They discovered a new planet."
+  },
+  {
+    "word": "discuss",
+    "pos": "v.",
+    "pronunciation": "ดิส-คัส",
+    "meaning": "อภิปราย",
+    "example": "Let's discuss the problem."
+  },
+  {
+    "word": "divide",
+    "pos": "v.",
+    "pronunciation": "ดี-ไวด์",
+    "meaning": "แบ่ง",
+    "example": "Divide the cake into pieces."
+  },
+  {
+    "word": "do",
+    "pos": "v.",
+    "pronunciation": "ดู",
+    "meaning": "ทำ",
+    "example": "I do my homework every day."
+  },
+  {
+    "word": "draw",
+    "pos": "v.",
+    "pronunciation": "ดรอว์",
+    "meaning": "วาด",
+    "example": "She drew a picture."
+  },
+  {
+    "word": "dream",
+    "pos": "v.",
+    "pronunciation": "ดรีม",
+    "meaning": "ฝัน",
+    "example": "I dream of becoming a singer."
+  },
+  {
+    "word": "dress",
+    "pos": "v.",
+    "pronunciation": "เดรส",
+    "meaning": "แต่งตัว",
+    "example": "She dresses nicely."
+  },
+  {
+    "word": "drink",
+    "pos": "v.",
+    "pronunciation": "ดริงค์",
+    "meaning": "ดื่ม",
+    "example": "He drinks water."
+  },
+  {
+    "word": "drive",
+    "pos": "v.",
+    "pronunciation": "ไดรฟ์",
+    "meaning": "ขับรถ",
+    "example": "I drive to school."
+  },
+  {
+    "word": "drop",
+    "pos": "v.",
+    "pronunciation": "ดรอป",
+    "meaning": "ทำตก",
+    "example": "She dropped her phone."
+  },
+  {
+    "word": "dry",
+    "pos": "v.",
+    "pronunciation": "ดราย",
+    "meaning": "แห้ง",
+    "example": "The sun dries the clothes."
+  },
+  {
+    "word": "earn",
+    "pos": "v.",
+    "pronunciation": "เอิร์น",
+    "meaning": "หาเงิน",
+    "example": "He earns a good salary."
+  },
+  {
+    "word": "eat",
+    "pos": "v.",
+    "pronunciation": "อีท",
+    "meaning": "กิน",
+    "example": "We eat lunch at noon."
+  },
+  {
+    "word": "edit",
+    "pos": "v.",
+    "pronunciation": "เอ็ด-ดิต",
+    "meaning": "แก้ไข",
+    "example": "She edited the article."
+  },
+  {
+    "word": "educate",
+    "pos": "v.",
+    "pronunciation": "เอ็ด-ยู-เคท",
+    "meaning": "ให้การศึกษา",
+    "example": "Schools educate children."
+  },
+  {
+    "word": "employ",
+    "pos": "v.",
+    "pronunciation": "เอ็ม-พลอย",
+    "meaning": "จ้างงาน",
+    "example": "They employ many workers."
+  },
+  {
+    "word": "encourage",
+    "pos": "v.",
+    "pronunciation": "เอ็น-เคอร์-ริจ",
+    "meaning": "สนับสนุน",
+    "example": "Teachers encourage students."
+  },
+  {
+    "word": "enjoy",
+    "pos": "v.",
+    "pronunciation": "เอ็น-จอย",
+    "meaning": "สนุกสนาน",
+    "example": "I enjoy playing soccer."
+  },
+  {
+    "word": "enter",
+    "pos": "v.",
+    "pronunciation": "เอน-เทอร์",
+    "meaning": "เข้าไป",
+    "example": "Please enter the room."
+  },
+  {
+    "word": "escape",
+    "pos": "v.",
+    "pronunciation": "เอส-เคพ",
+    "meaning": "หนี",
+    "example": "The cat escaped from home."
+  },
+  {
+    "word": "examine",
+    "pos": "v.",
+    "pronunciation": "อิก-แซม-มิ่น",
+    "meaning": "ตรวจสอบ",
+    "example": "The doctor examined the patient."
+  },
+  {
+    "word": "exist",
+    "pos": "v.",
+    "pronunciation": "อิก-ซิสท",
+    "meaning": "มีอยู่",
+    "example": "Dinosaurs once existed."
+  },
+  {
+    "word": "expect",
+    "pos": "v.",
+    "pronunciation": "อิก-สเป็คท",
+    "meaning": "คาดหวัง",
+    "example": "I expect good results."
+  },
+  {
+    "word": "explain",
+    "pos": "v.",
+    "pronunciation": "อิก-สเพลน",
+    "meaning": "อธิบาย",
+    "example": "Please explain the answer."
+  },
+  {
+    "word": "express",
+    "pos": "v.",
+    "pronunciation": "อิก-สเพรส",
+    "meaning": "แสดงออก",
+    "example": "She expressed her feelings."
+  },
+  {
+    "word": "extend",
+    "pos": "v.",
+    "pronunciation": "อิก-สเทนด์",
+    "meaning": "ขยาย",
+    "example": "We extended the deadline."
+  },
+  {
+    "word": "face",
+    "pos": "v.",
+    "pronunciation": "เฟซ",
+    "meaning": "เผชิญหน้า",
+    "example": "We face many challenges."
+  },
+  {
+    "word": "fail",
+    "pos": "v.",
+    "pronunciation": "เฟล",
+    "meaning": "ล้มเหลว",
+    "example": "He failed the test."
+  },
+  {
+    "word": "fall",
+    "pos": "v.",
+    "pronunciation": "ฟอล",
+    "meaning": "ตก",
+    "example": "Leaves fall in autumn."
+  },
+  {
+    "word": "fancy",
+    "pos": "v.",
+    "pronunciation": "แฟน-ซี",
+    "meaning": "ชอบ",
+    "example": "I fancy chocolate ice cream."
+  },
+  {
+    "word": "fasten",
+    "pos": "v.",
+    "pronunciation": "ฟาส-เทิน",
+    "meaning": "รัด",
+    "example": "Fasten your seatbelt."
+  },
+  {
+    "word": "fear",
+    "pos": "v.",
+    "pronunciation": "เฟียร์",
+    "meaning": "กลัว",
+    "example": "She fears spiders."
+  },
+  {
+    "word": "feed",
+    "pos": "v.",
+    "pronunciation": "ฟีด",
+    "meaning": "ให้อาหาร",
+    "example": "I feed the dog daily."
+  },
+  {
+    "word": "feel",
+    "pos": "v.",
+    "pronunciation": "ฟีล",
+    "meaning": "รู้สึก",
+    "example": "I feel happy today."
+  },
+  {
+    "word": "fight",
+    "pos": "v.",
+    "pronunciation": "ไฟท์",
+    "meaning": "ต่อสู้",
+    "example": "They fought bravely."
+  },
+  {
+    "word": "fill",
+    "pos": "v.",
+    "pronunciation": "ฟิลล์",
+    "meaning": "เติมเต็ม",
+    "example": "Fill the bottle with water."
+  },
+  {
+    "word": "find",
+    "pos": "v.",
+    "pronunciation": "ไฟน์ด",
+    "meaning": "หาเจอ",
+    "example": "I found my keys."
+  },
+  {
+    "word": "finish",
+    "pos": "v.",
+    "pronunciation": "ฟิน-นิช",
+    "meaning": "เสร็จสิ้น",
+    "example": "She finished her homework."
+  },
+  {
+    "word": "fit",
+    "pos": "v.",
+    "pronunciation": "ฟิต",
+    "meaning": "พอดี",
+    "example": "The shoes fit me well."
+  },
+  {
+    "word": "fix",
+    "pos": "v.",
+    "pronunciation": "ฟิกซ์",
+    "meaning": "ซ่อม",
+    "example": "He fixed the broken chair."
+  },
+  {
+    "word": "fly",
+    "pos": "v.",
+    "pronunciation": "ฟลาย",
+    "meaning": "บิน",
+    "example": "Birds fly in the sky."
+  },
+  {
+    "word": "fold",
+    "pos": "v.",
+    "pronunciation": "โฟลด",
+    "meaning": "พับ",
+    "example": "Fold the paper in half."
+  },
+  {
+    "word": "follow",
+    "pos": "v.",
+    "pronunciation": "ฟอล-โลว์",
+    "meaning": "ตาม",
+    "example": "Follow me to the classroom."
+  },
+  {
+    "word": "force",
+    "pos": "v.",
+    "pronunciation": "ฟอร์ซ",
+    "meaning": "บังคับ",
+    "example": "They forced him to leave."
+  },
+  {
+    "word": "forget",
+    "pos": "v.",
+    "pronunciation": "ฟอร์-เก็ต",
+    "meaning": "ลืม",
+    "example": "I forgot my homework."
+  },
+  {
+    "word": "forgive",
+    "pos": "v.",
+    "pronunciation": "ฟอร์-กิฟ",
+    "meaning": "ให้อภัย",
+    "example": "Please forgive me."
+  },
+  {
+    "word": "form",
+    "pos": "v.",
+    "pronunciation": "ฟอร์ม",
+    "meaning": "สร้าง",
+    "example": "They formed a team."
+  },
+  {
+    "word": "found",
+    "pos": "v.",
+    "pronunciation": "ฟาวน์ด",
+    "meaning": "ก่อตั้ง",
+    "example": "He founded the company."
+  },
+  {
+    "word": "frame",
+    "pos": "v.",
+    "pronunciation": "เฟรม",
+    "meaning": "ใส่กรอบ",
+    "example": "She framed the photo."
+  },
+  {
+    "word": "freeze",
+    "pos": "v.",
+    "pronunciation": "ฟรีซ",
+    "meaning": "แช่แข็ง",
+    "example": "Water freezes at zero degrees."
+  },
+  {
+    "word": "frighten",
+    "pos": "v.",
+    "pronunciation": "ไฟร์-เทิน",
+    "meaning": "ทำให้กลัว",
+    "example": "The loud noise frightened me."
+  },
+  {
+    "word": "gain",
+    "pos": "v.",
+    "pronunciation": "เกน",
+    "meaning": "ได้มา",
+    "example": "He gained new skills."
+  },
+  {
+    "word": "gather",
+    "pos": "v.",
+    "pronunciation": "แก็ธ-เทอร์",
+    "meaning": "รวบรวม",
+    "example": "They gathered information."
+  },
+  {
+    "word": "get",
+    "pos": "v.",
+    "pronunciation": "เก็ท",
+    "meaning": "ได้รับ",
+    "example": "I got a new bike."
+  },
+  {
+    "word": "give",
+    "pos": "v.",
+    "pronunciation": "กิฟ",
+    "meaning": "ให้",
+    "example": "She gave me a gift."
+  },
+  {
+    "word": "go",
+    "pos": "v.",
+    "pronunciation": "โก",
+    "meaning": "ไป",
+    "example": "We go to school by bus."
+  },
+  {
+    "word": "grab",
+    "pos": "v.",
+    "pronunciation": "แกร็บ",
+    "meaning": "คว้า",
+    "example": "He grabbed the book."
+  },
+  {
+    "word": "graduate",
+    "pos": "v.",
+    "pronunciation": "แกรด-ยู-เอท",
+    "meaning": "สำเร็จการศึกษา",
+    "example": "She graduated last year."
+  },
+  {
+    "word": "grow",
+    "pos": "v.",
+    "pronunciation": "โกรว์",
+    "meaning": "เติบโต",
+    "example": "Plants grow in the sun."
+  },
+  {
+    "word": "guess",
+    "pos": "v.",
+    "pronunciation": "เกส",
+    "meaning": "เดา",
+    "example": "Can you guess the answer?"
+  },
+  {
+    "word": "guide",
+    "pos": "v.",
+    "pronunciation": "ไกด์",
+    "meaning": "แนะนำ",
+    "example": "He guided us through the city."
+  },
+  {
+    "word": "obey",
+    "pos": "v.",
+    "pronunciation": "โอ-เบ",
+    "meaning": "เชื่อฟัง",
+    "example": "Children should obey their parents."
+  },
+  {
+    "word": "observe",
+    "pos": "v.",
+    "pronunciation": "ออบ-เซิฟ",
+    "meaning": "สังเกต",
+    "example": "We observe the stars at night."
+  },
+  {
+    "word": "obtain",
+    "pos": "v.",
+    "pronunciation": "ออบ-เทน",
+    "meaning": "ได้รับ",
+    "example": "She obtained a good result."
+  },
+  {
+    "word": "occupy",
+    "pos": "v.",
+    "pronunciation": "อ็อค-คิว-ไฟ",
+    "meaning": "ครอบครอง",
+    "example": "They occupy the whole building."
+  },
+  {
+    "word": "occur",
+    "pos": "v.",
+    "pronunciation": "อ็อค-เคอร์",
+    "meaning": "เกิดขึ้น",
+    "example": "Accidents occur unexpectedly."
+  },
+  {
+    "word": "offer",
+    "pos": "v.",
+    "pronunciation": "ออฟ-เฟอร์",
+    "meaning": "เสนอ",
+    "example": "He offered help to me."
+  },
+  {
+    "word": "omit",
+    "pos": "v.",
+    "pronunciation": "โอ-มิท",
+    "meaning": "ละเว้น",
+    "example": "Please do not omit any details."
+  },
+  {
+    "word": "open",
+    "pos": "v.",
+    "pronunciation": "โอ-เพิน",
+    "meaning": "เปิด",
+    "example": "Open the door, please."
+  },
+  {
+    "word": "operate",
+    "pos": "v.",
+    "pronunciation": "อ็อพ-เพอะ-เรท",
+    "meaning": "ดำเนินการ",
+    "example": "The machine operates well."
+  },
+  {
+    "word": "oppose",
+    "pos": "v.",
+    "pronunciation": "อ็อพ-โพส",
+    "meaning": "คัดค้าน",
+    "example": "They oppose the new law."
+  },
+  {
+    "word": "opt",
+    "pos": "v.",
+    "pronunciation": "อ็อพท",
+    "meaning": "เลือก",
+    "example": "I opt for the blue shirt."
+  },
+  {
+    "word": "order",
+    "pos": "v.",
+    "pronunciation": "ออร์-เดอร์",
+    "meaning": "สั่ง",
+    "example": "She ordered a pizza."
+  },
+  {
+    "word": "organize",
+    "pos": "v.",
+    "pronunciation": "ออร์-แกน-ไนซ์",
+    "meaning": "จัดระเบียบ",
+    "example": "We organize the event."
+  },
+  {
+    "word": "originate",
+    "pos": "v.",
+    "pronunciation": "โอ-ริ-จิ-เนท",
+    "meaning": "มีต้นกำเนิด",
+    "example": "This custom originates from Thailand."
+  },
+  {
+    "word": "overcome",
+    "pos": "v.",
+    "pronunciation": "โอ-เวอร์-คัม",
+    "meaning": "เอาชนะ",
+    "example": "He overcame his fear."
+  },
+  {
+    "word": "overlook",
+    "pos": "v.",
+    "pronunciation": "โอ-เวอร์-ลุค",
+    "meaning": "มองข้าม",
+    "example": "Don't overlook small mistakes."
+  },
+  {
+    "word": "owe",
+    "pos": "v.",
+    "pronunciation": "โอโว",
+    "meaning": "เป็นหนี้",
+    "example": "I owe you money."
+  },
+  {
+    "word": "own",
+    "pos": "v.",
+    "pronunciation": "โอโอ-น",
+    "meaning": "เป็นเจ้าของ",
+    "example": "They own a big house."
+  },
+  {
+    "word": "pack",
+    "pos": "v.",
+    "pronunciation": "แพค",
+    "meaning": "บรรจุ",
+    "example": "Please pack your bag."
+  },
+  {
+    "word": "paint",
+    "pos": "v.",
+    "pronunciation": "เพนท",
+    "meaning": "ทาสี",
+    "example": "She paints beautiful pictures."
+  },
+  {
+    "word": "participate",
+    "pos": "v.",
+    "pronunciation": "พาร์-ทิ-ซิ-เพท",
+    "meaning": "เข้าร่วม",
+    "example": "We participate in the game."
+  },
+  {
+    "word": "pass",
+    "pos": "v.",
+    "pronunciation": "พาส",
+    "meaning": "ผ่าน",
+    "example": "He passed the exam."
+  },
+  {
+    "word": "pay",
+    "pos": "v.",
+    "pronunciation": "เพย์",
+    "meaning": "จ่าย",
+    "example": "I pay for my lunch."
+  },
+  {
+    "word": "perform",
+    "pos": "v.",
+    "pronunciation": "เพอร์-ฟอร์ม",
+    "meaning": "แสดง",
+    "example": "She performs on stage."
+  },
+  {
+    "word": "permit",
+    "pos": "v.",
+    "pronunciation": "เพอร์-มิต",
+    "meaning": "อนุญาต",
+    "example": "Smoking is not permitted here."
+  },
+  {
+    "word": "persuade",
+    "pos": "v.",
+    "pronunciation": "เพอร์-สเวด",
+    "meaning": "โน้มน้าว",
+    "example": "He persuaded me to join."
+  },
+  {
+    "word": "photograph",
+    "pos": "v.",
+    "pronunciation": "โฟ-โต-กราฟ",
+    "meaning": "ถ่ายรูป",
+    "example": "I photograph nature."
+  },
+  {
+    "word": "pick",
+    "pos": "v.",
+    "pronunciation": "พิค",
+    "meaning": "เก็บ",
+    "example": "She picks flowers."
+  },
+  {
+    "word": "place",
+    "pos": "v.",
+    "pronunciation": "เพลส",
+    "meaning": "วาง",
+    "example": "Place the book on the table."
+  },
+  {
+    "word": "plan",
+    "pos": "v.",
+    "pronunciation": "แปลน",
+    "meaning": "วางแผน",
+    "example": "We plan a trip tomorrow."
+  },
+  {
+    "word": "play",
+    "pos": "v.",
+    "pronunciation": "เพลย์",
+    "meaning": "เล่น",
+    "example": "Children play outside."
+  },
+  {
+    "word": "point",
+    "pos": "v.",
+    "pronunciation": "พ้อยท์",
+    "meaning": "ชี้",
+    "example": "He points to the map."
+  },
+  {
+    "word": "pollute",
+    "pos": "v.",
+    "pronunciation": "โพล-ลูท",
+    "meaning": "ทำให้สกปรก",
+    "example": "Factories pollute the river."
+  },
+  {
+    "word": "prefer",
+    "pos": "v.",
+    "pronunciation": "พรี-เฟอร์",
+    "meaning": "ชอบมากกว่า",
+    "example": "I prefer tea to coffee."
+  },
+  {
+    "word": "prepare",
+    "pos": "v.",
+    "pronunciation": "พรี-แพร์",
+    "meaning": "เตรียม",
+    "example": "Prepare your homework."
+  },
+  {
+    "word": "present",
+    "pos": "v.",
+    "pronunciation": "พรี-เซนต์",
+    "meaning": "นำเสนอ",
+    "example": "She presents her ideas."
+  },
+  {
+    "word": "preserve",
+    "pos": "v.",
+    "pronunciation": "พรี-เซิร์ฟฟ",
+    "meaning": "อนุรักษ์",
+    "example": "We must preserve nature."
+  },
+  {
+    "word": "prevent",
+    "pos": "v.",
+    "pronunciation": "พรี-เวนท์",
+    "meaning": "ป้องกัน",
+    "example": "Wear a helmet to prevent injury."
+  },
+  {
+    "word": "print",
+    "pos": "v.",
+    "pronunciation": "พริ้นท์",
+    "meaning": "พิมพ์",
+    "example": "Please print your name."
+  },
+  {
+    "word": "produce",
+    "pos": "v.",
+    "pronunciation": "โพร-ดิวซ",
+    "meaning": "ผลิต",
+    "example": "They produce cars."
+  },
+  {
+    "word": "program",
+    "pos": "v.",
+    "pronunciation": "โพร-แกรม",
+    "meaning": "จัดโปรแกรม",
+    "example": "He programs computers."
+  },
+  {
+    "word": "protect",
+    "pos": "v.",
+    "pronunciation": "โพร-เท็คท์",
+    "meaning": "ปกป้อง",
+    "example": "We protect the environment."
+  },
+  {
+    "word": "prove",
+    "pos": "v.",
+    "pronunciation": "พรูฟ",
+    "meaning": "พิสูจน์",
+    "example": "She proved her point."
+  },
+  {
+    "word": "provide",
+    "pos": "v.",
+    "pronunciation": "โพร-ไวด์",
+    "meaning": "จัดหาให้",
+    "example": "They provide food."
+  },
+  {
+    "word": "publish",
+    "pos": "v.",
+    "pronunciation": "พับ-ลิช",
+    "meaning": "ตีพิมพ์",
+    "example": "He publishes a book."
+  },
+  {
+    "word": "pull",
+    "pos": "v.",
+    "pronunciation": "พูล",
+    "meaning": "ดึง",
+    "example": "Pull the door open."
+  },
+  {
+    "word": "punish",
+    "pos": "v.",
+    "pronunciation": "พั๊น-นิช",
+    "meaning": "ลงโทษ",
+    "example": "The teacher punished him."
+  },
+  {
+    "word": "purchase",
+    "pos": "v.",
+    "pronunciation": "เพอ-เชส",
+    "meaning": "ซื้อ",
+    "example": "I purchase a new phone."
+  },
+  {
+    "word": "push",
+    "pos": "v.",
+    "pronunciation": "พุช",
+    "meaning": "ผลัก",
+    "example": "Push the box."
+  },
+  {
+    "word": "qualify",
+    "pos": "v.",
+    "pronunciation": "ควอล-ลิ-ไฟ",
+    "meaning": "มีคุณสมบัติ",
+    "example": "She qualifies for the exam."
+  },
+  {
+    "word": "question",
+    "pos": "v.",
+    "pronunciation": "เควส-เชิน",
+    "meaning": "ตั้งคำถาม",
+    "example": "They questioned the witness."
+  },
+  {
+    "word": "quit",
+    "pos": "v.",
+    "pronunciation": "ควิท",
+    "meaning": "เลิก",
+    "example": "He quit smoking."
+  },
+  {
+    "word": "quote",
+    "pos": "v.",
+    "pronunciation": "โควท",
+    "meaning": "อ้างคำพูด",
+    "example": "She quoted a famous author."
+  },
+  {
+    "word": "race",
+    "pos": "v.",
+    "pronunciation": "เรซ",
+    "meaning": "แข่งขัน",
+    "example": "They race every weekend."
+  },
+  {
+    "word": "raise",
+    "pos": "v.",
+    "pronunciation": "เรซ",
+    "meaning": "ยกขึ้น",
+    "example": "Please raise your hand."
+  },
+  {
+    "word": "reach",
+    "pos": "v.",
+    "pronunciation": "รีช",
+    "meaning": "ไปถึง",
+    "example": "We reached the station."
+  },
+  {
+    "word": "read",
+    "pos": "v.",
+    "pronunciation": "รีด",
+    "meaning": "อ่าน",
+    "example": "I read a book."
+  },
+  {
+    "word": "realize",
+    "pos": "v.",
+    "pronunciation": "รี-อะ-ไลซ์",
+    "meaning": "ตระหนัก",
+    "example": "I realize my mistake."
+  },
+  {
+    "word": "receive",
+    "pos": "v.",
+    "pronunciation": "รี-ซีฟ",
+    "meaning": "ได้รับ",
+    "example": "She received a letter."
+  },
+  {
+    "word": "recognize",
+    "pos": "v.",
+    "pronunciation": "เร็ค-อะ-ไนซ์",
+    "meaning": "จำได้",
+    "example": "I recognize him."
+  },
+  {
+    "word": "recommend",
+    "pos": "v.",
+    "pronunciation": "เร็ค-อะ-เม็นด์",
+    "meaning": "แนะนำ",
+    "example": "I recommend this book."
+  },
+  {
+    "word": "record",
+    "pos": "v.",
+    "pronunciation": "รี-คอร์ด",
+    "meaning": "บันทึก",
+    "example": "He records videos."
+  },
+  {
+    "word": "reduce",
+    "pos": "v.",
+    "pronunciation": "รี-ดิวซ",
+    "meaning": "ลด",
+    "example": "We must reduce waste."
+  },
+  {
+    "word": "refer",
+    "pos": "v.",
+    "pronunciation": "รี-เฟอร์",
+    "meaning": "อ้างอิง",
+    "example": "Please refer to the guide."
+  },
+  {
+    "word": "reflect",
+    "pos": "v.",
+    "pronunciation": "รี-เฟลคท์",
+    "meaning": "สะท้อน",
+    "example": "The mirror reflects light."
+  },
+  {
+    "word": "refuse",
+    "pos": "v.",
+    "pronunciation": "รี-ฟิวส",
+    "meaning": "ปฏิเสธ",
+    "example": "I refuse to go."
+  },
+  {
+    "word": "regret",
+    "pos": "v.",
+    "pronunciation": "รี-เกรท",
+    "meaning": "เสียใจ",
+    "example": "I regret my decision."
+  },
+  {
+    "word": "relax",
+    "pos": "v.",
+    "pronunciation": "รี-แลกซ์",
+    "meaning": "ผ่อนคลาย",
+    "example": "Let's relax after work."
+  },
+  {
+    "word": "release",
+    "pos": "v.",
+    "pronunciation": "รี-ลีส",
+    "meaning": "ปล่อย",
+    "example": "They release the birds."
+  },
+  {
+    "word": "remain",
+    "pos": "v.",
+    "pronunciation": "รี-เมน",
+    "meaning": "ยังคงอยู่",
+    "example": "He remains silent."
+  },
+  {
+    "word": "remember",
+    "pos": "v.",
+    "pronunciation": "รี-เม็ม-เบอร์",
+    "meaning": "จำได้",
+    "example": "Remember to study."
+  },
+  {
+    "word": "remove",
+    "pos": "v.",
+    "pronunciation": "รี-มูฟ",
+    "meaning": "เอาออก",
+    "example": "Remove your shoes."
+  },
+  {
+    "word": "repair",
+    "pos": "v.",
+    "pronunciation": "รี-แพร์",
+    "meaning": "ซ่อมแซม",
+    "example": "He repairs cars."
+  },
+  {
+    "word": "repeat",
+    "pos": "v.",
+    "pronunciation": "รี-พีท",
+    "meaning": "ทำซ้ำ",
+    "example": "Please repeat the question."
+  },
+  {
+    "word": "replace",
+    "pos": "v.",
+    "pronunciation": "รี-เพลส",
+    "meaning": "แทนที่",
+    "example": "Replace the old bulbs."
+  },
+  {
+    "word": "reply",
+    "pos": "v.",
+    "pronunciation": "รี-พลาย",
+    "meaning": "ตอบกลับ",
+    "example": "I replied to his email."
+  },
+  {
+    "word": "report",
+    "pos": "v.",
+    "pronunciation": "รี-พอร์ท",
+    "meaning": "รายงาน",
+    "example": "She reports the news."
+  },
+  {
+    "word": "represent",
+    "pos": "v.",
+    "pronunciation": "เร็พ-รี-เซนท",
+    "meaning": "เป็นตัวแทน",
+    "example": "He represents the company."
+  },
+  {
+    "word": "require",
+    "pos": "v.",
+    "pronunciation": "รี-ไควร์",
+    "meaning": "ต้องการ",
+    "example": "This job requires skill."
+  },
+  {
+    "word": "rescue",
+    "pos": "v.",
+    "pronunciation": "เรส-คิว",
+    "meaning": "ช่วยเหลือ",
+    "example": "They rescued the cat."
+  },
+  {
+    "word": "research",
+    "pos": "v.",
+    "pronunciation": "รี-เซิร์ช",
+    "meaning": "ค้นคว้า",
+    "example": "Students research the topic."
+  },
+  {
+    "word": "reserve",
+    "pos": "v.",
+    "pronunciation": "รี-เซิร์ฟ",
+    "meaning": "จอง",
+    "example": "I reserve a seat."
+  },
+  {
+    "word": "resist",
+    "pos": "v.",
+    "pronunciation": "รี-ซิสท",
+    "meaning": "ต้านทาน",
+    "example": "She resists temptation."
+  },
+  {
+    "word": "resolve",
+    "pos": "v.",
+    "pronunciation": "รี-ซอลฟ์",
+    "meaning": "แก้ไข",
+    "example": "We resolve the problem."
+  },
+  {
+    "word": "respect",
+    "pos": "v.",
+    "pronunciation": "รี-สเปคท์",
+    "meaning": "เคารพ",
+    "example": "Respect your teachers."
+  },
+  {
+    "word": "respond",
+    "pos": "v.",
+    "pronunciation": "รี-สปอนด์",
+    "meaning": "ตอบสนอง",
+    "example": "He responds quickly."
+  },
+  {
+    "word": "restore",
+    "pos": "v.",
+    "pronunciation": "รี-สตอร์",
+    "meaning": "ฟื้นฟู",
+    "example": "They restore old buildings."
+  },
+  {
+    "word": "result",
+    "pos": "v.",
+    "pronunciation": "รี-ซัลท",
+    "meaning": "ส่งผล",
+    "example": "Hard work results in success."
+  },
+  {
+    "word": "retire",
+    "pos": "v.",
+    "pronunciation": "รี-ไทร์",
+    "meaning": "เกษียณ",
+    "example": "He will retire next year."
+  },
+  {
+    "word": "return",
+    "pos": "v.",
+    "pronunciation": "รี-เทิร์น",
+    "meaning": "กลับมา",
+    "example": "She returns home."
+  },
+  {
+    "word": "reveal",
+    "pos": "v.",
+    "pronunciation": "รี-วีล",
+    "meaning": "เปิดเผย",
+    "example": "He reveals the secret."
+  },
+  {
+    "word": "review",
+    "pos": "v.",
+    "pronunciation": "รี-วิว",
+    "meaning": "ทบทวน",
+    "example": "Let's review the lesson."
+  },
+  {
+    "word": "reward",
+    "pos": "v.",
+    "pronunciation": "รี-วอร์ด",
+    "meaning": "ให้รางวัล",
+    "example": "She rewarded the winners."
+  },
+  {
+    "word": "ride",
+    "pos": "v.",
+    "pronunciation": "ไรด์",
+    "meaning": "ขี่",
+    "example": "I ride a bicycle."
+  },
+  {
+    "word": "ring",
+    "pos": "v.",
+    "pronunciation": "ริง",
+    "meaning": "โทรศัพท์ดัง",
+    "example": "The phone rings."
+  },
+  {
+    "word": "rise",
+    "pos": "v.",
+    "pronunciation": "ไรซ์",
+    "meaning": "ขึ้น",
+    "example": "The sun rises in the east."
+  },
+  {
+    "word": "risk",
+    "pos": "v.",
+    "pronunciation": "ริสก์",
+    "meaning": "เสี่ยง",
+    "example": "Don't risk your life."
+  },
+  {
+    "word": "roll",
+    "pos": "v.",
+    "pronunciation": "โรล",
+    "meaning": "กลิ้ง",
+    "example": "Roll the ball."
+  },
+  {
+    "word": "rotate",
+    "pos": "v.",
+    "pronunciation": "โร-เทท",
+    "meaning": "หมุน",
+    "example": "The earth rotates."
+  },
+  {
+    "word": "rub",
+    "pos": "v.",
+    "pronunciation": "รับ",
+    "meaning": "ถู",
+    "example": "Rub your hands."
+  },
+  {
+    "word": "rule",
+    "pos": "v.",
+    "pronunciation": "รูล",
+    "meaning": "ปกครอง",
+    "example": "Kings rule countries."
+  },
+  {
+    "word": "run",
+    "pos": "v.",
+    "pronunciation": "รัน",
+    "meaning": "วิ่ง",
+    "example": "I run every morning."
+  },
+  {
+    "word": "rush",
+    "pos": "v.",
+    "pronunciation": "รัช",
+    "meaning": "รีบ",
+    "example": "Don't rush."
+  },
+  {
+    "word": "sacrifice",
+    "pos": "v.",
+    "pronunciation": "แซค-ริ-ไฟซ์",
+    "meaning": "สละ",
+    "example": "He sacrifices his time."
+  },
+  {
+    "word": "sail",
+    "pos": "v.",
+    "pronunciation": "เซล",
+    "meaning": "แล่นเรือ",
+    "example": "They sail across the sea."
+  },
+  {
+    "word": "save",
+    "pos": "v.",
+    "pronunciation": "เซฟ",
+    "meaning": "ช่วย",
+    "example": "Save the animals."
+  },
+  {
+    "word": "say",
+    "pos": "v.",
+    "pronunciation": "เซย์",
+    "meaning": "พูด",
+    "example": "What did you say?"
+  },
+  {
+    "word": "search",
+    "pos": "v.",
+    "pronunciation": "เซิร์ช",
+    "meaning": "ค้นหา",
+    "example": "Search for your keys."
+  },
+  {
+    "word": "see",
+    "pos": "v.",
+    "pronunciation": "ซี",
+    "meaning": "เห็น",
+    "example": "I see a bird."
+  },
+  {
+    "word": "sell",
+    "pos": "v.",
+    "pronunciation": "เซล",
+    "meaning": "ขาย",
+    "example": "They sell fruits."
+  },
+  {
+    "word": "send",
+    "pos": "v.",
+    "pronunciation": "เซ็นด์",
+    "meaning": "ส่ง",
+    "example": "Please send me a letter."
+  },
+  {
+    "word": "separate",
+    "pos": "v.",
+    "pronunciation": "เซ็พ-อะ-เรท",
+    "meaning": "แยก",
+    "example": "Separate the books by color."
+  },
+  {
+    "word": "serve",
+    "pos": "v.",
+    "pronunciation": "เซิร์ฟ",
+    "meaning": "ให้บริการ",
+    "example": "He serves food."
+  },
+  {
+    "word": "set",
+    "pos": "v.",
+    "pronunciation": "เซ็ท",
+    "meaning": "ตั้ง",
+    "example": "Set the table."
+  },
+  {
+    "word": "settle",
+    "pos": "v.",
+    "pronunciation": "เซ็ท-เทิล",
+    "meaning": "ตั้งถิ่นฐาน",
+    "example": "They settled in the city."
+  },
+  {
+    "word": "shake",
+    "pos": "v.",
+    "pronunciation": "เชค",
+    "meaning": "เขย่า",
+    "example": "Shake the bottle."
+  },
+  {
+    "word": "share",
+    "pos": "v.",
+    "pronunciation": "แชร์",
+    "meaning": "แบ่งปัน",
+    "example": "Share your toys."
+  },
+  {
+    "word": "shoot",
+    "pos": "v.",
+    "pronunciation": "ชูท",
+    "meaning": "ยิง",
+    "example": "He shoots the ball."
+  },
+  {
+    "word": "show",
+    "pos": "v.",
+    "pronunciation": "โชว์",
+    "meaning": "แสดง",
+    "example": "She shows her art."
+  },
+  {
+    "word": "shut",
+    "pos": "v.",
+    "pronunciation": "ชัท",
+    "meaning": "ปิด",
+    "example": "Shut the window."
+  },
+  {
+    "word": "sign",
+    "pos": "v.",
+    "pronunciation": "ไซน์",
+    "meaning": "เซ็นชื่อ",
+    "example": "Please sign here."
+  },
+  {
+    "word": "sing",
+    "pos": "v.",
+    "pronunciation": "ซิง",
+    "meaning": "ร้องเพลง",
+    "example": "They sing well."
+  },
+  {
+    "word": "sink",
+    "pos": "v.",
+    "pronunciation": "ซิงค์",
+    "meaning": "จม",
+    "example": "The ship sinks."
+  },
+  {
+    "word": "sit",
+    "pos": "v.",
+    "pronunciation": "ซิท",
+    "meaning": "นั่ง",
+    "example": "Sit on the chair."
+  },
+  {
+    "word": "ski",
+    "pos": "v.",
+    "pronunciation": "สกี",
+    "meaning": "เล่นสกี",
+    "example": "We ski in winter."
+  },
+  {
+    "word": "sleep",
+    "pos": "v.",
+    "pronunciation": "สลีพ",
+    "meaning": "นอนหลับ",
+    "example": "I sleep eight hours."
+  },
+  {
+    "word": "slide",
+    "pos": "v.",
+    "pronunciation": "สไลด์",
+    "meaning": "เลื่อน",
+    "example": "The children slide down."
+  },
+  {
+    "word": "smell",
+    "pos": "v.",
+    "pronunciation": "สเมล",
+    "meaning": "ได้กลิ่น",
+    "example": "I smell flowers."
+  },
+  {
+    "word": "smile",
+    "pos": "v.",
+    "pronunciation": "สไมล์",
+    "meaning": "ยิ้ม",
+    "example": "She smiles happily."
+  },
+  {
+    "word": "solve",
+    "pos": "v.",
+    "pronunciation": "ซอลฟ์",
+    "meaning": "แก้ปัญหา",
+    "example": "Solve the puzzle."
+  },
+  {
+    "word": "sort",
+    "pos": "v.",
+    "pronunciation": "ซอร์ท",
+    "meaning": "จัดเรียง",
+    "example": "Sort the papers."
+  },
+  {
+    "word": "sound",
+    "pos": "v.",
+    "pronunciation": "เซานด์",
+    "meaning": "ส่งเสียง",
+    "example": "The bell sounds."
+  },
+  {
+    "word": "spend",
+    "pos": "v.",
+    "pronunciation": "สเป็นด์",
+    "meaning": "ใช้จ่าย",
+    "example": "I spend money wisely."
+  },
+  {
+    "word": "spill",
+    "pos": "v.",
+    "pronunciation": "สปิล",
+    "meaning": "หก",
+    "example": "Don't spill the water."
+  },
+  {
+    "word": "spin",
+    "pos": "v.",
+    "pronunciation": "สปิน",
+    "meaning": "หมุน",
+    "example": "The top spins."
+  },
+  {
+    "word": "split",
+    "pos": "v.",
+    "pronunciation": "สปลิท",
+    "meaning": "แยก",
+    "example": "Split the cake."
+  },
+  {
+    "word": "spread",
+    "pos": "v.",
+    "pronunciation": "สเปรด",
+    "meaning": "แพร่กระจาย",
+    "example": "Spread the news."
+  },
+  {
+    "word": "stand",
+    "pos": "v.",
+    "pronunciation": "สแตนด์",
+    "meaning": "ยืน",
+    "example": "Stand up, please."
+  },
+  {
+    "word": "start",
+    "pos": "v.",
+    "pronunciation": "สตาร์ท",
+    "meaning": "เริ่มต้น",
+    "example": "Start the game."
+  },
+  {
+    "word": "stay",
+    "pos": "v.",
+    "pronunciation": "สเตย์",
+    "meaning": "พักอยู่",
+    "example": "Stay here."
+  },
+  {
+    "word": "steal",
+    "pos": "v.",
+    "pronunciation": "สทีล",
+    "meaning": "ขโมย",
+    "example": "He steals money."
+  },
+  {
+    "word": "stick",
+    "pos": "v.",
+    "pronunciation": "สติก",
+    "meaning": "ติด",
+    "example": "Stick the paper here."
+  },
+  {
+    "word": "stop",
+    "pos": "v.",
+    "pronunciation": "สต็อป",
+    "meaning": "หยุด",
+    "example": "Stop the car."
+  },
+  {
+    "word": "study",
+    "pos": "v.",
+    "pronunciation": "สตัด-ดี",
+    "meaning": "เรียน",
+    "example": "I study English."
+  },
+  {
+    "word": "succeed",
+    "pos": "v.",
+    "pronunciation": "ซัค-ซีด",
+    "meaning": "ประสบความสำเร็จ",
+    "example": "She succeeds in exams."
+  },
+  {
+    "word": "suffer",
+    "pos": "v.",
+    "pronunciation": "ซัฟ-เฟอร์",
+    "meaning": "ทุกข์ทรมาน",
+    "example": "He suffers from pain."
+  },
+  {
+    "word": "suggest",
+    "pos": "v.",
+    "pronunciation": "ซัค-เจสต์",
+    "meaning": "แนะนำ",
+    "example": "I suggest a break."
+  },
+  {
+    "word": "sum",
+    "pos": "v.",
+    "pronunciation": "ซัม",
+    "meaning": "รวม",
+    "example": "Sum the numbers."
+  },
+  {
+    "word": "supply",
+    "pos": "v.",
+    "pronunciation": "ซัพ-พลาย",
+    "meaning": "จัดหา",
+    "example": "They supply water."
+  },
+  {
+    "word": "support",
+    "pos": "v.",
+    "pronunciation": "ซัพ-พอร์ต",
+    "meaning": "สนับสนุน",
+    "example": "I support your idea."
+  },
+  {
+    "word": "survive",
+    "pos": "v.",
+    "pronunciation": "เซอร์-ไวฟ์",
+    "meaning": "รอดชีวิต",
+    "example": "They survive the accident."
+  },
+  {
+    "word": "switch",
+    "pos": "v.",
+    "pronunciation": "สวิตช์",
+    "meaning": "สลับ",
+    "example": "Switch the light on."
+  },
+  {
+    "word": "take",
+    "pos": "v.",
+    "pronunciation": "เทค",
+    "meaning": "เอา",
+    "example": "Take an apple."
+  },
+  {
+    "word": "talk",
+    "pos": "v.",
+    "pronunciation": "ทอล์ค",
+    "meaning": "พูดคุย",
+    "example": "We talk every day."
+  },
+  {
+    "word": "teach",
+    "pos": "v.",
+    "pronunciation": "ทีช",
+    "meaning": "สอน",
+    "example": "She teaches math."
+  },
+  {
+    "word": "tell",
+    "pos": "v.",
+    "pronunciation": "เทล",
+    "meaning": "บอก",
+    "example": "Tell me the truth."
+  },
+  {
+    "word": "test",
+    "pos": "v.",
+    "pronunciation": "เทสต์",
+    "meaning": "ทดสอบ",
+    "example": "We test the machine."
+  },
+  {
+    "word": "thank",
+    "pos": "v.",
+    "pronunciation": "แธงค์",
+    "meaning": "ขอบคุณ",
+    "example": "Thank you very much."
+  },
+  {
+    "word": "think",
+    "pos": "v.",
+    "pronunciation": "ธิงค์",
+    "meaning": "คิด",
+    "example": "I think it's right."
+  },
+  {
+    "word": "throw",
+    "pos": "v.",
+    "pronunciation": "โธว์",
+    "meaning": "ขว้าง",
+    "example": "Throw the ball."
+  },
+  {
+    "word": "touch",
+    "pos": "v.",
+    "pronunciation": "ทัช",
+    "meaning": "สัมผัส",
+    "example": "Don't touch that."
+  },
+  {
+    "word": "train",
+    "pos": "v.",
+    "pronunciation": "เทรน",
+    "meaning": "ฝึกฝน",
+    "example": "They train hard."
+  },
+  {
+    "word": "translate",
+    "pos": "v.",
+    "pronunciation": "ทรานส-เลท",
+    "meaning": "แปล",
+    "example": "Translate this sentence."
+  },
+  {
+    "word": "travel",
+    "pos": "v.",
+    "pronunciation": "แทรฟ-เฟิล",
+    "meaning": "เดินทาง",
+    "example": "I travel to Japan."
+  },
+  {
+    "word": "treat",
+    "pos": "v.",
+    "pronunciation": "ทรีท",
+    "meaning": "ปฏิบัติ",
+    "example": "Treat others kindly."
+  },
+  {
+    "word": "try",
+    "pos": "v.",
+    "pronunciation": "ทราย",
+    "meaning": "พยายาม",
+    "example": "Try your best."
+  },
+  {
+    "word": "turn",
+    "pos": "v.",
+    "pronunciation": "เทิร์น",
+    "meaning": "หมุน",
+    "example": "Turn left."
+  },
+  {
+    "word": "type",
+    "pos": "v.",
+    "pronunciation": "ไทป์",
+    "meaning": "พิมพ์",
+    "example": "Type your name."
+  },
+  {
+    "word": "understand",
+    "pos": "v.",
+    "pronunciation": "อัน-เดอร์-สแทนด์",
+    "meaning": "เข้าใจ",
+    "example": "I understand the lesson."
+  },
+  {
+    "word": "use",
+    "pos": "v.",
+    "pronunciation": "ยูส",
+    "meaning": "ใช้",
+    "example": "Use a pencil."
+  },
+  {
+    "word": "visit",
+    "pos": "v.",
+    "pronunciation": "วิซ-ิท",
+    "meaning": "เยี่ยมเยียน",
+    "example": "I visit my friend."
+  },
+  {
+    "word": "wait",
+    "pos": "v.",
+    "pronunciation": "เวท",
+    "meaning": "รอ",
+    "example": "Wait for me."
+  },
+  {
+    "word": "walk",
+    "pos": "v.",
+    "pronunciation": "วอล์ค",
+    "meaning": "เดิน",
+    "example": "I walk to school."
+  },
+  {
+    "word": "want",
+    "pos": "v.",
+    "pronunciation": "วอนท์",
+    "meaning": "ต้องการ",
+    "example": "I want a new bike."
+  },
+  {
+    "word": "watch",
+    "pos": "v.",
+    "pronunciation": "วอช",
+    "meaning": "ดู",
+    "example": "Watch TV."
+  },
+  {
+    "word": "win",
+    "pos": "v.",
+    "pronunciation": "วิน",
+    "meaning": "ชนะ",
+    "example": "She wins the race."
+  },
+  {
+    "word": "wish",
+    "pos": "v.",
+    "pronunciation": "วิช",
+    "meaning": "ปรารถนา",
+    "example": "I wish for peace."
+  },
+  {
+    "word": "work",
+    "pos": "v.",
+    "pronunciation": "เวิร์ค",
+    "meaning": "ทำงาน",
+    "example": "I work every day."
+  },
+  {
+    "word": "worry",
+    "pos": "v.",
+    "pronunciation": "วอร์-รี",
+    "meaning": "กังวล",
+    "example": "Don't worry about it."
+  },
+  {
+    "word": "write",
+    "pos": "v.",
+    "pronunciation": "ไรท์",
+    "meaning": "เขียน",
+    "example": "Write your name."
+  },
+  {
+    "word": "yawn",
+    "pos": "v.",
+    "pronunciation": "ยอน",
+    "meaning": "หาว",
+    "example": "I yawn when I'm tired."
+  },
+  {
+    "word": "yell",
+    "pos": "v.",
+    "pronunciation": "เยลล์",
+    "meaning": "ตะโกน",
+    "example": "Don't yell at me."
+  },
+  {
+    "word": "yield",
+    "pos": "v.",
+    "pronunciation": "เยลด์",
+    "meaning": "ยอมแพ้",
+    "example": "They yield to the enemy."
+  },
+  {
+    "word": "zip",
+    "pos": "v.",
+    "pronunciation": "ซิป",
+    "meaning": "รูดซิป",
+    "example": "Zip up your jacket."
+  },
+  {
+    "word": "zoom",
+    "pos": "v.",
+    "pronunciation": "ซูม",
+    "meaning": "ซูมเข้า",
+    "example": "Zoom in on the picture."
+  }
+]

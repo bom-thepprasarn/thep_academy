@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses — KHAM</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8D5A3;--gold-pale:#FAF5E9;--ink:#1A1714;--ink-soft:#3D3830;--ink-muted:#8A837A;--white:#FDFBF7;--line:rgba(201,168,76,0.2);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 60px;background:rgba(253,251,247,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:padding 0.3s;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:0.18em;color:var(--ink);text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:13px;color:var(--ink-soft);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+.lang-btn{padding:6px 14px;cursor:pointer;border:none;background:transparent;color:var(--ink-muted);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;transition:all 0.2s;}
+.lang-btn.active{background:var(--gold);color:var(--white);}
+.nav-cta{padding:10px 24px;background:var(--ink);color:var(--white);border:none;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.2s;}
+.nav-cta:hover{background:var(--gold);transform:translateY(-1px);}
+.page-header{padding:140px 60px 80px;border-bottom:1px solid var(--line);}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.eyebrow-line{width:24px;height:1px;background:var(--gold);}
+.eyebrow-text{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,72px);font-weight:300;line-height:1.1;color:var(--ink);}
+.page-title em{font-style:italic;color:var(--gold);}
+.page-sub{font-size:16px;font-weight:300;color:var(--ink-soft);line-height:1.7;max-width:560px;margin-top:20px;}
+.section{padding:80px 60px;}
+.section-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3vw,48px);font-weight:300;color:var(--ink);margin-bottom:48px;}
+.section-title em{font-style:italic;color:var(--gold);}
+.course-card{border:1px solid var(--line);margin-bottom:2px;overflow:hidden;}
+.course-header{padding:36px 40px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:background 0.2s;}
+.course-header:hover{background:var(--gold-pale);}
+.course-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;}
+.badge-live{background:rgba(201,168,76,0.15);color:var(--gold);}
+.badge-soon{background:rgba(138,131,122,0.1);color:var(--ink-muted);}
+.course-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--ink);}
+.course-meta{font-size:13px;color:var(--ink-muted);margin-top:4px;}
+.course-arrow{font-size:20px;color:var(--gold);transition:transform 0.3s;}
+.course-body{padding:0 40px 40px;display:none;}
+.course-body.open{display:block;}
+.modules-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px;}
+.module{padding:24px;border:1px solid var(--line);border-radius:4px;}
+.module-num{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px;}
+.module-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--ink);margin-bottom:8px;}
+.module-desc{font-size:13px;color:var(--ink-muted);line-height:1.6;}
+.course-info-bar{background:var(--ink);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-radius:4px;}
+.course-info-text{font-size:13px;color:rgba(253,251,247,0.7);}
+.btn-join{padding:10px 24px;background:var(--gold);color:var(--white);border-radius:4px;font-size:13px;font-weight:500;text-decoration:none;transition:background 0.2s;}
+.btn-join:hover{background:#b8973a;}
+.coming-soon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+.coming-card{background:var(--white);padding:40px;transition:background 0.2s;}
+.coming-card:hover{background:var(--gold-pale);}
+.coming-icon{font-size:32px;margin-bottom:16px;display:block;}
+.coming-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);margin-bottom:8px;}
+.coming-desc{font-size:13px;color:var(--ink-muted);line-height:1.6;}
+.coming-tag{display:inline-block;margin-top:12px;padding:4px 12px;background:rgba(138,131,122,0.1);border-radius:20px;font-size:11px;color:var(--ink-muted);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+footer{border-top:1px solid var(--line);}
+.footer-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding:60px 60px 40px;border-bottom:1px solid var(--line);}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:0.15em;color:var(--ink);margin-bottom:12px;}
+.footer-logo span{color:var(--gold);}
+.footer-col-title{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-muted);font-weight:500;margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:13px;color:var(--ink-soft);text-decoration:none;}
+.footer-links a:hover{color:var(--gold);}
+.footer-bottom{padding:20px 60px;display:flex;align-items:center;justify-content:space-between;}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.8s,transform 0.8s;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:900px){nav{padding:20px 24px;}.nav-links{display:none;}.page-header{padding:100px 24px 60px;}.section{padding:60px 24px;}.modules-grid{grid-template-columns:1fr;}.coming-soon-grid{grid-template-columns:1fr;}.footer-main{grid-template-columns:1fr 1fr;padding:40px 24px;}.footer-bottom{padding:20px 24px;flex-direction:column;gap:8px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">KH<span>A</span>M</a>
+  <div class="nav-links">
+    <a href="index.html" data-en="Home" data-th="หน้าแรก">Home</a>
+    <a href="courses.html" class="active" data-en="Courses" data-th="คอร์สเรียน">Courses</a>
+    <a href="about.html" data-en="About" data-th="เกี่ยวกับเรา">About</a>
+    <a href="join.html" data-en="Join" data-th="ลงทะเบียน">Join</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('th')">TH</button>
+    </div>
+    <a href="join.html" class="nav-cta" data-en="Get Early Access" data-th="ลงทะเบียนก่อนใคร">Get Early Access</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text" data-en="What we teach" data-th="วิชาที่สอน">What we teach</span></div>
+  <h1 class="page-title" data-en="Courses built for<br><em>real Thai students.</em>" data-th="คอร์สที่สร้างขึ้น<br><em>เพื่อเด็กไทยจริงๆ</em>">Courses built for<br><em>real Thai students.</em></h1>
+  <p class="page-sub" data-en="Starting with Everyday English — free for opening members. More subjects coming soon." data-th="เริ่มจากภาษาอังกฤษในชีวิตจริง ฟรีสำหรับสมาชิกช่วงเปิดตัว วิชาอื่นๆ กำลังตามมา">Starting with Everyday English — free for opening members. More subjects coming soon.</p>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text" data-en="Available now" data-th="เปิดสอนแล้ว">Available now</span></div>
+  <h2 class="section-title" data-en="<em>Everyday English</em>" data-th="<em>ภาษาอังกฤษในชีวิตจริง</em>"><em>Everyday English</em></h2>
+
+  <div class="course-card">
+    <div class="course-header" onclick="toggleCourse(this)">
+      <div>
+        <div class="course-badge badge-live" data-en="🎉 Free for Opening" data-th="🎉 ฟรีช่วงเปิดตัว">🎉 Free for Opening</div>
+        <div class="course-name" data-en="Everyday English" data-th="ภาษาอังกฤษในชีวิตจริง">Everyday English</div>
+        <div class="course-meta" data-en="4 modules · 10–15 min per lesson · Certificate included" data-th="4 โมดูล · 10–15 นาทีต่อ lesson · มีใบรับรอง">4 modules · 10–15 min per lesson · Certificate included</div>
+      </div>
+      <div class="course-arrow">↓</div>
+    </div>
+    <div class="course-body open">
+      <div class="modules-grid">
+        <div class="module">
+          <div class="module-num" data-en="Module 1" data-th="โมดูล 1">Module 1</div>
+          <div class="module-title" data-en="Speaking with Confidence" data-th="พูดภาษาอังกฤษอย่างมั่นใจ">Speaking with Confidence</div>
+          <div class="module-desc" data-en="Everyday phrases and small talk that actually get used — not textbook English." data-th="ประโยคที่ใช้จริงในชีวิต ไม่ใช่ภาษาในหนังสือเรียน">Everyday phrases and small talk that actually get used — not textbook English.</div>
+        </div>
+        <div class="module">
+          <div class="module-num" data-en="Module 2" data-th="โมดูล 2">Module 2</div>
+          <div class="module-title" data-en="Grammar That Actually Matters" data-th="ไวยากรณ์ที่ใช้จริง">Grammar That Actually Matters</div>
+          <div class="module-desc" data-en="The grammar patterns Thai people get wrong most — fixed simply and memorably." data-th="รูปแบบไวยากรณ์ที่คนไทยมักผิดบ่อย แก้ได้ง่ายและจำได้นาน">The grammar patterns Thai people get wrong most — fixed simply and memorably.</div>
+        </div>
+        <div class="module">
+          <div class="module-num" data-en="Module 3" data-th="โมดูล 3">Module 3</div>
+          <div class="module-title" data-en="Listening & Pronunciation" data-th="การฟังและการออกเสียง">Listening & Pronunciation</div>
+          <div class="module-desc" data-en="Train your ear for real English — accents, speed, and natural flow." data-th="ฝึกหูให้คุ้นกับภาษาอังกฤษจริงๆ สำเนียง ความเร็ว และ flow">Train your ear for real English — accents, speed, and natural flow.</div>
+        </div>
+        <div class="module">
+          <div class="module-num" data-en="Module 4" data-th="โมดูล 4">Module 4</div>
+          <div class="module-title" data-en="English for Opportunities" data-th="ภาษาอังกฤษเพื่อโอกาส">English for Opportunities</div>
+          <div class="module-desc" data-en="Job interviews, scholarships, and professional emails — English that opens doors." data-th="สัมภาษณ์งาน สมัครทุน และอีเมลมืออาชีพ">Job interviews, scholarships, and professional emails — English that opens doors.</div>
+        </div>
+      </div>
+      <div class="course-info-bar">
+        <div class="course-info-text" data-en="Free for opening members · Quiz after every module · Certificate on completion" data-th="ฟรีสำหรับสมาชิกช่วงเปิดตัว · Quiz หลังทุกโมดูล · ได้รับใบรับรองเมื่อเรียนจบ">Free for opening members · Quiz after every module · Certificate on completion</div>
+        <a href="join.html" class="btn-join" data-en="Join Free →" data-th="เรียนฟรี →">Join Free →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal" style="padding-top:0;">
+  <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text" data-en="Coming soon" data-th="เร็วๆ นี้">Coming soon</span></div>
+  <h2 class="section-title" data-en="More subjects<br><em>on the way.</em>" data-th="วิชาอื่นๆ<br><em>กำลังมา</em>">More subjects<br><em>on the way.</em></h2>
+  <div class="coming-soon-grid">
+    <div class="coming-card"><span class="coming-icon">📐</span><div class="coming-title" data-en="Mathematics" data-th="คณิตศาสตร์">Mathematics</div><div class="coming-desc" data-en="From core concepts to advanced problem solving for Mathayom students." data-th="จากพื้นฐานสู่การแก้โจทย์ขั้นสูงสำหรับนักเรียน ม.ปลาย">From core concepts to advanced problem solving for Mathayom students.</div><span class="coming-tag" data-en="Coming Soon" data-th="เร็วๆ นี้">Coming Soon</span></div>
+    <div class="coming-card"><span class="coming-icon">⚗️</span><div class="coming-title" data-en="Chemistry" data-th="เคมี">Chemistry</div><div class="coming-desc" data-en="Clear explanations of reactions, bonding, and everything that confused you in class." data-th="อธิบายปฏิกิริยา พันธะ และทุกอย่างที่ทำให้งงในห้องเรียน">Clear explanations of reactions, bonding, and everything that confused you in class.</div><span class="coming-tag" data-en="Coming Soon" data-th="เร็วๆ นี้">Coming Soon</span></div>
+    <div class="coming-card"><span class="coming-icon">🔬</span><div class="coming-title" data-en="Biology" data-th="ชีววิทยา">Biology</div><div class="coming-desc" data-en="Life science made memorable — from cells to ecosystems, simply explained." data-th="วิทยาศาสตร์ชีวิตที่จำได้ง่าย จากเซลล์สู่ระบบนิเวศ">Life science made memorable — from cells to ecosystems, simply explained.</div><span class="coming-tag" data-en="Coming Soon" data-th="เร็วๆ นี้">Coming Soon</span></div>
+    <div class="coming-card"><span class="coming-icon">⚡</span><div class="coming-title" data-en="Physics" data-th="ฟิสิกส์">Physics</div><div class="coming-desc" data-en="Forces, waves, and energy — made intuitive for students who want to truly understand." data-th="แรง คลื่น และพลังงาน เข้าใจจริงไม่ใช่แค่ท่องจำ">Forces, waves, and energy — made intuitive for students who want to truly understand.</div><span class="coming-tag" data-en="Coming Soon" data-th="เร็วๆ นี้">Coming Soon</span></div>
+    <div class="coming-card"><span class="coming-icon">🌏</span><div class="coming-title" data-en="Social Studies" data-th="สังคมศึกษา">Social Studies</div><div class="coming-desc" data-en="History, civics, and geography that connects to the world students actually live in." data-th="ประวัติศาสตร์ หน้าที่พลเมือง และภูมิศาสตร์ที่เชื่อมกับโลกจริงๆ">History, civics, and geography that connects to the world students actually live in.</div><span class="coming-tag" data-en="Coming Soon" data-th="เร็วๆ นี้">Coming Soon</span></div>
+    <div class="coming-card" style="display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:var(--gold-pale);">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);margin-bottom:8px;" data-en="Want a subject added?" data-th="อยากให้เพิ่มวิชาอะไร?">Want a subject added?</div>
+      <div style="font-size:13px;color:var(--ink-muted);margin-bottom:16px;" data-en="Tell us what you need." data-th="บอกเราได้เลย">Tell us what you need.</div>
+      <a href="join.html" style="padding:10px 24px;background:var(--ink);color:var(--white);border-radius:4px;font-size:13px;font-weight:500;text-decoration:none;" data-en="Send a request" data-th="ส่งคำขอ">Send a request</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">
+    <div><div class="footer-logo">KH<span>A</span>M</div><p style="font-size:13px;color:var(--ink-muted);line-height:1.7;max-width:260px;" data-en="Gold for Every Mind." data-th="ทองคำแห่งการเรียนรู้">Gold for Every Mind.</p></div>
+    <div><div class="footer-col-title" data-en="Platform" data-th="แพลตฟอร์ม">Platform</div><div class="footer-links"><a href="courses.html" data-en="Courses" data-th="คอร์สเรียน">Courses</a><a href="about.html" data-en="Instructor" data-th="ผู้สอน">Instructor</a><a href="join.html" data-en="Join Waitlist" data-th="ลงทะเบียน">Join Waitlist</a></div></div>
+    <div><div class="footer-col-title" data-en="Company" data-th="บริษัท">Company</div><div class="footer-links"><a href="about.html" data-en="About Us" data-th="เกี่ยวกับเรา">About Us</a><a href="mailto:hello@khamlearn.com">Contact</a></div></div>
+    <div><div class="footer-col-title" data-en="Legal" data-th="กฎหมาย">Legal</div><div class="footer-links"><a href="#" data-en="Privacy Policy" data-th="นโยบายความเป็นส่วนตัว">Privacy Policy</a><a href="#" data-en="Terms of Service" data-th="ข้อกำหนดการใช้บริการ">Terms of Service</a></div></div>
+  </div>
+  <div class="footer-bottom"><div style="font-size:12px;color:var(--ink-muted);">© 2025 Kham. Bangkok, Thailand.</div><div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--ink-muted);" data-en="Gold for Every Mind." data-th="ทองคำแห่งการเรียนรู้">Gold for Every Mind.</div></div>
+</footer>
+
+<script>
+let currentLang='en';
+function setLang(lang){currentLang=lang;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');document.querySelectorAll('[data-en]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t)el.innerHTML=t;});}
+function toggleCourse(header){const body=header.nextElementSibling;const arrow=header.querySelector('.course-arrow');const isOpen=body.classList.contains('open');body.classList.toggle('open',!isOpen);arrow.style.transform=isOpen?'':'rotate(180deg)';}
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.padding=window.scrollY>40?'16px 60px':'24px 60px';});
+</script>
+</body>
+</html>
