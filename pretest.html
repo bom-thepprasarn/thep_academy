@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pre-test Grammar — Thep Academy</title>
+  <title>Pre-test Grammar | Thep Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/>
@@ -743,7 +743,7 @@
         <div class="lead-top">
           <div class="lead-icon">🎬</div>
           <div>
-            <div class="lead-title">รับคลิปฟรี — 5 จุดตายที่ออกสอบบ่อยที่สุด</div>
+            <div class="lead-title">รับคลิปฟรี: 5 จุดตายที่ออกสอบบ่อยที่สุด</div>
             <div class="lead-sub">พี่บอมสรุปเทคนิคพิชิตข้อสอบ Grammar ให้แบบกระชับ ดูแค่ครั้งเดียวจำได้เลย</div>
           </div>
         </div>
@@ -776,7 +776,7 @@
           <div class="lead-success-box">
             <div class="lead-success-icon">✅</div>
             <div class="lead-success-title">ส่งลิงก์ไปยัง email แล้ว!</div>
-            <div class="lead-success-sub">เช็ค inbox ได้เลยนะครับ — ถ้าไม่เจอลองดูใน Spam ด้วย</div>
+            <div class="lead-success-sub">เช็ค inbox ได้เลยนะครับ ถ้าไม่เจอลองดูใน Spam ด้วย</div>
           </div>
         </div>
       </div>
@@ -3208,7 +3208,7 @@
       "rice"
     ],
     "answer": 3,
-    "explain": "The passage lists dough, tomato sauce, and cheese — not rice"
+    "explain": "The passage lists dough, tomato sauce, and cheese. Rice is not mentioned."
   },
   {
     "topic": "Reading – Food",
@@ -3494,7 +3494,7 @@
       "modern skyscrapers"
     ],
     "answer": 3,
-    "explain": "Skyscrapers are not mentioned — temples, markets, and mountains are"
+    "explain": "Skyscrapers are not mentioned. The text refers to temples, markets, and mountains."
   }
 ];
 
@@ -3588,7 +3588,7 @@
       fb.className = `feedback-box show ${isCorrect ? 'correct' : 'wrong'}`;
       fb.innerHTML = isCorrect
         ? `<strong>✓ ถูกต้อง!</strong>${q.explain}`
-        : `<strong>✗ ไม่ถูกต้อง — คำตอบที่ถูกคือ "${q.options[q.answer]}"</strong>${q.explain}`;
+        : `<strong>✗ ไม่ถูกต้อง คำตอบที่ถูกคือ "${q.options[q.answer]}"</strong>${q.explain}`;
 
       document.getElementById('btn-next').classList.add('show');
     }
@@ -3643,7 +3643,7 @@
       const list = document.getElementById('breakdown-list');
       list.innerHTML = answers.map((a, i) => `
         <div class="breakdown-row">
-          <span class="breakdown-q">ข้อ ${i+1} — ${questions[i].topic}</span>
+          <span class="breakdown-q">ข้อ ${i+1}: ${questions[i].topic}</span>
           <span class="${a.correct ? 'breakdown-a-correct' : 'breakdown-a-wrong'}">
             ${a.correct ? '✓ ถูก' : '✗ ผิด'}
           </span>
