@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tense ทั้ง 12 แบบ — THEP ACADEMY</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0f1f3d;
+  --navy2:#1e3a5f;
+  --orange:#f97316;
+  --orange2:#ea580c;
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --text:#1a202c;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --radius:14px;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+/* ── TOP NAV ── */
+.topbar{background:var(--navy);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3);}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.topbar-brand img{height:36px;border-radius:6px;}
+.topbar-brand span{color:#fff;font-weight:700;font-size:1.1rem;letter-spacing:.5px;}
+.back-btn{color:#fff;text-decoration:none;font-size:.9rem;opacity:.8;display:flex;align-items:center;gap:6px;transition:opacity .2s;}
+.back-btn:hover{opacity:1;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#2d5a8e 100%);color:#fff;padding:48px 24px 36px;text-align:center;}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:10px;}
+.hero p{font-size:1rem;opacity:.85;max-width:500px;margin:0 auto;}
+.tense-count{display:inline-flex;gap:16px;margin-top:20px;flex-wrap:wrap;justify-content:center;}
+.tense-count span{background:rgba(255,255,255,.15);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:600;}
+
+/* ── FILTER TABS ── */
+.filter-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:24px 16px 8px;max-width:900px;margin:0 auto;}
+.filter-btn{padding:7px 18px;border-radius:20px;border:2px solid var(--border);background:#fff;color:var(--muted);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.filter-btn.active,.filter-btn:hover{border-color:var(--orange);color:var(--orange);background:#fff7ed;}
+.filter-btn.active{background:var(--orange);color:#fff;}
+
+/* ── GRID ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;padding:16px 24px 40px;max-width:1200px;margin:0 auto;}
+
+/* ── TENSE CARD ── */
+.tense-card{background:var(--card);border-radius:var(--radius);border:2px solid var(--border);cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
+.tense-card:hover{border-color:var(--orange);transform:translateY(-3px);box-shadow:0 8px 24px rgba(249,115,22,.15);}
+.tense-card.active{border-color:var(--orange);box-shadow:0 8px 24px rgba(249,115,22,.2);}
+
+.card-header{padding:16px 18px 12px;display:flex;align-items:flex-start;gap:12px;}
+.card-badge{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0;color:#fff;}
+.card-meta{flex:1;}
+.card-tense-name{font-weight:700;font-size:1rem;color:var(--navy);line-height:1.2;}
+.card-tense-th{font-size:.8rem;color:var(--muted);margin-top:2px;}
+.card-structure{background:#f0f4ff;border-radius:8px;padding:8px 12px;margin:0 18px 12px;font-family:'Courier New',monospace;font-size:.88rem;font-weight:600;color:var(--navy2);border-left:3px solid var(--orange);}
+.card-preview{padding:0 18px 12px;font-size:.85rem;color:var(--muted);font-style:italic;line-height:1.4;}
+.card-footer{padding:8px 18px 12px;display:flex;align-items:center;justify-content:space-between;}
+.card-tag{font-size:.75rem;padding:3px 10px;border-radius:12px;font-weight:600;}
+.expand-icon{font-size:.8rem;color:var(--muted);transition:transform .25s;}
+.tense-card.active .expand-icon{transform:rotate(180deg);}
+
+/* ── DETAIL PANEL ── */
+.detail-panel{display:none;border-top:2px dashed var(--border);margin:0;padding:18px;background:#fafbff;}
+.tense-card.active .detail-panel{display:block;}
+
+.detail-section{margin-bottom:14px;}
+.detail-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--orange);margin-bottom:6px;}
+.detail-content{font-size:.88rem;line-height:1.6;color:var(--text);}
+.usage-list{list-style:none;padding:0;}
+.usage-list li{padding:3px 0 3px 14px;position:relative;font-size:.87rem;color:var(--text);}
+.usage-list li::before{content:"•";position:absolute;left:0;color:var(--orange);font-weight:700;}
+.example-box{background:#fff;border-radius:8px;padding:10px 12px;border-left:3px solid var(--navy);margin-top:6px;}
+.example-en{font-style:italic;color:var(--navy);font-weight:500;font-size:.9rem;}
+.example-th{font-size:.8rem;color:var(--muted);margin-top:2px;}
+.signal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.signal-tag{background:#fff7ed;color:var(--orange2);border:1px solid #fed7aa;border-radius:8px;padding:3px 10px;font-size:.78rem;font-weight:600;}
+.note-box{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:10px 12px;font-size:.83rem;color:#78350f;margin-top:6px;}
+.note-box strong{color:#b45309;}
+
+/* ── COLOUR THEMES ── */
+.theme-1 .card-badge{background:#3b82f6;}
+.theme-1 .card-structure{background:#eff6ff;border-color:#3b82f6;}
+.theme-2 .card-badge{background:#06b6d4;}
+.theme-2 .card-structure{background:#ecfeff;border-color:#06b6d4;}
+.theme-3 .card-badge{background:#10b981;}
+.theme-3 .card-structure{background:#f0fdf4;border-color:#10b981;}
+.theme-4 .card-badge{background:#8b5cf6;}
+.theme-4 .card-structure{background:#f5f3ff;border-color:#8b5cf6;}
+.theme-5 .card-badge{background:#ef4444;}
+.theme-5 .card-structure{background:#fef2f2;border-color:#ef4444;}
+.theme-6 .card-badge{background:#f59e0b;}
+.theme-6 .card-structure{background:#fffbeb;border-color:#f59e0b;}
+.theme-7 .card-badge{background:#6366f1;}
+.theme-7 .card-structure{background:#eef2ff;border-color:#6366f1;}
+.theme-8 .card-badge{background:#ec4899;}
+.theme-8 .card-structure{background:#fdf2f8;border-color:#ec4899;}
+.theme-9 .card-badge{background:#14b8a6;}
+.theme-9 .card-structure{background:#f0fdfa;border-color:#14b8a6;}
+.theme-10 .card-badge{background:#f97316;}
+.theme-10 .card-structure{background:#fff7ed;border-color:#f97316;}
+.theme-11 .card-badge{background:#0ea5e9;}
+.theme-11 .card-structure{background:#f0f9ff;border-color:#0ea5e9;}
+.theme-12 .card-badge{background:#a855f7;}
+.theme-12 .card-structure{background:#faf5ff;border-color:#a855f7;}
+
+.tag-present{background:#dbeafe;color:#1d4ed8;}
+.tag-past{background:#fee2e2;color:#b91c1c;}
+.tag-future{background:#dcfce7;color:#15803d;}
+
+/* ── SUMMARY TABLE (toggle) ── */
+.summary-toggle{text-align:center;padding:8px 24px 24px;}
+.summary-btn{background:var(--navy);color:#fff;border:none;padding:10px 28px;border-radius:24px;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .2s;}
+.summary-btn:hover{background:var(--navy2);}
+
+.summary-table-wrap{display:none;padding:0 24px 40px;max-width:1200px;margin:0 auto;}
+.summary-table-wrap.show{display:block;}
+.summary-table{width:100%;border-collapse:collapse;font-size:.88rem;}
+.summary-table th{background:var(--navy);color:#fff;padding:12px 14px;text-align:left;font-weight:700;}
+.summary-table td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.summary-table tr:nth-child(even) td{background:#f8fafc;}
+.summary-table tr:hover td{background:#fff7ed;}
+.sum-struct{font-family:'Courier New',monospace;font-size:.82rem;background:#f0f4ff;padding:4px 8px;border-radius:5px;white-space:nowrap;}
+
+/* ── FOOTER ── */
+.page-footer{background:var(--navy);color:rgba(255,255,255,.7);text-align:center;padding:20px;font-size:.82rem;}
+.page-footer strong{color:#fff;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .grid{grid-template-columns:1fr;padding:12px 14px 32px;}
+  .hero{padding:32px 16px 24px;}
+  .topbar{padding:10px 16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <img src="Thep Academy (3).png" alt="Thep Academy" onerror="this.style.display='none'">
+    <span>THEP ACADEMY</span>
+  </a>
+  <a class="back-btn" href="index.html">← กลับหน้าหลัก</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>📚 Tense ทั้ง 12 แบบ</h1>
+  <p>สรุปครบในหน้าเดียว — คลิกที่การ์ดเพื่อดูรายละเอียด โครงสร้าง ตัวอย่าง และ Signal Words</p>
+  <div class="tense-count">
+    <span>⏰ 4 Present</span>
+    <span>⏪ 4 Past</span>
+    <span>⏩ 4 Future</span>
+  </div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterTense('all',this)">ทั้งหมด 12</button>
+  <button class="filter-btn" onclick="filterTense('present',this)">Present (ปัจจุบัน)</button>
+  <button class="filter-btn" onclick="filterTense('past',this)">Past (อดีต)</button>
+  <button class="filter-btn" onclick="filterTense('future',this)">Future (อนาคต)</button>
+</div>
+
+<!-- CARD GRID -->
+<div class="grid" id="card-grid">
+
+  <!-- 1 Present Simple -->
+  <div class="tense-card theme-1" data-group="present" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">1</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Present Simple</div>
+        <div class="card-tense-th">ปัจจุบันธรรมดา</div>
+      </div>
+    </div>
+    <div class="card-structure">S + V1 (s/es)</div>
+    <div class="card-preview">"She drinks coffee every morning."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-present">Present</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>ความจริงทั่วไป / ข้อเท็จจริงทางวิทยาศาสตร์</li>
+          <li>นิสัย / กิจวัตรประจำวัน</li>
+          <li>ตารางเวลาที่กำหนดตายตัว (ตาราง flight/train)</li>
+          <li>สภาพถาวรที่เป็นจริงอยู่เสมอ</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">The sun rises in the east.</div>
+          <div class="example-th">ดวงอาทิตย์ขึ้นทางทิศตะวันออก (ความจริงเสมอ)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">She teaches English at a university.</div>
+          <div class="example-th">เธอสอนภาษาอังกฤษที่มหาวิทยาลัย (สภาพถาวร)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">The train departs at 8 AM tomorrow.</div>
+          <div class="example-th">รถไฟออกตี 8 พรุ่งนี้ (ตารางเวลาตายตัว)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">always</span><span class="signal-tag">usually</span><span class="signal-tag">often</span><span class="signal-tag">sometimes</span><span class="signal-tag">seldom</span><span class="signal-tag">never</span><span class="signal-tag">every day/week</span><span class="signal-tag">on Mondays</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ จำไว้:</strong> He/She/It → กริยาต้องเติม -s/-es เสมอ | Stative verbs (know, like, want, have) ใช้ Simple ไม่ใช่ Continuous</div>
+    </div>
+  </div>
+
+  <!-- 2 Present Continuous -->
+  <div class="tense-card theme-2" data-group="present" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">2</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Present Continuous</div>
+        <div class="card-tense-th">ปัจจุบันกำลังกระทำ</div>
+      </div>
+    </div>
+    <div class="card-structure">S + is/am/are + V-ing</div>
+    <div class="card-preview">"They are studying for their exam now."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-present">Present</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>กำลังเกิดขึ้นในขณะที่พูด (right now)</li>
+          <li>เหตุการณ์ชั่วคราวในช่วงนี้ (this week/month)</li>
+          <li>แผนในอนาคตที่นัดหมายแล้ว</li>
+          <li>พฤติกรรมที่น่ารำคาญ (ใช้กับ always)</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">She is cooking dinner right now.</div>
+          <div class="example-th">เธอกำลังทำอาหารเย็นอยู่ตอนนี้</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">He is meeting the client tomorrow afternoon.</div>
+          <div class="example-th">เขาจะพบลูกค้าพรุ่งนี้บ่าย (นัดไว้แล้ว)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">She is always forgetting her keys!</div>
+          <div class="example-th">เธอลืมกุญแจตลอดเลย! (น่ารำคาญ)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">now</span><span class="signal-tag">right now</span><span class="signal-tag">at the moment</span><span class="signal-tag">currently</span><span class="signal-tag">today</span><span class="signal-tag">this week</span><span class="signal-tag">Look!</span><span class="signal-tag">Listen!</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ จำไว้:</strong> Stative verbs (know, believe, understand, love, hate, want, need, seem) ห้ามใช้รูป Continuous</div>
+    </div>
+  </div>
+
+  <!-- 3 Present Perfect -->
+  <div class="tense-card theme-3" data-group="present" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">3</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Present Perfect</div>
+        <div class="card-tense-th">ปัจจุบันสมบูรณ์</div>
+      </div>
+    </div>
+    <div class="card-structure">S + has/have + V3</div>
+    <div class="card-preview">"I have lived in Bangkok for 5 years."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-present">Present</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>เกิดในอดีต มีผลต่อเนื่องถึงปัจจุบัน</li>
+          <li>ประสบการณ์ในชีวิต (เคย/ไม่เคย)</li>
+          <li>เพิ่งเกิดขึ้น (just/recently)</li>
+          <li>ยังไม่เสร็จ หรือเสร็จแล้ว (yet/already)</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">I have never been to Japan.</div>
+          <div class="example-th">ฉันไม่เคยไปญี่ปุ่น (ประสบการณ์)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">She has just finished her report.</div>
+          <div class="example-th">เธอเพิ่งเสร็จรายงาน (just = เพิ่งเกิด)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">They haven't arrived yet.</div>
+          <div class="example-th">พวกเขายังไม่มาถึงเลย (yet = คาดหวังจะเกิด)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">since</span><span class="signal-tag">for</span><span class="signal-tag">already</span><span class="signal-tag">yet</span><span class="signal-tag">just</span><span class="signal-tag">ever</span><span class="signal-tag">never</span><span class="signal-tag">recently</span><span class="signal-tag">lately</span><span class="signal-tag">so far</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ for vs since:</strong> for + ระยะเวลา (for 3 years) | since + จุดเริ่มต้น (since 2020, since Monday)</div>
+    </div>
+  </div>
+
+  <!-- 4 Present Perfect Continuous -->
+  <div class="tense-card theme-4" data-group="present" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">4</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Present Perfect Continuous</div>
+        <div class="card-tense-th">ปัจจุบันสมบูรณ์กำลังกระทำ</div>
+      </div>
+    </div>
+    <div class="card-structure">S + has/have + been + V-ing</div>
+    <div class="card-preview">"He has been waiting for an hour."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-present">Present</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>เริ่มในอดีต ดำเนินต่อเนื่องจนปัจจุบัน (ยังไม่หยุด)</li>
+          <li>เน้นกระบวนการ/ระยะเวลา มากกว่าผลลัพธ์</li>
+          <li>มักมีร่องรอย/หลักฐานให้เห็น ณ ปัจจุบัน</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">I have been studying English for three years.</div>
+          <div class="example-th">ฉันกำลังเรียนภาษาอังกฤษมาสามปีแล้ว (ยังเรียนอยู่)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">You look tired. Have you been running?</div>
+          <div class="example-th">คุณดูเหนื่อย วิ่งอยู่หรือเปล่า? (ร่องรอยให้เห็น)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">for</span><span class="signal-tag">since</span><span class="signal-tag">all day</span><span class="signal-tag">all morning</span><span class="signal-tag">lately</span><span class="signal-tag">recently</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ Perfect vs Perfect Continuous:</strong> "I have written 5 pages." (เสร็จแล้ว 5 หน้า) vs "I have been writing." (เน้นว่ากำลังทำอยู่ ยังไม่เสร็จ)</div>
+    </div>
+  </div>
+
+  <!-- 5 Past Simple -->
+  <div class="tense-card theme-5" data-group="past" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">5</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Past Simple</div>
+        <div class="card-tense-th">อดีตธรรมดา</div>
+      </div>
+    </div>
+    <div class="card-structure">S + V2</div>
+    <div class="card-preview">"We visited Paris last year."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-past">Past</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>เกิดขึ้นและจบสิ้นในอดีต (ระบุเวลาชัดเจน)</li>
+          <li>เหตุการณ์ต่อเนื่องในอดีต (ลำดับเหตุการณ์)</li>
+          <li>นิสัยหรือสภาพในอดีต (ที่ไม่เป็นจริงอีกแล้ว)</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">She graduated from university in 2022.</div>
+          <div class="example-th">เธอจบมหาวิทยาลัยปี 2022 (ระบุเวลาชัด)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">He came in, sat down, and opened his laptop.</div>
+          <div class="example-th">เขาเดินเข้า นั่ง และเปิดแล็ปท็อป (ลำดับเหตุการณ์)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">yesterday</span><span class="signal-tag">last night/week/year</span><span class="signal-tag">ago</span><span class="signal-tag">in 2020</span><span class="signal-tag">when</span><span class="signal-tag">then</span><span class="signal-tag">at that time</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ Past Simple vs Present Perfect:</strong> "I lost my keys." (ไม่รู้ตอนไหน หรือไม่สำคัญ) vs "I have lost my keys." (ยังหายอยู่ มีผลตอนนี้)</div>
+    </div>
+  </div>
+
+  <!-- 6 Past Continuous -->
+  <div class="tense-card theme-6" data-group="past" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">6</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Past Continuous</div>
+        <div class="card-tense-th">อดีตกำลังกระทำ</div>
+      </div>
+    </div>
+    <div class="card-structure">S + was/were + V-ing</div>
+    <div class="card-preview">"She was reading when I called."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-past">Past</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>กำลังเกิดขึ้นในอดีต ณ เวลาใดเวลาหนึ่ง</li>
+          <li>เหตุการณ์ต่อเนื่องถูกขัดจังหวะ (was/were + V-ing → when + Past Simple)</li>
+          <li>เหตุการณ์คู่ขนานในอดีต (while...was, were...)</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">I was sleeping when the earthquake struck.</div>
+          <div class="example-th">ฉันกำลังนอนหลับอยู่เมื่อแผ่นดินไหว (ถูกขัด)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">While she was cooking, he was setting the table.</div>
+          <div class="example-th">ขณะที่เธอทำอาหาร เขากำลังจัดโต๊ะ (คู่ขนาน)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">while</span><span class="signal-tag">as</span><span class="signal-tag">when</span><span class="signal-tag">at that time</span><span class="signal-tag">all day yesterday</span><span class="signal-tag">at 9 PM last night</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ สูตรคู่สำคัญ:</strong> was/were + V-ing (เหตุการณ์ต่อเนื่อง) + when + V2 (เหตุการณ์ขัดจังหวะ)</div>
+    </div>
+  </div>
+
+  <!-- 7 Past Perfect -->
+  <div class="tense-card theme-7" data-group="past" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">7</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Past Perfect</div>
+        <div class="card-tense-th">อดีตสมบูรณ์</div>
+      </div>
+    </div>
+    <div class="card-structure">S + had + V3</div>
+    <div class="card-preview">"He had finished before he went out."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-past">Past</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>เกิดขึ้นก่อนอีกเหตุการณ์หนึ่งในอดีต (อดีตของอดีต)</li>
+          <li>ใช้คู่กับ Past Simple เพื่อแสดงลำดับเวลา</li>
+          <li>Reported speech: back-shift จาก Present Perfect</li>
+          <li>If-clause Type 3 (Unreal past condition)</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">By the time I arrived, the movie had already started.</div>
+          <div class="example-th">พอฉันมาถึง หนังเริ่มไปแล้ว (เริ่มก่อนที่ฉันมา)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">If she had studied harder, she would have passed.</div>
+          <div class="example-th">ถ้าเธอขยันกว่านี้ เธอคงผ่าน (If Type 3)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">before</span><span class="signal-tag">after</span><span class="signal-tag">by the time</span><span class="signal-tag">already</span><span class="signal-tag">when</span><span class="signal-tag">as soon as</span><span class="signal-tag">until</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ Past Perfect คือ "อดีตของอดีต":</strong> เหตุการณ์ A (had + V3) เกิดก่อน → เหตุการณ์ B (V2) เกิดหลัง</div>
+    </div>
+  </div>
+
+  <!-- 8 Past Perfect Continuous -->
+  <div class="tense-card theme-8" data-group="past" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">8</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Past Perfect Continuous</div>
+        <div class="card-tense-th">อดีตสมบูรณ์กำลังกระทำ</div>
+      </div>
+    </div>
+    <div class="card-structure">S + had + been + V-ing</div>
+    <div class="card-preview">"They had been playing for 2 hours when it rained."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-past">Past</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>เริ่มในอดีต ดำเนินต่อเนื่องจนถึงอีกจุดในอดีต</li>
+          <li>เน้นระยะเวลา/กระบวนการ ก่อนอีกเหตุการณ์หนึ่ง</li>
+          <li>มักมีร่องรอยของกิจกรรมนั้น ณ จุดอดีตที่อ้างถึง</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">She had been working for 12 hours when she finally stopped.</div>
+          <div class="example-th">เธอทำงานมา 12 ชั่วโมงแล้วก่อนที่จะหยุดในที่สุด</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">He was exhausted because he had been running.</div>
+          <div class="example-th">เขาเหนื่อยมาก เพราะวิ่งมานาน (ร่องรอยให้เห็น)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">for</span><span class="signal-tag">since</span><span class="signal-tag">before</span><span class="signal-tag">by the time</span><span class="signal-tag">when</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ ใช้บ่อยน้อยที่สุด</strong> แต่ออกสอบ! เน้นว่า "กำลังทำอยู่ต่อเนื่อง" ก่อนถึงจุดหนึ่งในอดีต</div>
+    </div>
+  </div>
+
+  <!-- 9 Future Simple -->
+  <div class="tense-card theme-9" data-group="future" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">9</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Future Simple</div>
+        <div class="card-tense-th">อนาคตธรรมดา</div>
+      </div>
+    </div>
+    <div class="card-structure">S + will + V1</div>
+    <div class="card-preview">"I will call you tomorrow."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-future">Future</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>ตัดสินใจ ณ ขณะที่พูด (spontaneous decision)</li>
+          <li>คาดการณ์อนาคต (prediction)</li>
+          <li>สัญญา ข้อเสนอ คำเตือน</li>
+          <li>ความจริงในอนาคตที่ไม่อาจเปลี่ยนได้</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">— "The phone's ringing!" — "I'll answer it."</div>
+          <div class="example-th">ตัดสินใจทันทีขณะพูด (ไม่ได้วางแผนล่วงหน้า)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">I think it will rain this afternoon.</div>
+          <div class="example-th">คาดการณ์ (ไม่มีหลักฐานชัด ใช้ think/believe)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">tomorrow</span><span class="signal-tag">next week/month</span><span class="signal-tag">soon</span><span class="signal-tag">in the future</span><span class="signal-tag">probably</span><span class="signal-tag">I think</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ will vs be going to:</strong> will = ตัดสินใจตอนนี้ / คาดการณ์ | be going to = วางแผนไว้แล้ว / มีหลักฐานว่าจะเกิด</div>
+    </div>
+  </div>
+
+  <!-- 10 Future Continuous -->
+  <div class="tense-card theme-10" data-group="future" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">10</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Future Continuous</div>
+        <div class="card-tense-th">อนาคตกำลังกระทำ</div>
+      </div>
+    </div>
+    <div class="card-structure">S + will + be + V-ing</div>
+    <div class="card-preview">"At 10 AM tomorrow, I will be working."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-future">Future</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>กำลังเกิดขึ้น ณ เวลาใดเวลาหนึ่งในอนาคต</li>
+          <li>แผนในอนาคตที่จะดำเนินอยู่</li>
+          <li>ถามสุภาพเพื่อขอข้อมูล (ไม่ได้กดดัน)</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">This time next week, we will be flying to London.</div>
+          <div class="example-th">อีกอาทิตย์หน้าเวลานี้ เราจะกำลังบินไปลอนดอน</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">Will you be using your car tomorrow? Can I borrow it?</div>
+          <div class="example-th">ถามสุภาพ (ไม่ได้กดดันให้ตอบ)</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">at this time tomorrow</span><span class="signal-tag">this time next week</span><span class="signal-tag">in 3 hours</span><span class="signal-tag">while</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ ออกสอบบ่อย:</strong> "At 8 PM, she will be studying." → จุดเวลา (8 PM) ตัดกับเหตุการณ์ที่กำลังดำเนินอยู่</div>
+    </div>
+  </div>
+
+  <!-- 11 Future Perfect -->
+  <div class="tense-card theme-11" data-group="future" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">11</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Future Perfect</div>
+        <div class="card-tense-th">อนาคตสมบูรณ์</div>
+      </div>
+    </div>
+    <div class="card-structure">S + will + have + V3</div>
+    <div class="card-preview">"By next year, I will have graduated."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-future">Future</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>เสร็จสิ้นสมบูรณ์ก่อนเวลาใดเวลาหนึ่งในอนาคต</li>
+          <li>มักใช้กับ by + เวลาในอนาคต</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">By the time he arrives, we will have finished dinner.</div>
+          <div class="example-th">พอเขามา เราจะกินข้าวเสร็จไปแล้ว</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">She will have worked here for 10 years by 2030.</div>
+          <div class="example-th">เธอจะทำงานที่นี่ครบ 10 ปีภายในปี 2030</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">by then</span><span class="signal-tag">by next year</span><span class="signal-tag">before</span><span class="signal-tag">by the time</span><span class="signal-tag">by + future time</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ สูตรสำคัญ:</strong> By + (จุดเวลาในอนาคต), S + will have + V3 → เน้นว่า "เสร็จก่อน" จุดเวลานั้น</div>
+    </div>
+  </div>
+
+  <!-- 12 Future Perfect Continuous -->
+  <div class="tense-card theme-12" data-group="future" onclick="toggleCard(this)">
+    <div class="card-header">
+      <div class="card-badge">12</div>
+      <div class="card-meta">
+        <div class="card-tense-name">Future Perfect Continuous</div>
+        <div class="card-tense-th">อนาคตสมบูรณ์กำลังกระทำ</div>
+      </div>
+    </div>
+    <div class="card-structure">S + will + have + been + V-ing</div>
+    <div class="card-preview">"By 5 PM, she will have been studying for 8 hours."</div>
+    <div class="card-footer">
+      <span class="card-tag tag-future">Future</span>
+      <span class="expand-icon">▼ ดูรายละเอียด</span>
+    </div>
+    <div class="detail-panel">
+      <div class="detail-section">
+        <div class="detail-label">การใช้งาน</div>
+        <ul class="usage-list">
+          <li>กำลังดำเนินต่อเนื่องไปจนถึงจุดใดจุดหนึ่งในอนาคต</li>
+          <li>เน้นระยะเวลา/กระบวนการที่ต่อเนื่อง</li>
+        </ul>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">ตัวอย่าง</div>
+        <div class="example-box">
+          <div class="example-en">By 2030, I will have been teaching for 20 years.</div>
+          <div class="example-th">ถึงปี 2030 ฉันจะสอนมาครบ 20 ปีแล้ว (เน้นระยะเวลา)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-en">When you arrive, she will have been waiting for 2 hours.</div>
+          <div class="example-th">พอคุณมา เธอจะรออยู่มา 2 ชั่วโมงแล้ว</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Signal Words</div>
+        <div class="signal-tags">
+          <span class="signal-tag">for ... by (future time)</span><span class="signal-tag">by the time</span><span class="signal-tag">when</span>
+        </div>
+      </div>
+      <div class="note-box"><strong>⚡ ยากที่สุดใน 12 tense</strong> แต่จำง่ายว่าคือ "กำลังทำอยู่ต่อเนื่อง" + "ถึงจุดเวลาในอนาคต" + "เน้นระยะเวลา"</div>
+    </div>
+  </div>
+
+</div><!-- end grid -->
+
+<!-- SUMMARY TABLE TOGGLE -->
+<div class="summary-toggle">
+  <button class="summary-btn" onclick="toggleTable()">📋 ดูตารางสรุปทั้งหมด</button>
+</div>
+<div class="summary-table-wrap" id="summary-table">
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tense</th>
+        <th>โครงสร้าง</th>
+        <th>การใช้หลัก</th>
+        <th>ตัวอย่าง</th>
+        <th>Signal Words</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Present Simple</strong></td><td><span class="sum-struct">S + V1(s/es)</span></td><td>ความจริง, นิสัย, ตาราง</td><td><em>She works every day.</em></td><td>always, often, every...</td></tr>
+      <tr><td>2</td><td><strong>Present Continuous</strong></td><td><span class="sum-struct">S + is/am/are + V-ing</span></td><td>กำลังเกิด, ชั่วคราว, นัดหมาย</td><td><em>He is reading now.</em></td><td>now, currently, today</td></tr>
+      <tr><td>3</td><td><strong>Present Perfect</strong></td><td><span class="sum-struct">S + has/have + V3</span></td><td>อดีต→ปัจจุบัน, ประสบการณ์</td><td><em>I have seen that film.</em></td><td>since, for, already, yet, just, ever</td></tr>
+      <tr><td>4</td><td><strong>Present Perfect Continuous</strong></td><td><span class="sum-struct">S + has/have + been + V-ing</span></td><td>เริ่มในอดีต ยังดำเนินอยู่</td><td><em>She has been waiting for an hour.</em></td><td>for, since, all day</td></tr>
+      <tr><td>5</td><td><strong>Past Simple</strong></td><td><span class="sum-struct">S + V2</span></td><td>จบในอดีต, ลำดับเหตุการณ์</td><td><em>They left yesterday.</em></td><td>yesterday, ago, last..., when</td></tr>
+      <tr><td>6</td><td><strong>Past Continuous</strong></td><td><span class="sum-struct">S + was/were + V-ing</span></td><td>กำลังเกิดในอดีต, ถูกขัด</td><td><em>I was sleeping when he arrived.</em></td><td>while, as, when, at that time</td></tr>
+      <tr><td>7</td><td><strong>Past Perfect</strong></td><td><span class="sum-struct">S + had + V3</span></td><td>อดีตของอดีต, If Type 3</td><td><em>She had left before I came.</em></td><td>before, after, by the time, already</td></tr>
+      <tr><td>8</td><td><strong>Past Perfect Continuous</strong></td><td><span class="sum-struct">S + had + been + V-ing</span></td><td>ต่อเนื่องก่อนจุดในอดีต</td><td><em>He had been working for hours.</em></td><td>for, since, before, when</td></tr>
+      <tr><td>9</td><td><strong>Future Simple</strong></td><td><span class="sum-struct">S + will + V1</span></td><td>ตัดสินใจทันที, คาดการณ์</td><td><em>I will help you.</em></td><td>tomorrow, next..., soon, probably</td></tr>
+      <tr><td>10</td><td><strong>Future Continuous</strong></td><td><span class="sum-struct">S + will + be + V-ing</span></td><td>กำลังเกิด ณ เวลาในอนาคต</td><td><em>She will be working at 9 AM.</em></td><td>at this time tomorrow, while</td></tr>
+      <tr><td>11</td><td><strong>Future Perfect</strong></td><td><span class="sum-struct">S + will + have + V3</span></td><td>เสร็จก่อนเวลาในอนาคต</td><td><em>I will have finished by 5 PM.</em></td><td>by then, by next year, before</td></tr>
+      <tr><td>12</td><td><strong>Future Perfect Continuous</strong></td><td><span class="sum-struct">S + will + have + been + V-ing</span></td><td>ดำเนินต่อเนื่องถึงจุดในอนาคต</td><td><em>By June, I will have been studying for a year.</em></td><td>for... by (future time)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <strong>THEP ACADEMY</strong> — สถาบันสอนภาษาอังกฤษ | © 2026 All Rights Reserved | ห้ามนำไปเผยแพร่เพื่อการพาณิชย์โดยไม่ได้รับอนุญาต
+</div>
+
+<script>
+function toggleCard(card){
+  const isActive = card.classList.contains('active');
+  // close all
+  document.querySelectorAll('.tense-card').forEach(c => c.classList.remove('active'));
+  if(!isActive) card.classList.add('active');
+  if(!isActive) card.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function filterTense(group, btn){
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tense-card').forEach(card => {
+    if(group === 'all' || card.dataset.group === group){
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+      card.classList.remove('active');
+    }
+  });
+}
+
+function toggleTable(){
+  const wrap = document.getElementById('summary-table');
+  const btn = document.querySelector('.summary-btn');
+  const show = wrap.classList.toggle('show');
+  btn.textContent = show ? '▲ ซ่อนตารางสรุป' : '📋 ดูตารางสรุปทั้งหมด';
+  if(show) wrap.scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>

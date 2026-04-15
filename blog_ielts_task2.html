@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing Task 2 Band 7+ Formula — THEP ACADEMY</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0f1f3d;
+  --navy2:#1e3a5f;
+  --orange:#f97316;
+  --orange2:#ea580c;
+  --bg:#f5f7fa;
+  --text:#1a202c;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --radius:12px;
+  --gold:#d97706;
+  --gold-light:#fef3c7;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--navy);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3);}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.topbar-brand img{height:36px;border-radius:6px;}
+.topbar-brand span{color:#fff;font-weight:700;font-size:1.05rem;}
+.back-btn{color:rgba(255,255,255,.8);text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:5px;transition:color .2s;}
+.back-btn:hover{color:#fff;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#1a0a2e 0%,var(--navy) 40%,#1e3a5f 100%);color:#fff;padding:56px 24px 44px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:"Band 7+";position:absolute;right:-20px;top:-10px;font-size:8rem;font-weight:900;opacity:.04;color:#fff;pointer-events:none;line-height:1;}
+.hero-tag{display:inline-block;background:rgba(217,119,6,.3);color:#fcd34d;border:1px solid rgba(217,119,6,.5);padding:4px 14px;border-radius:20px;font-size:.8rem;font-weight:700;letter-spacing:.6px;margin-bottom:14px;text-transform:uppercase;}
+.hero h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800;line-height:1.25;max-width:680px;margin:0 auto 12px;}
+.hero p{font-size:1rem;opacity:.85;max-width:520px;margin:0 auto 24px;}
+.hero-meta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.hero-meta span{font-size:.82rem;opacity:.75;display:flex;align-items:center;gap:5px;}
+
+/* ── BAND SCALE ── */
+.band-scale{display:flex;gap:0;margin:20px 0 28px;border-radius:var(--radius);overflow:hidden;border:2px solid var(--border);}
+.band-item{flex:1;text-align:center;padding:10px 4px;}
+.band-item .band-num{font-weight:800;font-size:1rem;}
+.band-item .band-label{font-size:.65rem;margin-top:2px;}
+.band-item:not(:last-child){border-right:1px solid var(--border);}
+.b5{background:#fee2e2;}.b5 .band-num{color:#b91c1c;}
+.b6{background:#fef3c7;}.b6 .band-num{color:#b45309;}
+.b7{background:#dcfce7;}.b7 .band-num{color:#15803d;}
+.b8{background:#dbeafe;}.b8 .band-num{color:#1d4ed8;}
+.b9{background:#f3e8ff;}.b9 .band-num{color:#7c3aed;}
+.band-target{outline:3px solid var(--gold);outline-offset:-2px;border-radius:0;}
+
+/* ── LAYOUT ── */
+.page-wrap{max-width:820px;margin:0 auto;padding:40px 20px 60px;}
+h2{font-size:1.3rem;font-weight:800;color:var(--navy);margin:36px 0 12px;padding-left:12px;border-left:4px solid var(--orange);}
+h3{font-size:1.05rem;font-weight:700;color:var(--navy2);margin:22px 0 8px;}
+p{margin-bottom:14px;font-size:.97rem;}
+hr{border:none;border-top:2px dashed var(--border);margin:36px 0;}
+
+/* ── CRITERIA GRID ── */
+.criteria-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0 28px;}
+.criteria-card{background:#fff;border-radius:var(--radius);border:2px solid var(--border);padding:16px 18px;}
+.criteria-card h4{font-size:.9rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.criteria-card p{font-size:.84rem;color:var(--muted);margin:0;}
+.criteria-card ul{list-style:none;padding:0;margin-top:8px;}
+.criteria-card ul li{font-size:.83rem;color:var(--text);padding:3px 0 3px 14px;position:relative;line-height:1.4;}
+.criteria-card ul li::before{content:"•";position:absolute;left:0;color:var(--orange);font-weight:700;}
+.c1{border-top:3px solid #3b82f6;}
+.c2{border-top:3px solid #16a34a;}
+.c3{border-top:3px solid #f59e0b;}
+.c4{border-top:3px solid #a855f7;}
+@media(max-width:560px){.criteria-grid{grid-template-columns:1fr;}}
+
+/* ── STRUCTURE ── */
+.structure-box{background:#fff;border:2px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:16px 0 28px;}
+.structure-row{display:flex;align-items:stretch;}
+.structure-row:not(:last-child){border-bottom:1px solid var(--border);}
+.str-left{width:130px;min-width:130px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;}
+.str-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;}
+.str-time{font-size:.78rem;margin-top:4px;opacity:.75;}
+.str-right{flex:1;padding:14px 18px;border-left:1px solid var(--border);}
+.str-title{font-weight:700;font-size:.93rem;margin-bottom:5px;}
+.str-desc{font-size:.84rem;color:var(--muted);line-height:1.5;}
+.str-row-intro .str-left{background:#eff6ff;}.str-row-intro .str-label{color:#2563eb;}
+.str-row-body1 .str-left,.str-row-body2 .str-left{background:#f0fdf4;}.str-row-body1 .str-label,.str-row-body2 .str-label{color:#15803d;}
+.str-row-conc .str-left{background:#fff7ed;}.str-row-conc .str-label{color:var(--orange2);}
+
+/* ── BAND DIFF TABLE ── */
+.diff-table{width:100%;border-collapse:collapse;margin:16px 0 28px;font-size:.87rem;}
+.diff-table th{background:var(--navy);color:#fff;padding:11px 14px;text-align:left;font-weight:700;}
+.diff-table td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.diff-table tr:nth-child(even) td{background:#f8fafc;}
+.diff-table tr:hover td{background:#fff7ed;}
+.b6-cell{color:#92400e;background:#fef9ec !important;}
+.b7-cell{color:#14532d;background:#f0fdf4 !important;font-weight:600;}
+
+/* ── SAMPLE ESSAY ── */
+.essay-tabs{display:flex;gap:8px;margin-bottom:0;}
+.essay-tab{padding:8px 18px;border:2px solid var(--border);border-bottom:none;border-radius:8px 8px 0 0;font-size:.85rem;font-weight:700;cursor:pointer;background:#f8fafc;color:var(--muted);transition:all .2s;}
+.essay-tab.active{background:#fff;color:var(--navy);border-color:var(--border);}
+.essay-card{background:#fff;border:2px solid var(--border);border-radius:0 var(--radius) var(--radius) var(--radius);padding:0;margin-bottom:28px;}
+.essay-panel{display:none;padding:20px;}
+.essay-panel.active{display:block;}
+.essay-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+.band-badge{padding:4px 12px;border-radius:12px;font-weight:800;font-size:.85rem;}
+.band-badge.b6{background:#fef3c7;color:#92400e;}
+.band-badge.b7{background:#dcfce7;color:#14532d;}
+.question-box{background:#f8fafc;border-left:3px solid var(--orange);padding:10px 14px;border-radius:0 6px 6px 0;font-size:.88rem;font-style:italic;margin-bottom:14px;color:#374151;}
+.essay-text{font-size:.9rem;line-height:1.85;color:#374151;}
+.essay-text p{margin-bottom:12px;}
+.anno{background:#fef9ec;border-bottom:2px solid var(--gold);cursor:help;position:relative;}
+.anno-good{background:#f0fdf4;border-bottom:2px solid #16a34a;}
+.anno-weak{background:#fef2f2;border-bottom:2px solid #ef4444;}
+.legend{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;}
+.legend span{font-size:.77rem;padding:2px 8px;border-radius:4px;font-weight:600;}
+.lg-good{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;}
+.lg-weak{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca;}
+
+/* ── VOCAB BOXES ── */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0 28px;}
+.vocab-box{background:#fff;border:2px solid var(--border);border-radius:var(--radius);padding:16px 18px;}
+.vocab-box h4{font-size:.83rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;color:var(--muted);}
+.vocab-box ul{list-style:none;padding:0;}
+.vocab-box ul li{font-size:.84rem;padding:3px 0 3px 12px;position:relative;border-bottom:1px dashed #f1f5f9;line-height:1.4;}
+.vocab-box ul li:last-child{border-bottom:none;}
+.vocab-box ul li::before{content:"→";position:absolute;left:0;color:var(--orange);font-size:.75rem;}
+
+/* ── CHECKLIST ── */
+.checklist{background:#fff;border:2px solid var(--border);border-radius:var(--radius);padding:20px;margin:16px 0 28px;}
+.checklist h4{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:14px;}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #f8fafc;}
+.check-item:last-child{border-bottom:none;}
+.check-box{width:20px;height:20px;min-width:20px;border:2px solid var(--border);border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;margin-top:2px;}
+.check-box.checked{background:var(--green,#16a34a);border-color:var(--green,#16a34a);}
+.check-box.checked::after{content:"✓";color:#fff;font-size:.75rem;font-weight:700;}
+.check-text{font-size:.88rem;line-height:1.5;}
+
+/* ── CTA ── */
+.cta-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border-radius:var(--radius);padding:32px 28px;text-align:center;color:#fff;margin-top:40px;}
+.cta-box h3{font-size:1.2rem;font-weight:800;margin-bottom:8px;}
+.cta-box p{font-size:.9rem;opacity:.85;margin-bottom:20px;}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:700;font-size:.95rem;transition:background .2s;}
+.cta-btn:hover{background:var(--orange2);}
+
+@media(max-width:600px){
+  .hero{padding:36px 16px 28px;}
+  .page-wrap{padding:28px 14px 48px;}
+  .str-left{width:100px;min-width:100px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <img src="Thep Academy (3).png" alt="Thep Academy" onerror="this.style.display='none'">
+    <span>THEP ACADEMY</span>
+  </a>
+  <a class="back-btn" href="index.html#freedocs">← คลังความรู้</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">🎯 IELTS Writing Task 2</div>
+  <h1>Band 7+ Formula<br>คู่มือเขียน IELTS Task 2</h1>
+  <p>โครงสร้าง เทคนิค และภาษาที่ Examiner ต้องการ — พร้อม Sample Answer เปรียบ Band 6 vs Band 7</p>
+  <div class="hero-meta">
+    <span>📖 อ่าน 8 นาที</span>
+    <span>🎯 Target: Band 7.0+</span>
+    <span>✅ Sample Answer จริง</span>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- BAND SCALE -->
+  <h2>Band Score คืออะไร?</h2>
+  <p>IELTS ให้คะแนน Writing 4 ด้าน รวมกันได้คะแนน <strong>Band 1–9</strong> มหาวิทยาลัยส่วนใหญ่ต้องการ Band 6.5–7.0 ขึ้นไป</p>
+  <div class="band-scale">
+    <div class="band-item b5"><div class="band-num">5</div><div class="band-label">Modest</div></div>
+    <div class="band-item b6"><div class="band-num">6</div><div class="band-label">Competent</div></div>
+    <div class="band-item b7 band-target"><div class="band-num">7 🎯</div><div class="band-label">Good</div></div>
+    <div class="band-item b8"><div class="band-num">8</div><div class="band-label">Very Good</div></div>
+    <div class="band-item b9"><div class="band-num">9</div><div class="band-label">Expert</div></div>
+  </div>
+
+  <h2>4 เกณฑ์ให้คะแนน (ละเท่ากัน 25% ต่อด้าน)</h2>
+  <div class="criteria-grid">
+    <div class="criteria-card c1">
+      <h4>📌 Task Achievement (TA)</h4>
+      <p>ตอบโจทย์ครบและชัดเจนหรือไม่</p>
+      <ul>
+        <li>ระบุ position ชัดตั้งแต่ Introduction</li>
+        <li>มีข้อโต้แย้ง/ข้อสนับสนุนครบทุกส่วน</li>
+        <li>ไม่เขียนออกนอกประเด็น (off-topic)</li>
+      </ul>
+    </div>
+    <div class="criteria-card c2">
+      <h4>🔗 Coherence &amp; Cohesion (CC)</h4>
+      <p>ความลื่นไหลและการเชื่อมโยงระหว่างประโยค</p>
+      <ul>
+        <li>ใช้ linking words หลากหลาย (ไม่ใช่แค่ "and")</li>
+        <li>แต่ละย่อหน้ามี topic sentence ชัด</li>
+        <li>ข้อมูลเรียงลำดับสมเหตุสมผล</li>
+      </ul>
+    </div>
+    <div class="criteria-card c3">
+      <h4>📚 Lexical Resource (LR)</h4>
+      <p>ความหลากหลายและความแม่นยำของคำศัพท์</p>
+      <ul>
+        <li>ไม่ซ้ำคำศัพท์บ่อย — ใช้ synonym</li>
+        <li>ใช้ collocations ที่เป็นธรรมชาติ</li>
+        <li>หลีกเลี่ยง informal language</li>
+      </ul>
+    </div>
+    <div class="criteria-card c4">
+      <h4>⚙️ Grammatical Range (GRA)</h4>
+      <p>ความหลากหลายและความถูกต้องของไวยากรณ์</p>
+      <ul>
+        <li>ผสม complex &amp; simple sentences</li>
+        <li>ใช้ passive voice, conditionals, relative clauses</li>
+        <li>ลด error — ไม่มี basic mistakes</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>โครงสร้าง Essay — 4 ย่อหน้า (250+ คำ)</h2>
+
+  <div class="structure-box">
+    <div class="structure-row str-row-intro">
+      <div class="str-left">
+        <div class="str-label">Introduction</div>
+        <div class="str-time">~50 คำ · 5 นาที</div>
+      </div>
+      <div class="str-right">
+        <div class="str-title">Paraphrase + Thesis Statement</div>
+        <div class="str-desc">
+          <strong>ขั้นตอน:</strong> Paraphrase คำถาม (เขียนใหม่ด้วยคำของตัวเอง) → ระบุ position ชัดเจนว่าเห็นด้วย/ไม่เห็นด้วย/อะไรคือ main argument<br>
+          <strong>⚠️ ห้าม:</strong> Copy คำถามโดยตรง | เขียนยาวเกินไป | ยังไม่ระบุ position
+        </div>
+      </div>
+    </div>
+    <div class="structure-row str-row-body1">
+      <div class="str-left">
+        <div class="str-label">Body 1</div>
+        <div class="str-time">~90 คำ · 12 นาที</div>
+      </div>
+      <div class="str-right">
+        <div class="str-title">Topic Sentence → Explanation → Example → Link</div>
+        <div class="str-desc">
+          <strong>เหตุผลหลักที่ 1:</strong> Topic sentence (1 ประโยค) → อธิบายเหตุผลนั้น (2–3 ประโยค) → ยกตัวอย่างจริงหรือสมมติ → เชื่อมกลับสู่ thesis
+        </div>
+      </div>
+    </div>
+    <div class="structure-row str-row-body2">
+      <div class="str-left">
+        <div class="str-label">Body 2</div>
+        <div class="str-time">~90 คำ · 12 นาที</div>
+      </div>
+      <div class="str-right">
+        <div class="str-title">Topic Sentence → Explanation → Example → Link</div>
+        <div class="str-desc">
+          <strong>เหตุผลหลักที่ 2</strong> (หรือ counterargument + refutation สำหรับ Discuss both views): โครงสร้างเดียวกับ Body 1
+        </div>
+      </div>
+    </div>
+    <div class="structure-row str-row-conc">
+      <div class="str-left">
+        <div class="str-label">Conclusion</div>
+        <div class="str-time">~40 คำ · 5 นาที</div>
+      </div>
+      <div class="str-right">
+        <div class="str-title">Restate + Recommendation / Prediction</div>
+        <div class="str-desc">
+          <strong>ถอดความ thesis ใหม่</strong> (ไม่ใช้ประโยคเดิม) → สรุป 2 เหตุผลหลักสั้นๆ → จบด้วย recommendation หรือ final thought<br>
+          <strong>⚠️ ห้าม:</strong> เพิ่มข้อมูลใหม่ในบทสรุป
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Band 6 vs Band 7 — ต่างกันตรงไหน?</h2>
+
+  <table class="diff-table">
+    <thead>
+      <tr><th>ด้าน</th><th>Band 6 — ทำได้แต่ยังขาด</th><th>Band 7 — ทำได้ชัดเจน ✅</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Task Achievement</strong></td>
+        <td class="b6-cell">ตอบโจทย์ได้ แต่บางส่วน under-developed</td>
+        <td class="b7-cell">Position ชัด ทุก body paragraph support thesis ได้ตรง</td>
+      </tr>
+      <tr>
+        <td><strong>Coherence</strong></td>
+        <td class="b6-cell">ใช้ "however / therefore / also" ซ้ำๆ</td>
+        <td class="b7-cell">ใช้หลากหลาย: "Nevertheless / In contrast / Consequently / This suggests that…"</td>
+      </tr>
+      <tr>
+        <td><strong>Vocabulary</strong></td>
+        <td class="b6-cell">คำเดิมซ้ำ เช่น "good / bad / important" บ่อย</td>
+        <td class="b7-cell">ใช้ synonym และ collocations: "beneficial / detrimental / significant"</td>
+      </tr>
+      <tr>
+        <td><strong>Grammar</strong></td>
+        <td class="b6-cell">ส่วนใหญ่ simple sentences, มีข้อผิดพลาดเล็กน้อย</td>
+        <td class="b7-cell">ผสม complex sentences, relative clauses, passive voice อย่างชำนาญ</td>
+      </tr>
+      <tr>
+        <td><strong>Introduction</strong></td>
+        <td class="b6-cell">Paraphrase ได้ แต่ thesis ไม่ชัด หรือ copy คำถาม</td>
+        <td class="b7-cell">Paraphrase ดี + thesis 1 ประโยคชัดเจนว่า position คืออะไร</td>
+      </tr>
+      <tr>
+        <td><strong>Examples</strong></td>
+        <td class="b6-cell">อธิบายสั้นหรือไม่มีตัวอย่างรองรับ</td>
+        <td class="b7-cell">มี specific example หรือ hypothetical scenario ที่ชัดเจน</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h2>Sample Answers — Band 6 vs Band 7</h2>
+  <p>คำถาม: <em>"In many countries, more and more young people are choosing to live alone. What are the advantages and disadvantages of this trend?"</em></p>
+
+  <div class="essay-tabs">
+    <div class="essay-tab active" onclick="switchTab(this,'tab-b6')">Band 6 Essay</div>
+    <div class="essay-tab" onclick="switchTab(this,'tab-b7')">Band 7+ Essay</div>
+  </div>
+  <div class="essay-card">
+
+    <!-- Band 6 -->
+    <div class="essay-panel active" id="tab-b6">
+      <div class="essay-head">
+        <span class="band-badge b6">Band ~6.0</span>
+        <span style="font-size:.83rem;color:var(--muted);">สังเกต: คำศัพท์ซ้ำ, structure เรียบง่าย, thesis ไม่ชัด</span>
+      </div>
+      <div class="essay-text">
+        <p><span class="anno-weak">Nowadays</span>, many young people in many countries <span class="anno-weak">choose to live alone</span>. This is a big trend. There are both advantages and disadvantages of this trend.</p>
+        <p>One advantage is that young people can <span class="anno-weak">have more freedom</span>. They can do what they want without their parents telling them what to do. For example, they can come home late or eat whatever they like. This is <span class="anno-weak">good</span> for their personal development.</p>
+        <p>However, there are also disadvantages. Living alone can be <span class="anno-weak">lonely</span>. Young people might feel sad because they have no one to talk to. Also, it is <span class="anno-weak">expensive</span>. They have to pay for everything themselves, like rent and food.</p>
+        <p>In conclusion, living alone has both <span class="anno-weak">good and bad</span> points. I think young people should think carefully before deciding to live alone.</p>
+      </div>
+      <div class="legend">
+        <span class="lg-weak">🔴 ปัญหา: คำซ้ำ / คำง่ายเกินไป / thesis ไม่ชัด</span>
+      </div>
+    </div>
+
+    <!-- Band 7 -->
+    <div class="essay-panel" id="tab-b7">
+      <div class="essay-head">
+        <span class="band-badge b7">Band ~7.0</span>
+        <span style="font-size:.83rem;color:var(--muted);">สังเกต: Paraphrase ดี, vocabulary หลากหลาย, structure ชัดเจน</span>
+      </div>
+      <div class="essay-text">
+        <p><span class="anno-good">The growing tendency among young adults to establish independent households</span> has become a defining social pattern in many nations. <span class="anno-good">While this shift offers considerable personal and developmental benefits, it simultaneously presents financial and psychological challenges that warrant careful consideration.</span></p>
+        <p><span class="anno-good">One of the primary advantages of solo living is the development of personal autonomy and self-reliance.</span> When young people manage their own households, they are compelled to develop practical life skills — from budgeting and cooking to managing utilities — which are <span class="anno-good">invaluable</span> in adult life. Furthermore, <span class="anno-good">the absence of familial oversight</span> allows individuals to establish routines and make decisions that align with their own values, <span class="anno-good">fostering a stronger sense of identity.</span></p>
+        <p><span class="anno-good">Nevertheless, the disadvantages of this trend should not be overlooked.</span> <span class="anno-good">Perhaps most significantly, the financial burden of independent living can be substantial.</span> In high-cost urban areas, rent, utilities, and groceries collectively represent a significant proportion of a young person's income, <span class="anno-good">potentially limiting their capacity to save or invest in their future.</span> Moreover, <span class="anno-good">prolonged social isolation — a common consequence of living alone — has been associated with increased rates of anxiety and depression</span> among young adults.</p>
+        <p><span class="anno-good">In conclusion, while independent living cultivates important qualities such as self-sufficiency and personal freedom, it also exposes young individuals to financial strain and emotional isolation.</span> <span class="anno-good">Governments and communities would therefore benefit from providing affordable housing initiatives and social support networks to mitigate these challenges.</span></p>
+      </div>
+      <div class="legend">
+        <span class="lg-good">🟢 ดี: Paraphrase / Complex sentences / Vocabulary / Specific development</span>
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <h2>คำศัพท์ Band 7+ ที่ควรมีติดปาก</h2>
+
+  <div class="vocab-grid">
+    <div class="vocab-box">
+      <h4>🔄 แทนคำว่า "good / bad"</h4>
+      <ul>
+        <li>beneficial / detrimental</li>
+        <li>advantageous / harmful</li>
+        <li>valuable / counterproductive</li>
+        <li>favourable / adverse</li>
+      </ul>
+    </div>
+    <div class="vocab-box">
+      <h4>🔗 Linking Words ระดับ 7+</h4>
+      <ul>
+        <li>Nevertheless / Nonetheless</li>
+        <li>Consequently / As a result</li>
+        <li>Furthermore / In addition to this</li>
+        <li>This suggests that… / This implies…</li>
+      </ul>
+    </div>
+    <div class="vocab-box">
+      <h4>📈 แทนคำว่า "increase / decrease"</h4>
+      <ul>
+        <li>surge / escalate / rise sharply</li>
+        <li>decline / diminish / fall steadily</li>
+        <li>grow substantially / drop significantly</li>
+      </ul>
+    </div>
+    <div class="vocab-box">
+      <h4>✍️ Academic Phrases</h4>
+      <ul>
+        <li>It is widely argued that…</li>
+        <li>Evidence suggests that…</li>
+        <li>This trend can be attributed to…</li>
+        <li>…warrants careful consideration</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Checklist ก่อนส่ง — ตรวจใน 5 นาทีสุดท้าย</h2>
+
+  <div class="checklist">
+    <h4>✅ ทำเครื่องหมายทุกข้อที่ตรวจแล้ว</h4>
+    <div class="check-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div><div class="check-text"><strong>Introduction:</strong> Paraphrase โจทย์แล้ว ไม่ copy | มี thesis statement ชัดเจน</div></div>
+    <div class="check-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div><div class="check-text"><strong>Body paragraphs:</strong> แต่ละย่อหน้ามี topic sentence | มีตัวอย่างสนับสนุน | เชื่อมกลับสู่ thesis</div></div>
+    <div class="check-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div><div class="check-text"><strong>Conclusion:</strong> Restate thesis ด้วยคำใหม่ | ไม่มีข้อมูลใหม่ | มี final thought</div></div>
+    <div class="check-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div><div class="check-text"><strong>Word count:</strong> ครบ 250 คำขึ้นไป (นับคร่าวๆ = 4 ย่อหน้า × ~60 คำ)</div></div>
+    <div class="check-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div><div class="check-text"><strong>Vocabulary:</strong> ไม่มีคำซ้ำเกิน 3 ครั้ง | ใช้ synonym และ collocations</div></div>
+    <div class="check-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div><div class="check-text"><strong>Grammar:</strong> มี complex sentences อย่างน้อย 3–4 ประโยค | ตรวจ subject-verb agreement</div></div>
+    <div class="check-item"><div class="check-box" onclick="this.classList.toggle('checked')"></div><div class="check-text"><strong>Punctuation:</strong> ใส่ comma หลัง linking word ต้นประโยค | ไม่มี run-on sentences</div></div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>📚 เรียนต่อกับ THEP ACADEMY</h3>
+    <p>ดูหลักสูตร IELTS และคอร์สเตรียมสอบอื่นๆ หรือกลับไปดูบทความใน คลังความรู้</p>
+    <a href="index.html#courses" class="cta-btn">🎓 ดูคอร์สทั้งหมด</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div style="background:var(--navy);color:rgba(255,255,255,.65);text-align:center;padding:18px;font-size:.82rem;">
+  <strong style="color:#fff;">THEP ACADEMY</strong> — สถาบันสอนภาษาอังกฤษ | © 2026 All Rights Reserved
+</div>
+
+<script>
+function switchTab(btn, panelId){
+  document.querySelectorAll('.essay-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.essay-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เทคนิค Skimming & Scanning สำหรับข้อสอบ — THEP ACADEMY</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0f1f3d;
+  --navy2:#1e3a5f;
+  --orange:#f97316;
+  --orange2:#ea580c;
+  --bg:#f5f7fa;
+  --text:#1a202c;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --radius:12px;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--navy);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3);}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.topbar-brand img{height:36px;border-radius:6px;}
+.topbar-brand span{color:#fff;font-weight:700;font-size:1.05rem;}
+.back-btn{color:rgba(255,255,255,.8);text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:5px;transition:color .2s;}
+.back-btn:hover{color:#fff;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3a6e 55%,#0e4d7a 100%);color:#fff;padding:56px 24px 44px;text-align:center;}
+.hero-tag{display:inline-block;background:rgba(249,115,22,.25);color:#fed7aa;border:1px solid rgba(249,115,22,.4);padding:4px 14px;border-radius:20px;font-size:.8rem;font-weight:700;letter-spacing:.6px;margin-bottom:14px;text-transform:uppercase;}
+.hero h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800;line-height:1.25;max-width:680px;margin:0 auto 12px;}
+.hero p{font-size:1rem;opacity:.85;max-width:520px;margin:0 auto 24px;}
+.hero-meta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.hero-meta span{font-size:.82rem;opacity:.75;display:flex;align-items:center;gap:5px;}
+
+/* ── LAYOUT ── */
+.page-wrap{max-width:820px;margin:0 auto;padding:40px 20px 60px;}
+
+/* ── PROSE ── */
+h2{font-size:1.3rem;font-weight:800;color:var(--navy);margin:36px 0 12px;padding-left:12px;border-left:4px solid var(--orange);}
+h3{font-size:1.05rem;font-weight:700;color:var(--navy2);margin:22px 0 8px;}
+p{margin-bottom:14px;font-size:.97rem;}
+
+/* ── COMPARE CARDS ── */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 28px;}
+.compare-card{background:#fff;border-radius:var(--radius);border:2px solid var(--border);overflow:hidden;}
+.compare-head{padding:14px 18px;color:#fff;font-weight:800;font-size:1rem;}
+.compare-head.skim{background:#2563eb;}
+.compare-head.scan{background:#16a34a;}
+.compare-body{padding:16px 18px;}
+.compare-body p{font-size:.88rem;color:var(--muted);margin-bottom:10px;}
+.compare-body ul{list-style:none;padding:0;}
+.compare-body ul li{font-size:.87rem;padding:5px 0 5px 16px;position:relative;border-bottom:1px solid #f8fafc;line-height:1.4;}
+.compare-body ul li:last-child{border-bottom:none;}
+.compare-body ul li::before{content:"✓";position:absolute;left:0;font-weight:700;}
+.skim-li::before{color:#2563eb !important;}
+.scan-li::before{color:#16a34a !important;}
+@media(max-width:560px){.compare-grid{grid-template-columns:1fr;}}
+
+/* ── STEP BOXES ── */
+.steps{display:flex;flex-direction:column;gap:12px;margin:16px 0 28px;}
+.step{display:flex;gap:14px;background:#fff;border-radius:var(--radius);border:2px solid var(--border);padding:16px 18px;align-items:flex-start;}
+.step-num{width:36px;height:36px;min-width:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;margin-top:2px;}
+.step-num.blue{background:#2563eb;}
+.step-num.green{background:#16a34a;}
+.step-body{}
+.step-title{font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:4px;}
+.step-desc{font-size:.86rem;color:var(--muted);line-height:1.5;}
+
+/* ── PASSAGE BOX ── */
+.passage-box{background:#fff;border:2px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:16px 0 24px;}
+.passage-head{background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px;}
+.passage-body{padding:18px;font-size:.9rem;line-height:1.8;color:#374151;}
+.skim-mark{background:#dbeafe;color:#1d4ed8;padding:1px 4px;border-radius:3px;font-weight:600;}
+.scan-mark{background:#dcfce7;color:#15803d;padding:1px 4px;border-radius:3px;font-weight:600;}
+
+/* ── Q&A PRACTICE ── */
+.qa-section{background:#fff;border:2px solid var(--border);border-radius:var(--radius);padding:20px;margin:16px 0 28px;}
+.qa-title{font-weight:700;font-size:.92rem;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+.qa-item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px dashed var(--border);}
+.qa-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.qa-q{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:8px;}
+.qa-type{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:6px;text-transform:uppercase;}
+.qa-type.skim{background:#dbeafe;color:#1d4ed8;}
+.qa-type.scan{background:#dcfce7;color:#15803d;}
+.qa-ans{font-size:.85rem;color:var(--muted);background:#f8fafc;border-radius:6px;padding:8px 12px;border-left:3px solid var(--orange);display:none;}
+.qa-ans.show{display:block;}
+.show-btn{font-size:.78rem;color:var(--orange);border:none;background:none;cursor:pointer;font-weight:600;padding:4px 0;text-decoration:underline;}
+
+/* ── TIPS TABLE ── */
+.tips-table{width:100%;border-collapse:collapse;margin:16px 0 28px;font-size:.88rem;}
+.tips-table th{background:var(--navy);color:#fff;padding:11px 14px;text-align:left;font-weight:700;}
+.tips-table td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tips-table tr:nth-child(even) td{background:#f8fafc;}
+.tips-table tr:hover td{background:#fff7ed;}
+.badge{display:inline-block;font-size:.72rem;padding:2px 8px;border-radius:10px;font-weight:700;white-space:nowrap;}
+.badge.do{background:#dcfce7;color:#15803d;}
+.badge.dont{background:#fee2e2;color:#b91c1c;}
+
+/* ── DO/DONT ── */
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0 28px;}
+.do-box,.dont-box{background:#fff;border-radius:var(--radius);padding:16px 18px;border:2px solid var(--border);}
+.do-box{border-top:4px solid #16a34a;}
+.dont-box{border-top:4px solid #ef4444;}
+.do-box h4{color:#15803d;font-size:.9rem;margin-bottom:10px;}
+.dont-box h4{color:#b91c1c;font-size:.9rem;margin-bottom:10px;}
+.do-box ul,.dont-box ul{list-style:none;padding:0;}
+.do-box ul li,.dont-box ul li{font-size:.85rem;padding:4px 0 4px 18px;position:relative;line-height:1.4;}
+.do-box ul li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:700;}
+.dont-box ul li::before{content:"✗";position:absolute;left:0;color:#ef4444;font-weight:700;}
+@media(max-width:560px){.do-dont{grid-template-columns:1fr;}}
+
+/* ── DIVIDER ── */
+hr{border:none;border-top:2px dashed var(--border);margin:36px 0;}
+
+/* ── CTA ── */
+.cta-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border-radius:var(--radius);padding:32px 28px;text-align:center;color:#fff;margin-top:40px;}
+.cta-box h3{font-size:1.2rem;font-weight:800;margin-bottom:8px;}
+.cta-box p{font-size:.9rem;opacity:.85;margin-bottom:20px;}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:700;font-size:.95rem;transition:background .2s;}
+.cta-btn:hover{background:var(--orange2);}
+
+@media(max-width:600px){
+  .hero{padding:36px 16px 28px;}
+  .page-wrap{padding:28px 14px 48px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <img src="Thep Academy (3).png" alt="Thep Academy" onerror="this.style.display='none'">
+    <span>THEP ACADEMY</span>
+  </a>
+  <a class="back-btn" href="index.html#freedocs">← คลังความรู้</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">📖 Reading Strategies</div>
+  <h1>เทคนิค Skimming &amp; Scanning<br>สำหรับข้อสอบ</h1>
+  <p>อ่านข้อสอบ Reading ให้เร็วขึ้น 2 เท่า โดยไม่ต้องอ่านทุกคำ — เรียนรู้วิธีเลือกอ่านอย่างชาญฉลาด</p>
+  <div class="hero-meta">
+    <span>📖 อ่าน 6 นาที</span>
+    <span>🎯 O-NET · PAT · IELTS</span>
+    <span>✅ พร้อมแบบฝึกหัด</span>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <h2>Skimming กับ Scanning ต่างกันอย่างไร?</h2>
+  <p>นักเรียนส่วนใหญ่อ่านบทความตั้งแต่ต้นจนจบทุกคำ ซึ่งเสียเวลามากในข้อสอบ เทคนิค <strong>Skimming</strong> และ <strong>Scanning</strong> คือวิธีอ่าน "เลือกสรร" ที่ให้คำตอบเร็วกว่าโดยไม่ต้องอ่านทั้งหมด</p>
+
+  <div class="compare-grid">
+    <div class="compare-card">
+      <div class="compare-head skim">👁️ Skimming — อ่านคร่าวๆ</div>
+      <div class="compare-body">
+        <p><strong>เป้าหมาย:</strong> จับ "ใจความรวม" ของบทความ</p>
+        <ul>
+          <li class="skim-li">อ่านหัวข้อ + ย่อหน้าแรก + ย่อหน้าสุดท้าย</li>
+          <li class="skim-li">อ่านประโยคแรกของทุกย่อหน้า (topic sentence)</li>
+          <li class="skim-li">ใช้เวลา 20–30% ของเวลาที่มี</li>
+          <li class="skim-li">ตอบคำถาม "เกี่ยวกับอะไร / Main idea คืออะไร"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="compare-card">
+      <div class="compare-head scan">🔍 Scanning — ค้นหาข้อมูล</div>
+      <div class="compare-body">
+        <p><strong>เป้าหมาย:</strong> หาข้อมูล "เฉพาะจุด" ที่โจทย์ถาม</p>
+        <ul>
+          <li class="scan-li">มองหาตัวเลข / ชื่อเฉพาะ / คำสำคัญ</li>
+          <li class="scan-li">ตามองแบบ Z หรือ F ไม่อ่านทุกคำ</li>
+          <li class="scan-li">หยุดเมื่อเจอคำที่ต้องการ แล้วอ่านรอบๆ</li>
+          <li class="scan-li">ตอบคำถาม "ใคร / ที่ไหน / เมื่อไหร่ / เท่าไหร่"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>วิธีใช้ Skimming — ทีละขั้นตอน</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num blue">1</div>
+      <div class="step-body">
+        <div class="step-title">อ่านหัวข้อและ subheadings ทั้งหมดก่อน</div>
+        <div class="step-desc">หัวข้อบอก "แผนที่" ของบทความ ทำให้รู้ว่าข้อมูลอยู่ตรงไหนก่อนอ่านจริง</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num blue">2</div>
+      <div class="step-body">
+        <div class="step-title">อ่านย่อหน้าแรกอย่างละเอียด</div>
+        <div class="step-desc">ย่อหน้าแรกมักบอก thesis หรือ main idea ของทั้งบทความ — อย่าข้าม</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num blue">3</div>
+      <div class="step-body">
+        <div class="step-title">อ่านเฉพาะประโยคแรกของแต่ละย่อหน้า</div>
+        <div class="step-desc">ประโยคแรก (topic sentence) คือสรุปของย่อหน้านั้น ถ้าไม่ตรงโจทย์ → ข้ามไปเลย</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num blue">4</div>
+      <div class="step-body">
+        <div class="step-title">อ่านย่อหน้าสุดท้ายอย่างละเอียด</div>
+        <div class="step-desc">บทสรุปมักเป็นที่อยู่ของ conclusion / author's opinion ซึ่งออกสอบบ่อยมาก</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>วิธีใช้ Scanning — ทีละขั้นตอน</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num green">1</div>
+      <div class="step-body">
+        <div class="step-title">อ่านโจทย์ก่อน — ระบุ "keyword" ที่ต้องหา</div>
+        <div class="step-desc">เช่น โจทย์ถามว่า "In which year…?" → keyword คือตัวเลขปี | "Who invented…?" → keyword คือชื่อคน</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num green">2</div>
+      <div class="step-body">
+        <div class="step-title">วางสายตาแบบ Z-pattern ผ่านบทความ</div>
+        <div class="step-desc">อย่าอ่านทุกคำ — ให้ตามองวกไปมาอย่างรวดเร็ว มองหา keyword หรือคำใกล้เคียง (synonym)</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num green">3</div>
+      <div class="step-body">
+        <div class="step-title">หยุดเมื่อเห็น keyword แล้วอ่านรอบๆ 1–2 ประโยค</div>
+        <div class="step-desc">ตัวเลข, ชื่อเฉพาะ, วันที่ หรือตัวพิมพ์ใหญ่มักโดดออกมาให้เห็นได้ง่าย</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num green">4</div>
+      <div class="step-body">
+        <div class="step-title">ระวัง paraphrase — ข้อสอบมักไม่ใช้คำเดิม</div>
+        <div class="step-desc">ถ้าโจทย์ถาม "cost" อาจอยู่ในบทความในรูป "price" หรือ "expense" — มองหา synonym ด้วย</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>แบบฝึกหัด — ลองใช้เทคนิคจริง</h2>
+  <p>อ่านบทความด้านล่าง แล้วตอบคำถาม โดยระบุว่าใช้ <span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:.85rem;font-weight:700;">Skimming</span> หรือ <span style="background:#dcfce7;color:#15803d;padding:2px 6px;border-radius:4px;font-size:.85rem;font-weight:700;">Scanning</span></p>
+
+  <div class="passage-box">
+    <div class="passage-head">📄 Passage — "The Benefits of Urban Gardening"</div>
+    <div class="passage-body">
+      <span class="skim-mark">Urban gardening has become increasingly popular in cities around the world.</span> As more people move into densely populated areas, access to fresh produce has become a growing concern. Community gardens and rooftop farms are now being established in cities from Bangkok to New York.<br><br>
+      <span class="skim-mark">One of the primary benefits of urban gardening is improved mental health.</span> Studies conducted in the Netherlands found that residents who participated in community gardens reported a <span class="scan-mark">34% reduction</span> in stress levels compared to those who did not. Furthermore, the act of tending to plants has been shown to reduce anxiety and improve mood.<br><br>
+      <span class="skim-mark">Urban gardens also contribute to environmental sustainability.</span> Rooftop gardens can reduce a building's temperature by up to <span class="scan-mark">3°C</span>, lowering energy consumption for air conditioning. Additionally, local food production reduces the carbon footprint associated with transporting food over long distances.<br><br>
+      <span class="skim-mark">In conclusion, urban gardening offers a range of social, psychological, and environmental benefits</span> that make it a worthwhile investment for city planners and residents alike. As urban populations continue to grow, integrating green spaces into city design will become increasingly essential.
+    </div>
+  </div>
+  <p style="font-size:.8rem;color:var(--muted);">
+    <span style="background:#dbeafe;padding:2px 6px;border-radius:3px;">สีน้ำเงิน</span> = ใช้ Skimming &nbsp;|&nbsp;
+    <span style="background:#dcfce7;padding:2px 6px;border-radius:3px;">สีเขียว</span> = ใช้ Scanning
+  </p>
+
+  <div class="qa-section">
+    <div class="qa-title">❓ แบบฝึกหัด — ตอบคำถาม</div>
+
+    <div class="qa-item">
+      <div class="qa-q"><span class="qa-type skim">Skimming</span> 1. What is the main idea of this passage?</div>
+      <button class="show-btn" onclick="toggleAns(this)">ดูเฉลย ▼</button>
+      <div class="qa-ans">Urban gardening provides multiple benefits — mental health, environmental sustainability, and community well-being — making it valuable for modern cities. <em>(ใช้ Skimming: อ่านประโยคแรกแต่ละย่อหน้า + บทสรุป)</em></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q"><span class="qa-type scan">Scanning</span> 2. By how much did stress levels reduce among community garden participants?</div>
+      <button class="show-btn" onclick="toggleAns(this)">ดูเฉลย ▼</button>
+      <div class="qa-ans">34% — <em>(ใช้ Scanning: มองหาตัวเลขในบทความ แล้วอ่านรอบๆ ประโยคนั้น)</em></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q"><span class="qa-type scan">Scanning</span> 3. How much can a rooftop garden reduce a building's temperature?</div>
+      <button class="show-btn" onclick="toggleAns(this)">ดูเฉลย ▼</button>
+      <div class="qa-ans">Up to 3°C — <em>(ใช้ Scanning: มองหาตัวเลขพร้อม °C หรือคำว่า temperature)</em></div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q"><span class="qa-type skim">Skimming</span> 4. What is the author's overall attitude towards urban gardening?</div>
+      <button class="show-btn" onclick="toggleAns(this)">ดูเฉลย ▼</button>
+      <div class="qa-ans">Positive / supportive — the author presents benefits without criticism and concludes it is "a worthwhile investment." <em>(ใช้ Skimming: อ่านย่อหน้าสุดท้าย + tone ของบทความ)</em></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>สรุปเทคนิคที่ใช้กับข้อสอบแต่ละประเภท</h2>
+  <table class="tips-table">
+    <thead>
+      <tr>
+        <th>ประเภทคำถาม</th>
+        <th>เทคนิค</th>
+        <th>วิธีหาคำตอบ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Main idea / What is the passage about?</td><td><span class="badge do">Skimming</span></td><td>อ่านประโยคแรกทุกย่อหน้า + บทสรุป</td></tr>
+      <tr><td>Best title / Topic of the passage</td><td><span class="badge do">Skimming</span></td><td>จับธีมหลักจาก topic sentences</td></tr>
+      <tr><td>Author's purpose / attitude / tone</td><td><span class="badge do">Skimming</span></td><td>อ่านบทนำ + บทสรุป + คำคุณศัพท์</td></tr>
+      <tr><td>Specific number / date / name</td><td><span class="badge dont">Scanning</span></td><td>มองหาตัวเลข / ตัวพิมพ์ใหญ่</td></tr>
+      <tr><td>Where / When / Who / How much</td><td><span class="badge dont">Scanning</span></td><td>ค้นหา keyword จากโจทย์</td></tr>
+      <tr><td>Vocabulary in context</td><td><span class="badge dont">Scanning</span></td><td>หาคำ → อ่านรอบๆ 1–2 ประโยค</td></tr>
+      <tr><td>Inference / What does the author imply?</td><td><span class="badge do">Skimming</span></td><td>อ่านทั้งย่อหน้าที่เกี่ยวข้อง</td></tr>
+    </tbody>
+  </table>
+
+  <h2>สิ่งที่ควรทำ vs ไม่ควรทำ</h2>
+  <div class="do-dont">
+    <div class="do-box">
+      <h4>✅ ควรทำ</h4>
+      <ul>
+        <li>อ่านโจทย์ก่อนอ่านบทความเสมอ</li>
+        <li>밑줄 keyword ในโจทย์ก่อน scan</li>
+        <li>มองหา synonym ไม่ใช่แค่คำเดิม</li>
+        <li>จับเวลาฝึก — ตั้งเป้า 1 นาทีต่อย่อหน้า</li>
+        <li>อ่านรอบๆ keyword อีก 1–2 ประโยค</li>
+      </ul>
+    </div>
+    <div class="dont-box">
+      <h4>❌ ไม่ควรทำ</h4>
+      <ul>
+        <li>อ่านทุกคำตั้งแต่ต้นจนจบก่อนดูโจทย์</li>
+        <li>แปลทุกประโยคในใจ (เสียเวลามาก)</li>
+        <li>หยุดนานที่คำศัพท์ที่ไม่รู้จัก</li>
+        <li>ไม่จับเวลาตอนฝึก</li>
+        <li>เชื่อคำตอบที่มีคำเดิมจากบทความเสมอ (trap!)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>📚 ฝึกกับข้อสอบจริง</h3>
+    <p>ลองใช้เทคนิค Skimming &amp; Scanning กับข้อสอบ O-NET จำลอง 1,000 ข้อ</p>
+    <a href="mock-exam.html" class="cta-btn">🧪 ทำ Mock Exam</a>
+  </div>
+
+</div><!-- end page-wrap -->
+
+<!-- FOOTER -->
+<div style="background:var(--navy);color:rgba(255,255,255,.65);text-align:center;padding:18px;font-size:.82rem;">
+  <strong style="color:#fff;">THEP ACADEMY</strong> — สถาบันสอนภาษาอังกฤษ | © 2026 All Rights Reserved
+</div>
+
+<script>
+function toggleAns(btn){
+  const ans = btn.nextElementSibling;
+  const show = ans.classList.toggle('show');
+  btn.textContent = show ? 'ซ่อนเฉลย ▲' : 'ดูเฉลย ▼';
+}
+</script>
+</body>
+</html>
