@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grammar Foundation | THEP ACADEMY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#1a2340;
+  --gold:#D4AF37;
+  --gold-light:rgba(212,175,55,0.12);
+  --green:#4CAF50;
+  --pink:#FCE4EC;
+  --blue:#E3F2FD;
+  --bg:#FAFAFA;
+  --card:#ffffff;
+  --text:#1a2340;
+  --muted:#64748b;
+  --border:#e8e8e8;
+  --radius:14px;
+}
+body{font-family:'Proza Libre',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+/* ── TOP NAV ── */
+.topbar{background:#ffffff;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.07);border-bottom:1px solid rgba(212,175,55,0.2);}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.topbar-brand img{height:44px;width:auto;object-fit:contain;}
+.back-btn{color:var(--navy);text-decoration:none;font-size:.9rem;opacity:.7;display:flex;align-items:center;gap:6px;transition:opacity .2s;font-weight:600;}
+.back-btn:hover{opacity:1;color:var(--gold);}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#263660 60%,#1a2340 100%);color:#fff;padding:52px 24px 40px;text-align:center;}
+.hero-tag{display:inline-block;background:var(--gold-light);color:var(--gold);border:1px solid rgba(212,175,55,0.4);border-radius:20px;padding:5px 16px;font-size:.8rem;font-weight:700;letter-spacing:.5px;margin-bottom:14px;text-transform:uppercase;}
+.hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:10px;line-height:1.2;}
+.hero h1 span{color:var(--gold);}
+.hero p{font-size:1rem;opacity:.8;max-width:560px;margin:0 auto 20px;}
+.hero-chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.hero-chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:5px 16px;border-radius:20px;font-size:.82rem;font-weight:600;}
+
+/* ── TABS ── */
+.tab-bar{display:flex;gap:0;justify-content:center;padding:28px 16px 0;max-width:600px;margin:0 auto;border-bottom:2px solid var(--border);}
+.tab-btn{flex:1;padding:12px 0;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;font-family:inherit;font-size:1rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s;}
+.tab-btn.active{color:var(--navy);border-bottom-color:var(--gold);}
+.tab-btn:hover:not(.active){color:var(--navy);}
+.tab-btn span{font-size:.75rem;display:block;font-weight:400;opacity:.75;margin-top:2px;}
+
+.tab-section{display:none;max-width:1100px;margin:0 auto;padding:32px 20px 60px;}
+.tab-section.active{display:block;}
+
+/* ── SECTION TITLE ── */
+.section-intro{text-align:center;margin-bottom:36px;}
+.section-intro h2{font-size:1.5rem;font-weight:800;color:var(--navy);margin-bottom:8px;}
+.section-intro p{color:var(--muted);font-size:.95rem;max-width:540px;margin:0 auto;}
+
+/* ═══════════════════════════════════════════════
+   12 TENSES
+═══════════════════════════════════════════════ */
+/* Quick-reference table */
+.tense-overview{overflow-x:auto;margin-bottom:40px;}
+.tense-overview table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:640px;}
+.tense-overview th{background:var(--navy);color:var(--gold);padding:10px 12px;text-align:left;font-weight:700;}
+.tense-overview td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+.tense-overview tr:hover td{background:#f9f5e8;}
+.tense-overview tr:nth-child(even) td{background:#FAFAFA;}
+.tense-overview tr:nth-child(even):hover td{background:#f9f5e8;}
+.tense-overview code{font-family:'Courier New',monospace;font-size:.82rem;background:#f0f4ff;padding:2px 6px;border-radius:4px;color:var(--navy);}
+.badge-time{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.72rem;font-weight:700;}
+.t-present{background:#E3F2FD;color:#1565C0;}
+.t-past{background:#FCE4EC;color:#c62828;}
+.t-future{background:#E8F5E9;color:#2E7D32;}
+
+/* Tense filter */
+.tense-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;justify-content:center;}
+.tf-btn{padding:6px 18px;border-radius:20px;border:2px solid var(--border);background:#fff;color:var(--muted);font-size:.82rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit;}
+.tf-btn.on,.tf-btn:hover{border-color:var(--gold);color:var(--navy);background:var(--gold-light);}
+.tf-btn.on{background:var(--gold);color:#fff;border-color:var(--gold);}
+
+/* Tense cards grid */
+.tense-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+.tc{background:#fff;border-radius:var(--radius);border:2px solid var(--border);overflow:hidden;transition:all .22s;cursor:pointer;}
+.tc:hover{border-color:var(--gold);box-shadow:0 6px 20px rgba(212,175,55,.18);}
+.tc.open{border-color:var(--gold);box-shadow:0 6px 20px rgba(212,175,55,.2);}
+.tc-head{padding:16px 18px 12px;display:flex;align-items:flex-start;gap:12px;}
+.tc-num{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;flex-shrink:0;color:#fff;}
+.tc-info{flex:1;}
+.tc-name{font-weight:800;font-size:1rem;color:var(--navy);line-height:1.2;}
+.tc-th{font-size:.78rem;color:var(--muted);margin-top:2px;}
+.tc-struct{background:#f0f4ff;border-radius:8px;padding:7px 12px;margin:0 18px 12px;font-family:'Courier New',monospace;font-size:.83rem;font-weight:700;color:var(--navy);border-left:3px solid var(--gold);}
+.tc-preview{padding:0 18px 10px;font-size:.83rem;color:var(--muted);font-style:italic;line-height:1.4;}
+.tc-toggle{padding:6px 18px 12px;display:flex;align-items:center;justify-content:space-between;}
+.tc-toggle-lbl{font-size:.78rem;color:var(--gold);font-weight:700;}
+.tc-arrow{font-size:.75rem;color:var(--muted);transition:transform .2s;}
+.tc.open .tc-arrow{transform:rotate(180deg);}
+
+/* Detail panel */
+.tc-detail{display:none;border-top:2px dashed var(--border);padding:16px 18px;background:#fafbff;}
+.tc.open .tc-detail{display:block;}
+.dl{margin-bottom:12px;}
+.dl-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--gold);margin-bottom:6px;}
+.dl-content{font-size:.85rem;line-height:1.6;color:var(--text);}
+.use-list{list-style:none;padding:0;}
+.use-list li{padding:2px 0 2px 14px;position:relative;font-size:.84rem;color:var(--text);}
+.use-list li::before{content:"•";position:absolute;left:0;color:var(--gold);font-weight:700;}
+.ex-box{background:#fff;border-radius:8px;padding:10px 12px;border-left:3px solid var(--navy);margin-top:6px;}
+.ex-en{font-style:italic;color:var(--navy);font-weight:600;font-size:.88rem;}
+.ex-th{font-size:.78rem;color:var(--muted);margin-top:3px;}
+.sig-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.sig-tag{background:#fffbeb;color:#b45309;border:1px solid #fde68a;border-radius:8px;padding:3px 10px;font-size:.76rem;font-weight:700;}
+.note{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:10px 12px;font-size:.82rem;color:#78350f;margin-top:6px;}
+
+/* ═══════════════════════════════════════════════
+   PARTS OF SPEECH
+═══════════════════════════════════════════════ */
+.pos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.pos-card{background:#fff;border-radius:var(--radius);border:2px solid var(--border);overflow:hidden;transition:all .22s;}
+.pos-card:hover{border-color:var(--gold);box-shadow:0 6px 20px rgba(212,175,55,.15);transform:translateY(-2px);}
+.pos-head{padding:18px 20px 14px;display:flex;align-items:center;gap:14px;}
+.pos-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.pos-title{flex:1;}
+.pos-en{font-weight:800;font-size:1.05rem;color:var(--navy);line-height:1.2;}
+.pos-th{font-size:.82rem;color:var(--muted);margin-top:2px;}
+.pos-body{padding:0 20px 18px;}
+.pos-def{font-size:.88rem;color:var(--text);line-height:1.6;margin-bottom:12px;padding:10px 12px;background:var(--blue);border-radius:8px;border-left:3px solid var(--gold);}
+.pos-section-lbl{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--gold);margin-bottom:6px;margin-top:10px;}
+.pos-examples{display:flex;flex-wrap:wrap;gap:6px;}
+.pos-ex{background:var(--gold-light);color:var(--navy);border:1px solid rgba(212,175,55,.3);border-radius:8px;padding:4px 12px;font-size:.8rem;font-weight:700;}
+.pos-subtypes{display:grid;gap:6px;margin-top:6px;}
+.pos-sub{background:var(--bg);border-radius:8px;padding:8px 12px;}
+.pos-sub-name{font-weight:700;font-size:.82rem;color:var(--navy);}
+.pos-sub-desc{font-size:.78rem;color:var(--muted);margin-top:2px;line-height:1.4;}
+.pos-sub-ex{font-size:.78rem;color:var(--green);font-style:italic;margin-top:3px;}
+.pos-tip{background:var(--pink);border-radius:8px;padding:10px 12px;font-size:.82rem;color:var(--navy);margin-top:10px;line-height:1.5;}
+.pos-tip strong{color:#c62828;}
+.pos-sent{margin-top:12px;background:#f9f5e8;border-radius:8px;padding:10px 12px;border-left:3px solid var(--gold);}
+.pos-sent-lbl{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--gold);margin-bottom:4px;}
+.pos-sent p{font-size:.85rem;font-style:italic;color:var(--navy);line-height:1.6;}
+.pos-sent .th{color:var(--muted);font-style:normal;font-size:.78rem;margin-top:2px;}
+
+/* ── Highlight sentence with word class colors ── */
+mark.noun{background:#E3F2FD;color:#1565C0;border-radius:4px;padding:1px 4px;}
+mark.verb{background:#FCE4EC;color:#c62828;border-radius:4px;padding:1px 4px;}
+mark.adj{background:#E8F5E9;color:#2E7D32;border-radius:4px;padding:1px 4px;}
+mark.adv{background:#FFF9C4;color:#F57F17;border-radius:4px;padding:1px 4px;}
+mark.prep{background:#EDE7F6;color:#4527A0;border-radius:4px;padding:1px 4px;}
+mark.conj{background:#FBE9E7;color:#BF360C;border-radius:4px;padding:1px 4px;}
+mark.pron{background:#E0F7FA;color:#006064;border-radius:4px;padding:1px 4px;}
+mark.art{background:#F3E5F5;color:#6A1B9A;border-radius:4px;padding:1px 4px;}
+
+/* ── POS Legend ── */
+.pos-legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:32px;padding:16px 20px;background:#fff;border-radius:12px;border:1px solid var(--border);}
+.leg{display:flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;}
+.leg-dot{width:12px;height:12px;border-radius:3px;}
+
+/* ── Sentence anatomy ── */
+.anatomy-wrap{margin-bottom:40px;padding:20px 24px;background:#fff;border-radius:14px;border:1px solid var(--border);}
+.anatomy-wrap h3{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:12px;text-align:center;}
+.anatomy-sent{font-size:1.05rem;line-height:2;text-align:center;margin-bottom:12px;}
+.anatomy-legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.aleg{font-size:.78rem;font-weight:700;display:flex;align-items:center;gap:5px;}
+.aleg-box{width:14px;height:14px;border-radius:3px;}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:24px;text-align:center;font-size:.82rem;color:rgba(255,255,255,.6);}
+footer strong{color:#fff;}
+footer a{color:var(--gold);text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+
+@media(max-width:600px){
+  .tense-grid,.pos-grid{grid-template-columns:1fr;}
+  .tab-btn{font-size:.85rem;}
+  .hero h1{font-size:1.7rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── TOP NAV ── -->
+<nav class="topbar">
+  <a href="index.html" class="topbar-brand">
+    <img src="Thep Academy.png" alt="Thep Academy" onerror="this.style.display='none'">
+  </a>
+  <a href="index.html" class="back-btn">← กลับหน้าหลัก</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-tag">FOUNDATION COURSE</div>
+  <h1>Grammar <span>Foundation</span></h1>
+  <p>สรุปไวยากรณ์พื้นฐานภาษาอังกฤษ ครบจบในที่เดียว เข้าใจง่าย พร้อมตัวอย่างจริง</p>
+  <div class="hero-chips">
+    <span class="hero-chip">📐 12 Tenses</span>
+    <span class="hero-chip">🔤 8 Parts of Speech</span>
+    <span class="hero-chip">✅ ตัวอย่างทุกหัวข้อ</span>
+  </div>
+</section>
+
+<!-- ── TABS ── -->
+<div style="background:#fff;border-bottom:1px solid var(--border);">
+  <div class="tab-bar" style="max-width:600px;margin:0 auto;">
+    <button class="tab-btn active" onclick="switchTab('tenses',this)">
+      📐 12 Tenses
+      <span>Present · Past · Future</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('pos',this)">
+      🔤 Parts of Speech
+      <span>Noun · Verb · Adj · ...</span>
+    </button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     TAB 1: 12 TENSES
+════════════════════════════════════════════ -->
+<div id="tab-tenses" class="tab-section active">
+
+  <div class="section-intro">
+    <h2>12 Tenses ในภาษาอังกฤษ</h2>
+    <p>แบ่งเป็น 3 กลุ่มเวลา × 4 ลักษณะการกระทำ เรียนรู้โครงสร้างและเมื่อไหรต้องใช้แต่ละ Tense</p>
+  </div>
+
+  <!-- Quick Reference Table -->
+  <div class="tense-overview">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tense</th>
+          <th>โครงสร้างหลัก</th>
+          <th>ตัวอย่าง</th>
+          <th>เวลา</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><b>Simple Present</b></td><td><code>S + V1 (s/es)</code></td><td>She <i>walks</i> to school.</td><td><span class="badge-time t-present">Present</span></td></tr>
+        <tr><td>2</td><td><b>Present Continuous</b></td><td><code>S + is/am/are + V-ing</code></td><td>She <i>is walking</i> now.</td><td><span class="badge-time t-present">Present</span></td></tr>
+        <tr><td>3</td><td><b>Present Perfect</b></td><td><code>S + has/have + V3</code></td><td>She <i>has walked</i> 5 km.</td><td><span class="badge-time t-present">Present</span></td></tr>
+        <tr><td>4</td><td><b>Present Perfect Continuous</b></td><td><code>S + has/have + been + V-ing</code></td><td>She <i>has been walking</i> for 2 hours.</td><td><span class="badge-time t-present">Present</span></td></tr>
+        <tr><td>5</td><td><b>Simple Past</b></td><td><code>S + V2</code></td><td>She <i>walked</i> yesterday.</td><td><span class="badge-time t-past">Past</span></td></tr>
+        <tr><td>6</td><td><b>Past Continuous</b></td><td><code>S + was/were + V-ing</code></td><td>She <i>was walking</i> when it rained.</td><td><span class="badge-time t-past">Past</span></td></tr>
+        <tr><td>7</td><td><b>Past Perfect</b></td><td><code>S + had + V3</code></td><td>She <i>had walked</i> home before dark.</td><td><span class="badge-time t-past">Past</span></td></tr>
+        <tr><td>8</td><td><b>Past Perfect Continuous</b></td><td><code>S + had + been + V-ing</code></td><td>She <i>had been walking</i> for an hour.</td><td><span class="badge-time t-past">Past</span></td></tr>
+        <tr><td>9</td><td><b>Simple Future</b></td><td><code>S + will + V1</code></td><td>She <i>will walk</i> tomorrow.</td><td><span class="badge-time t-future">Future</span></td></tr>
+        <tr><td>10</td><td><b>Future Continuous</b></td><td><code>S + will + be + V-ing</code></td><td>She <i>will be walking</i> at 8 a.m.</td><td><span class="badge-time t-future">Future</span></td></tr>
+        <tr><td>11</td><td><b>Future Perfect</b></td><td><code>S + will + have + V3</code></td><td>She <i>will have walked</i> 10 km by noon.</td><td><span class="badge-time t-future">Future</span></td></tr>
+        <tr><td>12</td><td><b>Future Perfect Continuous</b></td><td><code>S + will + have + been + V-ing</code></td><td>She <i>will have been walking</i> for 3 hours.</td><td><span class="badge-time t-future">Future</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Filter buttons -->
+  <div class="tense-filter">
+    <button class="tf-btn on" onclick="filterTense('all',this)">ทั้งหมด</button>
+    <button class="tf-btn" onclick="filterTense('present',this)">Present</button>
+    <button class="tf-btn" onclick="filterTense('past',this)">Past</button>
+    <button class="tf-btn" onclick="filterTense('future',this)">Future</button>
+  </div>
+
+  <!-- Tense Cards -->
+  <div class="tense-grid" id="tenseGrid">
+
+    <!-- 1 -->
+    <div class="tc" data-time="present">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#1565C0;">1</div>
+        <div class="tc-info">
+          <div class="tc-name">Simple Present</div>
+          <div class="tc-th">ปัจจุบันกาลธรรมดา</div>
+        </div>
+        <span class="badge-time t-present" style="height:fit-content;">Present</span>
+      </div>
+      <div class="tc-struct">S + V1 (s/es) | S + do/does + not + V1</div>
+      <div class="tc-preview">"She walks to school every day."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>พูดถึงเหตุการณ์ที่เกิดขึ้นเป็นประจำ / นิสัย</li>
+            <li>ความจริงทั่วไป (The sun rises in the east.)</li>
+            <li>ตารางเวลาที่แน่นอน (The train leaves at 8.)</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">I study English every morning.</div><div class="ex-th">ฉันเรียนภาษาอังกฤษทุกเช้า</div></div>
+          <div class="ex-box"><div class="ex-en">Water boils at 100 degrees Celsius.</div><div class="ex-th">น้ำเดือดที่ 100 องศาเซลเซียส</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">always</span><span class="sig-tag">usually</span><span class="sig-tag">often</span><span class="sig-tag">sometimes</span><span class="sig-tag">never</span><span class="sig-tag">every day/week</span></div>
+        </div>
+        <div class="note">⚠️ กริยา He/She/It ต้องเติม <b>-s / -es</b> เสมอ: go→goes, study→studies, watch→watches</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="tc" data-time="present">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#1976D2;">2</div>
+        <div class="tc-info">
+          <div class="tc-name">Present Continuous</div>
+          <div class="tc-th">ปัจจุบันกาลต่อเนื่อง</div>
+        </div>
+        <span class="badge-time t-present" style="height:fit-content;">Present</span>
+      </div>
+      <div class="tc-struct">S + is/am/are + V-ing</div>
+      <div class="tc-preview">"They are playing football right now."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>กำลังทำอยู่ขณะนี้ (right now)</li>
+            <li>เหตุการณ์ชั่วคราวในช่วงนี้</li>
+            <li>แผนที่วางไว้ในอนาคตอันใกล้</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">She is reading a book now.</div><div class="ex-th">เธอกำลังอ่านหนังสืออยู่ตอนนี้</div></div>
+          <div class="ex-box"><div class="ex-en">I am meeting my friend tomorrow.</div><div class="ex-th">ฉันจะเจอเพื่อนพรุ่งนี้ (แผนที่วางไว้แล้ว)</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">now</span><span class="sig-tag">right now</span><span class="sig-tag">at the moment</span><span class="sig-tag">currently</span><span class="sig-tag">Look!</span><span class="sig-tag">Listen!</span></div>
+        </div>
+        <div class="note">⚠️ กริยาบางคำใช้ Continuous ไม่ได้ เช่น know, love, want, believe, have (ความเป็นเจ้าของ)</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="tc" data-time="present">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#1E88E5;">3</div>
+        <div class="tc-info">
+          <div class="tc-name">Present Perfect</div>
+          <div class="tc-th">ปัจจุบันกาลสมบูรณ์</div>
+        </div>
+        <span class="badge-time t-present" style="height:fit-content;">Present</span>
+      </div>
+      <div class="tc-struct">S + has/have + V3 (past participle)</div>
+      <div class="tc-preview">"I have visited Paris twice."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>ประสบการณ์ในชีวิต (เคย/ไม่เคย)</li>
+            <li>เหตุการณ์ที่เพิ่งเกิดขึ้นและมีผลต่อปัจจุบัน</li>
+            <li>ทำมาตั้งแต่อดีตและยังทำอยู่ (with since/for)</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">I have never eaten sushi.</div><div class="ex-th">ฉันไม่เคยกินซูชิเลย</div></div>
+          <div class="ex-box"><div class="ex-en">She has lived here since 2010.</div><div class="ex-th">เธออาศัยอยู่ที่นี่ตั้งแต่ปี 2010</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">already</span><span class="sig-tag">yet</span><span class="sig-tag">just</span><span class="sig-tag">ever</span><span class="sig-tag">never</span><span class="sig-tag">since</span><span class="sig-tag">for</span><span class="sig-tag">recently</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="tc" data-time="present">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#42A5F5;">4</div>
+        <div class="tc-info">
+          <div class="tc-name">Present Perfect Continuous</div>
+          <div class="tc-th">ปัจจุบันกาลสมบูรณ์ต่อเนื่อง</div>
+        </div>
+        <span class="badge-time t-present" style="height:fit-content;">Present</span>
+      </div>
+      <div class="tc-struct">S + has/have + been + V-ing</div>
+      <div class="tc-preview">"She has been studying for 3 hours."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>ทำมาตั้งแต่อดีตและยังคงทำอยู่ เน้นระยะเวลา</li>
+            <li>เหนื่อย/เปลืองจากการกระทำที่เพิ่งหยุด (เห็นผล)</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">They have been waiting for 2 hours.</div><div class="ex-th">พวกเขารอมา 2 ชั่วโมงแล้ว (และยังรออยู่)</div></div>
+          <div class="ex-box"><div class="ex-en">Your eyes are red. Have you been crying?</div><div class="ex-th">ตาแดงเลย เพิ่งร้องไห้มาเหรอ?</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">for</span><span class="sig-tag">since</span><span class="sig-tag">all day/morning</span><span class="sig-tag">lately</span><span class="sig-tag">recently</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="tc" data-time="past">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#c62828;">5</div>
+        <div class="tc-info">
+          <div class="tc-name">Simple Past</div>
+          <div class="tc-th">อดีตกาลธรรมดา</div>
+        </div>
+        <span class="badge-time t-past" style="height:fit-content;">Past</span>
+      </div>
+      <div class="tc-struct">S + V2 (past form) | S + did not + V1</div>
+      <div class="tc-preview">"He visited his grandmother last Sunday."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>เหตุการณ์ที่เกิดขึ้นและสิ้นสุดแล้วในอดีต</li>
+            <li>ลำดับเหตุการณ์ในอดีต</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">I went to the market this morning.</div><div class="ex-th">ฉันไปตลาดเมื่อเช้านี้</div></div>
+          <div class="ex-box"><div class="ex-en">She didn't come to school yesterday.</div><div class="ex-th">เธอไม่ได้มาโรงเรียนเมื่อวาน</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">yesterday</span><span class="sig-tag">last night/week/year</span><span class="sig-tag">ago</span><span class="sig-tag">in 2020</span><span class="sig-tag">just now</span></div>
+        </div>
+        <div class="note">⚠️ กริยา Regular verbs เติม <b>-ed</b>: walk→walked, study→studied | Irregular verbs ต้องจำ: go→went, eat→ate, buy→bought</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="tc" data-time="past">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#D32F2F;">6</div>
+        <div class="tc-info">
+          <div class="tc-name">Past Continuous</div>
+          <div class="tc-th">อดีตกาลต่อเนื่อง</div>
+        </div>
+        <span class="badge-time t-past" style="height:fit-content;">Past</span>
+      </div>
+      <div class="tc-struct">S + was/were + V-ing</div>
+      <div class="tc-preview">"I was sleeping when the phone rang."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>กำลังทำอยู่ในช่วงเวลาหนึ่งในอดีต</li>
+            <li>กำลังทำอยู่แล้วมีเหตุการณ์อื่นแทรก (when + Simple Past)</li>
+            <li>สองเหตุการณ์เกิดพร้อมกันในอดีต (while)</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">She was cooking when I arrived.</div><div class="ex-th">เธอกำลังทำอาหารอยู่เมื่อฉันมาถึง</div></div>
+          <div class="ex-box"><div class="ex-en">While he was reading, she was listening to music.</div><div class="ex-th">ขณะที่เขาอ่านหนังสือ เธอกำลังฟังเพลง</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">while</span><span class="sig-tag">when</span><span class="sig-tag">at that time</span><span class="sig-tag">at 9 p.m. yesterday</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="tc" data-time="past">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#E53935;">7</div>
+        <div class="tc-info">
+          <div class="tc-name">Past Perfect</div>
+          <div class="tc-th">อดีตกาลสมบูรณ์</div>
+        </div>
+        <span class="badge-time t-past" style="height:fit-content;">Past</span>
+      </div>
+      <div class="tc-struct">S + had + V3 (past participle)</div>
+      <div class="tc-preview">"She had already left when I called."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>เหตุการณ์ที่เกิดขึ้น <b>ก่อน</b> เหตุการณ์อื่นในอดีต</li>
+            <li>มักใช้คู่กับ Simple Past (before/after/when/by the time)</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">By the time I arrived, the movie had already started.</div><div class="ex-th">กว่าฉันจะมาถึง หนังก็เริ่มไปแล้ว</div></div>
+          <div class="ex-box"><div class="ex-en">He had never flown before that trip.</div><div class="ex-th">เขาไม่เคยบินก่อนการเดินทางครั้งนั้น</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">before</span><span class="sig-tag">after</span><span class="sig-tag">by the time</span><span class="sig-tag">already</span><span class="sig-tag">when</span><span class="sig-tag">never</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="tc" data-time="past">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#EF5350;">8</div>
+        <div class="tc-info">
+          <div class="tc-name">Past Perfect Continuous</div>
+          <div class="tc-th">อดีตกาลสมบูรณ์ต่อเนื่อง</div>
+        </div>
+        <span class="badge-time t-past" style="height:fit-content;">Past</span>
+      </div>
+      <div class="tc-struct">S + had + been + V-ing</div>
+      <div class="tc-preview">"He had been waiting for an hour before she arrived."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>กำลังทำต่อเนื่องมาก่อนเหตุการณ์หนึ่งในอดีต เน้นระยะเวลา</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">She had been studying for 5 hours before she took a break.</div><div class="ex-th">เธอเรียนมา 5 ชั่วโมงแล้วก่อนจะพัก</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">for</span><span class="sig-tag">since</span><span class="sig-tag">before</span><span class="sig-tag">when</span><span class="sig-tag">by the time</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="tc" data-time="future">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#2E7D32;">9</div>
+        <div class="tc-info">
+          <div class="tc-name">Simple Future</div>
+          <div class="tc-th">อนาคตกาลธรรมดา</div>
+        </div>
+        <span class="badge-time t-future" style="height:fit-content;">Future</span>
+      </div>
+      <div class="tc-struct">S + will + V1 | S + is/am/are + going to + V1</div>
+      <div class="tc-preview">"I will call you tonight."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li><b>will:</b> ตัดสินใจทันที, สัญญา, การคาดเดา</li>
+            <li><b>going to:</b> แผนที่วางไว้แล้ว, เห็นสัญญาณชัดเจน</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">I'll help you. (ตัดสินใจตอนนี้)</div><div class="ex-th">ฉันจะช่วยนะ (ตัดสินใจทันที)</div></div>
+          <div class="ex-box"><div class="ex-en">I'm going to study harder next term. (แผนล่วงหน้า)</div><div class="ex-th">ฉันจะตั้งใจเรียนมากขึ้นเทอมหน้า</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">tomorrow</span><span class="sig-tag">next week/year</span><span class="sig-tag">soon</span><span class="sig-tag">in the future</span><span class="sig-tag">tonight</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="tc" data-time="future">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#388E3C;">10</div>
+        <div class="tc-info">
+          <div class="tc-name">Future Continuous</div>
+          <div class="tc-th">อนาคตกาลต่อเนื่อง</div>
+        </div>
+        <span class="badge-time t-future" style="height:fit-content;">Future</span>
+      </div>
+      <div class="tc-struct">S + will + be + V-ing</div>
+      <div class="tc-preview">"This time tomorrow, I will be flying to Tokyo."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>กำลังทำอยู่ ณ จุดเวลาหนึ่งในอนาคต</li>
+            <li>เหตุการณ์ที่คาดว่าจะเกิดขึ้นตามปกติในอนาคต</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">At 10 a.m. tomorrow, she will be giving a speech.</div><div class="ex-th">พรุ่งนี้ 10 โมงเช้า เธอจะกำลังกล่าวสุนทรพจน์อยู่</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">at this time tomorrow</span><span class="sig-tag">this time next week</span><span class="sig-tag">all day tomorrow</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="tc" data-time="future">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#43A047;">11</div>
+        <div class="tc-info">
+          <div class="tc-name">Future Perfect</div>
+          <div class="tc-th">อนาคตกาลสมบูรณ์</div>
+        </div>
+        <span class="badge-time t-future" style="height:fit-content;">Future</span>
+      </div>
+      <div class="tc-struct">S + will + have + V3</div>
+      <div class="tc-preview">"By 2030, she will have graduated from university."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>เหตุการณ์ที่จะเสร็จสิ้น <b>ก่อน</b> จุดเวลาหนึ่งในอนาคต</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">By the time you arrive, I will have cooked dinner.</div><div class="ex-th">กว่าคุณจะมาถึง ฉันจะทำอาหารเย็นเสร็จแล้ว</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">by (then/tomorrow/2030)</span><span class="sig-tag">before</span><span class="sig-tag">by the time</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="tc" data-time="future">
+      <div class="tc-head">
+        <div class="tc-num" style="background:#66BB6A;">12</div>
+        <div class="tc-info">
+          <div class="tc-name">Future Perfect Continuous</div>
+          <div class="tc-th">อนาคตกาลสมบูรณ์ต่อเนื่อง</div>
+        </div>
+        <span class="badge-time t-future" style="height:fit-content;">Future</span>
+      </div>
+      <div class="tc-struct">S + will + have + been + V-ing</div>
+      <div class="tc-preview">"By next year, I will have been learning English for 10 years."</div>
+      <div class="tc-toggle"><span class="tc-toggle-lbl">ดูรายละเอียด</span><span class="tc-arrow">▼</span></div>
+      <div class="tc-detail">
+        <div class="dl"><div class="dl-label">ใช้เมื่อ</div>
+          <ul class="use-list">
+            <li>ทำต่อเนื่องมาจนถึงจุดเวลาหนึ่งในอนาคต เน้นระยะเวลาสะสม</li>
+          </ul>
+        </div>
+        <div class="dl"><div class="dl-label">ตัวอย่าง</div>
+          <div class="ex-box"><div class="ex-en">By 2026, she will have been teaching for 20 years.</div><div class="ex-th">ถึงปี 2026 เธอจะสอนมา 20 ปีแล้ว</div></div>
+        </div>
+        <div class="dl"><div class="dl-label">Signal Words</div>
+          <div class="sig-tags"><span class="sig-tag">by</span><span class="sig-tag">for</span><span class="sig-tag">since</span><span class="sig-tag">by the time</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tense-grid -->
+</div><!-- /tab-tenses -->
+
+
+<!-- ════════════════════════════════════════════
+     TAB 2: PARTS OF SPEECH
+════════════════════════════════════════════ -->
+<div id="tab-pos" class="tab-section">
+
+  <div class="section-intro">
+    <h2>Parts of Speech (ชนิดของคำ)</h2>
+    <p>คำในภาษาอังกฤษทุกคำมี "หน้าที่" ในประโยค แบ่งได้เป็น 8 ประเภทหลัก</p>
+  </div>
+
+  <!-- Sentence Anatomy -->
+  <div class="anatomy-wrap">
+    <h3>🔍 วิเคราะห์ประโยค: Parts of Speech ในประโยคจริง</h3>
+    <div class="anatomy-sent">
+      <mark class="art">The</mark> <mark class="adj">smart</mark> <mark class="noun">student</mark>
+      <mark class="adv">always</mark> <mark class="verb">studies</mark>
+      <mark class="prep">in</mark> <mark class="art">the</mark> <mark class="noun">library</mark>
+      <mark class="conj">and</mark> <mark class="pron">she</mark> <mark class="verb">reads</mark>
+      <mark class="adv">quietly</mark>.
+    </div>
+    <div class="anatomy-legend">
+      <div class="aleg"><div class="aleg-box" style="background:#E3F2FD;border:1px solid #1565C0;"></div><span style="color:#1565C0;font-weight:700;">Noun</span></div>
+      <div class="aleg"><div class="aleg-box" style="background:#FCE4EC;border:1px solid #c62828;"></div><span style="color:#c62828;font-weight:700;">Verb</span></div>
+      <div class="aleg"><div class="aleg-box" style="background:#E8F5E9;border:1px solid #2E7D32;"></div><span style="color:#2E7D32;font-weight:700;">Adjective</span></div>
+      <div class="aleg"><div class="aleg-box" style="background:#FFF9C4;border:1px solid #F57F17;"></div><span style="color:#F57F17;font-weight:700;">Adverb</span></div>
+      <div class="aleg"><div class="aleg-box" style="background:#EDE7F6;border:1px solid #4527A0;"></div><span style="color:#4527A0;font-weight:700;">Preposition</span></div>
+      <div class="aleg"><div class="aleg-box" style="background:#FBE9E7;border:1px solid #BF360C;"></div><span style="color:#BF360C;font-weight:700;">Conjunction</span></div>
+      <div class="aleg"><div class="aleg-box" style="background:#E0F7FA;border:1px solid #006064;"></div><span style="color:#006064;font-weight:700;">Pronoun</span></div>
+      <div class="aleg"><div class="aleg-box" style="background:#F3E5F5;border:1px solid #6A1B9A;"></div><span style="color:#6A1B9A;font-weight:700;">Article</span></div>
+    </div>
+  </div>
+
+  <div class="pos-grid">
+
+    <!-- 1. NOUN -->
+    <div class="pos-card">
+      <div class="pos-head">
+        <div class="pos-icon" style="background:#E3F2FD;">📦</div>
+        <div class="pos-title">
+          <div class="pos-en">Noun <span style="color:var(--gold);font-size:.8rem;margin-left:6px;">n.</span></div>
+          <div class="pos-th">คำนาม — ชื่อคน สิ่ง สถานที่ ความคิด</div>
+        </div>
+      </div>
+      <div class="pos-body">
+        <div class="pos-def">คำที่ใช้เรียกชื่อคน สัตว์ สิ่งของ สถานที่ หรือแนวคิดนามธรรม ทำหน้าที่เป็น Subject หรือ Object ในประโยค</div>
+        <div class="pos-section-lbl">ประเภทของ Noun</div>
+        <div class="pos-subtypes">
+          <div class="pos-sub">
+            <div class="pos-sub-name">Common Noun</div>
+            <div class="pos-sub-desc">ชื่อทั่วไป ไม่เฉพาะเจาะจง</div>
+            <div class="pos-sub-ex">dog, city, book, teacher</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Proper Noun</div>
+            <div class="pos-sub-desc">ชื่อเฉพาะ ขึ้นต้นตัวพิมพ์ใหญ่เสมอ</div>
+            <div class="pos-sub-ex">Thailand, Bangkok, Monday, Alice</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Abstract Noun</div>
+            <div class="pos-sub-desc">นามนามธรรม จับต้องไม่ได้</div>
+            <div class="pos-sub-ex">love, freedom, happiness, knowledge</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Collective Noun</div>
+            <div class="pos-sub-desc">คำนามหมู่</div>
+            <div class="pos-sub-ex">a team, a flock, a class, a family</div>
+          </div>
+        </div>
+        <div class="pos-sent">
+          <div class="pos-sent-lbl">ตัวอย่างในประโยค</div>
+          <p>The <mark class="noun">student</mark> read a <mark class="noun">book</mark> about <mark class="noun">history</mark>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. PRONOUN -->
+    <div class="pos-card">
+      <div class="pos-head">
+        <div class="pos-icon" style="background:#E0F7FA;">🙋</div>
+        <div class="pos-title">
+          <div class="pos-en">Pronoun <span style="color:var(--gold);font-size:.8rem;margin-left:6px;">pron.</span></div>
+          <div class="pos-th">คำสรรพนาม — ใช้แทน Noun</div>
+        </div>
+      </div>
+      <div class="pos-body">
+        <div class="pos-def">ใช้แทนคำนามเพื่อไม่ต้องพูดซ้ำ ทำให้ประโยคกระชับขึ้น</div>
+        <div class="pos-section-lbl">ตัวอย่าง Pronouns</div>
+        <div class="pos-subtypes">
+          <div class="pos-sub">
+            <div class="pos-sub-name">Personal Pronouns (ประธาน)</div>
+            <div class="pos-sub-ex">I, you, he, she, it, we, they</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Object Pronouns (กรรม)</div>
+            <div class="pos-sub-ex">me, you, him, her, it, us, them</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Possessive Pronouns (ความเป็นเจ้าของ)</div>
+            <div class="pos-sub-ex">mine, yours, his, hers, ours, theirs</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Reflexive Pronouns (กลับมาที่ตัวเอง)</div>
+            <div class="pos-sub-ex">myself, yourself, himself, herself, itself</div>
+          </div>
+        </div>
+        <div class="pos-sent">
+          <div class="pos-sent-lbl">ตัวอย่างในประโยค</div>
+          <p><mark class="pron">She</mark> gave <mark class="pron">him</mark> a gift. <mark class="pron">He</mark> was very happy.</p>
+          <p class="th">เธอให้ของขวัญเขา เขาดีใจมาก (ไม่ต้องพูดชื่อซ้ำ)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. VERB -->
+    <div class="pos-card">
+      <div class="pos-head">
+        <div class="pos-icon" style="background:#FCE4EC;">⚡</div>
+        <div class="pos-title">
+          <div class="pos-en">Verb <span style="color:var(--gold);font-size:.8rem;margin-left:6px;">v.</span></div>
+          <div class="pos-th">คำกริยา — การกระทำหรือสถานะ</div>
+        </div>
+      </div>
+      <div class="pos-body">
+        <div class="pos-def">คำที่บอกการกระทำ สถานะ หรือความเป็นอยู่ของประธาน เป็น "หัวใจ" ของประโยค</div>
+        <div class="pos-section-lbl">ประเภทของ Verb</div>
+        <div class="pos-subtypes">
+          <div class="pos-sub">
+            <div class="pos-sub-name">Action Verb</div>
+            <div class="pos-sub-desc">กริยาที่แสดงการกระทำ</div>
+            <div class="pos-sub-ex">run, eat, write, study, play, think</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Linking Verb (Be verb)</div>
+            <div class="pos-sub-desc">เชื่อมประธานกับคำขยาย</div>
+            <div class="pos-sub-ex">is, am, are, was, were, seem, become, look</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Modal Verb (กริยาช่วย)</div>
+            <div class="pos-sub-desc">แสดงความเป็นไปได้ ความจำเป็น</div>
+            <div class="pos-sub-ex">can, could, will, would, should, must, may, might</div>
+          </div>
+        </div>
+        <div class="pos-tip">💡 <b>Transitive vs Intransitive:</b> Transitive ต้องมีกรรม (She <b>eats</b> pizza.) | Intransitive ไม่ต้องมีกรรม (He <b>sleeps</b>.)</div>
+        <div class="pos-sent">
+          <div class="pos-sent-lbl">ตัวอย่างในประโยค</div>
+          <p>The cat <mark class="verb">is sleeping</mark>. She <mark class="verb">should study</mark> harder.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ADJECTIVE -->
+    <div class="pos-card">
+      <div class="pos-head">
+        <div class="pos-icon" style="background:#E8F5E9;">🎨</div>
+        <div class="pos-title">
+          <div class="pos-en">Adjective <span style="color:var(--gold);font-size:.8rem;margin-left:6px;">adj.</span></div>
+          <div class="pos-th">คำคุณศัพท์ — ขยาย Noun / Pronoun</div>
+        </div>
+      </div>
+      <div class="pos-body">
+        <div class="pos-def">ใช้ขยายคำนามหรือสรรพนาม บอกลักษณะ ขนาด สี จำนวน ฯลฯ มักอยู่หน้า Noun หรือหลัง Linking Verb</div>
+        <div class="pos-section-lbl">ตำแหน่งของ Adjective</div>
+        <div class="pos-subtypes">
+          <div class="pos-sub">
+            <div class="pos-sub-name">อยู่หน้า Noun (Attributive)</div>
+            <div class="pos-sub-ex">a <b>beautiful</b> flower, the <b>tall</b> building</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">อยู่หลัง Linking Verb (Predicative)</div>
+            <div class="pos-sub-ex">She is <b>beautiful</b>. He looks <b>tired</b>.</div>
+          </div>
+        </div>
+        <div class="pos-section-lbl">การเปรียบเทียบ (Degrees of Comparison)</div>
+        <div class="pos-subtypes">
+          <div class="pos-sub">
+            <div class="pos-sub-name">Positive (ขั้นปกติ)</div>
+            <div class="pos-sub-ex">tall, beautiful, good, bad</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Comparative (ขั้นกว่า) + than</div>
+            <div class="pos-sub-ex">taller, more beautiful, better, worse</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Superlative (ขั้นสุด) the + ...</div>
+            <div class="pos-sub-ex">the tallest, the most beautiful, the best</div>
+          </div>
+        </div>
+        <div class="pos-sent">
+          <div class="pos-sent-lbl">ตัวอย่างในประโยค</div>
+          <p>The <mark class="adj">small</mark> <mark class="adj">brown</mark> cat is <mark class="adj">cuter</mark> than the <mark class="adj">big</mark> one.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. ADVERB -->
+    <div class="pos-card">
+      <div class="pos-head">
+        <div class="pos-icon" style="background:#FFF9C4;">💨</div>
+        <div class="pos-title">
+          <div class="pos-en">Adverb <span style="color:var(--gold);font-size:.8rem;margin-left:6px;">adv.</span></div>
+          <div class="pos-th">คำกริยาวิเศษณ์ — ขยาย Verb / Adj / Adv</div>
+        </div>
+      </div>
+      <div class="pos-body">
+        <div class="pos-def">ขยายคำกริยา คำคุณศัพท์ หรือคำกริยาวิเศษณ์ด้วยกัน บอก อย่างไร เมื่อไหร่ ที่ไหน เท่าไหร่</div>
+        <div class="pos-section-lbl">ประเภทของ Adverb</div>
+        <div class="pos-subtypes">
+          <div class="pos-sub">
+            <div class="pos-sub-name">Manner (อย่างไร)</div>
+            <div class="pos-sub-ex">quickly, slowly, carefully, loudly, well</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Time (เมื่อไหร่)</div>
+            <div class="pos-sub-ex">now, yesterday, soon, already, still, yet</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Place (ที่ไหน)</div>
+            <div class="pos-sub-ex">here, there, everywhere, outside, upstairs</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Frequency (บ่อยแค่ไหน)</div>
+            <div class="pos-sub-ex">always, usually, often, sometimes, never</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Degree (มากน้อยแค่ไหน)</div>
+            <div class="pos-sub-ex">very, quite, too, enough, almost, extremely</div>
+          </div>
+        </div>
+        <div class="pos-tip">💡 Adjective หลายคำเปลี่ยนเป็น Adverb ได้โดยเติม <b>-ly</b>: quick→quickly, careful→carefully (ยกเว้น: good→well, fast→fast, hard→hard)</div>
+        <div class="pos-sent">
+          <div class="pos-sent-lbl">ตัวอย่างในประโยค</div>
+          <p>She sings <mark class="adv">beautifully</mark>. He is <mark class="adv">very</mark> <mark class="adj">tall</mark>. I <mark class="adv">always</mark> wake up <mark class="adv">early</mark>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. PREPOSITION -->
+    <div class="pos-card">
+      <div class="pos-head">
+        <div class="pos-icon" style="background:#EDE7F6;">🗺️</div>
+        <div class="pos-title">
+          <div class="pos-en">Preposition <span style="color:var(--gold);font-size:.8rem;margin-left:6px;">prep.</span></div>
+          <div class="pos-th">คำบุพบท — แสดงความสัมพันธ์ของคำ</div>
+        </div>
+      </div>
+      <div class="pos-body">
+        <div class="pos-def">แสดงความสัมพันธ์ระหว่างคำนาม/สรรพนามกับคำอื่นในประโยค บอก ตำแหน่ง เวลา ทิศทาง</div>
+        <div class="pos-section-lbl">กลุ่ม Preposition ที่สำคัญ</div>
+        <div class="pos-subtypes">
+          <div class="pos-sub">
+            <div class="pos-sub-name">สถานที่ / ตำแหน่ง</div>
+            <div class="pos-sub-ex">in, on, at, under, above, beside, between, behind, in front of, next to</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">เวลา</div>
+            <div class="pos-sub-ex">in (เดือน/ปี/ฤดู), on (วัน/วันที่), at (เวลาแน่นอน), before, after, during, since, for</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">ทิศทาง / การเคลื่อนที่</div>
+            <div class="pos-sub-ex">to, from, into, out of, through, across, along, towards</div>
+          </div>
+        </div>
+        <div class="pos-tip">⚠️ <b>in / on / at</b> สำหรับเวลา: <b>in</b> the morning | <b>on</b> Monday | <b>at</b> 8 o'clock</div>
+        <div class="pos-sent">
+          <div class="pos-sent-lbl">ตัวอย่างในประโยค</div>
+          <p>The book is <mark class="prep">on</mark> the table. She was born <mark class="prep">in</mark> May <mark class="prep">at</mark> midnight.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. CONJUNCTION -->
+    <div class="pos-card">
+      <div class="pos-head">
+        <div class="pos-icon" style="background:#FBE9E7;">🔗</div>
+        <div class="pos-title">
+          <div class="pos-en">Conjunction <span style="color:var(--gold);font-size:.8rem;margin-left:6px;">conj.</span></div>
+          <div class="pos-th">คำสันธาน — เชื่อมประโยคหรือวลี</div>
+        </div>
+      </div>
+      <div class="pos-body">
+        <div class="pos-def">ใช้เชื่อมคำ วลี หรือประโยคเข้าด้วยกัน ทำให้ความคิดไหลต่อเนื่อง</div>
+        <div class="pos-section-lbl">ประเภทของ Conjunction</div>
+        <div class="pos-subtypes">
+          <div class="pos-sub">
+            <div class="pos-sub-name">Coordinating Conjunctions (FANBOYS)</div>
+            <div class="pos-sub-desc">เชื่อมสิ่งที่สำคัญเท่ากัน</div>
+            <div class="pos-sub-ex">For, And, Nor, But, Or, Yet, So</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Subordinating Conjunctions</div>
+            <div class="pos-sub-desc">เชื่อม main clause กับ subordinate clause</div>
+            <div class="pos-sub-ex">because, although, if, when, while, since, unless, until, after, before</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">Correlative Conjunctions (คู่)</div>
+            <div class="pos-sub-ex">both...and, either...or, neither...nor, not only...but also</div>
+          </div>
+        </div>
+        <div class="pos-sent">
+          <div class="pos-sent-lbl">ตัวอย่างในประโยค</div>
+          <p>I was tired <mark class="conj">but</mark> I finished my homework. <mark class="conj">Although</mark> it rained, we played outside.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. ARTICLE -->
+    <div class="pos-card">
+      <div class="pos-head">
+        <div class="pos-icon" style="background:#F3E5F5;">🏷️</div>
+        <div class="pos-title">
+          <div class="pos-en">Article <span style="color:var(--gold);font-size:.8rem;margin-left:6px;">art.</span></div>
+          <div class="pos-th">คำนำหน้านาม — a / an / the</div>
+        </div>
+      </div>
+      <div class="pos-body">
+        <div class="pos-def">คำขนาดเล็กที่วางหน้าคำนาม บอกว่านามนั้นเป็นสิ่งที่รู้จักกันหรือไม่ มีจำเพาะหรือไม่</div>
+        <div class="pos-section-lbl">การใช้ Article</div>
+        <div class="pos-subtypes">
+          <div class="pos-sub">
+            <div class="pos-sub-name">a — Indefinite (ไม่จำเพาะ) + เสียงพยัญชนะ</div>
+            <div class="pos-sub-ex">a book, a cat, a university (ย = พยัญชนะ)</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">an — Indefinite (ไม่จำเพาะ) + เสียงสระ</div>
+            <div class="pos-sub-ex">an apple, an hour (ไม่ออกเสียง h), an honest man</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">the — Definite (จำเพาะ ทั้งสองรู้จักกันแล้ว)</div>
+            <div class="pos-sub-ex">the sun, the moon, the president, the book I gave you</div>
+          </div>
+          <div class="pos-sub">
+            <div class="pos-sub-name">ไม่ใช้ Article (Zero Article)</div>
+            <div class="pos-sub-ex">ชื่อคน ประเทศ (ส่วนใหญ่), ภาษา, กีฬา, อาหาร: Thailand, English, football, rice</div>
+          </div>
+        </div>
+        <div class="pos-tip">💡 ดูที่ <b>เสียง</b> ไม่ใช่ตัวอักษร: "a university" (เสียง /j/) | "an hour" (ไม่ออกเสียง h)</div>
+        <div class="pos-sent">
+          <div class="pos-sent-lbl">ตัวอย่างในประโยค</div>
+          <p>I saw <mark class="art">a</mark> dog in <mark class="art">the</mark> park. It was <mark class="art">an</mark> amazing dog!</p>
+          <p class="th">ฉันเห็น<b>หมา</b>ตัวนึง ใน<b>สวนสาธารณะ</b> (the=รู้จักกันอยู่แล้ว) มันน่ารักมาก!</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /pos-grid -->
+</div><!-- /tab-pos -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <strong>THEP ACADEMY</strong> | สถาบันสอนภาษาอังกฤษ |
+  <a href="index.html">thep-academy.com</a> |
+  © 2026 All Rights Reserved
+</footer>
+
+<script>
+// ── Tab switching ─────────────────────────────────────────────
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── Tense card toggle ─────────────────────────────────────────
+document.querySelectorAll('.tc').forEach(card => {
+  card.addEventListener('click', function() {
+    this.classList.toggle('open');
+  });
+});
+
+// ── Tense filter ──────────────────────────────────────────────
+function filterTense(time, btn) {
+  document.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.tc').forEach(card => {
+    if (time === 'all' || card.dataset.time === time) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
