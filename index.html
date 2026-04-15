@@ -929,16 +929,17 @@
  margin-top: auto;
  }
 
- .subcourse-cta:hover { transform: scale(1.02); }
+ .subcourse-cta:hover {
+   transform: scale(1.02);
+   background: var(--gold) !important;
+   color: var(--navy) !important;
+   box-shadow: 0 4px 16px rgba(212,175,55,0.35);
+ }
 
  .cta-free { background: #16a34a; color: #fff; }
- .cta-free:hover { background: #15803d; }
  .cta-found { background: #1d4ed8; color: #fff; }
- .cta-found:hover { background: #1e40af; }
  .cta-core { background: var(--orange); color: #fff; }
- .cta-core:hover { background: var(--orange-hover); }
  .cta-sprint { background: var(--orange); color: #fff; }
- .cta-sprint:hover { background: var(--orange-hover); }
 
  /* ABOUT */
  .about {
@@ -1132,7 +1133,8 @@
  }
 
  .footer-line-btn:hover {
- background: #05b84d;
+ background: var(--gold) !important;
+ color: var(--navy) !important;
  transform: scale(1.02);
  }
 
@@ -1393,7 +1395,7 @@
  box-shadow: 0 4px 16px rgba(249,115,22,0.3);
  margin-top: 4px;
  }
- .modal-submit:hover { background: var(--orange-hover); transform: translateY(-1px); }
+ .modal-submit:hover { background: var(--gold) !important; color: var(--navy) !important; transform: translateY(-1px); }
  .modal-note {
  text-align: center;
  font-size: 12px;
@@ -1659,8 +1661,9 @@
  }
 
  .filter-tab:hover {
- border-color: var(--orange);
- color: var(--orange);
+ border-color: var(--gold);
+ color: var(--gold);
+ background: var(--gold-light);
  }
 
  .filter-tab.active {
@@ -1829,7 +1832,7 @@
  transition: gap 0.15s;
  }
 
- .research-read-btn:hover { text-decoration: underline; }
+ .research-read-btn:hover { color: var(--gold) !important; text-decoration: underline; }
 
  @media (max-width: 768px) {
  .research-grid { grid-template-columns: 1fr; }
@@ -2014,8 +2017,9 @@
    font-family: 'Proza Libre', 'Sarabun', sans-serif !important;
  }
  .btn-primary:hover {
-   background: var(--gold-hover) !important;
-   box-shadow: 0 6px 24px rgba(212,175,55,0.38) !important;
+   background: var(--gold) !important;
+   box-shadow: 0 6px 24px rgba(212,175,55,0.42) !important;
+   color: #fff !important;
  }
  .btn-secondary {
    border-radius: 8px !important;
@@ -2023,8 +2027,9 @@
    font-family: 'Proza Libre', 'Sarabun', sans-serif !important;
  }
  .btn-secondary:hover {
+   background: var(--gold) !important;
    border-color: var(--gold) !important;
-   background: var(--gold-light) !important;
+   color: #fff !important;
  }
  .btn-download {
    background: var(--navy) !important;
@@ -2034,12 +2039,16 @@
  .btn-download:hover {
    background: var(--gold) !important;
    border-color: var(--gold) !important;
+   color: var(--navy) !important;
  }
  .view-courses-btn {
    background: var(--gold) !important;
    border-radius: 8px !important;
  }
- .view-courses-btn:hover { background: var(--gold-hover) !important; }
+ .view-courses-btn:hover {
+   background: var(--gold-hover) !important;
+   box-shadow: 0 6px 24px rgba(212,175,55,0.42) !important;
+ }
 
  /* Nav items */
  .nav-menu a:hover {
@@ -2172,7 +2181,7 @@
    box-shadow: 0 4px 16px rgba(212,175,55,0.28) !important;
    border-radius: 8px !important;
  }
- .modal-submit:hover { background: var(--gold-hover) !important; }
+ .modal-submit:hover { background: var(--gold) !important; color: var(--navy) !important; }
  .modal-note span { color: var(--gold) !important; }
  .social-login-btn:hover {
    border-color: var(--gold) !important;
