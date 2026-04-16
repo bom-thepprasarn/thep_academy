@@ -215,134 +215,46 @@
 
 </div><!-- /wrapper -->
 
+<!-- ── Exam modules (order matters) ───────────────────────────── -->
+<script src="exam-timer.js"></script>
+<script src="session-recovery.js"></script>
+<script src="exam-engine.js"></script>
+
 <script>
 "use strict";
 
-let bank = [];
-let bankLoaded = false;
+// ── Configure ExamEngine ─────────────────────────────────────────
+// Switch mode to 'api' when backend is live:
+//   ExamEngine.configure({ mode: 'api', apiBase: '/api/exam' });
+ExamEngine.configure({
+  mode        : 'api',
+  apiBase     : 'https://thep-academy-backend.railway.app/api/exam',
+  examType    : 'mock',
+  perCategory : 10,
+  totalTimeSecs: 3600,
+});
 
-// ── Load questions ───────────────────────────────────────────────
-function initExam() {
-  const btn = document.getElementById('btn-start');
-  btn.textContent = 'กำลังโหลด...';
-  btn.disabled = true;
-
-  fetch('questions.json')
-    .then(function(res) { return res.json(); })
-    .then(function(data) {
-      bank = data;
-      bankLoaded = true;
-      btn.disabled = false;
-      btn.textContent = 'เริ่มทำข้อสอบ →';
-    })
-    .catch(function(err) {
-      btn.disabled = false;
-      btn.textContent = '⚠️ โหลดไม่สำเร็จ กดเพื่อลองใหม่';
-      bankLoaded = false;
-      console.error(err);
-    });
-}
-
-function handleStart() {
-  if (!bankLoaded || bank.length === 0) {
-    initExam();
-    return;
-  }
-  try {
-    startSession();
-  } catch(e) {
-    alert('เกิดข้อผิดพลาด: ' + e.message);
-    console.error(e);
-  }
-}
-
-async function initExam() {
-  try {
-    document.getElementById('btn-start').disabled = true;
-    document.getElementById('btn-start').textContent = 'กำลังโหลด...';
-    const res = await fetch('questions.json');
-    bank = await res.json();
-    document.getElementById('btn-start').disabled = false;
-    document.getElementById('btn-start').textContent = 'เริ่มทำข้อสอบ →';
-  } catch(e) {
-    document.getElementById('btn-start').textContent = 'โหลดไม่สำเร็จ ลองรีเฟรช';
-    console.error('Failed to load questions:', e);
-  }
-}
-
-// ── State ───────────────────────────────────────────────────────
-let session  = [];
-let answers  = {};
-let cur      = 0;
-let timerID  = null;
-let secsLeft = 3600;
 const LETTERS = ['A','B','C','D'];
 
-// ── Helpers ─────────────────────────────────────────────────────
+// ── Screen helper ────────────────────────────────────────────────
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
 }
 
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function pickQuestions(pool, n) {
-  const groups = {};
-  for (const q of pool) (groups[q.category] = groups[q.category] || []).push(q);
-  const picked = [];
-  for (const qs of Object.values(groups)) picked.push(...shuffle(qs).slice(0, n));
-  return shuffle(picked);
-}
-
-// ── Timer ────────────────────────────────────────────────────────
-function startTimer() {
-  clearInterval(timerID);
-  secsLeft = 3600;
-  renderTimer();
-  timerID = setInterval(() => {
-    secsLeft--;
-    renderTimer();
-    if (secsLeft <= 0) { clearInterval(timerID); alert('⏰ หมดเวลา! ระบบส่งข้อสอบให้อัตโนมัติ'); showResults(); }
-  }, 1000);
-}
-
-function renderTimer() {
-  const el = document.getElementById('timer');
-  const m  = String(Math.floor(secsLeft / 60)).padStart(2, '0');
-  const s  = String(secsLeft % 60).padStart(2, '0');
-  el.textContent = m + ':' + s;
-  el.classList.toggle('urgent', secsLeft <= 300);
-}
-
 // ── Render question ──────────────────────────────────────────────
-function renderQ() {
-  const q     = session[cur];
-  const total = session.length;
-
-  document.getElementById('q-num').textContent     = cur + 1;
-  document.getElementById('q-total').textContent   = total;
-  document.getElementById('q-answered').textContent = Object.keys(answers).length;
-  document.getElementById('q-cat').textContent     = q.category;
+function renderQ({ q, cur, total, answered, selected, isFirst, isLast }) {
+  document.getElementById('q-num').textContent      = cur + 1;
+  document.getElementById('q-total').textContent    = total;
+  document.getElementById('q-answered').textContent = answered;
+  document.getElementById('q-cat').textContent      = q.category;
   document.getElementById('progress-fill').style.width = ((cur + 1) / total * 100) + '%';
 
-  // Reading passage
   const passEl = document.getElementById('q-passage');
-  if (q.passage) {
-    passEl.textContent = q.passage;
-    passEl.classList.remove('hidden');
-  } else {
-    passEl.classList.add('hidden');
-  }
+  if (q.passage) { passEl.textContent = q.passage; passEl.classList.remove('hidden'); }
+  else             passEl.classList.add('hidden');
 
-  // Question text — Conversation: split A:/B: onto new lines
   const qEl = document.getElementById('q-text');
   if (q.category === 'Conversation & Situational Dialogues') {
     qEl.innerHTML = q.question.replace(/\n/g, '<br>');
@@ -350,129 +262,130 @@ function renderQ() {
     qEl.textContent = q.question;
   }
 
-  // Options
   const container = document.getElementById('options');
   container.innerHTML = '';
   q.options.forEach((text, i) => {
     if (!text) return;
     const letter = LETTERS[i];
-    const sel    = answers[cur] === letter;
     const btn    = document.createElement('button');
-    btn.className = 'opt-btn' + (sel ? ' selected' : '');
-    btn.innerHTML =
-      '<span class="opt-letter">' + letter + '</span>' +
-      '<span>' + text + '</span>';
-    btn.onclick = () => { answers[cur] = letter; renderQ(); };
+    btn.className = 'opt-btn' + (selected === letter ? ' selected' : '');
+    btn.innerHTML = '<span class="opt-letter">' + letter + '</span><span>' + text + '</span>';
+    btn.onclick   = () => ExamEngine.selectAnswer(letter);
     container.appendChild(btn);
   });
 
-  // Nav
-  const isLast = cur === total - 1;
-  document.getElementById('btn-prev').disabled = cur === 0;
+  document.getElementById('btn-prev').disabled = isFirst;
   document.getElementById('btn-next').classList.toggle('hidden', isLast);
   document.getElementById('btn-submit').classList.toggle('hidden', !isLast);
 }
 
-// ── Navigation ───────────────────────────────────────────────────
-document.getElementById('btn-prev').onclick = () => { if (cur > 0) { cur--; renderQ(); } };
-document.getElementById('btn-next').onclick = () => { if (cur < session.length - 1) { cur++; renderQ(); } };
-document.getElementById('btn-submit').onclick = () => {
-  const left = session.length - Object.keys(answers).length;
-  if (left > 0 && !confirm('ยังมี ' + left + ' ข้อที่ยังไม่ตอบ ต้องการส่งเลยไหม?')) return;
-  clearInterval(timerID);
-  showResults();
-};
-
-// ── Results ──────────────────────────────────────────────────────
-function showResults() {
+// ── Render results ───────────────────────────────────────────────
+function renderResults(r) {
   showScreen('s-results');
-  let correct = 0, wrong = 0, skip = 0;
-  const catStats = {};
 
-  session.forEach((q, i) => {
-    const ua  = answers[i];
-    const cat = q.category;
-    if (!catStats[cat]) catStats[cat] = { c: 0, t: 0 };
-    catStats[cat].t++;
-    if (!ua)            skip++;
-    else if (ua === q.answer) { correct++; catStats[cat].c++; }
-    else                wrong++;
-  });
-
-  const pct = Math.round(correct / session.length * 100);
   const ring = document.getElementById('score-ring');
-  ring.textContent = pct + '%';
-  ring.className   = 'score-ring ' + (pct >= 80 ? 'good' : pct >= 60 ? 'ok' : 'low');
-  document.getElementById('score-sub').textContent     = correct + ' / ' + session.length + ' ข้อถูก';
-  document.getElementById('score-feedback').textContent =
-    pct >= 80 ? '🎉 ยอดเยี่ยม! พร้อมสอบมากแล้ว' :
-    pct >= 60 ? '👍 ดี! ทบทวนจุดอ่อนเพิ่มเติม' :
-                '💪 ฝึกต่อไป! ยิ่งทำยิ่งเก่งขึ้น';
-  document.getElementById('t-correct').textContent = correct;
-  document.getElementById('t-wrong').textContent   = wrong;
-  document.getElementById('t-skip').textContent    = skip;
+  ring.textContent = r.pct + '%';
+  ring.className   = 'score-ring ' + (r.pct >= 80 ? 'good' : r.pct >= 60 ? 'ok' : 'low');
+  document.getElementById('score-sub').textContent      = r.correct + ' / ' + r.total + ' ข้อถูก';
+  document.getElementById('score-feedback').textContent = r.feedback;
+  document.getElementById('t-correct').textContent = r.correct;
+  document.getElementById('t-wrong').textContent   = r.wrong;
+  document.getElementById('t-skip').textContent    = r.skip;
 
   const barsEl = document.getElementById('cat-bars');
   barsEl.innerHTML = '';
-  for (const [cat, s] of Object.entries(catStats)) {
-    const p = Math.round(s.c / s.t * 100);
+  for (const [cat, s] of Object.entries(r.catStats)) {
+    const p = Math.round(s.correct / s.total * 100);
     barsEl.innerHTML +=
       '<div class="cat-bar-row">' +
         '<div class="cat-bar-name" title="' + cat + '">' + cat + '</div>' +
         '<div class="cat-bar-track"><div class="cat-bar-fill ' + (p >= 80 ? 'good' : p < 60 ? 'low' : '') + '" style="width:' + p + '%"></div></div>' +
-        '<div class="cat-bar-score">' + s.c + '/' + s.t + '</div>' +
+        '<div class="cat-bar-score">' + s.correct + '/' + s.total + '</div>' +
       '</div>';
   }
 
   const reviewEl = document.getElementById('review-list');
   reviewEl.innerHTML = '';
-  const wrongItems = session.reduce((acc, q, i) => {
-    if (answers[i] !== q.answer) acc.push({ q, i, ua: answers[i] });
-    return acc;
-  }, []);
-  document.getElementById('review-count').textContent = wrongItems.length + ' ข้อ';
+  document.getElementById('review-count').textContent = r.review.length + ' ข้อ';
 
-  if (!wrongItems.length) {
+  if (!r.review.length) {
     document.getElementById('review-empty').classList.remove('hidden');
   } else {
-    wrongItems.forEach(({ q, i, ua }) => {
-      const corrText = q.options[LETTERS.indexOf(q.answer)] || '';
-      const uaText   = ua ? (q.options[LETTERS.indexOf(ua)] || '') : null;
+    r.review.forEach(item => {
       reviewEl.innerHTML +=
         '<div class="review-item">' +
-          '<div class="review-meta">ข้อ ' + (i + 1) + ' · ' + q.category + '</div>' +
-          '<div class="review-q">' + q.question.split('\n').join('<br>') + '</div>' +
-          (ua
-            ? '<span class="review-tag tag-wrong">คำตอบของคุณ</span><div class="review-ans">(' + ua + ') ' + uaText + '</div>'
+          '<div class="review-meta">ข้อ ' + (item.index + 1) + ' · ' + item.category + '</div>' +
+          '<div class="review-q">' + item.question.split('\n').join('<br>') + '</div>' +
+          (item.userAnswer
+            ? '<span class="review-tag tag-wrong">คำตอบของคุณ</span><div class="review-ans">(' + item.userAnswer + ') ' + (item.userText || '') + '</div>'
             : '<span class="review-tag tag-skip">ข้ามข้อนี้</span>') +
           '<span class="review-tag tag-correct">เฉลย</span>' +
-          '<div class="review-ans" style="color:var(--green);font-weight:700;">(' + q.answer + ') ' + corrText + '</div>' +
-          '<div class="review-note">' + q.explanation + '</div>' +
+          '<div class="review-ans" style="color:var(--green);font-weight:700;">(' + item.correctAnswer + ') ' + item.correctText + '</div>' +
+          '<div class="review-note">' + (item.explanation || '') + '</div>' +
         '</div>';
     });
   }
 }
 
-// ── Retry / Retake ───────────────────────────────────────────────
-document.getElementById('btn-retry').onclick  = () => startSession();
-document.getElementById('btn-retake').onclick = () => {
-  const wrong = session.filter((q, i) => answers[i] !== q.answer);
-  if (!wrong.length) { alert('ไม่มีข้อที่ผิด!'); return; }
-  startSession(wrong);
-};
+// ── ExamEngine event listeners ───────────────────────────────────
+document.addEventListener('exam:ready', () => {
+  const btn = document.getElementById('btn-start');
+  btn.disabled    = false;
+  btn.textContent = 'เริ่มทำข้อสอบ →';
+});
 
-// ── Start session ────────────────────────────────────────────────
-function startSession(override) {
-  answers  = {};
-  cur      = 0;
-  session  = override ? shuffle(override) : pickQuestions(bank, 10);
+document.addEventListener('exam:question', e => {
   showScreen('s-exam');
-  renderQ();
-  startTimer();
+  renderQ(e.detail);
+});
+
+document.addEventListener('exam:answered', () => {
+  // Re-render current question to reflect selection
+  const state = ExamEngine.getState();
+  // Trigger re-render via goTo same index
+  ExamEngine.goTo(state.cur);
+});
+
+document.addEventListener('exam:results', e => renderResults(e.detail));
+
+document.addEventListener('exam:error', e => {
+  const btn = document.getElementById('btn-start');
+  btn.disabled    = false;
+  btn.textContent = '⚠️ โหลดไม่สำเร็จ กดเพื่อลองใหม่';
+  console.error('[ExamEngine]', e.detail.message);
+});
+
+// ── Button wiring ────────────────────────────────────────────────
+function handleStart() {
+  ExamEngine.startSession().catch(e => console.error(e));
 }
 
-// ── Init ────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', initExam);
+document.getElementById('btn-prev').onclick   = () => ExamEngine.prev();
+document.getElementById('btn-next').onclick   = () => ExamEngine.next();
+document.getElementById('btn-submit').onclick = async () => {
+  const state = ExamEngine.getState();
+  const left  = state.total - state.answered;
+  if (left > 0 && !confirm('ยังมี ' + left + ' ข้อที่ยังไม่ตอบ ต้องการส่งเลยไหม?')) return;
+  await ExamEngine.submit();
+};
+
+document.getElementById('btn-retry').onclick  = () => ExamEngine.startSession();
+document.getElementById('btn-retake').onclick = async () => {
+  const state = ExamEngine.getState();
+  if (!state.running && ExamEngine._lastResults?.wrongQuestions?.length === 0) {
+    alert('ไม่มีข้อที่ผิด!'); return;
+  }
+  // In API mode this hits /api/exam/retake; in local mode engine handles it
+  await ExamEngine.startSession('retake');
+};
+
+// ── Init ─────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btn-start');
+  btn.disabled    = true;
+  btn.textContent = 'กำลังโหลด...';
+  ExamEngine.init();
+});
 
 </script>
 </body>

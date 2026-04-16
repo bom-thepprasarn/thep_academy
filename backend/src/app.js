@@ -19,6 +19,7 @@ const ordersRoutes   = require('./modules/orders/orders.routes');
 const trackingRoutes   = require('./modules/tracking/tracking.routes');
 const adminRoutes      = require('./modules/admin/admin.routes');
 const documentsRoutes  = require('./modules/documents/documents.routes');
+const examRoutes       = require('./modules/exam/exam.routes');
 
 const app = express();
 
@@ -66,6 +67,7 @@ app.use('/api/orders',   ordersRoutes);
 app.use('/api/track',     trackingRoutes);
 app.use('/api/admin',     adminRoutes);
 app.use('/api/documents', documentsRoutes);
+app.use('/api/exam',      examRoutes);
 
 // ─── 404 handler ─────────────────────────────────────────────────
 app.use((req, res) => {
