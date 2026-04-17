@@ -1111,6 +1111,81 @@
             background: var(--gold);
         }
 
+        /* Blog Section */
+        #blog {
+            padding: 80px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1.5px solid var(--light-gray);
+            padding: 28px 24px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--orange);
+        }
+
+        .blog-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+
+        .blog-tag.entrance { background: var(--orange-light); color: var(--orange); }
+        .blog-tag.writing  { background: var(--blue-light);   color: var(--blue);   }
+        .blog-tag.ielts    { background: var(--pink-light);   color: var(--pink);   }
+        .blog-tag.reading  { background: var(--green-light);  color: var(--green);  }
+
+        .blog-card h3 {
+            font-family: 'Proza Libre', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .blog-card p {
+            font-size: 14px;
+            color: var(--mid-gray);
+            line-height: 1.6;
+            margin: 0;
+            flex: 1;
+        }
+
+        .blog-read-more {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--orange);
+            margin-top: 4px;
+        }
+
         .newsletter-box {
             background: var(--navy);
             color: var(--white);
@@ -1755,6 +1830,7 @@
             <a href="#" class="nav-link" onclick="openModal(); return false;">คอร์สของฉัน</a>
             <a href="#docs" class="nav-link">คลังความรู้</a>
 
+            <a href="#blog" class="nav-link">Blog</a>
             <a href="#contact" class="nav-link">ติดต่อ</a>
         </div>
 
@@ -2024,6 +2100,7 @@
                 <div class="doc-meta">30 ข้อ · PDF · พร้อมเฉลย</div>
                 <a href="docs/MockExam_M1_English_ThepAcademy.pdf" target="_blank">เปิดอ่าน →</a>
             </div>
+
         </div>
 
         <div class="newsletter-box">
@@ -2032,6 +2109,45 @@
                 <input type="email" placeholder="อีเมลของคุณ" required>
                 <button type="submit">สมัครสมาชิกฟรี →</button>
             </form>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="reveal">
+        <div class="section-header">
+            <span class="eyebrow">บทความจากพี่บอม</span>
+            <h2>เรียนรู้เทคนิคก่อนใคร</h2>
+            <p>บทความที่ช่วยให้เข้าใจภาษาอังกฤษอย่างเป็นระบบ ใช้ได้จริงในสนามสอบ</p>
+        </div>
+
+        <div class="blog-grid">
+            <a href="blog_m1_5traps.html" target="_blank" class="blog-card reveal">
+                <span class="blog-tag entrance">🎯 Entrance</span>
+                <h3>5 จุดตายภาษาอังกฤษสอบเข้า ม.1 ที่พลาดบ่อยที่สุด</h3>
+                <p>กับดักโจทย์จากสถิติข้อสอบจริง พร้อมเทคนิควิเคราะห์แบบฉับไว</p>
+                <span class="blog-read-more">อ่านบทความ →</span>
+            </a>
+
+            <a href="blog_essay_writing.html" target="_blank" class="blog-card reveal">
+                <span class="blog-tag writing">✍️ Writing</span>
+                <h3>วิธีเขียน Essay ภาษาอังกฤษแบบ 5 Paragraphs</h3>
+                <p>คู่มือโครงสร้าง วิธีเริ่มต้นแต่ละย่อหน้า และดูตัวอย่าง Essay จริง</p>
+                <span class="blog-read-more">อ่านบทความ →</span>
+            </a>
+
+            <a href="blog_ielts_task2.html" target="_blank" class="blog-card reveal">
+                <span class="blog-tag ielts">🏅 IELTS</span>
+                <h3>IELTS Writing Task 2 Band 7+ Formula</h3>
+                <p>สูตรเขียน Task 2 ให้ได้ Band 7 ขึ้นไป ตามมาตรฐาน IELTS จริง</p>
+                <span class="blog-read-more">อ่านบทความ →</span>
+            </a>
+
+            <a href="blog_skimming_scanning.html" target="_blank" class="blog-card reveal">
+                <span class="blog-tag reading">👀 Reading</span>
+                <h3>เทคนิค Skimming & Scanning สำหรับข้อสอบ</h3>
+                <p>วิธีอ่านข้อความอย่างมีประสิทธิภาพ ทำให้ตอบข้อสอบได้เร็วขึ้น 2 เท่า</p>
+                <span class="blog-read-more">อ่านบทความ →</span>
+            </a>
         </div>
     </section>
 
