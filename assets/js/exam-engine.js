@@ -30,7 +30,7 @@ const ExamEngine = (() => {
   // ── Config ──────────────────────────────────────────────────────
   let cfg = {
     mode            : 'local',          // 'local' | 'api'
-    localDataUrl: "assets/data/questions.json"', // used in local mode
+    localDataUrl: "/assets/data/questions.json"', // used in local mode
     apiBase         : '/api/exam',      // used in api mode
     examType        : 'mock',           // 'mock' | 'pretest'
     questionCount   : 50,               // total questions per session
