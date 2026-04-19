@@ -53,6 +53,16 @@
     .sec-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--orange);margin-bottom:8px;}
     .sec-title{font-size:1.5rem;font-weight:800;color:var(--navy);margin-bottom:24px;}
 
+    /* ── MENTOR CARD ── */
+    .mentor-card{display:flex;align-items:center;gap:20px;background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:40px;}
+    .mentor-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;border:2.5px solid var(--orange);flex-shrink:0;}
+    .mentor-info{flex:1;}
+    .mentor-name{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:2px;}
+    .mentor-role{font-size:.82rem;color:var(--orange);font-weight:600;margin-bottom:8px;}
+    .mentor-creds{display:flex;flex-wrap:wrap;gap:6px;}
+    .cred-chip{background:rgba(26,35,64,.06);border-radius:20px;padding:3px 10px;font-size:.72rem;font-weight:600;color:var(--navy);}
+    @media(max-width:500px){.mentor-card{flex-direction:column;text-align:center;}.mentor-creds{justify-content:center;}}
+
     /* ── PRICING ── */
     .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;}
     @media(max-width:640px){.pricing-grid{grid-template-columns:1fr;}}
@@ -161,6 +171,22 @@
 </div>
 
 <div class="page">
+
+    <!-- MENTOR -->
+    <div class="mentor-card">
+        <img src="assets/images/bom_photo.jpg" alt="พี่บอม" class="mentor-photo">
+        <div class="mentor-info">
+            <div class="mentor-name">พี่บอม · Thep Academy</div>
+            <div class="mentor-role">ผู้ก่อตั้งและผู้สอน</div>
+            <div class="mentor-creds">
+                <span class="cred-chip">Ph.D. Management · NIDA</span>
+                <span class="cred-chip">M.B.A. Assumption University</span>
+                <span class="cred-chip">B.A. English · Ramkhamhaeng</span>
+                <span class="cred-chip">Google PM Certified</span>
+                <span class="cred-chip">Meta Marketing Science</span>
+            </div>
+        </div>
+    </div>
 
     <!-- PRICING -->
     <div class="sec-label">ราคาต่อชั่วโมง</div>
