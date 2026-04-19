@@ -2105,7 +2105,48 @@
         .teaser-cta-navy:hover {
             background: #0d1a30;
         }
-    </style>
+    
+        /* ── Mobile menu open state ── */
+        /* ── Mobile dropdown menu ── */
+        #mobile-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0; right: 0;
+            background: #1a2340;
+            z-index: 999;
+            flex-direction: column;
+            padding: 8px 20px 16px;
+            border-top: 2px solid var(--orange);
+            box-shadow: 0 8px 24px rgba(0,0,0,.3);
+        }
+        #mobile-menu a {
+            display: block;
+            color: rgba(255,255,255,.85);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+            font-family: 'Sarabun', sans-serif;
+        }
+        #mobile-menu a:last-child { border-bottom: none; }
+        #mobile-menu a:hover { color: var(--orange); }
+        #mobile-menu .mobile-cta {
+            margin-top: 12px;
+            text-align: center;
+            background: var(--orange);
+            color: #fff;
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: 700;
+            border-bottom: none;
+        }
+        @media (min-width: 769px) {
+            #mobile-menu { display: none !important; }
+        }
+
+        </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -2133,6 +2174,16 @@
             <span></span>
         </div>
     </nav>
+
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu">
+        <a href="/about">เกี่ยวกับ</a>
+        <a href="/courses">คอร์สเรียน</a>
+        <a href="#docs">คลังความรู้</a>
+        <a href="/blog">Blog</a>
+        <a href="#contact">ติดต่อ</a>
+        <a href="/booking" class="mobile-cta">📅 จองเรียน</a>
+    </div>
 
     <!-- Hero Section -->
     <section id="hero">
@@ -2360,10 +2411,33 @@
         });
 
         // Mobile hamburger toggle
+        var _menuOpen = false;
         function toggleMenu() {
-            const nav = document.getElementById('topnav');
-            nav.classList.toggle('open');
+            _menuOpen = !_menuOpen;
+            var m = document.getElementById('mobile-menu');
+            if (m) m.style.display = _menuOpen ? 'flex' : 'none';
+            var spans = document.querySelectorAll('.hamburger span');
+            if (spans.length >= 3) {
+                if (_menuOpen) {
+                    spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+                } else {
+                    spans[0].style.transform = '';
+                    spans[1].style.opacity = '';
+                    spans[2].style.transform = '';
+                }
+            }
         }
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('#mobile-menu a').forEach(function(l) {
+                l.addEventListener('click', function() {
+                    _menuOpen = false;
+                    var m = document.getElementById('mobile-menu');
+                    if (m) m.style.display = 'none';
+                });
+            });
+        });
 
         // Filter courses
         function filterCourse(btn, tag) {
