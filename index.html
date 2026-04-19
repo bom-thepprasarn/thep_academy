@@ -1530,44 +1530,80 @@
             opacity: 0.6;
         }
 
-        /* Floating LINE Button */
-        .float-line {
+        /* Floating Contact Buttons */
+        .float-contacts {
             position: fixed;
             bottom: 32px;
             right: 32px;
-            background: #06C755;
-            color: var(--white);
-            padding: 12px 20px;
-            border-radius: 24px;
-            text-decoration: none;
             display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 700;
-            font-size: 13px;
-            box-shadow: var(--shadow-hover);
-            transition: all 0.3s ease;
+            flex-direction: column;
+            gap: 12px;
             z-index: 999;
-            animation: pulse 2s infinite;
         }
 
-        .float-line:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 36px rgba(6, 199, 85, 0.35);
+        .float-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+            position: relative;
         }
+
+        .float-btn:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+        }
+
+        .float-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .float-line-btn  { background: #06C755; animation: pulse 2s infinite; }
+        .float-messenger { background: linear-gradient(135deg, #0084ff 0%, #a855f7 100%); }
+        .float-phone     { background: var(--orange); }
+
+        /* Tooltip labels */
+        .float-btn::before {
+            content: attr(data-tip);
+            position: absolute;
+            right: calc(100% + 10px);
+            background: rgba(15,31,61,0.92);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .float-btn:hover::before { opacity: 1; }
 
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+            50% { opacity: 0.85; }
         }
 
         @media (max-width: 768px) {
-            .float-line {
+            .float-contacts {
                 bottom: 20px;
                 right: 20px;
-                padding: 10px 16px;
-                font-size: 12px;
+                gap: 10px;
             }
+            .float-btn {
+                width: 46px;
+                height: 46px;
+            }
+            .float-btn svg { width: 21px; height: 21px; }
+            .float-btn::before { display: none; }
         }
 
         /* Modal */
@@ -1899,8 +1935,8 @@
                 </div>
 
                 <div class="about-content">
-                    <span class="eyebrow">ผู้ก่อตั้งและผู้สอน</span>
-                    <h2>สอนโดยคนที่เรียนมาจริง ทำงานมาจริง</h2>
+                    <span class="eyebrow">Meet Your Mentor</span>
+                    <h2>พี่บอม · Thep Academy</h2>
                     <p>พี่บอมเชื่อว่าภาษาอังกฤษไม่ใช่เรื่องของการท่องจำ แต่คือทักษะที่ฝึกได้ ถ้าเรียนถูกวิธี</p>
 
                     <div class="credentials">
@@ -2241,11 +2277,33 @@
         </div>
     </footer>
 
-    <!-- Floating LINE Button -->
-    <a href="https://line.me/ti/p/~@489hmdfx" class="float-line" target="_blank">
-        <span>💬</span>
-        <span>ทักแชท Line</span>
-    </a>
+    <!-- Floating Contact Buttons -->
+    <div class="float-contacts">
+
+        <!-- โทรศัพท์ -->
+        <a href="tel:0802648381" class="float-btn float-phone" data-tip="080-264-8381">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.6 1.3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+        </a>
+
+        <!-- Facebook Messenger -->
+        <a href="https://m.me/61570701028364" class="float-btn float-messenger" target="_blank" rel="noopener" data-tip="Facebook Messenger">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C6.477 2 2 6.36 2 11.73c0 2.9 1.35 5.5 3.47 7.24V22l3.17-1.75c.84.24 1.74.37 2.66.37 5.523 0 10-4.36 10-9.73S17.523 2 12 2z"/>
+                <path d="M7.5 14l2.5-3 2.5 2 2.5-3"/>
+            </svg>
+        </a>
+
+        <!-- LINE -->
+        <a href="https://line.me/ti/p/~@489hmdfx" class="float-btn float-line-btn" target="_blank" rel="noopener" data-tip="ทักแชท LINE">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5C21 16.19 17.19 20 12.5 20c-.78 0-1.54-.1-2.26-.28L6 22l.9-3.5C5.11 17.1 4 14.42 4 11.5 4 6.81 7.81 3 12.5 3S21 6.81 21 11.5z"/>
+                <path d="M8.5 10.5h7M8.5 13.5h5"/>
+            </svg>
+        </a>
+
+    </div>
 
     <!-- Login Modal -->
     <div id="modal-login">
