@@ -1569,80 +1569,139 @@
             opacity: 0.6;
         }
 
-        /* Floating Contact Buttons */
-        .float-contacts {
+        /* ── Speed Dial FAB ── */
+        .fab-wrap {
             position: fixed;
             bottom: 32px;
             right: 32px;
+            z-index: 999;
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 12px;
-            z-index: 999;
         }
 
-        .float-btn {
-            width: 52px;
-            height: 52px;
+        /* Child buttons stack */
+        .fab-items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Each child item */
+        .fab-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(16px) scale(0.8);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        /* Stagger delays */
+        .fab-item:nth-child(1) { transition-delay: 0.05s; }
+        .fab-item:nth-child(2) { transition-delay: 0.1s; }
+        .fab-item:nth-child(3) { transition-delay: 0.15s; }
+
+        /* Open state */
+        .fab-wrap.open .fab-item {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        /* Tooltip label */
+        .fab-label {
+            background: rgba(15,31,61,0.88);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 11px;
+            border-radius: 8px;
+            white-space: nowrap;
+            backdrop-filter: blur(6px);
+        }
+
+        /* Round button */
+        .fab-btn {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-            transition: all 0.3s ease;
-            position: relative;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+            flex-shrink: 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .float-btn:hover {
-            transform: translateY(-4px) scale(1.1);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+        .fab-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 22px rgba(0,0,0,0.3);
         }
 
-        .float-btn svg {
-            width: 24px;
-            height: 24px;
+        .fab-btn svg { width: 22px; height: 22px; }
+
+        .fab-line      { background: #06C755; }
+        .fab-messenger { background: linear-gradient(135deg, #0084ff 0%, #a855f7 100%); }
+        .fab-phone     { background: var(--orange); }
+
+        /* Main toggle button */
+        .fab-toggle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--navy);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+            transition: background 0.25s ease, transform 0.3s ease;
+            flex-shrink: 0;
         }
 
-        .float-line-btn  { background: #06C755; animation: pulse 2s infinite; }
-        .float-messenger { background: linear-gradient(135deg, #0084ff 0%, #a855f7 100%); }
-        .float-phone     { background: var(--orange); }
+        .fab-toggle:hover { background: var(--orange); }
 
-        /* Tooltip labels */
-        .float-btn::before {
-            content: attr(data-tip);
+        /* Icon inside toggle: chat → X */
+        .fab-toggle .icon-chat { transition: opacity 0.2s, transform 0.2s; }
+        .fab-toggle .icon-close {
             position: absolute;
-            right: calc(100% + 10px);
-            background: rgba(15,31,61,0.92);
-            color: var(--white);
-            font-size: 12px;
-            font-weight: 600;
-            padding: 5px 10px;
-            border-radius: 8px;
-            white-space: nowrap;
             opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s ease;
+            transform: rotate(-90deg);
+            transition: opacity 0.2s, transform 0.2s;
         }
 
-        .float-btn:hover::before { opacity: 1; }
+        .fab-toggle { position: relative; }
+
+        .fab-wrap.open .fab-toggle { background: var(--orange); transform: rotate(0deg); }
+        .fab-wrap.open .fab-toggle .icon-chat  { opacity: 0; transform: rotate(90deg); }
+        .fab-wrap.open .fab-toggle .icon-close { opacity: 1; transform: rotate(0deg); }
+
+        /* Backdrop overlay (optional dim) */
+        .fab-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 998;
+        }
+        .fab-wrap.open ~ .fab-backdrop { display: block; }
 
         @keyframes pulse {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; }
+            50% { opacity: 0.82; }
         }
 
         @media (max-width: 768px) {
-            .float-contacts {
-                bottom: 20px;
-                right: 20px;
-                gap: 10px;
-            }
-            .float-btn {
-                width: 46px;
-                height: 46px;
-            }
-            .float-btn svg { width: 21px; height: 21px; }
-            .float-btn::before { display: none; }
+            .fab-wrap { bottom: 20px; right: 20px; }
+            .fab-btn  { width: 44px; height: 44px; }
+            .fab-btn svg { width: 20px; height: 20px; }
+            .fab-label { display: none; }
+            .fab-toggle { width: 50px; height: 50px; }
         }
 
         /* Modal */
@@ -2288,33 +2347,77 @@
         </div>
     </footer>
 
-    <!-- Floating Contact Buttons -->
-    <div class="float-contacts">
+    <!-- Speed Dial FAB -->
+    <div class="fab-wrap" id="fabWrap">
 
-        <!-- โทรศัพท์ -->
-        <a href="tel:0802648381" class="float-btn float-phone" data-tip="080-264-8381">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.6 1.3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-        </a>
+        <!-- Child buttons (hidden until open) -->
+        <div class="fab-items">
 
-        <!-- Facebook Messenger -->
-        <a href="https://m.me/61570701028364" class="float-btn float-messenger" target="_blank" rel="noopener" data-tip="Facebook Messenger">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2C6.477 2 2 6.36 2 11.73c0 2.9 1.35 5.5 3.47 7.24V22l3.17-1.75c.84.24 1.74.37 2.66.37 5.523 0 10-4.36 10-9.73S17.523 2 12 2z"/>
-                <path d="M7.5 14l2.5-3 2.5 2 2.5-3"/>
-            </svg>
-        </a>
+            <!-- โทรศัพท์ -->
+            <div class="fab-item">
+                <span class="fab-label">080-264-8381</span>
+                <a href="tel:0802648381" class="fab-btn fab-phone" aria-label="โทรหาเรา">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.6 1.3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </a>
+            </div>
 
-        <!-- LINE -->
-        <a href="https://line.me/ti/p/~@489hmdfx" class="float-btn float-line-btn" target="_blank" rel="noopener" data-tip="ทักแชท LINE">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 11.5C21 16.19 17.19 20 12.5 20c-.78 0-1.54-.1-2.26-.28L6 22l.9-3.5C5.11 17.1 4 14.42 4 11.5 4 6.81 7.81 3 12.5 3S21 6.81 21 11.5z"/>
-                <path d="M8.5 10.5h7M8.5 13.5h5"/>
+            <!-- Facebook Messenger -->
+            <div class="fab-item">
+                <span class="fab-label">Facebook Messenger</span>
+                <a href="https://m.me/61570701028364" class="fab-btn fab-messenger" target="_blank" rel="noopener" aria-label="Messenger">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2C6.477 2 2 6.36 2 11.73c0 2.9 1.35 5.5 3.47 7.24V22l3.17-1.75c.84.24 1.74.37 2.66.37 5.523 0 10-4.36 10-9.73S17.523 2 12 2z"/>
+                        <path d="M7.5 14l2.5-3 2.5 2 2.5-3"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- LINE -->
+            <div class="fab-item">
+                <span class="fab-label">ทักแชท LINE</span>
+                <a href="https://line.me/ti/p/~@489hmdfx" class="fab-btn fab-line" target="_blank" rel="noopener" aria-label="LINE">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5C21 16.19 17.19 20 12.5 20c-.78 0-1.54-.1-2.26-.28L6 22l.9-3.5C5.11 17.1 4 14.42 4 11.5 4 6.81 7.81 3 12.5 3S21 6.81 21 11.5z"/>
+                        <path d="M8.5 10.5h7M8.5 13.5h5"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Main toggle button -->
+        <button class="fab-toggle" id="fabToggle" aria-label="ติดต่อเรา">
+            <!-- Chat icon -->
+            <svg class="icon-chat" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
-        </a>
+            <!-- Close icon -->
+            <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
 
     </div>
+    <div class="fab-backdrop" id="fabBackdrop"></div>
+
+    <script>
+        (function() {
+            const wrap     = document.getElementById('fabWrap');
+            const toggle   = document.getElementById('fabToggle');
+            const backdrop = document.getElementById('fabBackdrop');
+
+            function openFab()  { wrap.classList.add('open'); }
+            function closeFab() { wrap.classList.remove('open'); }
+            function toggleFab() { wrap.classList.contains('open') ? closeFab() : openFab(); }
+
+            toggle.addEventListener('click', function(e) { e.stopPropagation(); toggleFab(); });
+            backdrop.addEventListener('click', closeFab);
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeFab(); });
+        })();
+    </script>
 
     <!-- Login Modal -->
     <div id="modal-login">
