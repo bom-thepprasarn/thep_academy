@@ -1500,6 +1500,45 @@
             opacity: 0.9;
         }
 
+        .footer-mentor {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            justify-content: center;
+            margin: 28px 0 0;
+            opacity: 0.75;
+            transition: opacity 0.2s;
+        }
+
+        .footer-mentor:hover { opacity: 1; }
+
+        .footer-mentor-photo {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(249,115,22,0.4);
+            flex-shrink: 0;
+        }
+
+        .footer-mentor-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .footer-mentor-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-mentor-bio {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 2px;
+        }
+
         .footer-divider {
             height: 1px;
             background: rgba(255, 255, 255, 0.2);
@@ -1926,39 +1965,6 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="reveal">
-        <div class="section-container">
-            <div class="about-grid">
-                <div>
-                    <img src="assets/images/bom_photo.jpg" alt="พี่บอม ผู้สอน Thep Academy" class="about-photo">
-                    <div class="photo-label">พี่บอม · Thep Academy</div>
-                </div>
-
-                <div class="about-content">
-                    <span class="eyebrow">Meet Your Mentor</span>
-                    <h2>พี่บอม · Thep Academy</h2>
-                    <p>พี่บอมเชื่อว่าภาษาอังกฤษไม่ใช่เรื่องของการท่องจำ แต่คือทักษะที่ฝึกได้ ถ้าเรียนถูกวิธี</p>
-
-                    <div class="credentials">
-                        <div class="credential-group">
-                            <span class="credential-group-title">วุฒิการศึกษา</span>
-                            <div class="credential-item">Ph.D. Management · NIDA International</div>
-                            <div class="credential-item">M.B.A. Tourism Management · Assumption University</div>
-                            <div class="credential-item">B.A. English · Ramkhamhaeng University</div>
-                            <div class="credential-item">B.A. Political Science · Ramkhamhaeng University</div>
-                        </div>
-                        <div class="credential-group">
-                            <span class="credential-group-title">ใบรับรอง</span>
-                            <div class="credential-item">Google Project Management Certified</div>
-                            <div class="credential-item">Google Advanced Data Analytics Certified</div>
-                            <div class="credential-item">Google Digital Marketing & E-Commerce Certified</div>
-                            <div class="credential-item">Meta Marketing Science Certified</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Services Section -->
     <section id="services" class="reveal">
@@ -2257,6 +2263,15 @@
                         <path d="M24.35 20.9 30.5 13h-1.46l-5.33 6.2L19.3 13H14l6.43 9.36L14 31h1.46l5.62-6.53L25.7 31H31l-6.65-10.1zm-1.99 2.32-.65-.93-5.17-7.4h2.23l4.18 5.98.65.93 5.42 7.77h-2.23l-4.43-6.35z" fill="#fff"/>
                     </svg>
                 </a>
+            </div>
+
+            <!-- Mentor mini card -->
+            <div class="footer-mentor">
+                <img src="assets/images/bom_photo.jpg" alt="พี่บอม" class="footer-mentor-photo">
+                <div class="footer-mentor-info">
+                    <span class="footer-mentor-name">พี่บอม · Thep Academy</span>
+                    <span class="footer-mentor-bio">Ph.D. Management, NIDA · ผู้ก่อตั้งและผู้สอน</span>
+                </div>
             </div>
 
             <div class="footer-divider"></div>
