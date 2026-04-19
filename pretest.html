@@ -34,8 +34,8 @@
 
     body {
       font-family: 'Sarabun', sans-serif;
-      background: var(--navy);
-      color: var(--white);
+      background: #fff8f0;
+      color: #1a1a1a;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -52,8 +52,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(249,115,22,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(249,115,22,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(249,115,22,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(249,115,22,0.06) 1px, transparent 1px);
       background-size: 48px 48px;
       pointer-events: none;
     }
@@ -168,7 +168,7 @@
 
     .intro-desc {
       font-size: 17px;
-      color: rgba(255,255,255,0.6);
+      color: #6b7280;
       line-height: 1.7;
       margin-bottom: 40px;
       font-weight: 400;
@@ -182,8 +182,8 @@
     }
 
     .intro-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
       border-radius: 14px;
       padding: 20px 16px;
       text-align: center;
@@ -197,7 +197,7 @@
       color: var(--orange);
       margin-bottom: 4px;
     }
-    .intro-card-label { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .intro-card-label { font-size: 12px; color: #9ca3af; }
 
     .btn-start {
       width: 100%;
@@ -232,7 +232,7 @@
     .quiz-counter {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 13px;
-      color: rgba(255,255,255,0.45);
+      color: #6b7280;
       letter-spacing: 0.5px;
     }
 
@@ -245,11 +245,11 @@
       font-family: 'IBM Plex Mono', monospace;
       font-size: 14px;
       font-weight: 600;
-      color: rgba(255,255,255,0.6);
-      background: rgba(255,255,255,0.06);
+      color: #374151;
+      background: rgba(0,0,0,0.05);
       padding: 6px 14px;
       border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(0,0,0,0.08);
     }
 
     .quiz-timer.urgent { color: #f87171; border-color: rgba(248,113,113,0.3); }
@@ -258,7 +258,7 @@
     .progress-track {
       width: 100%;
       height: 4px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.08);
       border-radius: 2px;
       margin-bottom: 36px;
       overflow: hidden;
@@ -273,8 +273,8 @@
 
     /* Question card */
     .question-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
       border-radius: 20px;
       padding: 36px 32px;
       margin-bottom: 20px;
@@ -294,7 +294,7 @@
       font-size: 20px;
       font-weight: 600;
       line-height: 1.5;
-      color: var(--white);
+      color: #1a1a1a;
       letter-spacing: -0.2px;
     }
 
@@ -317,11 +317,11 @@
     }
 
     .option-btn {
-      background: rgba(255,255,255,0.04);
-      border: 1.5px solid rgba(255,255,255,0.1);
+      background: #ffffff;
+      border: 1.5px solid rgba(0,0,0,0.1);
       border-radius: 12px;
       padding: 16px 18px;
-      color: rgba(255,255,255,0.85);
+      color: #374151;
       font-family: 'Sarabun', sans-serif;
       font-size: 15px;
       font-weight: 500;
@@ -336,7 +336,7 @@
     .option-btn:hover:not(:disabled) {
       background: rgba(249,115,22,0.1);
       border-color: rgba(249,115,22,0.4);
-      color: var(--white);
+      color: #1a1a1a;
     }
 
     .option-key {
@@ -346,29 +346,29 @@
       width: 26px;
       height: 26px;
       border-radius: 6px;
-      background: rgba(255,255,255,0.08);
+      background: #f3f0ea;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: rgba(255,255,255,0.5);
+      color: #9ca3af;
     }
 
     .option-btn.correct {
       background: rgba(22,163,74,0.15);
       border-color: rgba(22,163,74,0.5);
-      color: #4ade80;
+      color: #15803d;
     }
 
-    .option-btn.correct .option-key { background: rgba(22,163,74,0.3); color: #4ade80; }
+    .option-btn.correct .option-key { background: rgba(22,163,74,0.2); color: #15803d; }
 
     .option-btn.wrong {
       background: rgba(220,38,38,0.12);
       border-color: rgba(220,38,38,0.4);
-      color: #f87171;
+      color: #b91c1c;
     }
 
-    .option-btn.wrong .option-key { background: rgba(220,38,38,0.25); color: #f87171; }
+    .option-btn.wrong .option-key { background: rgba(220,38,38,0.15); color: #b91c1c; }
 
     .option-btn:disabled { cursor: default; }
 
@@ -383,8 +383,8 @@
     }
 
     .feedback-box.show { display: block; }
-    .feedback-box.correct { background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.25); color: #4ade80; }
-    .feedback-box.wrong   { background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.2); color: #f87171; }
+    .feedback-box.correct { background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.25); color: #15803d; }
+    .feedback-box.wrong   { background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.2); color: #b91c1c; }
 
     .feedback-box strong { display: block; margin-bottom: 4px; font-size: 15px; }
 
@@ -392,10 +392,10 @@
       width: 100%;
       margin-top: 16px;
       padding: 16px;
-      background: var(--navy2);
-      border: 1.5px solid rgba(255,255,255,0.12);
+      background: #f3f0ea;
+      border: 1.5px solid rgba(0,0,0,0.08);
       border-radius: 12px;
-      color: var(--white);
+      color: #1a1a1a;
       font-family: 'Sarabun', sans-serif;
       font-size: 15px;
       font-weight: 600;
@@ -405,7 +405,7 @@
     }
 
     .btn-next.show { display: block; }
-    .btn-next:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); }
+    .btn-next:hover { background: #e8e4dc; border-color: rgba(0,0,0,0.15); }
 
     /* ── RESULT SCREEN ── */
     .result-ring {
