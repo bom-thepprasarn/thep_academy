@@ -2052,6 +2052,59 @@
                 font-size: 14px;
             }
         }
+
+        /* ── Teaser Sections ── */
+        .teaser-section {
+            text-align: center;
+            padding: 80px 24px;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .teaser-section.teaser-alt {
+            background: var(--off-white);
+            max-width: 100%;
+            padding: 80px 24px;
+        }
+        .teaser-section.teaser-alt > * {
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .teaser-section h2 {
+            font-size: clamp(26px, 5vw, 40px);
+            font-weight: 800;
+            color: var(--dark-gray);
+            margin: 10px 0 14px;
+            line-height: 1.25;
+        }
+        .teaser-section p {
+            font-size: 16px;
+            color: var(--mid-gray);
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+        .teaser-cta {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--orange);
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background .2s, transform .15s;
+        }
+        .teaser-cta:hover {
+            background: #ea6c0a;
+            transform: translateY(-2px);
+        }
+        .teaser-cta-navy {
+            background: var(--navy);
+        }
+        .teaser-cta-navy:hover {
+            background: #0d1a30;
+        }
     </style>
 </head>
 <body>
@@ -2062,44 +2115,10 @@
         </a>
 
         <div class="nav-center">
-            <div class="nav-item" style="position: relative;">
-                <span class="nav-link dropdown-toggle">คอร์สเรียน</span>
-                <div class="nav-dropdown">
-                    <div class="dropdown-section">
-                        <div class="dropdown-header">Mission to the Moon</div>
-                        <div class="dropdown-subheader">เตรียมสอบเข้า ม.1</div>
-                        <a href="pretest.html" class="dropdown-item">
-                            <span class="dropdown-badge badge-free">FREE</span>
-                            <span>Pre-test & Mini Lessons</span>
-                        </a>
-                        <a href="grammar_foundation.html" class="dropdown-item">
-                            <span class="dropdown-badge badge-foundation">FOUNDATION</span>
-                            <span>Grammar Foundation</span>
-                        </a>
-                        <a href="#subcourses" class="dropdown-item">
-                            <span class="dropdown-badge badge-core">CORE</span>
-                            <span>The Ultimate Prep</span>
-                        </a>
-                        <a href="mock-exam.html" class="dropdown-item">
-                            <span class="dropdown-badge badge-sprint">SPRINT</span>
-                            <span>Mock Exam Final Sprint</span>
-                        </a>
-                    </div>
-                    <div class="dropdown-section">
-                        <div class="dropdown-header">Mission to Mars</div>
-                        <div class="dropdown-subheader">เตรียมสอบเข้า ม.4 <span class="badge-coming">เร็วๆ นี้</span></div>
-                    </div>
-                    <div class="dropdown-section">
-                        <div class="dropdown-header">Mission to Pluto</div>
-                        <div class="dropdown-subheader">TCAS · IELTS · SAT <span class="badge-coming">เร็วๆ นี้</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <a href="#" class="nav-link" onclick="openModal(); return false;">คอร์สของฉัน</a>
+            <a href="courses.html" class="nav-link">คอร์สเรียน</a>
+            <a href="about.html" class="nav-link">เกี่ยวกับ</a>
             <a href="#docs" class="nav-link">คลังความรู้</a>
-
-            <a href="#blog" class="nav-link">Blog</a>
+            <a href="blog.html" class="nav-link">Blog</a>
             <a href="#contact" class="nav-link">ติดต่อ</a>
         </div>
 
@@ -2153,239 +2172,28 @@
 
     <!-- About Section -->
 
-    <!-- Services Section -->
-    <section id="services" class="reveal">
-        <div class="section-header">
-            <span class="eyebrow">เลือกเส้นทางของคุณ</span>
-            <h2>เลือกคอร์สที่ใช่</h2>
-            <p>สำหรับเป้าหมายของคุณ</p>
-        </div>
-
-        <div class="services-grid">
-            <!-- Moon -->
-            <div class="service-card active" onclick="this.classList.toggle('active')">
-                <div class="service-icon">🌙</div>
-                <span class="eyebrow">Mission to the Moon</span>
-                <h3>สอบเข้า ม.1</h3>
-                <p>ปูพื้นฐานภาษาอังกฤษให้น้องๆ พร้อมก้าวสู่โรงเรียนมัธยมที่ตั้งใจไว้</p>
-                <a href="#subcourses" class="btn-service">ดูคอร์สเรียนทั้งหมด →</a>
-            </div>
-
-            <!-- Mars -->
-            <div class="service-card disabled">
-                <div class="service-icon">🔴</div>
-                <span class="eyebrow">Mission to Mars</span>
-                <h3>สอบเข้า ม.4</h3>
-                <p>ภารกิจที่ต้องการความแม่นยำมากขึ้น เสริมทักษะไวยากรณ์และการอ่านให้พร้อม ก่อนก้าวสู่มัธยมปลาย</p>
-                <div class="service-badge">เปิดรับสมัครเร็วๆ นี้</div>
-            </div>
-
-            <!-- Pluto -->
-            <div class="service-card disabled">
-                <div class="service-icon">❄️</div>
-                <span class="eyebrow">Mission to Pluto</span>
-                <h3>มหาวิทยาลัย & อินเตอร์</h3>
-                <p>ภารกิจสุดท้าทาย ครอบคลุม TCAS · IELTS · SAT สำหรับคนที่กล้าบินไกลกว่าทุกคน</p>
-                <div class="service-badge">เปิดรับสมัครเร็วๆ นี้</div>
-            </div>
-        </div>
+    <!-- Courses Teaser -->
+    <section id="courses-teaser" class="reveal teaser-section">
+        <span class="eyebrow">เลือกเส้นทางของคุณ</span>
+        <h2>เลือกคอร์สที่ใช่</h2>
+        <p>ตั้งแต่พื้นฐานไปถึงเตรียมสอบจริง ครบทุกระดับในที่เดียว</p>
+        <a href="courses.html" class="teaser-cta">ดูคอร์สทั้งหมด →</a>
     </section>
 
-    <!-- Subcourses Section -->
-    <section id="subcourses" class="reveal">
-        <div class="section-header">
-            <span class="eyebrow">Mission to the Moon</span>
-            <h2>คอร์สสำหรับสอบเข้า ม.1</h2>
-            <p>คอร์สเรียนที่เราตั้งใจทำเพื่อคุณ</p>
-        </div>
-
-        <div class="filter-tabs">
-            <button class="filter-btn active" onclick="filterCourse(this, 'all')">ทั้งหมด</button>
-            <button class="filter-btn" onclick="filterCourse(this, 'moon')">สอบเข้า ม.1</button>
-            <button class="filter-btn" onclick="filterCourse(this, 'mars')">สอบเข้า ม.4</button>
-            <button class="filter-btn" onclick="filterCourse(this, 'free')">คอร์สฟรี</button>
-        </div>
-
-        <div class="subcourse-grid">
-            <!-- Pre-test -->
-            <div class="subcourse-card reveal" data-tag="moon free">
-                <img src="assets/images/banners/banner-pretest.png" alt="Pre-test และ Mini Lessons คอร์สฟรี" class="subcourse-cover">
-                <span class="subcourse-badge badge-free" style="background: var(--green-light); color: var(--green);">FREE</span>
-                <div class="subcourse-content">
-                    <h3>Pre-test & Mini Lessons</h3>
-                    <p>ทำแบบทดสอบวัดระดับและรับคลิปเทคนิค 5 จุดตาย ที่ออกสอบบ่อยที่สุด</p>
-                    <div class="subcourse-price">ฟรี <span style="color: var(--dark-gray); font-weight: 400;">0 บาท</span></div>
-                    <a href="pretest.html" class="subcourse-cta" style="background: var(--green);">เริ่มทดสอบ</a>
-                </div>
-            </div>
-
-            <!-- Grammar Foundation -->
-            <div class="subcourse-card reveal" data-tag="moon free">
-                <img src="assets/images/banners/banner-grammar.png" alt="Grammar Foundation 12 Tenses Parts of Speech" class="subcourse-cover">
-                <span class="subcourse-badge badge-foundation" style="background: var(--blue-light); color: var(--blue);">FOUNDATION</span>
-                <div class="subcourse-content">
-                    <h3>Grammar Foundation</h3>
-                    <p>สรุปไวยากรณ์พื้นฐาน 12 Tenses และ Parts of Speech ครบจบในที่เดียว</p>
-                    <div class="subcourse-price">ฟรี <span style="color: var(--dark-gray); font-weight: 400;">0 บาท</span> <del>290 บาท</del></div>
-                    <a href="grammar_foundation.html" class="subcourse-cta" style="background: var(--blue);">เริ่มเรียน</a>
-                </div>
-            </div>
-
-            <!-- Ultimate Prep -->
-            <div class="subcourse-card reveal" data-tag="moon">
-                <img src="assets/images/banners/banner-ultimate.png" alt="The Ultimate Prep คอร์สหลักเตรียมสอบเข้า ม.1" class="subcourse-cover">
-                <span class="subcourse-ribbon">⭐ แนะนำ</span>
-                <span class="subcourse-badge badge-core" style="background: var(--orange-light); color: var(--orange);">CORE</span>
-                <div class="subcourse-content">
-                    <h3>The Ultimate Prep</h3>
-                    <p>คอร์สหลักเนื้อหา 30 ชั่วโมง พร้อมหนังสือเรียนส่งถึงบ้าน</p>
-                    <div class="subcourse-price">349 บาท <del>690 บาท</del></div>
-                    <button class="subcourse-cta" style="background: var(--orange); color: #fff;" onclick="openModal()">ลงทะเบียนคอร์สหลัก</button>
-                </div>
-            </div>
-
-            <!-- Mock Exam -->
-            <div class="subcourse-card reveal" data-tag="moon">
-                <img src="assets/images/banners/banner-mock-exam.png" alt="Mock Exam ตะลุยโจทย์ 1000 ข้อสอบเข้า ม.1" class="subcourse-cover">
-                <span class="subcourse-badge badge-sprint" style="background: var(--pink-light); color: var(--pink);">SPRINT</span>
-                <div class="subcourse-content">
-                    <h3>Mock Exam</h3>
-                    <p>ตะลุยโจทย์ 1,000 ข้อ จำลองสนามสอบจริงก่อนวันสอบจริง</p>
-                    <div class="subcourse-price">249 บาท <del>490 บาท</del></div>
-                    <a href="mock-exam.html" class="subcourse-cta" style="background: var(--orange);">ตะลุยโจทย์โค้งสุดท้าย</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="bundle-cta">
-            <h3>⭐ Best Value แพ็กเกจ Mission to the Moon เตรียมพร้อมสำหรับสอบเข้า ม.1</h3>
-            <p>รวม 4 คอร์ส · Pre-test + Foundation + Ultimate Prep + Mock Exam</p>
-            <div class="bundle-price">
-                <span class="bundle-price-main">499 บาท</span>
-                <span class="bundle-price-original">ราคาปกติ 1,180 บาท</span>
-                <span class="bundle-savings">ประหยัด 58%</span>
-            </div>
-            <button class="btn-cta" onclick="openModal()" style="max-width: 280px; margin: 0 auto;">ดูแพ็กเกจทั้งหมด →</button>
-        </div>
+    <!-- Docs Teaser -->
+    <section id="docs" class="reveal teaser-section teaser-alt">
+        <span class="eyebrow">คลังความรู้ฟรี</span>
+        <h2>เอกสารและสรุปฟรี<br>ดาวน์โหลดได้เลย</h2>
+        <p>สรุปเนื้อหาที่พี่บอมทำเองทุกชิ้น ใช้ทบทวนก่อนสอบได้เลย</p>
+        <a href="resources.html" class="teaser-cta teaser-cta-navy">เข้าคลังความรู้ →</a>
     </section>
 
-    <!-- Docs Section -->
-    <section id="docs" class="reveal">
-        <div class="section-header">
-            <span class="eyebrow">คลังความรู้ฟรี</span>
-            <h2>เอกสารและสรุปฟรี ดาวน์โหลดได้เลย</h2>
-            <p>สรุปเนื้อหาที่พี่บอมทำเองทุกชิ้น ใช้ทบทวนก่อนสอบได้เลย</p>
-        </div>
-
-        <div class="docs-grid">
-            <!-- Tenses -->
-            <div class="doc-card reveal">
-                <div class="doc-icon">📋</div>
-                <span class="doc-tag">Grammar</span>
-                <h3>Tense ทั้ง 12 แบบ สรุปครบในหน้าเดียว</h3>
-                <p>ตารางแสดง Tense และ Signal Words ที่ใช้บอกว่าเป็น Tense ไหน</p>
-                <div class="doc-meta">ตาราง · สรุปพร้อม signal words</div>
-                <a href="12_tenses_table.html" target="_blank">เปิดอ่าน →</a>
-            </div>
-
-            <!-- Vocabulary -->
-            <div class="doc-card reveal">
-                <div class="doc-icon">📚</div>
-                <span class="doc-tag">Vocabulary</span>
-                <h3>คำศัพท์ O-NET ม.3 ที่ต้องรู้ 500 คำ</h3>
-                <p>รวบรวมคำศัพท์จากข้อสอบ O-NET มัธยมต้นที่ออกบ่อยมากที่สุด</p>
-                <div class="doc-meta">500 คำ · พร้อมคำแปล</div>
-                <a href="onet_m3_vocab_500.html" target="_blank">เปิดอ่าน →</a>
-            </div>
-
-            <!-- Writing -->
-            <div class="doc-card reveal">
-                <div class="doc-icon">✍️</div>
-                <span class="doc-tag">Writing</span>
-                <h3>แม่แบบเขียนเรียงความภาษาอังกฤษ 5 Paragraphs</h3>
-                <p>วิธีจัดโครงสร้างเรียงความให้เป็นระบบ พร้อม Sentence Starters</p>
-                <div class="doc-meta">พร้อม sentence starters</div>
-                <a href="blog_essay_writing.html" target="_blank">เปิดอ่าน →</a>
-            </div>
-
-            <!-- IELTS -->
-            <div class="doc-card reveal">
-                <div class="doc-icon">🎯</div>
-                <span class="doc-tag">IELTS</span>
-                <h3>IELTS Writing Task 2 Band 7+ Formula</h3>
-                <p>สูตรเขียน Task 2 ให้ได้ Band 7 ขึ้นไป ตามมาตรฐาน IELTS</p>
-                <div class="doc-meta">เทคนิค Band 7 ขึ้นไป</div>
-                <a href="blog_ielts_task2.html" target="_blank">เปิดอ่าน →</a>
-            </div>
-
-            <!-- Reading -->
-            <div class="doc-card reveal">
-                <div class="doc-icon">👀</div>
-                <span class="doc-tag">Reading</span>
-                <h3>เทคนิค Skimming & Scanning สำหรับข้อสอบ</h3>
-                <p>วิธีอ่านข้อความอย่างมีประสิทธิภาพ ทำให้ตอบข้อสอบได้เร็วขึ้น</p>
-                <div class="doc-meta">เร็วขึ้น 2 เท่า</div>
-                <a href="blog_skimming_scanning.html" target="_blank">เปิดอ่าน →</a>
-            </div>
-
-            <!-- Entrance Exam -->
-            <div class="doc-card reveal">
-                <div class="doc-icon">🏆</div>
-                <span class="doc-tag">Entrance</span>
-                <h3>แนวข้อสอบสอบเข้า ม.1 วิชาภาษาอังกฤษ</h3>
-                <p>รวบรวมข้อสอบแบบปฏิบัติการจำนวน 30 ข้อ พร้อมเฉลยอย่างละเอียด</p>
-                <div class="doc-meta">30 ข้อ · PDF · พร้อมเฉลย</div>
-                <a href="docs/MockExam_M1_English_ThepAcademy.pdf" target="_blank">เปิดอ่าน →</a>
-            </div>
-
-        </div>
-
-        <div class="newsletter-box">
-            <h3>สมัครสมาชิกฟรีเพื่อรับเอกสารใหม่ก่อนใคร</h3>
-            <form class="newsletter-form" onsubmit="return submitNewsletter(event)">
-                <input type="email" placeholder="อีเมลของคุณ" required>
-                <button type="submit">สมัครสมาชิกฟรี →</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="reveal">
-        <div class="section-header">
-            <span class="eyebrow">บทความจากพี่บอม</span>
-            <h2>เรียนรู้เทคนิคก่อนใคร</h2>
-            <p>บทความที่ช่วยให้เข้าใจภาษาอังกฤษอย่างเป็นระบบ ใช้ได้จริงในสนามสอบ</p>
-        </div>
-
-        <div class="blog-grid">
-            <a href="blog_m1_5traps.html" target="_blank" class="blog-card reveal">
-                <span class="blog-tag entrance">🎯 Entrance</span>
-                <h3>5 จุดตายภาษาอังกฤษสอบเข้า ม.1 ที่พลาดบ่อยที่สุด</h3>
-                <p>กับดักโจทย์จากสถิติข้อสอบจริง พร้อมเทคนิควิเคราะห์แบบฉับไว</p>
-                <span class="blog-read-more">อ่านบทความ →</span>
-            </a>
-
-            <a href="blog_essay_writing.html" target="_blank" class="blog-card reveal">
-                <span class="blog-tag writing">✍️ Writing</span>
-                <h3>วิธีเขียน Essay ภาษาอังกฤษแบบ 5 Paragraphs</h3>
-                <p>คู่มือโครงสร้าง วิธีเริ่มต้นแต่ละย่อหน้า และดูตัวอย่าง Essay จริง</p>
-                <span class="blog-read-more">อ่านบทความ →</span>
-            </a>
-
-            <a href="blog_ielts_task2.html" target="_blank" class="blog-card reveal">
-                <span class="blog-tag ielts">🏅 IELTS</span>
-                <h3>IELTS Writing Task 2 Band 7+ Formula</h3>
-                <p>สูตรเขียน Task 2 ให้ได้ Band 7 ขึ้นไป ตามมาตรฐาน IELTS จริง</p>
-                <span class="blog-read-more">อ่านบทความ →</span>
-            </a>
-
-            <a href="blog_skimming_scanning.html" target="_blank" class="blog-card reveal">
-                <span class="blog-tag reading">👀 Reading</span>
-                <h3>เทคนิค Skimming & Scanning สำหรับข้อสอบ</h3>
-                <p>วิธีอ่านข้อความอย่างมีประสิทธิภาพ ทำให้ตอบข้อสอบได้เร็วขึ้น 2 เท่า</p>
-                <span class="blog-read-more">อ่านบทความ →</span>
-            </a>
-        </div>
+    <!-- Blog Teaser -->
+    <section id="blog" class="reveal teaser-section">
+        <span class="eyebrow">บทความจากพี่บอม</span>
+        <h2>เรียนรู้เทคนิคก่อนใคร</h2>
+        <p>บทความที่ช่วยให้เข้าใจภาษาอังกฤษอย่างเป็นระบบ ใช้ได้จริงในสนามสอบ</p>
+        <a href="blog.html" class="teaser-cta">อ่านบทความทั้งหมด →</a>
     </section>
 
     <!-- Footer -->
