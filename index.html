@@ -19,6 +19,130 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://thep-academy.com">
 
+    <!-- Structured Data: Organization + WebSite + Sitelinks -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://thep-academy.com/#organization",
+          "name": "Thep Academy",
+          "url": "https://thep-academy.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://thep-academy.com/assets/images/logo.png"
+          },
+          "description": "คอร์สภาษาอังกฤษเตรียมสอบเข้า ม.1 สอนโดยพี่บอม Ph.D. NIDA เรียนรู้จริง ไม่ท่องจำ",
+          "foundingDate": "2024",
+          "founder": {
+            "@type": "Person",
+            "name": "พี่บอม",
+            "jobTitle": "Ph.D. Management, NIDA International"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+66-80-264-8381",
+            "contactType": "customer service",
+            "availableLanguage": ["Thai", "English"]
+          },
+          "sameAs": [
+            "https://youtube.com/@2ThepAcademy",
+            "https://www.facebook.com/profile.php?id=61570701028364",
+            "https://www.tiktok.com/@thepacademy",
+            "https://www.instagram.com/thep.academy"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://thep-academy.com/#website",
+          "url": "https://thep-academy.com",
+          "name": "Thep Academy",
+          "description": "คอร์สภาษาอังกฤษเตรียมสอบเข้า ม.1 กับพี่บอม Ph.D.",
+          "publisher": { "@id": "https://thep-academy.com/#organization" },
+          "inLanguage": "th"
+        },
+        {
+          "@type": "ItemList",
+          "name": "หน้าหลักของ Thep Academy",
+          "itemListElement": [
+            {
+              "@type": "SiteLinksSearchBox",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://thep-academy.com/courses.html"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "คอร์สเรียนทั้งหมด",
+              "description": "Grammar Foundation, ONET M3 Vocab 500 และคอร์สเตรียมสอบอื่นๆ",
+              "url": "https://thep-academy.com/courses.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "ทดสอบตัวเอง (Pre-test ฟรี)",
+              "description": "ทดสอบระดับภาษาอังกฤษฟรี 10 ข้อ Grammar + Vocabulary + Reading",
+              "url": "https://thep-academy.com/pretest.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Grammar Foundation",
+              "description": "คอร์สไวยากรณ์พื้นฐานสำหรับสอบเข้า ม.1",
+              "url": "https://thep-academy.com/grammar_foundation.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Mock Exam ภาษาอังกฤษ",
+              "description": "ข้อสอบจำลองเต็มรูปแบบ 50 ข้อ 60 นาที",
+              "url": "https://thep-academy.com/mock-exam.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "ติดต่อเรา",
+              "description": "ติดต่อพี่บอมผ่าน LINE, Facebook หรือโทรศัพท์",
+              "url": "https://thep-academy.com/#contact"
+            }
+          ]
+        },
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://thep-academy.com/#edu",
+          "name": "Thep Academy",
+          "url": "https://thep-academy.com",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "คอร์สภาษาอังกฤษ",
+            "itemListElement": [
+              {
+                "@type": "Course",
+                "name": "Grammar Foundation",
+                "description": "คอร์สไวยากรณ์พื้นฐานสำหรับสอบเข้า ม.1",
+                "url": "https://thep-academy.com/grammar_foundation.html",
+                "provider": { "@id": "https://thep-academy.com/#organization" },
+                "inLanguage": "th",
+                "educationalLevel": "Beginner"
+              },
+              {
+                "@type": "Course",
+                "name": "ONET M3 Vocabulary 500",
+                "description": "คำศัพท์ 500 คำสำหรับสอบ O-NET ม.3",
+                "url": "https://thep-academy.com/onet_m3_vocab_500.html",
+                "provider": { "@id": "https://thep-academy.com/#organization" },
+                "inLanguage": "th"
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700;800;900&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
