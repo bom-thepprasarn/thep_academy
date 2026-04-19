@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X05ZGMBFW7"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-X05ZGMBFW7');</script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="shortcut icon" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จองคลาสเรียน | Thep Academy</title>
+    <meta name="description" content="จองคลาสเรียนภาษาอังกฤษออนไลน์กับพี่บอม Ph.D. NIDA เลือกเวลาที่สะดวก แล้วทักยืนยันผ่าน LINE">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+    :root {
+        --navy:   #1a2340;
+        --orange: #F97316;
+        --orange2:#ea6c0a;
+        --orange-light: rgba(249,115,22,0.08);
+        --green:  #16a34a;
+        --gold:   #D4AF37;
+        --bg:     #fff8f0;
+        --card:   #ffffff;
+        --text:   #1a1a1a;
+        --muted:  #6b7280;
+        --border: #e8e0d5;
+        --radius: 14px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+    /* ── TOP BAR ── */
+    .topbar{background:var(--navy);padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.2);}
+    .topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .topbar-brand img{height:40px;width:auto;}
+    .topbar-brand span{color:#fff;font-weight:700;font-size:1rem;}
+    .back-btn{color:rgba(255,255,255,.7);text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:6px;transition:color .2s;font-weight:500;}
+    .back-btn:hover{color:#fff;}
+    .back-btn svg{width:16px;height:16px;}
+
+    /* ── HERO ── */
+    .hero{background:linear-gradient(135deg,var(--navy) 0%,#263660 60%,var(--navy) 100%);color:#fff;padding:52px 24px 44px;text-align:center;}
+    .hero-tag{display:inline-block;background:rgba(249,115,22,.2);color:#fdba74;border:1px solid rgba(249,115,22,.35);border-radius:20px;padding:5px 16px;font-size:.78rem;font-weight:700;letter-spacing:.6px;margin-bottom:14px;text-transform:uppercase;}
+    .hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:10px;}
+    .hero h1 span{color:var(--orange);}
+    .hero p{font-size:1rem;opacity:.8;max-width:520px;margin:0 auto;}
+
+    /* ── LAYOUT ── */
+    .page{max-width:960px;margin:0 auto;padding:40px 20px 80px;}
+
+    /* ── SECTION TITLE ── */
+    .sec-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--orange);margin-bottom:8px;}
+    .sec-title{font-size:1.5rem;font-weight:800;color:var(--navy);margin-bottom:24px;}
+
+    /* ── PRICING ── */
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;}
+    @media(max-width:640px){.pricing-grid{grid-template-columns:1fr;}}
+
+    .price-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:24px 20px;position:relative;transition:border-color .2s,box-shadow .2s;cursor:pointer;}
+    .price-card:hover{border-color:var(--orange);box-shadow:0 6px 24px rgba(249,115,22,.12);}
+    .price-card.selected{border-color:var(--orange);box-shadow:0 6px 24px rgba(249,115,22,.18);background:#fffbf7;}
+    .price-card.featured{border-color:var(--gold);background:linear-gradient(135deg,#fffdf5 0%,#fff8e8 100%);}
+    .price-card.featured .price-type{color:var(--gold);}
+
+    .badge-best{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:.7rem;font-weight:800;padding:3px 12px;border-radius:20px;white-space:nowrap;}
+
+    .price-type{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--orange);margin-bottom:6px;}
+    .price-name{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+    .price-desc{font-size:.82rem;color:var(--muted);margin-bottom:16px;line-height:1.5;}
+    .price-amount{font-family:'IBM Plex Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--orange);}
+    .price-unit{font-size:.82rem;color:var(--muted);margin-left:4px;}
+    .price-tag{display:inline-block;margin-top:8px;font-size:.75rem;font-weight:600;color:var(--green);background:rgba(22,163,74,.08);border-radius:6px;padding:3px 8px;}
+
+    /* ── PACKAGES ── */
+    .pkg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:48px;}
+    @media(max-width:500px){.pkg-row{grid-template-columns:1fr;}}
+
+    .pkg-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;transition:border-color .2s,box-shadow .2s;}
+    .pkg-card:hover,.pkg-card.selected{border-color:var(--orange);box-shadow:0 4px 16px rgba(249,115,22,.1);background:#fffbf7;}
+    .pkg-info{}
+    .pkg-name{font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:2px;}
+    .pkg-save{font-size:.78rem;color:var(--green);font-weight:600;}
+    .pkg-price{font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--orange);text-align:right;white-space:nowrap;}
+    .pkg-orig{font-size:.75rem;color:var(--muted);text-decoration:line-through;text-align:right;}
+
+    /* ── CALENDAR ── */
+    .cal-wrap{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:48px;}
+    .cal-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);}
+    .cal-nav-btn{background:none;border:1.5px solid var(--border);border-radius:8px;width:34px;height:34px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--navy);transition:all .2s;}
+    .cal-nav-btn:hover{border-color:var(--orange);color:var(--orange);}
+    .cal-week-label{font-weight:700;font-size:.95rem;color:var(--navy);}
+
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);}
+    .cal-day-head{padding:10px 4px;text-align:center;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);border-bottom:1px solid var(--border);}
+    .cal-day{padding:8px 4px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);min-height:100px;}
+    .cal-day:nth-child(7n){border-right:none;}
+    .cal-day.inactive{background:#faf7f4;}
+    .cal-day.today .cal-date{background:var(--orange);color:#fff;border-radius:50%;}
+    .cal-date{width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--navy);margin:0 auto 6px;}
+
+    .slot{display:block;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.25);border-radius:6px;padding:4px 6px;font-size:.68rem;font-weight:600;color:var(--orange);margin-bottom:4px;cursor:pointer;text-align:center;transition:all .18s;user-select:none;}
+    .slot:hover{background:var(--orange);color:#fff;}
+    .slot.picked{background:var(--orange);color:#fff;border-color:var(--orange);}
+    .no-slot{font-size:.65rem;color:var(--border);text-align:center;margin-top:8px;}
+
+    /* ── FORM ── */
+    .form-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:28px 24px;margin-bottom:32px;}
+    .form-row{margin-bottom:18px;}
+    label{display:block;font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+    input[type=text],textarea,select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:9px;font-family:'Sarabun',sans-serif;font-size:.92rem;color:var(--text);background:#fff;transition:border-color .2s;outline:none;}
+    input[type=text]:focus,textarea:focus,select:focus{border-color:var(--orange);}
+    textarea{resize:vertical;min-height:80px;line-height:1.6;}
+    .selected-summary{background:var(--orange-light);border:1.5px solid rgba(249,115,22,.25);border-radius:10px;padding:14px 16px;margin-bottom:24px;font-size:.88rem;color:var(--navy);line-height:1.8;display:none;}
+    .selected-summary.show{display:block;}
+    .selected-summary strong{color:var(--orange);}
+
+    /* ── CTA ── */
+    .btn-line{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;background:#06C755;color:#fff;border:none;border-radius:12px;font-family:'Sarabun',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;box-shadow:0 6px 20px rgba(6,199,85,.3);}
+    .btn-line:hover{background:#05b34c;transform:translateY(-2px);box-shadow:0 10px 28px rgba(6,199,85,.38);}
+    .btn-line svg{width:22px;height:22px;}
+    .btn-hint{text-align:center;font-size:.78rem;color:var(--muted);margin-top:10px;}
+
+    /* ── COPY MSG ── */
+    .msg-box{background:#f0fdf4;border:1.5px solid rgba(22,163,74,.25);border-radius:10px;padding:14px 16px;margin-bottom:16px;display:none;}
+    .msg-box.show{display:block;}
+    .msg-box-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--green);margin-bottom:6px;}
+    .msg-text{font-size:.88rem;color:var(--navy);line-height:1.7;white-space:pre-line;}
+    .btn-copy{margin-top:10px;background:none;border:1.5px solid var(--green);color:var(--green);border-radius:8px;padding:6px 14px;font-family:'Sarabun',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .18s;}
+    .btn-copy:hover{background:var(--green);color:#fff;}
+    .btn-copy.copied{background:var(--green);color:#fff;}
+
+    @media(max-width:640px){
+        .cal-day{min-height:70px;}
+        .slot{font-size:.6rem;padding:3px 4px;}
+        .page{padding:24px 12px 60px;}
+    }
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <a href="index.html" class="topbar-brand">
+        <img src="assets/images/logo.png" alt="Thep Academy">
+        <span>Thep Academy</span>
+    </a>
+    <a href="index.html" class="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        กลับหน้าหลัก
+    </a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-tag">📅 Online Booking</div>
+    <h1>จองคลาสกับ<span>พี่บอม</span></h1>
+    <p>เรียนสดออนไลน์ · เลือกเวลาที่สะดวก · ยืนยันผ่าน LINE</p>
+</div>
+
+<div class="page">
+
+    <!-- PRICING -->
+    <div class="sec-label">ราคาต่อชั่วโมง</div>
+    <div class="sec-title">เลือกประเภทคลาส</div>
+    <div class="pricing-grid" id="priceGrid">
+        <div class="price-card" data-type="1on1" data-price="900" onclick="selectType(this)">
+            <div class="price-type">1 : 1</div>
+            <div class="price-name">Private Class</div>
+            <div class="price-desc">เรียนตัวต่อตัว โฟกัสเต็มที่ ปรับได้ตามจุดอ่อน</div>
+            <div><span class="price-amount">900</span><span class="price-unit">บาท / ชม.</span></div>
+        </div>
+        <div class="price-card featured" data-type="group_small" data-price="500" onclick="selectType(this)">
+            <div class="badge-best">⭐ แนะนำ</div>
+            <div class="price-type">กลุ่ม 2–5 คน</div>
+            <div class="price-name">Small Group</div>
+            <div class="price-desc">เรียนกับเพื่อน ได้ฝึกสื่อสาร ราคาคุ้มกว่า</div>
+            <div><span class="price-amount">500</span><span class="price-unit">บาท / คน / ชม.</span></div>
+            <div class="price-tag">ประหยัดกว่า 44%</div>
+        </div>
+        <div class="price-card" data-type="group_large" data-price="300" onclick="selectType(this)">
+            <div class="price-type">กลุ่ม 6+ คน</div>
+            <div class="price-name">Group Class</div>
+            <div class="price-desc">เหมาะสำหรับกลุ่มนักเรียน ห้องเรียน หรือทีม</div>
+            <div><span class="price-amount">300</span><span class="price-unit">บาท / คน / ชม.</span></div>
+            <div class="price-tag">ประหยัดกว่า 67%</div>
+        </div>
+    </div>
+
+    <!-- PACKAGES -->
+    <div class="sec-label">Package ประหยัด</div>
+    <div class="sec-title">จองหลายครั้งราคาดีกว่า</div>
+    <div class="pkg-row" id="pkgGrid">
+        <div class="pkg-card" data-pkg="4" data-pkg-price="3200" data-pkg-orig="3600" onclick="selectPkg(this)">
+            <div class="pkg-info">
+                <div class="pkg-name">4 ครั้ง</div>
+                <div class="pkg-save">ประหยัด 400 บาท</div>
+            </div>
+            <div>
+                <div class="pkg-orig">3,600 บาท</div>
+                <div class="pkg-price">3,200฿</div>
+            </div>
+        </div>
+        <div class="pkg-card" data-pkg="8" data-pkg-price="5900" data-pkg-orig="7200" onclick="selectPkg(this)">
+            <div class="pkg-info">
+                <div class="pkg-name">8 ครั้ง</div>
+                <div class="pkg-save">ประหยัด 1,300 บาท</div>
+            </div>
+            <div>
+                <div class="pkg-orig">7,200 บาท</div>
+                <div class="pkg-price">5,900฿</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALENDAR -->
+    <div class="sec-label">ตารางว่าง</div>
+    <div class="sec-title">เลือกวันและเวลา</div>
+    <div class="cal-wrap">
+        <div class="cal-nav">
+            <button class="cal-nav-btn" onclick="shiftWeek(-1)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span class="cal-week-label" id="weekLabel"></span>
+            <button class="cal-nav-btn" onclick="shiftWeek(1)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+    </div>
+
+    <!-- FORM -->
+    <div class="sec-label">ข้อมูลการจอง</div>
+    <div class="sec-title">กรอกรายละเอียด</div>
+    <div class="form-card">
+        <div class="form-row">
+            <label>ชื่อ–นามสกุล</label>
+            <input type="text" id="fname" placeholder="เช่น สมชาย ใจดี">
+        </div>
+        <div class="form-row">
+            <label>เป้าหมายการเรียน</label>
+            <select id="fgoal">
+                <option value="">— เลือกเป้าหมาย —</option>
+                <option>สอบเข้า ม.1</option>
+                <option>O-NET / PAT</option>
+                <option>TOEIC</option>
+                <option>IELTS / TOEFL</option>
+                <option>เสริมพื้นฐาน Grammar</option>
+                <option>อื่นๆ</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label>หมายเหตุเพิ่มเติม (ถ้ามี)</label>
+            <textarea id="fnote" placeholder="เช่น อยากเน้น Reading, มีสอบวันที่ ..."></textarea>
+        </div>
+
+        <!-- Summary -->
+        <div class="selected-summary" id="summary"></div>
+
+        <!-- LINE message -->
+        <div class="msg-box" id="msgBox">
+            <div class="msg-box-label">📋 copy ข้อความนี้แล้วส่งใน LINE</div>
+            <div class="msg-text" id="msgText"></div>
+            <button class="btn-copy" id="btnCopy" onclick="copyMsg()">Copy ข้อความ</button>
+        </div>
+
+        <a href="https://line.me/ti/p/~@489hmdfx" target="_blank" rel="noopener" class="btn-line" onclick="buildMsg()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5C21 16.19 17.19 20 12.5 20c-.78 0-1.54-.1-2.26-.28L6 22l.9-3.5C5.11 17.1 4 14.42 4 11.5 4 6.81 7.81 3 12.5 3S21 6.81 21 11.5z"/>
+                <path d="M8.5 10.5h7M8.5 13.5h5"/>
+            </svg>
+            ทัก LINE เพื่อยืนยันการจอง
+        </a>
+        <div class="btn-hint">@489hmdfx · พี่บอมจะตอบกลับภายใน 24 ชม.</div>
+    </div>
+
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────
+const state = {
+    weekOffset : 0,
+    selectedType : null,
+    selectedPkg  : null,
+    selectedSlots: [],   // [{date, time}]
+};
+
+const TYPE_LABELS = {
+    '1on1'       : 'Private 1:1 · 900 บาท/ชม.',
+    'group_small': 'Small Group (2–5 คน) · 500 บาท/คน/ชม.',
+    'group_large': 'Group Class (6+ คน) · 300 บาท/คน/ชม.',
+};
+
+// ── Available slots ────────────────────────────────────────────────
+// Mon(1)–Fri(5): 20:00–22:00   Sat(6)/Sun(0): 09:00–18:00 (every 1h)
+function getSlotsForDay(dayOfWeek) {
+    if (dayOfWeek >= 1 && dayOfWeek <= 5) return ['20:00','21:00'];
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+        return ['09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00'];
+    }
+    return [];
+}
+
+// ── Calendar ───────────────────────────────────────────────────────
+const DAYS_TH = ['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.'];
+const MONTHS_TH = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+
+function getWeekStart(offset) {
+    const d = new Date();
+    const day = d.getDay(); // 0=Sun
+    const diff = d.getDate() - day + (offset * 7);
+    const start = new Date(d.setDate(diff));
+    start.setHours(0,0,0,0);
+    return start;
+}
+
+function fmt(d) {
+    return `${d.getDate()} ${MONTHS_TH[d.getMonth()]} ${d.getFullYear()+543}`;
+}
+
+function dateKey(d) {
+    return d.toISOString().slice(0,10);
+}
+
+function isSlotPicked(dateStr, time) {
+    return state.selectedSlots.some(s => s.date === dateStr && s.time === time);
+}
+
+function toggleSlot(dateStr, time, label, el) {
+    const idx = state.selectedSlots.findIndex(s => s.date === dateStr && s.time === time);
+    if (idx > -1) {
+        state.selectedSlots.splice(idx, 1);
+        el.classList.remove('picked');
+    } else {
+        state.selectedSlots.push({date: dateStr, time, label});
+        el.classList.add('picked');
+    }
+    updateSummary();
+}
+
+function renderCalendar() {
+    const grid   = document.getElementById('calGrid');
+    const wLabel = document.getElementById('weekLabel');
+    const start  = getWeekStart(state.weekOffset);
+    const today  = new Date(); today.setHours(0,0,0,0);
+
+    // Week label
+    const end = new Date(start); end.setDate(end.getDate() + 6);
+    wLabel.textContent = `${fmt(start)} – ${fmt(end)}`;
+
+    // Header row
+    let html = DAYS_TH.map(d => `<div class="cal-day-head">${d}</div>`).join('');
+
+    for (let i = 0; i < 7; i++) {
+        const day = new Date(start); day.setDate(start.getDate() + i);
+        const isPast = day < today;
+        const isToday = day.getTime() === today.getTime();
+        const slots = isPast ? [] : getSlotsForDay(day.getDay());
+        const dKey  = dateKey(day);
+        const dayLabel = `${day.getDate()} ${MONTHS_TH[day.getMonth()]}`;
+
+        let slotsHtml = slots.length
+            ? slots.map(t => {
+                const picked = isSlotPicked(dKey, t) ? ' picked' : '';
+                return `<span class="slot${picked}" onclick="toggleSlot('${dKey}','${t}','${dayLabel} ${t}',this)">${t}</span>`;
+              }).join('')
+            : `<div class="no-slot">${isPast ? 'ผ่านแล้ว' : '–'}</div>`;
+
+        html += `<div class="cal-day${isToday ? ' today' : ''}${isPast ? ' inactive' : ''}">
+            <div class="cal-date">${day.getDate()}</div>
+            ${slotsHtml}
+        </div>`;
+    }
+
+    grid.innerHTML = html;
+}
+
+function shiftWeek(dir) {
+    state.weekOffset += dir;
+    if (state.weekOffset < 0) state.weekOffset = 0;
+    renderCalendar();
+}
+
+// ── Type & Package ─────────────────────────────────────────────────
+function selectType(el) {
+    document.querySelectorAll('.price-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    state.selectedType = el.dataset.type;
+    updateSummary();
+}
+
+function selectPkg(el) {
+    document.querySelectorAll('.pkg-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    state.selectedPkg = { sessions: el.dataset.pkg, price: el.dataset.pkgPrice };
+    updateSummary();
+}
+
+// ── Summary ────────────────────────────────────────────────────────
+function updateSummary() {
+    const el = document.getElementById('summary');
+    const parts = [];
+
+    if (state.selectedType)
+        parts.push(`<strong>ประเภท:</strong> ${TYPE_LABELS[state.selectedType]}`);
+
+    if (state.selectedPkg)
+        parts.push(`<strong>Package:</strong> ${state.selectedPkg.sessions} ครั้ง · ${Number(state.selectedPkg.price).toLocaleString()} บาท`);
+
+    if (state.selectedSlots.length)
+        parts.push(`<strong>เวลาที่เลือก:</strong> ${state.selectedSlots.map(s=>s.label).join(', ')}`);
+
+    if (parts.length) {
+        el.innerHTML = parts.join('<br>');
+        el.classList.add('show');
+    } else {
+        el.classList.remove('show');
+    }
+}
+
+// ── Build LINE message ─────────────────────────────────────────────
+function buildMsg() {
+    const name  = document.getElementById('fname').value.trim() || '(ยังไม่ระบุชื่อ)';
+    const goal  = document.getElementById('fgoal').value || '(ยังไม่ระบุ)';
+    const note  = document.getElementById('fnote').value.trim();
+    const type  = state.selectedType ? TYPE_LABELS[state.selectedType] : '(ยังไม่เลือก)';
+    const pkg   = state.selectedPkg  ? `${state.selectedPkg.sessions} ครั้ง · ${Number(state.selectedPkg.price).toLocaleString()} บาท` : '(ยังไม่เลือก)';
+    const slots = state.selectedSlots.length ? state.selectedSlots.map(s=>s.label).join(', ') : '(ยังไม่เลือก)';
+
+    const msg = `สวัสดีค่ะ/ครับ พี่บอม 🙏
+ขอจองคลาสเรียนออนไลน์นะคะ/ครับ
+
+👤 ชื่อ: ${name}
+📚 เป้าหมาย: ${goal}
+🎯 ประเภท: ${type}
+📦 Package: ${pkg}
+🕐 เวลาที่สะดวก: ${slots}${note ? `\n💬 หมายเหตุ: ${note}` : ''}
+
+ขอบคุณมากเลยค่ะ/ครับ`;
+
+    document.getElementById('msgText').textContent = msg;
+    document.getElementById('msgBox').classList.add('show');
+}
+
+function copyMsg() {
+    const text = document.getElementById('msgText').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('btnCopy');
+        btn.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy ข้อความ'; btn.classList.remove('copied'); }, 2000);
+    });
+}
+
+// ── Init ───────────────────────────────────────────────────────────
+renderCalendar();
+</script>
+</body>
+</html>
