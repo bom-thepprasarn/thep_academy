@@ -282,26 +282,26 @@
 <nav>
   <a href="/" class="nav-logo"><img src="/assets/images/logo.png" alt="Thep Academy"></a>
   <div class="nav-center">
-    <a href="/courses" class="nav-link">คอร์สเรียน</a>
-    <a href="/about" class="nav-link active">เกี่ยวกับ</a>
+    <a href="/courses/" class="nav-link">คอร์สเรียน</a>
+    <a href="/about/" class="nav-link active">เกี่ยวกับ</a>
     <a href="/#docs" class="nav-link">คลังความรู้</a>
-    <a href="/blog" class="nav-link">Blog</a>
+    <a href="/blog/" class="nav-link">Blog</a>
     <a href="/#contact" class="nav-link">ติดต่อ</a>
   </div>
   <div class="nav-right">
-    <a href="/booking" class="nav-cta">📅 จองเรียน</a>
+    <a href="/join/" class="nav-cta">สมัครเรียน</a>
   </div>  <button class="hamburger" onclick="toggleMenu()" aria-label="เมนู">
     <span></span><span></span><span></span>
   </button>
 </nav>
   <!-- Mobile dropdown menu -->
   <div id="mobile-menu">
-    <a href="/about">เกี่ยวกับ</a>
-    <a href="/courses">คอร์สเรียน</a>
+    <a href="/about/">เกี่ยวกับ</a>
+    <a href="/courses/">คอร์สเรียน</a>
     <a href="/#docs">คลังความรู้</a>
-    <a href="/blog">Blog</a>
+    <a href="/blog/">Blog</a>
     <a href="/#contact">ติดต่อ</a>
-    <a href="/booking" class="mobile-cta">📅 จองเรียน</a>
+    <a href="/join/" class="mobile-cta">สมัครเรียน</a>
   </div>
 
 <div class="page-header">
@@ -384,7 +384,7 @@
   <div class="about-cta">
     <h3>พร้อมเริ่มต้นเรียนภาษาอังกฤษแล้วหรือยัง?</h3>
     <p>เรียนรู้ภาษาอังกฤษคุณภาพดี ราคาเป็นมิตร สนุก และใช้ได้จริงกับ Thep Academy</p>
-    <a href="/courses">ดูคอร์สทั้งหมด →</a>
+    <a href="/courses/">ดูคอร์สทั้งหมด →</a>
   </div>
 
 </div>
@@ -468,20 +468,4 @@
         }
       };
       // Close menu when a link is clicked
-      document.addEventListener('DOMContentLoaded', function() {
-        var links = document.querySelectorAll('#mobile-menu a');
-        links.forEach(function(l) {
-          l.addEventListener('click', function() {
-            menuOpen = false;
-            var m = document.getElementById('mobile-menu');
-            if (m) m.style.display = 'none';
-          });
-        });
-      });
-    })();
-
-  </script>
-
-  <script src="/assets/js/consent.js"></script>
-</body>
-</html>
+      

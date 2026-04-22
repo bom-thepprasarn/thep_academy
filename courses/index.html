@@ -713,27 +713,4 @@
     }
   };
   document.addEventListener('DOMContentLoaded', function() {
-    var links = document.querySelectorAll('#mobile-menu a');
-    links.forEach(function(l) {
-      l.addEventListener('click', function() {
-        menuOpen = false;
-        var m = document.getElementById('mobile-menu');
-        if (m) m.style.display = 'none';
-      });
-    });
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  });
-})();
-</script>
-<script src="/assets/js/consent.js"></script>
-</body>
-</html>
+    var links = document.quer
