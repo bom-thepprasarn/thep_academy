@@ -269,13 +269,22 @@
 function handleJoin(){
   var name=document.getElementById('input-name').value.trim();
   var email=document.getElementById('input-email').value.trim();
+  var phone=document.getElementById('input-phone').value.trim();
   var role=document.getElementById('input-role').value;
   if(!name){alert('กรุณากรอกชื่อของคุณ');return;}
   if(!email||!email.includes('@')){alert('กรุณากรอกอีเมลที่ถูกต้อง');return;}
   if(!role){alert('กรุณาเลือกระดับชั้น/สถานะ');return;}
-  if(typeof gtag!=='undefined'){gtag('event','join_submit',{event_category:'engagement',event_label:role});}
-  document.getElementById('form-area').style.display='none';
-  document.getElementById('success-area').style.display='block';
+  var btn=document.querySelector('.form-submit');
+  btn.textContent='กำลังส่ง...';
+  btn.disabled=true;
+  fetch('https://script.google.com/macros/s/AKfycbxuvUqCJYxFnMnFAOodAMA6yK53o5-q1TdhiJ0ekQQDMUGsx4TNPUSqpy10mW_YwfAtGQ/exec',{
+    method:'POST',
+    body:JSON.stringify({name:name,email:email,phone:phone,role:role})
+  }).finally(function(){
+    if(typeof gtag!=='undefined'){gtag('event','join_submit',{event_category:'engagement',event_label:role});}
+    document.getElementById('form-area').style.display='none';
+    document.getElementById('success-area').style.display='block';
+  });
 }
 (function(){
   var menuOpen=false;
