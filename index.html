@@ -436,9 +436,9 @@
         /* Hero Section */
         #hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #1a2340 0%, #263660 50%, #1a2340 100%);
+            background: linear-gradient(160deg, #0f1f3d 0%, #1e3a5f 60%, #0f1f3d 100%);
             color: var(--white);
-            padding: 120px 24px 80px;
+            padding: 120px 24px 100px;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -449,189 +449,102 @@
         #hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-image:
-                radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.2), rgba(255,255,255,0)),
-                radial-gradient(2px 2px at 60px 70px, rgba(255,255,255,0.15), rgba(255,255,255,0)),
-                radial-gradient(1px 1px at 50px 50px, rgba(255,255,255,0.1), rgba(255,255,255,0));
+                radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.18), transparent),
+                radial-gradient(1px 1px at 80px 90px, rgba(255,255,255,0.12), transparent),
+                radial-gradient(1px 1px at 140px 50px, rgba(255,255,255,0.08), transparent);
             background-repeat: repeat;
             background-size: 200px 200px;
-            opacity: 0.5;
+            opacity: 0.6;
             pointer-events: none;
         }
 
-        .hero-container {
-            max-width: 1100px;
+        .hero-center {
+            max-width: 720px;
             margin: 0 auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            text-align: center;
             position: relative;
             z-index: 1;
         }
 
-        .hero-left h1 {
-            font-family: 'Sarabun', sans-serif;
-            font-size: 56px;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-left h2 {
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 16px;
-            opacity: 0.9;
-            line-height: 1.5;
-        }
-
-        .hero-left p {
-            font-size: 16px;
-            opacity: 0.7;
-            margin-bottom: 32px;
-        }
-
         .hero-badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 8px 16px;
+            background: rgba(249,115,22,0.18);
+            border: 1px solid rgba(249,115,22,0.4);
+            color: #fb923c;
+            padding: 8px 18px;
             border-radius: 20px;
             font-size: 13px;
             font-weight: 600;
             margin-bottom: 32px;
-            backdrop-filter: blur(10px);
+            letter-spacing: 0.02em;
         }
 
-        .hero-right {
-            position: relative;
-        }
-
-        .cta-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 32px;
-            box-shadow: var(--shadow-hover);
-            border-top: 3px solid var(--gold);
-            position: relative;
-        }
-
-        .best-value-badge {
-            position: absolute;
-            top: -16px;
-            left: 24px;
-            background: var(--gold);
-            color: var(--navy);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .cta-card h3 {
+        .hero-center h1 {
             font-family: 'Sarabun', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-top: 16px;
-            margin-bottom: 4px;
-        }
-
-        .cta-card > p {
-            color: var(--mid-gray);
-            font-size: 14px;
-            margin-bottom: 24px;
-        }
-
-        .price-row {
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
-            margin-bottom: 8px;
-        }
-
-        .price-main {
-            font-size: 32px;
+            font-size: 60px;
             font-weight: 800;
-            color: var(--orange);
-            font-family: 'Inter', sans-serif;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.25);
         }
 
-        .price-original {
-            font-size: 14px;
-            color: var(--mid-gray);
-            text-decoration: line-through;
+        .hero-center p {
+            font-size: 18px;
+            opacity: 0.75;
+            line-height: 1.7;
+            margin-bottom: 44px;
         }
 
-        .savings-badge {
-            display: inline-block;
-            background: var(--orange-light);
-            color: var(--orange);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-bottom: 28px;
-        }
-
-        .feature-list li {
-            padding: 8px 0;
-            font-size: 14px;
-            color: var(--dark-gray);
+        .hero-actions {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .feature-list li::before {
-            content: '✓';
-            color: var(--green);
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        .btn-cta {
-            width: 100%;
-            padding: 14px 20px;
+        .btn-cta-hero {
+            padding: 16px 36px;
             background: var(--orange);
             color: var(--white);
-            border: none;
             border-radius: 10px;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
-            cursor: pointer;
+            text-decoration: none;
             transition: all 0.2s ease;
             font-family: 'Sarabun', sans-serif;
-            text-decoration: none;
-            display: block;
-            text-align: center;
         }
 
-        .btn-cta:hover {
-            background: var(--gold);
+        .btn-cta-hero:hover {
+            background: #ea6c0a;
             transform: translateY(-2px);
         }
 
-        @media (max-width: 768px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+        .btn-ghost-hero {
+            padding: 16px 36px;
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            border: 1.5px solid rgba(255,255,255,0.25);
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-family: 'Sarabun', sans-serif;
+        }
 
-            .hero-left h1 {
+        .btn-ghost-hero:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hero-center h1 {
                 font-size: 40px;
+            }
+            .hero-center p {
+                font-size: 16px;
             }
 
             .hero-left h2 {
@@ -1082,66 +995,6 @@
             transform: translateY(-2px);
         }
 
-        .bundle-cta {
-            background: var(--white);
-            border: 2px solid var(--gold-border);
-            border-radius: var(--radius);
-            padding: 32px 24px;
-            text-align: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .bundle-cta h3 {
-            font-family: 'Sarabun', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-
-        .bundle-cta p {
-            color: var(--mid-gray);
-            font-size: 14px;
-            margin-bottom: 16px;
-        }
-
-        .bundle-price {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .bundle-price-main {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--orange);
-            font-family: 'Inter', sans-serif;
-        }
-
-        .bundle-price-original {
-            font-size: 14px;
-            color: var(--mid-gray);
-            text-decoration: line-through;
-        }
-
-        .bundle-savings {
-            display: inline-block;
-            background: var(--orange-light);
-            color: var(--orange);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .bundle-cta .btn-cta {
-            max-width: 280px;
-            margin: 0 auto;
-        }
 
         @media (max-width: 1024px) {
             .subcourse-grid {
@@ -2090,36 +1943,13 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <div class="hero-container">
-            <div class="hero-left">
-                <span class="hero-badge">✦ Mission to the Moon · เตรียมสอบเข้า ม.1</span>
-                <h1>แพ็กเกจรวมคอร์สสุดคุ้ม</h1>
-                <h2>เข้าใจภาษาอังกฤษ อย่างเป็นระบบ ไม่เน้นท่องจำ</h2>
-                <p>เรียนกับ Thep Academy ช่วยให้ภาษาอังกฤษ กลายเป็นเรื่องที่เข้าใจและได้ใช้จริง</p>
-            </div>
-
-            <div class="hero-right">
-                <div class="cta-card">
-                    <span class="best-value-badge">⭐ Best Value</span>
-                    <h3>แพ็กเกจ Mission to the Moon</h3>
-                    <p>เตรียมพร้อมสำหรับสอบเข้า ม.1</p>
-
-                    <div class="price-row">
-                        <span class="price-main">499</span>
-                        <span style="color: var(--mid-gray); font-size: 14px;">บาท</span>
-                        <span class="price-original">ราคาปกติ 1,180 บาท</span>
-                    </div>
-                    <div class="savings-badge">ประหยัด 58%</div>
-
-                    <ul class="feature-list">
-                        <li>Pre-test & Mini Lessons (ฟรี)</li>
-                        <li>Grammar Foundation</li>
-                        <li>The Ultimate Prep (30 ชั่วโมง + หนังสือเรียน)</li>
-                        <li>Mock Exam 1,000 ข้อ</li>
-                    </ul>
-
-                    <button class="btn-cta" onclick="openModal()">ดูแพ็กเกจทั้งหมด →</button>
-                </div>
+        <div class="hero-center">
+            <span class="hero-badge">✦ A-Level English · TGAT · TOEIC</span>
+            <h1>เข้าใจภาษาอังกฤษ<br>อย่างเป็นระบบ</h1>
+            <p>เรียนกับพี่บอม — เน้นเข้าใจจริง ไม่ท่องจำ<br>พร้อมลุยข้อสอบทุกรูปแบบ</p>
+            <div class="hero-actions">
+                <a href="/courses/" class="btn-cta-hero">ดูคอร์สเรียน →</a>
+                <a href="/pretest/" class="btn-ghost-hero">ทดสอบฟรี</a>
             </div>
         </div>
     </section>
