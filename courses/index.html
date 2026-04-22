@@ -2,587 +2,738 @@
 <html lang="th">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X05ZGMBFW7"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}      gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
-      gtag('js',new Date());gtag('config','G-X05ZGMBFW7');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+    gtag('js',new Date());gtag('config','G-X05ZGMBFW7');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>คอร์สเรียน | Thep Academy</title>
-  <meta name="description" content="คอร์สเรียนภาษาอังกฤษจาก Thep Academy เตรียมสอบเข้า ม.1 ม.4 และ TCAS/IELTS/SAT กับพี่บอม">
+  <title>A-Level English – คอร์สเตรียมสอบ | Thep Academy</title>
+  <meta name="description" content="คอร์ส A-Level English จาก Thep Academy ออกแบบมาเพื่อ ม.6 โดยเฉพาะ โครงสร้างข้อสอบจริง เฉลยละเอียด เตรียมพร้อมก่อนวันสอบ">
+  <meta property="og:title" content="A-Level English | Thep Academy">
+  <meta property="og:description" content="คอร์สเดียวที่คุณต้องการเพื่อสอบ A-Level English ผ่าน">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thep-academy.com/courses/">
+  <meta property="og:image" content="https://thep-academy.com/assets/images/logo.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thep-academy.com/courses/">
   <link rel="icon" type="image/png" href="/assets/images/logo.png">
   <link rel="shortcut icon" href="/assets/images/logo.png">
   <link rel="apple-touch-icon" href="/assets/images/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy:      #1a2340;
+      --navy:      #0f1f3d;
       --navy2:     #1e3a5f;
       --orange:    #F97316;
       --orange2:   #fb923c;
       --green:     #16a34a;
-      --off-white: #fff8f0;
-      --dark-gray: #1a1a1a;
-      --mid-gray:  #64748b;
-      --light-gray:#e2e8f0;
+      --off:       #f8fafc;
+      --dark:      #0a0a0a;
+      --mid:       #64748b;
+      --gray:      #e2e8f0;
+      --white:     #ffffff;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Sarabun', sans-serif; background: var(--off-white); color: var(--dark-gray); }
+    body { font-family: 'Sarabun', sans-serif; background: var(--white); color: var(--dark); overflow-x: hidden; }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 14px 40px; background: var(--navy); box-shadow: 0 2px 12px rgba(0,0,0,.18); }
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 40px;
+      background: rgba(15,31,61,.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
     .nav-logo img { height: 36px; }
-    .nav-center { display: flex; gap: 24px; align-items: center; }
-    .nav-link { color: rgba(255,255,255,.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+    .nav-center { display: flex; gap: 28px; align-items: center; }
+    .nav-link { color: rgba(255,255,255,.7); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
     .nav-link:hover, .nav-link.active { color: var(--orange); }
     .nav-right { display: flex; gap: 12px; align-items: center; }
-    .nav-cta { padding: 9px 20px; background: var(--orange); color: #fff; border-radius: 10px; font-weight: 700; font-size: 14px; text-decoration: none; transition: background .2s; }
+    .nav-cta {
+      padding: 8px 18px; background: var(--orange); color: #fff;
+      border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; transition: background .2s;
+    }
     .nav-cta:hover { background: #ea6c0a; }
 
-    /* PAGE HEADER */
-    .page-header {
-      padding: 120px 40px 64px;
+    /* ── HERO SECTION ── */
+    .hero {
+      min-height: 100vh;
       background: var(--navy);
-      color: #fff;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center;
-    }
-    .page-eyebrow {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 14px;
-    }
-    .page-header h1 {
-      font-size: clamp(30px, 5vw, 52px);
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-    .page-header p {
-      font-size: 16px;
-      color: rgba(255,255,255,.65);
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    /* MISSION SECTION */
-    .mission-section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 64px 24px 80px;
-    }
-    .mission-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .mission-label-line { width: 24px; height: 2px; background: var(--orange); }
-    .mission-label-text {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--orange);
-    }
-    .mission-title {
-      font-size: clamp(24px, 4vw, 38px);
-      font-weight: 800;
-      color: var(--dark-gray);
-      margin-bottom: 8px;
-    }
-    .mission-sub {
-      font-size: 15px;
-      color: var(--mid-gray);
-      margin-bottom: 36px;
-    }
-
-    /* COURSE CARDS */
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-      margin-bottom: 28px;
-    }
-    .course-card {
-      background: #fff;
-      border-radius: 14px;
-      border: 1px solid var(--light-gray);
+      padding: 100px 24px 80px;
+      position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: box-shadow .2s, transform .15s;
-      text-decoration: none;
-      color: inherit;
     }
-    .course-card:hover {
-      box-shadow: 0 8px 28px rgba(0,0,0,.09);
-      transform: translateY(-3px);
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(249,115,22,.12) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .course-cover {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      background: var(--navy);
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 24px;
     }
-    .course-cover-placeholder {
-      width: 100%;
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      background: linear-gradient(135deg, var(--navy), var(--navy2));
-    }
-    .course-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-    .course-badge {
-      display: inline-block;
-      font-size: 10px;
+    .hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--orange); }
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 80px);
       font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 20px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      width: fit-content;
-    }
-    .badge-free       { background: rgba(22,163,74,.12);  color: #16a34a; }
-    .badge-foundation { background: rgba(99,102,241,.1);  color: #6366f1; }
-    .badge-core       { background: rgba(249,115,22,.12); color: var(--orange); }
-    .badge-sprint     { background: rgba(236,72,153,.1);  color: #db2777; }
-
-    .course-name { font-size: 17px; font-weight: 700; line-height: 1.35; }
-    .course-desc { font-size: 13px; color: var(--mid-gray); line-height: 1.6; flex: 1; }
-    .course-price { font-size: 15px; font-weight: 700; color: var(--dark-gray); }
-    .course-price del { color: var(--mid-gray); font-weight: 400; font-size: 13px; margin-left: 6px; }
-    .course-price .free-label { color: var(--green); }
-    .course-cta {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
-      margin-top: 4px;
-      transition: opacity .2s;
-    }
-    .course-cta:hover { opacity: .85; }
-    .cta-green  { background: var(--green); color: #fff; }
-    .cta-orange { background: var(--orange); color: #fff; }
-    .cta-navy   { background: var(--navy);  color: #fff; }
-
-    /* BUNDLE BOX */
-    .bundle-box {
-      background: var(--navy);
       color: #fff;
-      border-radius: 16px;
-      padding: 32px 36px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      margin-bottom: 10px;
     }
-    .bundle-box h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
-    .bundle-box p  { font-size: 14px; color: rgba(255,255,255,.65); }
-    .bundle-price-wrap { text-align: right; flex-shrink: 0; }
-    .bundle-price-main { font-size: 32px; font-weight: 800; color: var(--orange); }
-    .bundle-price-orig { display: block; font-size: 13px; color: rgba(255,255,255,.45); text-decoration: line-through; }
-    .bundle-savings { display: inline-block; background: var(--orange); color: #fff; font-size: 11px; font-weight: 800; padding: 2px 10px; border-radius: 20px; margin-left: 8px; }
-    .bundle-cta {
+    .hero h1 span { color: var(--orange); }
+    .hero-exam-tag {
       display: inline-block;
-      margin-top: 16px;
-      padding: 12px 28px;
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-weight: 600;
+      color: rgba(255,255,255,.5);
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: .04em;
+      margin-bottom: 32px;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,.6);
+      max-width: 540px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    .hero-ctas { display: flex; gap: 14px; align-items: center; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      padding: 16px 40px;
       background: var(--orange);
       color: #fff;
-      border-radius: 10px;
+      border-radius: 12px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 16px;
       text-decoration: none;
+      transition: background .2s, transform .15s;
+      letter-spacing: .01em;
+    }
+    .btn-primary:hover { background: #ea6c0a; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-block;
+      padding: 15px 32px;
+      border: 1.5px solid rgba(255,255,255,.25);
+      color: rgba(255,255,255,.8);
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.6); color: #fff; }
+    .hero-stats {
+      display: flex; gap: 48px; justify-content: center; flex-wrap: wrap;
+      margin-top: 72px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 32px; font-weight: 800; color: var(--orange); font-family: 'IBM Plex Mono', monospace; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,.45); margin-top: 4px; letter-spacing: .04em; }
+
+    /* ── SECTION BASE ── */
+    .section { padding: 100px 24px; max-width: 960px; margin: 0 auto; }
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 20px;
+    }
+    .section-eyebrow-line { width: 20px; height: 1.5px; background: var(--orange); }
+    .section-title {
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 800; color: var(--dark);
+      line-height: 1.2; margin-bottom: 12px;
+      letter-spacing: -.01em;
+    }
+    .section-lead {
+      font-size: 16px; color: var(--mid); line-height: 1.75;
+      max-width: 600px; margin-bottom: 56px;
+    }
+
+    /* ── VALUE PROPS ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      background: var(--gray);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .why-card {
+      background: #fff;
+      padding: 40px 36px;
+    }
+    .why-card:first-child { border-radius: 20px 0 0 0; }
+    .why-card:nth-child(2) { border-radius: 0; }
+    .why-card:last-child { border-radius: 0 0 20px 0; }
+    .why-icon {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 12px;
+      background: rgba(249,115,22,.08);
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+    .why-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .why-desc { font-size: 14px; color: var(--mid); line-height: 1.7; }
+
+    /* ── FEATURES ── */
+    .features-bg { background: var(--navy); }
+    .features-wrap { max-width: 960px; margin: 0 auto; padding: 100px 24px; }
+    .features-header { text-align: center; margin-bottom: 64px; }
+    .features-header .section-title { color: #fff; }
+    .features-header .section-lead { color: rgba(255,255,255,.5); margin: 0 auto; }
+    .features-header .section-eyebrow { color: var(--orange); }
+    .feature-list { display: grid; gap: 20px; }
+    .feature-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 24px;
+      align-items: start;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 32px 36px;
       transition: background .2s;
     }
-    .bundle-cta:hover { background: #ea6c0a; }
-
-    /* DIVIDER */
-    .section-divider { border: none; border-top: 1px solid var(--light-gray); margin: 48px 0; }
-
-    /* COMING SOON MISSIONS */
-    .coming-missions {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
+    .feature-item:hover { background: rgba(255,255,255,.07); }
+    .feature-num {
+      font-size: 13px; font-weight: 700;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--orange); letter-spacing: .04em;
+      padding-top: 4px;
     }
-    .coming-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .coming-card {
-      background: #fff;
-      border-radius: 14px;
-      border: 1px solid var(--light-gray);
-      padding: 28px;
-      opacity: .7;
-    }
-    .coming-icon-lg { font-size: 36px; margin-bottom: 12px; display: block; }
-    .coming-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 8px; }
-    .coming-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
-    .coming-card p  { font-size: 14px; color: var(--mid-gray); line-height: 1.65; margin-bottom: 14px; }
-    .coming-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 12px;
-      border-radius: 20px;
-      background: var(--light-gray);
-      color: var(--mid-gray);
-      letter-spacing: .06em;
+    .feature-title { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .feature-desc { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.75; }
+    .feature-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    .feature-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px;
+      background: rgba(249,115,22,.15); color: var(--orange);
     }
 
-    /* FOOTER */
-    footer { background: var(--navy); color: rgba(255,255,255,.55); text-align: center; padding: 28px 24px; font-size: 13px; }
-    footer a { color: var(--orange); text-decoration: none; }
-
-    @media (max-width: 640px) {
-      nav { padding: 14px 20px; }
-      .nav-center { display: none; }
-      .bundle-box { flex-direction: column; }
-      .bundle-price-wrap { text-align: left; }
-    }
-  
-        /* ── Footer ── */
-        footer { background: var(--navy, #1a2340); color: rgba(255,255,255,.55); padding: 60px 24px 32px; }
-        .footer-container { max-width: 560px; margin: 0 auto; text-align: center; }
-        .footer-logo { height: 48px; margin-bottom: 16px; }
-        .footer-title { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
-        .footer-subtitle { font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 20px; line-height: 1.6; }
-        .footer-contact { margin-bottom: 24px; }
-        .contact-item { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,.7); text-decoration: none; font-size: 14px; transition: color .2s; }
-        .contact-item:hover { color: var(--orange, #F97316); }
-        .footer-mentor { display: inline-flex; align-items: center; gap: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 12px 20px; margin-bottom: 40px; }
-        .footer-mentor-photo { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(249,115,22,.5); }
-        .footer-mentor-info { display: flex; flex-direction: column; text-align: left; }
-        .footer-mentor-name { font-size: 14px; font-weight: 700; color: #fff; }
-        .footer-mentor-bio { font-size: 12px; color: rgba(255,255,255,.5); }
-        .social-icons { display: flex; justify-content: center; gap: 28px; margin-bottom: 28px; }
-        .social-icon { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: transform .2s, opacity .2s; }
-        .social-icon:hover { transform: translateY(-3px); opacity: .85; }
-        .social-icon svg { width: 40px; height: 40px; }
-        .footer-divider { height: 1px; background: rgba(255,255,255,.1); margin-bottom: 20px; }
-        .footer-legal { display: flex; justify-content: center; gap: 12px; align-items: center; font-size: 12px; margin-bottom: 10px; }
-        .footer-legal a { color: rgba(255,255,255,.45); text-decoration: none; }
-        .footer-legal a:hover { color: rgba(255,255,255,.7); }
-        .footer-copyright { font-size: 12px; color: rgba(255,255,255,.3); }
-
-  
-        
-    
-  
-    /* ── Mobile nav ── */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-      padding: 6px;
-      background: none;
-      border: none;
-      z-index: 200;
-    }
-    .hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-    #mobile-menu {
-      display: none;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      right: 0;
-      background: #1a2340;
-      z-index: 999;
-      flex-direction: column;
-      padding: 8px 20px 16px;
-      border-top: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 8px 24px rgba(0,0,0,.3);
-    }
-    #mobile-menu a {
-      display: block;
-      color: rgba(255,255,255,.85);
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,.07);
-      font-family: 'Sarabun', sans-serif;
-    }
-    #mobile-menu a:last-child { border-bottom: none; }
-    #mobile-menu a:hover { color: #F97316; }
-    #mobile-menu .mobile-cta {
-      margin-top: 12px;
-      display: block;
+    /* ── PRICING SECTION ── */
+    .pricing-wrap {
+      max-width: 640px; margin: 0 auto; padding: 100px 24px;
       text-align: center;
-      background: #F97316;
-      color: #fff !important;
-      border-radius: 10px;
-      padding: 12px !important;
-      font-weight: 700 !important;
-      border-bottom: none !important;
     }
+    .pricing-card {
+      background: var(--navy);
+      border-radius: 24px;
+      padding: 56px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--orange2));
+    }
+    .pricing-label {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 20px;
+    }
+    .pricing-course-name {
+      font-size: 28px; font-weight: 800; color: #fff;
+      margin-bottom: 8px; letter-spacing: -.01em;
+    }
+    .pricing-desc { font-size: 14px; color: rgba(255,255,255,.45); margin-bottom: 40px; line-height: 1.65; }
+    .pricing-price-row { display: flex; align-items: baseline; justify-content: center; gap: 12px; margin-bottom: 8px; }
+    .pricing-price-main { font-size: 56px; font-weight: 800; color: #fff; font-family: 'IBM Plex Mono', monospace; }
+    .pricing-price-currency { font-size: 20px; font-weight: 600; color: rgba(255,255,255,.45); }
+    .pricing-price-orig { font-size: 14px; color: rgba(255,255,255,.3); text-decoration: line-through; margin-bottom: 32px; }
+    .pricing-includes {
+      display: flex; flex-direction: column; gap: 12px;
+      margin: 32px 0 40px; text-align: left;
+    }
+    .pricing-include-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; color: rgba(255,255,255,.7);
+    }
+    .pricing-include-item svg { flex-shrink: 0; color: var(--orange); }
+    .pricing-cta {
+      display: block; width: 100%;
+      padding: 18px;
+      background: var(--orange); color: #fff;
+      border-radius: 12px; font-weight: 800; font-size: 17px;
+      text-decoration: none; text-align: center;
+      transition: background .2s, transform .15s;
+      letter-spacing: .01em;
+    }
+    .pricing-cta:hover { background: #ea6c0a; transform: translateY(-2px); }
+    .pricing-note { font-size: 12px; color: rgba(255,255,255,.25); margin-top: 16px; }
+
+    /* ── MENTOR STRIP ── */
+    .mentor-strip {
+      background: var(--off);
+      border-top: 1px solid var(--gray);
+      border-bottom: 1px solid var(--gray);
+    }
+    .mentor-strip-inner {
+      max-width: 960px; margin: 0 auto; padding: 48px 24px;
+      display: flex; align-items: center; gap: 28px;
+      flex-wrap: wrap;
+    }
+    .mentor-photo {
+      width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+      border: 3px solid var(--orange); flex-shrink: 0;
+    }
+    .mentor-info { flex: 1; min-width: 200px; }
+    .mentor-name { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+    .mentor-title { font-size: 13px; color: var(--mid); }
+    .mentor-quote {
+      font-size: 15px; color: var(--dark); line-height: 1.7;
+      font-style: italic; max-width: 440px;
+      border-left: 3px solid var(--orange); padding-left: 16px;
+    }
+
+    /* ── ADD-ONS / COMING SOON ── */
+    .addons-section { max-width: 960px; margin: 0 auto; padding: 80px 24px 0; }
+    .addon-divider { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
+    .addon-divider-line { flex: 1; height: 1px; background: var(--gray); }
+    .addon-divider-text { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); white-space: nowrap; }
+    .addon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .addon-card {
+      background: var(--off);
+      border: 1px solid var(--gray);
+      border-radius: 14px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex; flex-direction: column; gap: 8px;
+      transition: box-shadow .2s;
+      opacity: .8;
+    }
+    .addon-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.07); opacity: 1; }
+    .addon-card-dead { cursor: default; }
+    .addon-badge {
+      display: inline-block; font-size: 10px; font-weight: 800;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: 2px 9px; border-radius: 20px; width: fit-content;
+    }
+    .badge-free-sm  { background: rgba(22,163,74,.1); color: #16a34a; }
+    .badge-soon     { background: var(--gray); color: var(--mid); }
+    .badge-m1       { background: rgba(99,102,241,.1); color: #6366f1; }
+    .addon-name { font-size: 15px; font-weight: 700; }
+    .addon-desc { font-size: 13px; color: var(--mid); line-height: 1.6; flex: 1; }
+    .addon-link { font-size: 13px; font-weight: 700; color: var(--orange); margin-top: 4px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); color: rgba(255,255,255,.55); padding: 60px 24px 32px; margin-top: 80px; }
+    .footer-container { max-width: 560px; margin: 0 auto; text-align: center; }
+    .footer-logo { height: 48px; margin-bottom: 16px; }
+    .footer-title { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .footer-subtitle { font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 20px; line-height: 1.6; }
+    .footer-contact { margin-bottom: 24px; }
+    .contact-item { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,.7); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .contact-item:hover { color: var(--orange); }
+    .footer-mentor { display: inline-flex; align-items: center; gap: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 12px 20px; margin-bottom: 40px; }
+    .footer-mentor-photo { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(249,115,22,.5); }
+    .footer-mentor-info { display: flex; flex-direction: column; text-align: left; }
+    .footer-mentor-name { font-size: 14px; font-weight: 700; color: #fff; }
+    .footer-mentor-bio { font-size: 12px; color: rgba(255,255,255,.5); }
+    .social-icons { display: flex; justify-content: center; gap: 28px; margin-bottom: 28px; }
+    .social-icon { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: transform .2s, opacity .2s; }
+    .social-icon:hover { transform: translateY(-3px); opacity: .85; }
+    .social-icon svg { width: 40px; height: 40px; }
+    .footer-divider { height: 1px; background: rgba(255,255,255,.1); margin-bottom: 20px; }
+    .footer-legal { display: flex; justify-content: center; gap: 12px; align-items: center; font-size: 12px; margin-bottom: 10px; }
+    .footer-legal a { color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,.7); }
+    .footer-copyright { font-size: 12px; color: rgba(255,255,255,.3); }
+
+    /* ── MOBILE NAV ── */
+    .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; padding: 6px; background: none; border: none; z-index: 200; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: transform .3s, opacity .3s; }
+    #mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: #0f1f3d; z-index: 999; flex-direction: column; padding: 8px 20px 16px; border-top: 1px solid rgba(255,255,255,.12); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+    #mobile-menu a { display: block; color: rgba(255,255,255,.85); text-decoration: none; font-size: 16px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.07); font-family: 'Sarabun', sans-serif; }
+    #mobile-menu a:last-child { border-bottom: none; }
+    #mobile-menu a:hover { color: var(--orange); }
+    #mobile-menu .mobile-cta { margin-top: 12px; display: block; text-align: center; background: var(--orange); color: #fff !important; border-radius: 10px; padding: 12px !important; font-weight: 700 !important; border-bottom: none !important; }
+
     @media (max-width: 768px) {
       .hamburger { display: flex; }
       .nav-center { display: none !important; }
       .nav-right { display: none !important; }
+      .hero-stats { gap: 28px; }
+      .feature-item { grid-template-columns: 1fr; gap: 8px; padding: 24px; }
+      .feature-num { font-size: 11px; }
+      .pricing-card { padding: 36px 24px; }
+      .pricing-price-main { font-size: 44px; }
+      .mentor-strip-inner { flex-direction: column; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-card:first-child, .why-card:last-child { border-radius: 0; }
     }
     @media (min-width: 769px) {
       #mobile-menu { display: none !important; }
     }
-
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="/" class="nav-logo"><img src="/assets/images/logo.png" alt="Thep Academy"></a>
   <div class="nav-center">
-    <a href="/courses" class="nav-link active">คอร์สเรียน</a>
-    <a href="/about" class="nav-link">เกี่ยวกับ</a>
-    <a href="/#docs" class="nav-link">คลังความรู้</a>
-    <a href="/blog" class="nav-link">Blog</a>
+    <a href="/courses/" class="nav-link active">คอร์สเรียน</a>
+    <a href="/about/" class="nav-link">เกี่ยวกับ</a>
+    <a href="/blog/" class="nav-link">Blog</a>
     <a href="/#contact" class="nav-link">ติดต่อ</a>
   </div>
   <div class="nav-right">
-    <a href="/booking" class="nav-cta">📅 จองเรียน</a>
-  </div>  <button class="hamburger" onclick="toggleMenu()" aria-label="เมนู">
+    <a href="/join/" class="nav-cta">สมัครเรียน</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="เมนู">
     <span></span><span></span><span></span>
   </button>
 </nav>
-  <!-- Mobile dropdown menu -->
-  <div id="mobile-menu">
-    <a href="/about">เกี่ยวกับ</a>
-    <a href="/courses">คอร์สเรียน</a>
-    <a href="/#docs">คลังความรู้</a>
-    <a href="/blog">Blog</a>
-    <a href="/#contact">ติดต่อ</a>
-    <a href="/booking" class="mobile-cta">📅 จองเรียน</a>
-  </div>
-
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <span class="page-eyebrow">เลือกเส้นทางของคุณ</span>
-  <h1>เลือกคอร์สที่ใช่</h1>
-  <p>คอร์สภาษาอังกฤษที่ออกแบบมาเพื่อผู้เรียนชาวไทย เข้าใจง่าย ได้ผลจริง</p>
+<div id="mobile-menu">
+  <a href="/about/">เกี่ยวกับ</a>
+  <a href="/courses/">คอร์สเรียน</a>
+  <a href="/blog/">Blog</a>
+  <a href="/#contact">ติดต่อ</a>
+  <a href="/join/" class="mobile-cta">สมัครเรียน</a>
 </div>
 
-<!-- MISSION TO THE MOON -->
-<div class="mission-section">
-  <div class="mission-label">
-    <div class="mission-label-line"></div>
-    <span class="mission-label-text">Mission to the Moon · เตรียมสอบเข้า ม.1</span>
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-dot"></span>
+    คอร์สเรียนภาษาอังกฤษ
+    <span class="hero-eyebrow-dot"></span>
   </div>
-  <h2 class="mission-title">🌙 Mission to the Moon</h2>
-  <p class="mission-sub">ปูพื้นฐานภาษาอังกฤษให้น้องๆ พร้อมก้าวสู่โรงเรียนมัธยมที่ตั้งใจไว้</p>
-
-  <div class="course-grid">
-
-    <!-- Pre-test -->
-    <a href="/pretest" class="course-card">
-      <img src="/assets/images/banners/banner-pretest.png" alt="Pre-test" class="course-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="course-cover-placeholder" style="display:none;">🧪</div>
-      <div class="course-body">
-        <span class="course-badge badge-free">FREE</span>
-        <div class="course-name">Pre-test & Mini Lessons</div>
-        <div class="course-desc">ทำแบบทดสอบวัดระดับและรับคลิปเทคนิค 5 จุดตายที่ออกสอบบ่อยที่สุด</div>
-        <div class="course-price"><span class="free-label">ฟรี</span> <del>0 บาท</del></div>
-        <span class="course-cta cta-green">เริ่มทดสอบ</span>
-      </div>
-    </a>
-
-    <!-- Grammar Foundation -->
-    <a href="/grammar-foundation" class="course-card">
-      <img src="/assets/images/banners/banner-grammar.png" alt="Grammar Foundation" class="course-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="course-cover-placeholder" style="display:none;">📖</div>
-      <div class="course-body">
-        <span class="course-badge badge-foundation">FOUNDATION</span>
-        <div class="course-name">Grammar Foundation</div>
-        <div class="course-desc">สรุปไวยากรณ์พื้นฐาน 12 Tenses และ Parts of Speech ครบจบในที่เดียว</div>
-        <div class="course-price"><span class="free-label">ฟรี</span> <del>290 บาท</del></div>
-        <span class="course-cta cta-navy">เริ่มเรียน</span>
-      </div>
-    </a>
-
-    <!-- Ultimate Prep -->
-    <div class="course-card" style="cursor:default;">
-      <img src="/assets/images/banners/banner-ultimate.png" alt="The Ultimate Prep" class="course-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="course-cover-placeholder" style="display:none;">⭐</div>
-      <div class="course-body">
-        <span class="course-badge badge-core">CORE · แนะนำ</span>
-        <div class="course-name">The Ultimate Prep</div>
-        <div class="course-desc">คอร์สหลักเนื้อหา 30 ชั่วโมง พร้อมหนังสือเรียนส่งถึงบ้าน</div>
-        <div class="course-price">349 บาท <del>690 บาท</del></div>
-        <a href="/booking" class="course-cta cta-orange">สนใจคอร์สนี้ →</a>
-      </div>
-    </div>
-
-    <!-- Mock Exam -->
-    <a href="/mock-exam" class="course-card">
-      <img src="/assets/images/banners/banner-mock-exam.png" alt="Mock Exam" class="course-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="course-cover-placeholder" style="display:none;">🎯</div>
-      <div class="course-body">
-        <span class="course-badge badge-sprint">SPRINT</span>
-        <div class="course-name">Mock Exam</div>
-        <div class="course-desc">ตะลุยโจทย์ 1,000 ข้อ จำลองสนามสอบจริงก่อนวันสอบจริง</div>
-        <div class="course-price">249 บาท <del>490 บาท</del></div>
-        <span class="course-cta cta-orange">ตะลุยโจทย์โค้งสุดท้าย</span>
-      </div>
-    </a>
-
+  <h1>A-Level<br><span>English</span></h1>
+  <div class="hero-exam-tag">A-LEVEL · TCAS68 · ม.6</div>
+  <p class="hero-sub">
+    คอร์สเดียวที่คุณต้องการ<br>
+    ออกแบบมาเพื่อสนามสอบ A-Level โดยเฉพาะ
+  </p>
+  <div class="hero-ctas">
+    <a href="/join/" class="btn-primary">สมัครเรียนเลย</a>
+    <a href="#features" class="btn-ghost">ดูเนื้อหาคอร์ส</a>
   </div>
-
-  <!-- Bundle -->
-  <div class="bundle-box">
-    <div>
-      <h3>⭐ Best Value — แพ็กเกจ Mission to the Moon</h3>
-      <p>รวม 4 คอร์ส · Pre-test + Foundation + Ultimate Prep + Mock Exam</p>
-      <a href="/booking" class="bundle-cta">ดูแพ็กเกจทั้งหมด →</a>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">80</div>
+      <div class="stat-label">ข้อ ต่อชุดข้อสอบ</div>
     </div>
-    <div class="bundle-price-wrap">
-      <span class="bundle-price-orig">ราคาปกติ 1,180 บาท</span>
-      <div>
-        <span class="bundle-price-main">499</span>
-        <span style="color:rgba(255,255,255,.65);font-size:14px;"> บาท</span>
-        <span class="bundle-savings">ประหยัด 58%</span>
-      </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">ทักษะหลัก</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">ตรงกับโครงสร้างสอบจริง</div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- COMING SOON -->
-<div class="coming-missions">
-  <hr class="section-divider">
-  <div class="mission-label" style="margin-bottom:20px;">
-    <div class="mission-label-line"></div>
-    <span class="mission-label-text">กำลังจะมา</span>
+<!-- ══ WHY THIS COURSE ══ -->
+<section class="section">
+  <div class="section-eyebrow">
+    <span class="section-eyebrow-line"></span>
+    ทำไมต้องคอร์สนี้
   </div>
-  <h2 class="mission-title" style="margin-bottom:8px;">ภารกิจถัดไป</h2>
-  <p class="mission-sub">เปิดรับสมัครเร็วๆ นี้ ลงทะเบียนเพื่อรับการแจ้งเตือนก่อนใคร</p>
-
-  <div class="coming-grid">
-    <div class="coming-card">
-      <span class="coming-icon-lg">🔴</span>
-      <div class="coming-eyebrow">Mission to Mars</div>
-      <h3>สอบเข้า ม.4</h3>
-      <p>เสริมทักษะไวยากรณ์และการอ่านระดับมัธยมปลาย พร้อมก้าวสู่ ม.4 โรงเรียนที่ตั้งใจไว้</p>
-      <span class="coming-tag">เปิดรับสมัครเร็วๆ นี้</span>
+  <h2 class="section-title">ภาษาอังกฤษ A-Level<br>ไม่ใช่แค่ท่อง — ต้องเข้าใจ</h2>
+  <p class="section-lead">
+    หลายคนอ่านหนังสือมาเต็มที่ แต่พอถึงวันสอบกลับตกเพราะไม่เคยฝึกกับโจทย์ที่ใกล้เคียงสนามสอบจริง
+    คอร์สนี้แก้ปัญหาตรงนั้น
+  </p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </div>
+      <div class="why-title">ตรงประเด็น ไม่มีบวม</div>
+      <div class="why-desc">เนื้อหาทุกบทสกัดมาจากโครงสร้างข้อสอบ A-Level ไม่มีเนื้อหาที่ไม่จำเป็น เรียนอะไรก็ออกสอบทั้งนั้น</div>
     </div>
-    <div class="coming-card">
-      <span class="coming-icon-lg">❄️</span>
-      <div class="coming-eyebrow">Mission to Pluto</div>
-      <h3>TCAS · IELTS · SAT</h3>
-      <p>ภารกิจสุดท้าทาย ครอบคลุมทุกสนามสอบระดับมหาวิทยาลัยและนานาชาติ สำหรับคนที่กล้าบินไกล</p>
-      <span class="coming-tag">เปิดรับสมัครเร็วๆ นี้</span>
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <div class="why-title">เฉลยที่อธิบายได้ว่า "ทำไม"</div>
+      <div class="why-desc">ไม่ใช่แค่เฉลยข้อถูก แต่อธิบายว่าข้ออื่นผิดเพราะอะไร ช่วยให้คุณไม่พลาดซ้ำในสนามจริง</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="why-title">พร้อมสอบในเวลาที่มี</div>
+      <div class="why-desc">เรียนได้ทุกที่ ทุกเวลา ไม่มีตารางตายตัว เหมาะสำหรับ ม.6 ที่มีเวลาน้อยแต่ต้องการผลลัพธ์มาก</div>
     </div>
   </div>
-</div>
+</section>
 
-        <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-container">
-            <img src="/assets/images/logo.png" alt="Thep Academy" class="footer-logo">
-            <h2 class="footer-title">Thep Academy</h2>
-            <p class="footer-subtitle">เรียนรู้และเข้าใจภาษาอังกฤษอย่างเป็นระบบกับพี่บอม</p>
-            <!-- Mentor card -->
-            <div class="footer-mentor">
-                <img src="/assets/images/bom_photo.jpg" alt="พี่บอม" class="footer-mentor-photo">
-                <div class="footer-mentor-info">
-                    <span class="footer-mentor-name">พี่บอม · Thep Academy</span>
-                    <span class="footer-mentor-bio">Ph.D. Management, NIDA · ผู้ก่อตั้งและผู้สอน</span>
-                </div>
-            </div>
+<!-- ══ FEATURES ══ -->
+<section class="features-bg" id="features">
+  <div class="features-wrap">
+    <div class="features-header">
+      <div class="section-eyebrow" style="justify-content:center;">
+        <span class="section-eyebrow-line"></span>
+        โครงสร้างคอร์ส
+      </div>
+      <h2 class="section-title" style="color:#fff;">สามทักษะ หนึ่งคอร์ส<br>ครอบคลุมทุกส่วนของข้อสอบ</h2>
+      <p class="section-lead" style="color:rgba(255,255,255,.45);margin:0 auto;">
+        A-Level English วัด 3 ทักษะหลัก คอร์สนี้เทรนคุณทั้งหมด ไม่มีช่องว่าง
+      </p>
+    </div>
+    <div class="feature-list">
 
-            <div class="footer-contact">
-                <a href="mailto:admin.thepacademy@gmail.com" class="contact-item">
-                    <span class="contact-icon">✉️</span>
-                    <span>admin.thepacademy@gmail.com</span>
-                </a>
-            </div>
-
-            <!-- Social icons -->
-            <div class="social-icons">
-                <a href="https://youtube.com/@2ThepAcademy" target="_blank" class="social-icon" title="YouTube">
-                    <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="22" fill="#FF0000"/><path d="M33.5 16.5a3.2 3.2 0 0 0-2.25-2.27C29.1 13.7 22 13.7 22 13.7s-7.1 0-9.25.53A3.2 3.2 0 0 0 10.5 16.5C10 18.66 10 22 10 22s0 3.34.5 5.5a3.2 3.2 0 0 0 2.25 2.27C14.9 30.3 22 30.3 22 30.3s7.1 0 9.25-.53A3.2 3.2 0 0 0 33.5 27.5C34 25.34 34 22 34 22s0-3.34-.5-5.5zM19.5 25.5v-7L26.5 22l-7 3.5z" fill="#fff"/></svg>
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61570701028364" target="_blank" class="social-icon" title="Facebook">
-                    <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="22" fill="#1877F2"/><path d="M24.5 22.5h3l.5-3.5h-3.5V17c0-1 .5-1.5 1.5-1.5H28v-3s-1.2-.2-2.4-.2c-2.8 0-4.6 1.7-4.6 4.8v2.4H18v3.5h3V32h3.5V22.5z" fill="#fff"/></svg>
-                </a>
-                <a href="https://www.tiktok.com/@thepacademy" target="_blank" class="social-icon" title="TikTok">
-                    <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="22" fill="#010101"/><path d="M29.5 14.5c-.8-1-1.3-2.3-1.3-3.5h-3v14.3c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5c.3 0 .5 0 .7.1v-3.1c-.2 0-.5-.1-.7-.1-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5 5.5-2.5 5.5-5.5V19c1.1.8 2.5 1.3 3.9 1.3v-3c-.7 0-1.7-.5-2.6-1.8z" fill="#fff"/></svg>
-                </a>
-                <a href="https://www.instagram.com/thep.academy" target="_blank" class="social-icon" title="Instagram">
-                    <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><circle cx="22" cy="22" r="22" fill="url(#ig-grad)"/><rect x="13" y="13" width="18" height="18" rx="5" ry="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="22" r="4.5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="27.5" cy="16.5" r="1.2" fill="#fff"/></svg>
-                </a>
-                <a href="https://x.com/2ThepAcademy" target="_blank" class="social-icon" title="X (Twitter)">
-                    <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="22" fill="#000"/><path d="M24.35 20.9 30.5 13h-1.46l-5.33 6.2L19.3 13H14l6.43 9.36L14 31h1.46l5.62-6.53L25.7 31H31l-6.65-10.1zm-1.99 2.32-.65-.93-5.17-7.4h2.23l4.18 5.98.65.93 5.42 7.77h-2.23l-4.43-6.35z" fill="#fff"/></svg>
-                </a>
-            </div>
-
-            <div class="footer-divider"></div>
-            <div class="footer-legal">
-                <a href="#">ข้อตกลงการใช้งาน</a>
-                <span>·</span>
-                <a href="#">นโยบายความเป็นส่วนตัว</a>
-            </div>
-            <div class="footer-copyright">© 2026 Thep Academy · All rights reserved.</div>
+      <div class="feature-item">
+        <div class="feature-num">01 ·</div>
+        <div>
+          <div class="feature-title">Grammar &amp; Structure</div>
+          <div class="feature-desc">
+            ไวยากรณ์ในแบบที่ข้อสอบ A-Level ถาม — ไม่ใช่ท่องกฎ แต่ฝึกอ่าน context และเลือกคำตอบที่ใช้ได้จริง
+            ครอบคลุม Tenses, Connectors, Passive Voice, และ Sentence Structure
+          </div>
+          <div class="feature-tags">
+            <span class="feature-tag">Tenses</span>
+            <span class="feature-tag">Connectors</span>
+            <span class="feature-tag">Sentence Structure</span>
+          </div>
         </div>
-    </footer>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-num">02 ·</div>
+        <div>
+          <div class="feature-title">Vocabulary in Context</div>
+          <div class="feature-desc">
+            คำศัพท์ที่ข้อสอบ A-Level ชอบออก พร้อมเทคนิคเดา context สำหรับคำที่ไม่รู้จัก
+            ฝึกผ่านประโยคจริงที่คล้ายข้อสอบ ไม่ใช่แค่ท่องลิสต์คำศัพท์เปล่าๆ
+          </div>
+          <div class="feature-tags">
+            <span class="feature-tag">Context Clues</span>
+            <span class="feature-tag">Collocations</span>
+            <span class="feature-tag">Academic Words</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-num">03 ·</div>
+        <div>
+          <div class="feature-title">Reading Comprehension</div>
+          <div class="feature-desc">
+            บทอ่านระดับเดียวกับข้อสอบจริง พร้อมกลยุทธ์ skimming และ scanning
+            ฝึกทั้ง Main Idea, Inference, Reference และ Vocabulary in Passage
+          </div>
+          <div class="feature-tags">
+            <span class="feature-tag">Skimming</span>
+            <span class="feature-tag">Inference</span>
+            <span class="feature-tag">Main Idea</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ MENTOR STRIP ══ -->
+<section class="mentor-strip">
+  <div class="mentor-strip-inner">
+    <img src="/assets/images/bom_photo.jpg" alt="พี่บอม" class="mentor-photo">
+    <div class="mentor-info">
+      <div class="mentor-name">พี่บอม — ผู้สอนและผู้ออกแบบคอร์ส</div>
+      <div class="mentor-title">Ph.D. Management · NIDA · ผู้ก่อตั้ง Thep Academy</div>
+    </div>
+    <p class="mentor-quote">
+      "ข้อสอบ A-Level ไม่ได้วัดว่าคุณท่องมาเยอะแค่ไหน
+      แต่วัดว่าคุณเข้าใจภาษาอังกฤษแค่ไหน คอร์สนี้สร้างความเข้าใจนั้น"
+    </p>
+  </div>
+</section>
+
+<!-- ══ PRICING ══ -->
+<section class="pricing-wrap">
+  <div class="section-eyebrow" style="justify-content:center;margin-bottom:16px;">
+    <span class="section-eyebrow-line"></span>
+    ราคาและการสมัคร
+  </div>
+  <h2 class="section-title" style="text-align:center;margin-bottom:40px;">หนึ่งคอร์ส<br>ราคาที่เข้าถึงได้</h2>
+
+  <div class="pricing-card">
+    <div class="pricing-label">A-Level English · TCAS68</div>
+    <div class="pricing-course-name">คอร์ส A-Level English<br>กับพี่บอม</div>
+    <div class="pricing-desc">ครบ 3 ทักษะ · โจทย์จำลองสนามสอบ · เฉลยพร้อมคำอธิบาย</div>
+
+    <div class="pricing-price-row">
+      <div class="pricing-price-main">349</div>
+      <div class="pricing-price-currency">บาท</div>
+    </div>
+    <div class="pricing-price-orig">ราคาปกติ 690 บาท</div>
+
+    <div class="pricing-includes">
+      <div class="pricing-include-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Grammar, Vocabulary และ Reading ครบในชุดเดียว
+      </div>
+      <div class="pricing-include-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        โจทย์จำลองโครงสร้างข้อสอบ A-Level จริง
+      </div>
+      <div class="pricing-include-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        เฉลยละเอียดทุกข้อ พร้อมคำอธิบายว่าทำไม
+      </div>
+      <div class="pricing-include-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        เรียนได้ทันที ไม่มีวันหมดอายุ
+      </div>
+    </div>
+
+    <a href="/join/" class="pricing-cta">สมัครเรียนเลย →</a>
+    <div class="pricing-note">ชำระครั้งเดียว · ไม่มีค่าใช้จ่ายซ่อน · ติดต่อพี่บอมได้โดยตรง</div>
+  </div>
+</section>
+
+<!-- ══ ADD-ONS & FREE RESOURCES ══ -->
+<section class="addons-section">
+  <div class="addon-divider">
+    <div class="addon-divider-line"></div>
+    <div class="addon-divider-text">ส่วนเสริมและคอร์สฟรี</div>
+    <div class="addon-divider-line"></div>
+  </div>
+
+  <div class="addon-grid">
+
+    <a href="/pretest/" class="addon-card">
+      <span class="addon-badge badge-free-sm">FREE</span>
+      <div class="addon-name">ทำ Pre-test ก่อน</div>
+      <div class="addon-desc">วัดระดับตัวเองใน 10 นาที รู้จุดอ่อนก่อนเริ่มเรียน</div>
+      <div class="addon-link">เริ่มทดสอบ →</div>
+    </a>
+
+    <a href="/grammar-foundation/" class="addon-card">
+      <span class="addon-badge badge-free-sm">FREE</span>
+      <div class="addon-name">Grammar Foundation</div>
+      <div class="addon-desc">ทบทวนไวยากรณ์พื้นฐาน 12 Tenses ก่อนเข้าคอร์สหลัก</div>
+      <div class="addon-link">เรียนฟรี →</div>
+    </a>
+
+    <a href="/mock-exam/" class="addon-card">
+      <span class="addon-badge badge-m1">MOCK EXAM</span>
+      <div class="addon-name">Mock Exam 1,000 ข้อ</div>
+      <div class="addon-desc">ตะลุยโจทย์เพิ่มเติม จำลองสนามสอบก่อนวันสอบจริง</div>
+      <div class="addon-link">ดูรายละเอียด →</div>
+    </a>
+
+    <div class="addon-card addon-card-dead">
+      <span class="addon-badge badge-soon">Coming Soon</span>
+      <div class="addon-name">IELTS Foundation</div>
+      <div class="addon-desc">สำหรับคนที่มีเป้าหมายเกินกว่า TCAS กำลังพัฒนาอยู่</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-container">
+    <img src="/assets/images/logo.png" alt="Thep Academy" class="footer-logo">
+    <h2 class="footer-title">Thep Academy</h2>
+    <p class="footer-subtitle">เรียนรู้และเข้าใจภาษาอังกฤษอย่างเป็นระบบกับพี่บอม</p>
+    <div class="footer-mentor">
+      <img src="/assets/images/bom_photo.jpg" alt="พี่บอม" class="footer-mentor-photo">
+      <div class="footer-mentor-info">
+        <span class="footer-mentor-name">พี่บอม · Thep Academy</span>
+        <span class="footer-mentor-bio">Ph.D. Management, NIDA · ผู้ก่อตั้งและผู้สอน</span>
+      </div>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:admin.thepacademy@gmail.com" class="contact-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>admin.thepacademy@gmail.com</span>
+      </a>
+    </div>
+    <div class="social-icons">
+      <a href="https://youtube.com/@2ThepAcademy" target="_blank" class="social-icon" title="YouTube">
+        <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="22" fill="#FF0000"/><path d="M33.5 16.5a3.2 3.2 0 0 0-2.25-2.27C29.1 13.7 22 13.7 22 13.7s-7.1 0-9.25.53A3.2 3.2 0 0 0 10.5 16.5C10 18.66 10 22 10 22s0 3.34.5 5.5a3.2 3.2 0 0 0 2.25 2.27C14.9 30.3 22 30.3 22 30.3s7.1 0 9.25-.53A3.2 3.2 0 0 0 33.5 27.5C34 25.34 34 22 34 22s0-3.34-.5-5.5zM19.5 25.5v-7L26.5 22l-7 3.5z" fill="#fff"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61570701028364" target="_blank" class="social-icon" title="Facebook">
+        <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="22" fill="#1877F2"/><path d="M24.5 22.5h3l.5-3.5h-3.5V17c0-1 .5-1.5 1.5-1.5H28v-3s-1.2-.2-2.4-.2c-2.8 0-4.6 1.7-4.6 4.8v2.4H18v3.5h3V32h3.5V22.5z" fill="#fff"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@thepacademy" target="_blank" class="social-icon" title="TikTok">
+        <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="22" fill="#010101"/><path d="M29.5 14.5c-.8-1-1.3-2.3-1.3-3.5h-3v14.3c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5c.3 0 .5 0 .7.1v-3.1c-.2 0-.5-.1-.7-.1-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5 5.5-2.5 5.5-5.5V19c1.1.8 2.5 1.3 3.9 1.3v-3c-.7 0-1.7-.5-2.6-1.8z" fill="#fff"/></svg>
+      </a>
+      <a href="https://www.instagram.com/thep.academy" target="_blank" class="social-icon" title="Instagram">
+        <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><circle cx="22" cy="22" r="22" fill="url(#ig-grad)"/><rect x="13" y="13" width="18" height="18" rx="5" ry="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="22" cy="22" r="4.5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="27.5" cy="16.5" r="1.2" fill="#fff"/></svg>
+      </a>
+      <a href="https://x.com/2ThepAcademy" target="_blank" class="social-icon" title="X (Twitter)">
+        <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="22" fill="#000"/><path d="M24.35 20.9 30.5 13h-1.46l-5.33 6.2L19.3 13H14l6.43 9.36L14 31h1.46l5.62-6.53L25.7 31H31l-6.65-10.1zm-1.99 2.32-.65-.93-5.17-7.4h2.23l4.18 5.98.65.93 5.42 7.77h-2.23l-4.43-6.35z" fill="#fff"/></svg>
+      </a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-legal">
+      <a href="#">ข้อตกลงการใช้งาน</a>
+      <span>·</span>
+      <a href="#">นโยบายความเป็นส่วนตัว</a>
+    </div>
+    <div class="footer-copyright">© 2026 Thep Academy · All rights reserved.</div>
+  </div>
+</footer>
 
 <script>
-        
-
-        </script>
-<script>
-
-    // ── Mobile menu ──
-    (function() {
-      var menuOpen = false;
-      window.toggleMenu = function() {
-        menuOpen = !menuOpen;
+(function() {
+  var menuOpen = false;
+  window.toggleMenu = function() {
+    menuOpen = !menuOpen;
+    var m = document.getElementById('mobile-menu');
+    if (m) m.style.display = menuOpen ? 'flex' : 'none';
+    var spans = document.querySelectorAll('.hamburger span');
+    if (spans.length >= 3) {
+      if (menuOpen) {
+        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
+    }
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    var links = document.querySelectorAll('#mobile-menu a');
+    links.forEach(function(l) {
+      l.addEventListener('click', function() {
+        menuOpen = false;
         var m = document.getElementById('mobile-menu');
-        if (m) m.style.display = menuOpen ? 'flex' : 'none';
-        // Animate hamburger
-        var spans = document.querySelectorAll('.hamburger span');
-        if (spans.length >= 3) {
-          if (menuOpen) {
-            spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-          } else {
-            spans[0].style.transform = '';
-            spans[1].style.opacity = '';
-            spans[2].style.transform = '';
-          }
-        }
-      };
-      // Close menu when a link is clicked
-      document.addEventListener('DOMContentLoaded', function() {
-        var links = document.querySelectorAll('#mobile-menu a');
-        links.forEach(function(l) {
-          l.addEventListener('click', function() {
-            menuOpen = false;
-            var m = document.getElementById('mobile-menu');
-            if (m) m.style.display = 'none';
-          });
-        });
+        if (m) m.style.display = 'none';
       });
-    })();
-
-  </script>
-
-  <script src="/assets/js/consent.js"></script>
+    });
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  });
+})();
+</script>
+<script src="/assets/js/consent.js"></script>
 </body>
 </html>
