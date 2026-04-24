@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="robots" content="noindex,nofollow">
+<title>ชำระเงิน · Mission to the Moon ม.1 | Thep Academy</title>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X05ZGMBFW7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-X05ZGMBFW7');</script>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root{
+  --navy:#0f1f3d; --navy2:#1e3a5f;
+  --orange:#F97316; --orange2:#ea6c0a;
+  --line-green:#06C755; --line-dark:#05a848;
+  --green:#16a34a; --red:#dc2626;
+  --white:#fff; --off:#f8fafc;
+  --gray:#e2e8f0; --mid:#64748b; --dark:#1e293b;
+  --r:16px; --shadow:0 4px 24px rgba(0,0,0,.09);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Sarabun',system-ui,sans-serif;
+  background:var(--off);color:var(--dark);
+  line-height:1.65;-webkit-font-smoothing:antialiased;
+  padding-bottom:84px; /* room for sticky bar */
+}
+
+/* ── URGENCY BANNER ── */
+.urgency{
+  background:linear-gradient(90deg,#991b1b 0%,#dc2626 40%,#b91c1c 100%);
+  color:#fff;text-align:center;padding:9px 16px;
+  font-size:.82rem;font-weight:600;letter-spacing:.2px;
+  position:sticky;top:0;z-index:300;
+}
+.urgency strong{font-size:.88rem;}
+#cdown{
+  font-family:'IBM Plex Mono',monospace;font-size:.88rem;
+  background:rgba(0,0,0,.3);padding:1px 8px;border-radius:6px;
+  display:inline-block;min-width:74px;text-align:center;
+}
+
+/* ── TOPNAV ── */
+.topnav{
+  background:var(--navy);padding:12px 18px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:38px;z-index:200;
+  box-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+.nav-brand{display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-brand img{height:30px;border-radius:5px;}
+.nav-brand span{color:#fff;font-weight:700;font-size:.95rem;}
+.nav-back{
+  color:rgba(255,255,255,.65);font-size:.8rem;
+  text-decoration:none;display:flex;align-items:center;gap:4px;
+  transition:color .15s;
+}
+.nav-back:hover{color:#fff;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(150deg,var(--navy) 0%,#1a3a6e 55%,#1e4d8c 100%);
+  padding:28px 20px 24px;text-align:center;color:#fff;
+}
+.hero-badge{
+  display:inline-block;background:var(--orange);color:#fff;
+  font-size:.68rem;font-weight:800;letter-spacing:.9px;text-transform:uppercase;
+  padding:4px 14px;border-radius:20px;margin-bottom:12px;
+}
+.hero h1{font-size:clamp(1.3rem,4.5vw,1.9rem);font-weight:800;line-height:1.25;margin-bottom:8px;}
+.hero-sub{font-size:.88rem;opacity:.75;max-width:360px;margin:0 auto 14px;}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(6,199,85,.18);border:1px solid rgba(6,199,85,.4);
+  border-radius:30px;padding:6px 16px;
+  font-size:.82rem;color:rgba(255,255,255,.95);font-weight:600;
+}
+
+/* ── CARDS WRAPPER ── */
+.wrap{max-width:480px;margin:0 auto;padding:0 14px;}
+
+/* ── COURSE CARD ── */
+.card{
+  background:var(--white);border-radius:var(--r);
+  box-shadow:var(--shadow);margin-top:12px;overflow:hidden;
+}
+.card-stripe{height:4px;background:linear-gradient(90deg,var(--orange) 0%,#fb923c 100%);}
+.card-body{padding:18px 20px;}
+
+.course-tag{font-size:.68rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.8px;color:var(--orange);margin-bottom:6px;}
+.course-name{font-size:1.05rem;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:10px;}
+.benefits{list-style:none;}
+.benefits li{
+  font-size:.84rem;color:var(--mid);padding:4px 0;
+  display:flex;align-items:flex-start;gap:7px;
+}
+.benefits li::before{
+  content:"✓";color:var(--green);font-weight:800;
+  flex-shrink:0;margin-top:1px;
+}
+
+.price-block{
+  border-top:1px solid var(--gray);margin-top:14px;padding-top:14px;
+  display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;
+}
+.price-thb{font-size:.9rem;color:var(--mid);font-weight:600;}
+.price-num{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:2.3rem;font-weight:600;color:var(--navy);line-height:1;
+}
+.price-orig{font-size:.82rem;color:var(--mid);text-decoration:line-through;}
+.price-badge{
+  margin-left:auto;background:rgba(220,38,38,.08);color:var(--red);
+  font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid rgba(220,38,38,.2);
+}
+.access-row{
+  margin-top:10px;display:flex;align-items:center;gap:6px;
+  font-size:.79rem;color:var(--mid);
+}
+
+/* ── QR SECTION ── */
+.qr-header{
+  background:linear-gradient(90deg,#0f2d5e,#1a4a8a);
+  padding:14px 20px;
+}
+.qr-header-t{color:#fff;font-weight:800;font-size:.95rem;}
+.qr-header-s{color:rgba(255,255,255,.6);font-size:.76rem;margin-top:2px;}
+
+.qr-body{padding:20px;text-align:center;}
+
+.qr-frame{
+  display:inline-block;background:#fff;
+  border:2px solid var(--gray);border-radius:12px;
+  padding:10px;box-shadow:0 4px 20px rgba(0,0,0,.08);
+  margin-bottom:6px;position:relative;
+}
+.qr-frame img{
+  display:block;width:210px;height:210px;
+  image-rendering:pixelated;border-radius:4px;
+}
+/* QR Placeholder (shows while loading or on error) */
+.qr-placeholder{
+  width:210px;height:210px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:#f8fafc;border-radius:4px;border:2px dashed #cbd5e1;
+  gap:8px;color:var(--mid);font-size:.78rem;
+}
+.qr-placeholder svg{opacity:.5;}
+.qr-label-bar{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  font-size:.72rem;color:var(--mid);font-weight:600;margin-top:4px;
+  text-transform:uppercase;letter-spacing:.4px;
+}
+
+.acct-box{
+  background:var(--off);border-radius:12px;border:1px solid var(--gray);
+  padding:14px 16px;text-align:left;margin:14px 0;
+}
+.acct-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:7px 0;border-bottom:1px solid var(--gray);
+}
+.acct-row:last-child{border-bottom:none;padding-bottom:0;}
+.acct-lbl{font-size:.76rem;color:var(--mid);font-weight:600;}
+.acct-val{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.86rem;font-weight:600;color:var(--dark);
+}
+.acct-val.big{font-size:1.15rem;color:var(--navy);font-weight:700;}
+
+.copy-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:0;}
+.copy-btn{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  background:var(--off);border:1.5px solid var(--gray);
+  border-radius:10px;padding:11px 12px;
+  font-family:'Sarabun',sans-serif;font-size:.82rem;font-weight:700;
+  color:var(--navy);cursor:pointer;
+  transition:background .15s,border-color .15s,color .15s;
+  width:100%;
+}
+.copy-btn:active{background:#e2e8f0;}
+.copy-btn.ok{background:#dcfce7;border-color:var(--green);color:var(--green);}
+
+.amount-warn{
+  margin-top:12px;background:rgba(249,115,22,.06);
+  border:1px solid rgba(249,115,22,.25);border-radius:10px;
+  padding:10px 14px;font-size:.78rem;color:var(--orange2);
+  display:flex;align-items:flex-start;gap:8px;line-height:1.5;
+}
+
+/* ── STEPS CARD ── */
+.steps-title{
+  font-size:.92rem;font-weight:800;color:var(--navy);
+  margin-bottom:18px;display:flex;align-items:center;gap:8px;
+}
+.step{display:flex;gap:14px;padding:0 0 18px 0;position:relative;}
+.step::after{
+  content:'';position:absolute;left:15px;top:34px;
+  width:2px;height:calc(100% - 18px);background:var(--gray);
+}
+.step:last-child::after{display:none;}
+.step:last-child{padding-bottom:0;}
+.step-num{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.82rem;font-weight:800;margin-top:1px;z-index:1;
+}
+.step-num.n{background:var(--navy);color:#fff;}
+.step-num.ok{background:var(--green);color:#fff;}
+.step-t{font-size:.9rem;font-weight:700;color:var(--dark);margin-bottom:3px;}
+.step-d{font-size:.8rem;color:var(--mid);line-height:1.55;}
+
+/* ── LINE SECTION ── */
+.line-section{
+  background:linear-gradient(150deg,#064e25 0%,#16a34a 60%,#22c55e 100%);
+  border-radius:var(--r);margin-top:12px;
+  padding:24px 20px;text-align:center;
+  box-shadow:0 6px 28px rgba(6,199,85,.3);
+}
+.line-eyebrow{
+  display:inline-block;background:rgba(255,255,255,.18);color:#fff;
+  font-size:.68rem;font-weight:800;letter-spacing:.9px;text-transform:uppercase;
+  padding:3px 12px;border-radius:20px;margin-bottom:12px;
+}
+.line-section h2{
+  color:#fff;font-size:clamp(1.1rem,3.5vw,1.5rem);
+  font-weight:800;line-height:1.25;margin-bottom:6px;
+}
+.line-section .line-sub{
+  color:rgba(255,255,255,.75);font-size:.84rem;margin-bottom:20px;
+}
+.line-cta-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#fff;color:var(--line-green);
+  text-decoration:none;font-weight:800;font-size:1.05rem;
+  padding:16px 24px;border-radius:14px;
+  box-shadow:0 4px 20px rgba(0,0,0,.2);
+  max-width:340px;margin:0 auto;
+  transition:transform .15s,box-shadow .15s;
+}
+.line-cta-btn:active{transform:scale(.97);box-shadow:0 2px 10px rgba(0,0,0,.2);}
+
+.prefill-box{
+  margin-top:16px;background:rgba(0,0,0,.2);border-radius:10px;
+  padding:12px 14px;text-align:left;
+}
+.prefill-lbl{
+  font-size:.68rem;font-weight:700;color:rgba(255,255,255,.6);
+  text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;
+}
+.prefill-txt{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.7rem;color:rgba(255,255,255,.88);line-height:1.8;
+}
+
+/* ── TRUST GRID ── */
+.trust-section{margin-top:12px;}
+.trust-head{
+  font-size:.75rem;font-weight:700;color:var(--mid);
+  text-transform:uppercase;letter-spacing:.8px;
+  text-align:center;margin-bottom:10px;
+}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.trust-card{
+  background:var(--white);border-radius:14px;padding:16px 14px;
+  text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+.trust-icon{font-size:1.6rem;margin-bottom:6px;display:block;}
+.trust-v{font-size:1.05rem;font-weight:800;color:var(--navy);line-height:1.2;}
+.trust-l{font-size:.72rem;color:var(--mid);margin-top:3px;}
+
+/* ── FAQ ── */
+.faq-title{font-size:.92rem;font-weight:800;color:var(--navy);margin-bottom:16px;}
+.faq-item{border-bottom:1px solid var(--gray);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:14px 0;font-size:.88rem;font-weight:700;color:var(--dark);
+  cursor:pointer;user-select:none;
+}
+.faq-icon{
+  width:22px;height:22px;border-radius:50%;flex-shrink:0;
+  background:var(--off);border:1.5px solid var(--gray);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:800;color:var(--navy);
+  transition:transform .2s,background .2s,color .2s;
+}
+.faq-item.open .faq-icon{
+  transform:rotate(45deg);background:var(--navy);color:#fff;border-color:var(--navy);
+}
+.faq-a{
+  font-size:.82rem;color:var(--mid);line-height:1.7;
+  max-height:0;overflow:hidden;
+  transition:max-height .35s ease,padding .25s;
+}
+.faq-item.open .faq-a{max-height:240px;padding-bottom:14px;}
+
+/* ── FOOTER ── */
+.footer{
+  max-width:480px;margin:20px auto 0;padding:0 14px 16px;
+  text-align:center;
+}
+.footer-brand{font-weight:800;color:var(--mid);font-size:.85rem;}
+.footer-links{margin-top:6px;font-size:.73rem;color:var(--mid);}
+.footer-links a{color:var(--mid);text-decoration:none;}
+.footer-links a:hover{text-decoration:underline;}
+.footer-safe{
+  margin-top:10px;font-size:.72rem;color:var(--mid);
+  display:flex;align-items:center;justify-content:center;gap:5px;
+}
+.footer-copy{font-size:.68rem;color:var(--gray);margin-top:8px;}
+
+/* ── STICKY BOTTOM BAR ── */
+.sticky-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:400;
+  background:var(--line-green);
+  padding:10px 14px;
+  box-shadow:0 -4px 20px rgba(0,0,0,.2);
+}
+.sticky-btn{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  background:#fff;color:var(--line-green);text-decoration:none;
+  font-weight:800;font-size:.95rem;
+  padding:13px 20px;border-radius:12px;
+  max-width:480px;margin:0 auto;
+  box-shadow:0 2px 10px rgba(0,0,0,.12);
+  transition:opacity .15s;
+}
+.sticky-btn:active{opacity:.85;}
+
+/* ── RESPONSIVE DESKTOP ── */
+@media(min-width:520px){
+  .wrap{padding:0 20px;}
+  body{background:#e8edf4;}
+  .hero{border-radius:0 0 24px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ URGENCY BANNER ══ -->
+<div class="urgency">
+  🔥 ราคาพิเศษ ลด 33%! หมดเวลาใน <strong id="cdown">--:--:--</strong> · หลังจากนั้นราคากลับเป็น ฿2,990
+</div>
+
+<!-- ══ TOPNAV ══ -->
+<nav class="topnav">
+  <a href="/" class="nav-brand">
+    <img src="/assets/images/logo.png" alt="Thep Academy" onerror="this.style.display='none'">
+    <span>Thep Academy</span>
+  </a>
+  <a href="/courses/" class="nav-back">← กลับดูคอร์ส</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-badge">ชำระเงิน · PromptPay</div>
+  <h1>สแกน QR ส่งสลิป<br>เริ่มเรียนได้เลย 🚀</h1>
+  <p class="hero-sub">โอนตามจำนวนที่กำหนด แคปสลิป ส่งให้พี่บอมทาง LINE</p>
+  <div class="hero-pill">
+    ⚡ ปลดล็อคภายใน <strong style="margin:0 3px;">15 นาที</strong> หลังยืนยันสลิป
+  </div>
+</section>
+
+<div class="wrap">
+
+<!-- ══ COURSE CARD ══ -->
+<div class="card">
+  <div class="card-stripe"></div>
+  <div class="card-body">
+    <div class="course-tag">คอร์สที่คุณเลือก</div>
+    <div class="course-name">🚀 สอบเข้า ม.1 Mission to the Moon
+      <span style="font-size:.85rem;color:var(--mid);font-weight:600;"> (Mission 8)</span>
+    </div>
+    <ul class="benefits">
+      <li>Grammar · Vocabulary · Reading ครบจบในชุดเดียว</li>
+      <li>ข้อสอบจำลองสนามสอบจริง พร้อมเฉลยทุกข้อ</li>
+      <li>เรียนซ้ำได้ไม่จำกัด ไม่มีวันหมดอายุ</li>
+      <li>อัพเดตเนื้อหาตามแนวสอบล่าสุดเสมอ</li>
+    </ul>
+    <div class="price-block">
+      <span class="price-thb">฿</span>
+      <span class="price-num">1,990</span>
+      <span class="price-orig">฿2,990</span>
+      <span class="price-badge">ประหยัด ฿1,000</span>
+    </div>
+    <div class="access-row">
+      <span>🔓</span>
+      <span>เข้าถึงได้ตลอดชีพ · เรียนได้ทุกที่ ทุกเวลา</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QR PAYMENT CARD ══ -->
+<div class="card">
+  <div class="qr-header">
+    <div class="qr-header-t">📱 สแกน QR เพื่อโอนเงิน</div>
+    <div class="qr-header-s">รองรับทุกแอปธนาคาร · PromptPay</div>
+  </div>
+  <div class="qr-body">
+
+    <!-- QR CODE IMAGE -->
+    <!-- ⚠️ แทนที่ภาพด้วย QR PromptPay จริงจากแอปธนาคาร: src="/assets/images/qr-promptpay.png" -->
+    <div class="qr-frame" id="qrWrap">
+      <img
+        src="https://promptpay.io/0802648381/1990"
+        alt="QR Code PromptPay Thep Academy 1,990 บาท"
+        width="210" height="210"
+        id="qrImg"
+        onerror="showPlaceholder()"
+      >
+    </div>
+    <div class="qr-label-bar">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--mid)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      PromptPay · ยืนยันชื่อก่อนโอนทุกครั้ง
+    </div>
+
+    <!-- ACCOUNT DETAILS -->
+    <div class="acct-box">
+      <div class="acct-row">
+        <span class="acct-lbl">ชื่อบัญชี</span>
+        <span class="acct-val">พี่บอม (Thep Academy)</span>
+      </div>
+      <div class="acct-row">
+        <span class="acct-lbl">เบอร์ PromptPay</span>
+        <span class="acct-val">080-264-8381</span>
+      </div>
+      <div class="acct-row">
+        <span class="acct-lbl">จำนวนเงิน</span>
+        <span class="acct-val big">1,990 บาท</span>
+      </div>
+    </div>
+
+    <!-- COPY BUTTONS -->
+    <div class="copy-row">
+      <button class="copy-btn" id="btnAmt" onclick="doCopy('1990','btnAmt','📋 คัดลอกจำนวนเงิน')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        คัดลอกจำนวนเงิน
+      </button>
+      <button class="copy-btn" id="btnPh" onclick="doCopy('0802648381','btnPh','📞 คัดลอกเบอร์โทร')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        คัดลอกเบอร์โทร
+      </button>
+    </div>
+
+    <!-- WARNING -->
+    <div class="amount-warn">
+      <span>⚠️</span>
+      <span>กรุณาโอน <strong>1,990 บาทพอดี</strong> เพื่อให้พี่บอมยืนยันและปลดล็อคได้รวดเร็ว หากโอนผิดจำนวน ระบบจะล่าช้า</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ STEPS CARD ══ -->
+<div class="card">
+  <div class="card-body">
+    <div class="steps-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      ขั้นตอนการชำระเงิน (5 ขั้นตอน)
+    </div>
+
+    <div class="step">
+      <div class="step-num n">1</div>
+      <div>
+        <div class="step-t">เปิดแอปธนาคาร → กด "สแกน QR"</div>
+        <div class="step-d">ใช้แอปธนาคารใดก็ได้ (กสิกร, SCB, กรุงไทย, ทหารไทย, ออมสิน ฯลฯ)</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num n">2</div>
+      <div>
+        <div class="step-t">สแกน QR ด้านบน · กรอก 1,990 บาท</div>
+        <div class="step-d">ตรวจสอบให้แน่ใจว่าชื่อผู้รับแสดงเป็น "พี่บอม" ก่อนกดยืนยัน</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num n">3</div>
+      <div>
+        <div class="step-t">แคปหน้าจอสลิปการโอนเงิน</div>
+        <div class="step-d">Screenshot สลิปที่มีวันเวลา จำนวนเงิน และชื่อผู้รับชัดเจน</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num n">4</div>
+      <div>
+        <div class="step-t">กดปุ่ม LINE สีเขียว → ส่งสลิป + ข้อมูล</div>
+        <div class="step-d">แนบรูปสลิป พร้อมระบุชื่อ-สกุล / อีเมล / ชื่อคอร์ส</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num ok">✓</div>
+      <div>
+        <div class="step-t">รับลิงก์คอร์สทาง LINE ภายใน 15 นาที ✨</div>
+        <div class="step-d">ในเวลาทำการ 08:00–22:00 น. หากส่งนอกเวลา จะได้รับเช้าวันถัดไป</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LINE CTA SECTION ══ -->
+<div class="line-section">
+  <div class="line-eyebrow">ขั้นตอนสุดท้าย</div>
+  <h2>ส่งสลิปเพื่อปลดล็อคคอร์สทันที 🎉</h2>
+  <p class="line-sub">หลังโอนเงินแล้ว กดปุ่มด้านล่างเพื่อส่งสลิปให้พี่บอมทาง LINE ได้เลย</p>
+
+  <a href="https://line.me/ti/p/~@489hmdfx" target="_blank" rel="noopener noreferrer"
+     class="line-cta-btn" id="lineBtn"
+     onclick="trackLine('cta_section')">
+    <!-- LINE Icon -->
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--line-green)" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+    </svg>
+    ส่งสลิปผ่าน LINE ทันที
+  </a>
+
+  <div class="prefill-box">
+    <div class="prefill-lbl">📝 ส่งข้อมูลนี้พร้อมกับรูปสลิป</div>
+    <div class="prefill-txt">
+      ชื่อ-นามสกุล: [ชื่อของคุณ]<br>
+      อีเมล: [อีเมลที่ต้องการรับลิงก์]<br>
+      คอร์ส: Mission to the Moon (Mission 8)<br>
+      แนบ: 📸 รูปสลิปการโอนเงิน
+    </div>
+  </div>
+</div>
+
+<!-- ══ TRUST ══ -->
+<div class="trust-section">
+  <div class="trust-head">ทำไมถึงไว้วางใจ Thep Academy ได้</div>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <span class="trust-icon">👨‍🎓</span>
+      <div class="trust-v">1,000+</div>
+      <div class="trust-l">นักเรียนที่เรียนแล้ว</div>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon">♾️</span>
+      <div class="trust-v">ตลอดชีพ</div>
+      <div class="trust-l">เข้าถึงได้ไม่จำกัด</div>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon">🔄</span>
+      <div class="trust-v">อัพเดต</div>
+      <div class="trust-l">ตามแนวสอบล่าสุด</div>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon">🔒</span>
+      <div class="trust-v">ปลอดภัย</div>
+      <div class="trust-l">มาตรฐาน ธปท.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FAQ ══ -->
+<div class="card" style="margin-top:12px;">
+  <div class="card-body">
+    <div class="faq-title">❓ คำถามที่พบบ่อย</div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="tog(this)">
+        ใช้เวลานานแค่ไหนในการปลดล็อค?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        หลังพี่บอมได้รับสลิปและยืนยันการโอน จะส่งลิงก์คอร์สทาง LINE ภายใน <strong>15 นาที</strong> ในเวลาทำการ (08:00–22:00 น.) หากส่งสลิปนอกเวลา จะได้รับลิงก์ภายในเช้าวันถัดไปครับ
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="tog(this)">
+        ลืมส่งสลิปหลังโอนแล้ว ต้องทำอย่างไร?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        ไม่ต้องกังวล! สามารถส่งสลิปทาง LINE ได้ภายหลัง เพียงแนบรูปสลิปที่แสดงวันเวลาและจำนวนเงิน พร้อมระบุชื่อและอีเมล พี่บอมจะดำเนินการให้ทันทีครับ
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="tog(this)">
+        โอนผิดจำนวน หรือโอนหลายครั้ง ทำอย่างไร?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        ส่งสลิปให้พี่บอมทาง LINE พร้อมแจ้งรายละเอียด จะดำเนินการตรวจสอบและแก้ไขให้ครับ กรุณาเก็บสลิปทุกใบไว้เสมอ
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="tog(this)">
+        สามารถขอคืนเงินได้ไหม?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        เนื่องจากเป็นสินค้าดิจิทัลที่เข้าถึงได้ทันทีหลังปลดล็อค <strong>ไม่สามารถขอคืนเงินได้ในทุกกรณี</strong> โปรดพิจารณาให้รอบคอบก่อนชำระ หากมีข้อสงสัยเกี่ยวกับเนื้อหา สามารถสอบถามพี่บอมทาง LINE ก่อนตัดสินใจได้ครับ
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="tog(this)">
+        เรียนบนมือถือได้ไหม? ต้องติดตั้งแอปไหม?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        ได้เลย! คอร์สออกแบบมาสำหรับมือถือโดยเฉพาะ รองรับทั้ง iOS และ Android ไม่ต้องติดตั้งแอปใดๆ เปิดลิงก์ผ่าน Browser ได้เลยครับ
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<div class="footer">
+  <div class="footer-brand">Thep Academy</div>
+  <div class="footer-links">
+    <a href="/about/">เกี่ยวกับเรา</a> ·
+    <a href="/courses/">คอร์สเรียน</a> ·
+    <a href="mailto:admin.thepacademy@gmail.com">อีเมล</a>
+  </div>
+  <div class="footer-safe">
+    <span>🔒</span>
+    <span>ชำระเงินผ่าน PromptPay · มาตรฐานธนาคารแห่งประเทศไทย</span>
+  </div>
+  <div class="footer-copy">© 2026 Thep Academy · All rights reserved</div>
+</div>
+
+</div><!-- /wrap -->
+
+<!-- ══ STICKY BOTTOM BAR ══ -->
+<div class="sticky-bar" id="stickyBar">
+  <a href="https://line.me/ti/p/~@489hmdfx" target="_blank" rel="noopener noreferrer"
+     class="sticky-btn" onclick="trackLine('sticky_bar')">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--line-green)">
+      <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+    </svg>
+    ส่งสลิปเพื่อปลดล็อคคอร์สทันที
+  </a>
+</div>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+/* ─ COUNTDOWN (resets to midnight each day) ─ */
+(function(){
+  function getTarget(){
+    var d=new Date();
+    d.setHours(23,59,59,999);
+    return d;
+  }
+  function tick(){
+    var now=new Date(),diff=getTarget()-now;
+    if(diff<0)diff=0;
+    var h=Math.floor(diff/3600000);
+    var m=Math.floor((diff%3600000)/60000);
+    var s=Math.floor((diff%60000)/1000);
+    var el=document.getElementById('cdown');
+    if(el) el.textContent=pad(h)+':'+pad(m)+':'+pad(s);
+  }
+  function pad(n){return String(n).padStart(2,'0');}
+  tick();
+  setInterval(tick,1000);
+})();
+
+/* ─ COPY BUTTON ─ */
+function doCopy(text,btnId,origLabel){
+  var btn=document.getElementById(btnId);
+  if(!btn)return;
+  var origHTML=btn.innerHTML;
+  function success(){
+    btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> คัดลอกแล้ว!';
+    btn.classList.add('ok');
+    setTimeout(function(){btn.innerHTML=origHTML;btn.classList.remove('ok');},2200);
+  }
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(success).catch(function(){fallbackCopy(text,success);});
+  } else {
+    fallbackCopy(text,success);
+  }
+}
+function fallbackCopy(text,cb){
+  var ta=document.createElement('textarea');
+  ta.value=text;
+  Object.assign(ta.style,{position:'fixed',top:'0',opacity:'0'});
+  document.body.appendChild(ta);
+  ta.focus();ta.select();
+  try{document.execCommand('copy');cb();}catch(e){}
+  document.body.removeChild(ta);
+}
+
+/* ─ FAQ ACCORDION ─ */
+function tog(qEl){
+  var item=qEl.parentElement;
+  var open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!open)item.classList.add('open');
+}
+
+/* ─ QR FALLBACK ─ */
+function showPlaceholder(){
+  var wrap=document.getElementById('qrWrap');
+  if(!wrap)return;
+  wrap.innerHTML=
+    '<div class="qr-placeholder">'
+    +'<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5">'
+    +'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>'
+    +'<rect x="3" y="14" width="7" height="7" rx="1"/>'
+    +'<rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/>'
+    +'<rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/>'
+    +'</svg>'
+    +'<div style="font-size:.75rem;color:#94a3b8;text-align:center;line-height:1.5;">'
+    +'แทนที่ด้วย<br>QR PromptPay จริง</div>'
+    +'</div>';
+}
+
+/* ─ GA4 TRACKING ─ */
+function trackLine(label){
+  if(typeof gtag!=='undefined'){
+    gtag('event','line_click',{event_category:'checkout',event_label:label});
+  }
+}
+
+/* ─ STICKY BAR HIDE WHEN LINE CTA VISIBLE ─ */
+(function(){
+  var lineCta=document.getElementById('lineBtn');
+  var bar=document.getElementById('stickyBar');
+  if(!lineCta||!bar)return;
+  var io=new IntersectionObserver(function(entries){
+    bar.style.transform=entries[0].isIntersecting?'translateY(100%)':'translateY(0)';
+    bar.style.transition='transform .25s';
+  },{threshold:0.5});
+  io.observe(lineCta);
+})();
+</script>
+
+</body>
+</html>
