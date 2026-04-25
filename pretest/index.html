@@ -874,7 +874,7 @@
           <iframe
             id="gform-iframe"
             src="about:blank"
-            data-src="YOUR_GOOGLE_FORM_EMBED_URL"
+            data-src="https://docs.google.com/forms/d/e/1FAIpQLScVxLEgryFcouXg3KgcelyeVVscukBilCY4Nj5kl0V4-zx1ow/formResponse"
             style="display:none; width:100%; height:0; border:none;"
             title="Google Form"
           ></iframe>
@@ -3779,7 +3779,7 @@
       const iframe = document.getElementById('gform-iframe');
       const formBase = iframe.dataset.src;
       if (formBase && formBase !== 'YOUR_GOOGLE_FORM_EMBED_URL') {
-        iframe.src = `${formBase}?entry.EMAIL_FIELD_ID=${encodeURIComponent(email)}&entry.SCORE_FIELD_ID=${score}`;
+        iframe.src = `${formBase}?entry.436129704=${encodeURIComponent(email)}&entry.2067997562=${encodeURIComponent(score)}&submit=Submit`;
       }
       // ────────────────────────────────────────────────
 
