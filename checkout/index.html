@@ -349,7 +349,7 @@ body{
 
 <!-- ══ URGENCY BANNER ══ -->
 <div class="urgency">
-  🔥 ราคาพิเศษ ลด 33%! หมดเวลาใน <strong id="cdown">--:--:--</strong> · หลังจากนั้นราคากลับเป็น ฿2,990
+  🔥 ราคาพิเศษ! หมดเวลาใน <strong id="cdown">--:--:--</strong> · <span id="urgency-text">Full Pack ฿690 → ราคาปกติ ฿990</span>
 </div>
 
 <!-- ══ TOPNAV ══ -->
@@ -378,20 +378,18 @@ body{
   <div class="card-stripe"></div>
   <div class="card-body">
     <div class="course-tag">คอร์สที่คุณเลือก</div>
-    <div class="course-name">🚀 สอบเข้า ม.1 Mission to the Moon
-      <span style="font-size:.85rem;color:var(--mid);font-weight:600;"> (Mission 8)</span>
-    </div>
-    <ul class="benefits">
+    <div class="course-name" id="co-name">🟠 A-Level Full Pack</div>
+    <ul class="benefits" id="co-benefits">
       <li>Grammar · Vocabulary · Reading ครบจบในชุดเดียว</li>
-      <li>ข้อสอบจำลองสนามสอบจริง พร้อมเฉลยทุกข้อ</li>
+      <li>Mock Exam 500 ข้อ จำลองสนามสอบจริง</li>
+      <li>PDF สรุป + Cheat Sheet พิมพ์ได้เลย</li>
       <li>เรียนซ้ำได้ไม่จำกัด ไม่มีวันหมดอายุ</li>
-      <li>อัพเดตเนื้อหาตามแนวสอบล่าสุดเสมอ</li>
     </ul>
     <div class="price-block">
       <span class="price-thb">฿</span>
-      <span class="price-num">1,990</span>
-      <span class="price-orig">฿2,990</span>
-      <span class="price-badge">ประหยัด ฿1,000</span>
+      <span class="price-num" id="co-price">690</span>
+      <span class="price-orig" id="co-orig">฿990</span>
+      <span class="price-badge" id="co-badge">ประหยัด ฿300</span>
     </div>
     <div class="access-row">
       <span>🔓</span>
@@ -412,10 +410,10 @@ body{
     <!-- ⚠️ แทนที่ภาพด้วย QR PromptPay จริงจากแอปธนาคาร: src="/assets/images/qr-promptpay.png" -->
     <div class="qr-frame" id="qrWrap">
       <img
-        src="https://promptpay.io/0802648381/1990"
-        alt="QR Code PromptPay Thep Academy 1,990 บาท"
-        width="210" height="210"
+        src="https://promptpay.io/0802648381/690"
+        alt="QR Code PromptPay Thep Academy"
         id="qrImg"
+        width="210" height="210"
         onerror="showPlaceholder()"
       >
     </div>
@@ -436,13 +434,13 @@ body{
       </div>
       <div class="acct-row">
         <span class="acct-lbl">จำนวนเงิน</span>
-        <span class="acct-val big">1,990 บาท</span>
+        <span class="acct-val big" id="co-amount">690 บาท</span>
       </div>
     </div>
 
     <!-- COPY BUTTONS -->
     <div class="copy-row">
-      <button class="copy-btn" id="btnAmt" onclick="doCopy('1990','btnAmt','📋 คัดลอกจำนวนเงิน')">
+      <button class="copy-btn" id="btnAmt" onclick="doCopy(window._tierAmt,'btnAmt','📋 คัดลอกจำนวนเงิน')">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
         คัดลอกจำนวนเงิน
       </button>
@@ -455,7 +453,7 @@ body{
     <!-- WARNING -->
     <div class="amount-warn">
       <span>⚠️</span>
-      <span>กรุณาโอน <strong>1,990 บาทพอดี</strong> เพื่อให้พี่บอมยืนยันและปลดล็อคได้รวดเร็ว หากโอนผิดจำนวน ระบบจะล่าช้า</span>
+      <span>กรุณาโอน <strong id="co-warn-amt">690 บาทพอดี</strong> เพื่อให้พี่บอมยืนยันและปลดล็อคได้รวดเร็ว หากโอนผิดจำนวน ระบบจะล่าช้า</span>
     </div>
   </div>
 </div>
@@ -651,6 +649,33 @@ body{
 
 <!-- ══ SCRIPTS ══ -->
 <script>
+/* ─ TIER SETUP ─ */
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var tier=params.get('tier')==='1'?1:2;
+  var tiers={
+    1:{name:'🔵 A-Level Core',price:'399',orig:'฿690',badge:'ประหยัด ฿291',amount:'399',
+       benefits:['Grammar · Vocabulary · Reading ครบจบในชุดเดียว','เฉลยละเอียดทุกข้อ','เรียนซ้ำได้ไม่จำกัด ไม่มีวันหมดอายุ'],
+       urgency:'Core ฿399 → ราคาปกติ ฿690'},
+    2:{name:'🟠 A-Level Full Pack',price:'690',orig:'฿990',badge:'ประหยัด ฿300',amount:'690',
+       benefits:['Grammar · Vocabulary · Reading ครบจบในชุดเดียว','Mock Exam 500 ข้อ จำลองสนามสอบจริง','PDF สรุป + Cheat Sheet พิมพ์ได้เลย','เรียนซ้ำได้ไม่จำกัด ไม่มีวันหมดอายุ'],
+       urgency:'Full Pack ฿690 → ราคาปกติ ฿990'}
+  };
+  var d=tiers[tier];
+  window._tierAmt=d.amount;
+  document.addEventListener('DOMContentLoaded',function(){
+    document.getElementById('co-name').textContent=d.name;
+    document.getElementById('co-price').textContent=d.price;
+    document.getElementById('co-orig').textContent=d.orig;
+    document.getElementById('co-badge').textContent=d.badge;
+    document.getElementById('co-amount').textContent=d.amount+' บาท';
+    document.getElementById('co-warn-amt').textContent=d.amount+' บาทพอดี';
+    document.getElementById('urgency-text').textContent=d.urgency;
+    document.getElementById('qrImg').src='https://promptpay.io/0802648381/'+d.amount;
+    var ul=document.getElementById('co-benefits');
+    ul.innerHTML=d.benefits.map(function(b){return'<li>'+b+'</li>';}).join('');
+  });
+})();
 /* ─ COUNTDOWN (resets to midnight each day) ─ */
 (function(){
   function getTarget(){

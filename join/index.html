@@ -213,14 +213,30 @@
           <option value="other">อื่นๆ</option>
         </select>
       </div>
+      <!-- TIER SELECTION -->
+      <div class="form-group">
+        <label class="form-label">เลือก Package</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;">
+          <label id="tier1-label" onclick="selectTier(1)" style="border:2px solid var(--gray);border-radius:10px;padding:12px;cursor:pointer;transition:border .2s;">
+            <div style="font-weight:700;font-size:.95rem;color:var(--dark);">🔵 Core</div>
+            <div style="font-size:.8rem;color:var(--mid);margin:2px 0;">Grammar · Vocab · Reading</div>
+            <div style="font-weight:800;font-size:1.1rem;color:var(--navy);">฿399</div>
+          </label>
+          <label id="tier2-label" onclick="selectTier(2)" style="border:2px solid var(--orange);border-radius:10px;padding:12px;cursor:pointer;transition:border .2s;background:rgba(249,115,22,.04);">
+            <div style="font-weight:700;font-size:.95rem;color:var(--dark);">🟠 Full Pack <span style="font-size:.7rem;background:var(--orange);color:#fff;padding:1px 6px;border-radius:8px;">แนะนำ</span></div>
+            <div style="font-size:.8rem;color:var(--mid);margin:2px 0;">Core + Mock Exam + PDF</div>
+            <div style="font-weight:800;font-size:1.1rem;color:var(--orange);">฿690</div>
+          </label>
+        </div>
+      </div>
       <div class="price-summary">
         <div>
-          <div class="price-course">คอร์ส A-Level English</div>
-          <div class="price-course-sub">Grammar · Vocabulary · Reading · เฉลยละเอียด</div>
+          <div class="price-course" id="join-tier-name">Full Pack — A-Level English</div>
+          <div class="price-course-sub" id="join-tier-desc">Core + Mock Exam 500 ข้อ + PDF สรุป</div>
         </div>
         <div class="price-amount">
-          <div class="price-orig">690 บาท</div>
-          <div><span class="price-main">349</span><span class="price-unit"> บาท</span></div>
+          <div class="price-orig" id="join-tier-orig">990 บาท</div>
+          <div><span class="price-main" id="join-tier-price">690</span><span class="price-unit"> บาท</span></div>
         </div>
       </div>
       <button class="form-submit" onclick="handleJoin()">สมัครเรียนเลย →</button>
@@ -232,7 +248,7 @@
       </div>
       <div class="success-title">ส่งข้อมูลเรียบร้อย!</div>
       <p class="success-desc">ขั้นตอนถัดไป: ชำระเงินเพื่อเริ่มเรียนได้เลย<br>ระบบจะพาไปหน้าชำระเงินใน <span id="redirect-count">5</span> วินาที</p>
-      <a href="/checkout/" class="form-submit" style="display:inline-block;text-align:center;text-decoration:none;margin-top:8px;">ชำระเงินเลย →</a>
+      <a id="checkout-link" href="/checkout/?tier=2" class="form-submit" style="display:inline-block;text-align:center;text-decoration:none;margin-top:8px;">ชำระเงินเลย →</a>
     </div>
   </div>
 </div>
@@ -269,6 +285,27 @@
 </footer>
 
 <script>
+var selectedTier=2;
+function selectTier(t){
+  selectedTier=t;
+  var t1=document.getElementById('tier1-label');
+  var t2=document.getElementById('tier2-label');
+  if(t===1){
+    t1.style.border='2px solid var(--navy)';t1.style.background='rgba(15,31,61,.04)';
+    t2.style.border='2px solid var(--gray)';t2.style.background='';
+    document.getElementById('join-tier-name').textContent='Core — A-Level English';
+    document.getElementById('join-tier-desc').textContent='Grammar · Vocabulary · Reading · เฉลยละเอียด';
+    document.getElementById('join-tier-orig').textContent='690 บาท';
+    document.getElementById('join-tier-price').textContent='399';
+  } else {
+    t2.style.border='2px solid var(--orange)';t2.style.background='rgba(249,115,22,.04)';
+    t1.style.border='2px solid var(--gray)';t1.style.background='';
+    document.getElementById('join-tier-name').textContent='Full Pack — A-Level English';
+    document.getElementById('join-tier-desc').textContent='Core + Mock Exam 500 ข้อ + PDF สรุป';
+    document.getElementById('join-tier-orig').textContent='990 บาท';
+    document.getElementById('join-tier-price').textContent='690';
+  }
+}
 function handleJoin(){
   var name=document.getElementById('input-name').value.trim();
   var email=document.getElementById('input-email').value.trim();
@@ -292,7 +329,7 @@ function handleJoin(){
       count--;
       var el=document.getElementById('redirect-count');
       if(el)el.textContent=count;
-      if(count<=0){clearInterval(timer);window.location.href='/checkout/';}
+      if(count<=0){clearInterval(timer);window.location.href='/checkout/?tier='+selectedTier;}
     },1000);
   });
 }
