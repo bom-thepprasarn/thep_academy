@@ -231,8 +231,8 @@
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <div class="success-title">ส่งข้อมูลเรียบร้อย!</div>
-      <p class="success-desc">พี่บอมจะติดต่อกลับภายใน 24 ชั่วโมง<br>เพื่อยืนยันการสมัครและส่งลิงก์เรียน<br><br>ขอบคุณที่เลือก Thep Academy ครับ</p>
-      <a href="/courses/" class="success-back">← ดูรายละเอียดคอร์ส</a>
+      <p class="success-desc">ขั้นตอนถัดไป: ชำระเงินเพื่อเริ่มเรียนได้เลย<br>ระบบจะพาไปหน้าชำระเงินใน <span id="redirect-count">5</span> วินาที</p>
+      <a href="/checkout/" class="form-submit" style="display:inline-block;text-align:center;text-decoration:none;margin-top:8px;">ชำระเงินเลย →</a>
     </div>
   </div>
 </div>
@@ -287,6 +287,13 @@ function handleJoin(){
     if(typeof gtag!=='undefined'){gtag('event','join_submit',{event_category:'engagement',event_label:role});}
     document.getElementById('form-area').style.display='none';
     document.getElementById('success-area').style.display='block';
+    var count=5;
+    var timer=setInterval(function(){
+      count--;
+      var el=document.getElementById('redirect-count');
+      if(el)el.textContent=count;
+      if(count<=0){clearInterval(timer);window.location.href='/checkout/';}
+    },1000);
   });
 }
 (function(){
