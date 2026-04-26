@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="robots" content="noindex,nofollow">
-<title>ชำระเงิน · Mission to the Moon ม.1 | Thep Academy</title>
+<title>ชำระเงิน · A-Level Reading | Thep Academy</title>
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X05ZGMBFW7"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-X05ZGMBFW7');</script>
@@ -528,7 +528,7 @@ body{
     <div class="prefill-txt">
       ชื่อ-นามสกุล: [ชื่อของคุณ]<br>
       อีเมล: [อีเมลที่ต้องการรับลิงก์]<br>
-      คอร์ส: Mission to the Moon (Mission 8)<br>
+      คอร์ส: <span id="co-course">A-Level Reading</span><br>
       แนบ: 📸 รูปสลิปการโอนเงิน
     </div>
   </div>
@@ -664,6 +664,7 @@ body{
   window._tierAmt=d.amount;
   document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('co-name').textContent=d.name;
+    document.getElementById('co-course').textContent=d.name.replace(/^[^\s]+\s/,'');
     document.getElementById('co-price').textContent=d.price;
     document.getElementById('co-orig').textContent=d.orig;
     document.getElementById('co-badge').textContent=d.badge;
