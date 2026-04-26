@@ -407,10 +407,9 @@ body{
   <div class="qr-body">
 
     <!-- QR CODE IMAGE -->
-    <!-- ⚠️ แทนที่ภาพด้วย QR PromptPay จริงจากแอปธนาคาร: src="/assets/images/qr-promptpay.png" -->
     <div class="qr-frame" id="qrWrap">
       <img
-        src="https://promptpay.io/0802648381/690"
+        src="/assets/images/qr-promptpay.jpg"
         alt="QR Code PromptPay Thep Academy"
         id="qrImg"
         width="210" height="210"
@@ -671,7 +670,6 @@ body{
     document.getElementById('co-amount').textContent=d.amount+' บาท';
     document.getElementById('co-warn-amt').textContent=d.amount+' บาทพอดี';
     document.getElementById('urgency-text').textContent=d.urgency;
-    document.getElementById('qrImg').src='https://promptpay.io/0802648381/'+d.amount;
     var ul=document.getElementById('co-benefits');
     ul.innerHTML=d.benefits.map(function(b){return'<li>'+b+'</li>';}).join('');
   });
